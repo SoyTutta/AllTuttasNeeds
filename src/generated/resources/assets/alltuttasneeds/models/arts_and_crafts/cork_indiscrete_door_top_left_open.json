@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "bottom": "arts_and_crafts:block/indiscrete_door/cork_door_bottom",
+    "top": "arts_and_crafts:block/indiscrete_door/cork_door_top"
+  }
+}

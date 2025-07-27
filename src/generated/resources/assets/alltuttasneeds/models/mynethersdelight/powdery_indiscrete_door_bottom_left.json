@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "bottom": "mynethersdelight:block/indiscrete_door/powdery_door_bottom",
+    "top": "mynethersdelight:block/indiscrete_door/powdery_door_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "tuttasdoors:block/pet_door_top",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "door": "malum:block/pet_door/bolted_runewood_boards_door",
+    "extra": "malum:block/pet_door/bolted_runewood_boards_door"
+  }
+}

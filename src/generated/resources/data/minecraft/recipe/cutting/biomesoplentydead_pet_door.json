@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:dead_pet_door"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "biomesoplenty:dead_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

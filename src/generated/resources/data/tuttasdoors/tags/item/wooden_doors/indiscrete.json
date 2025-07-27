@@ -1,0 +1,237 @@
+{
+  "values": [
+    "minecraft:acacia_door",
+    {
+      "id": "tuttasdoors:oak_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:spruce_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:birch_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:jungle_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:dark_oak_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:mangrove_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:cherry_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:bamboo_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:crimson_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:warped_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "arts_and_crafts:cork_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:fir_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:pine_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:maple_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:redwood_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:mahogany_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:jacaranda_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:palm_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:willow_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:dead_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:magic_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:umbran_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:hellbark_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:empyreal_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:veiled_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:celestial_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:murublight_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:powdery_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:pine_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:willow_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:walnut_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:maple_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:aspen_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cedar_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:coconut_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cypress_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:fir_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:ghaf_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:joshua_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:larch_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:mahogany_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:maple_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:olive_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:palo_verde_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:redwood_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:saxaul_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:sugi_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:willow_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:wisteria_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "newworld:fir_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:runewood_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_runewood_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:runewood_boards_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_runewood_boards_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:soulwood_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_soulwood_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:soulwood_boards_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_soulwood_boards_indiscrete_door",
+      "required": false
+    }
+  ]
+}

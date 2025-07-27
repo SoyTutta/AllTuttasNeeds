@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_right",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "door": "biomesoplenty:block/transit_door/pine_door_bottom"
+  }
+}

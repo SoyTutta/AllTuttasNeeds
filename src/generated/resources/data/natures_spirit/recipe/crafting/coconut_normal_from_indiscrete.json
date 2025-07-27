@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "natures_spirit:coconut_door"
+    },
+    {
+      "item": "natures_spirit:coconut_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "natures_spirit:coconut_normal_door"
+  }
+}

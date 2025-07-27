@@ -1,0 +1,8 @@
+{
+  "parent": "tuttasdoors:block/alt/transit_door_top_right_open",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "door": "nomansland:block/transit_door/maple_door_top",
+    "side": "nomansland:block/maple/maple_door_sides"
+  }
+}

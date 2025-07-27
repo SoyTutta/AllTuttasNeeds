@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hellbark_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "biomesoplenty:hellbark_indiscrete_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "biomesoplenty:crafting/hellbark_normal_from_indiscrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hellbark_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "biomesoplenty:crafting/hellbark_normal_from_indiscrete"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_left_open",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "door": "enderscape:block/transit_door/celestial_door_top"
+  }
+}

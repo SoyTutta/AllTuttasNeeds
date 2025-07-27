@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "sliding_doors",
+  "key": {
+    "#": {
+      "item": "blockbox:golden_bars"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "blockbox:golden_bars_sliding_door"
+  }
+}

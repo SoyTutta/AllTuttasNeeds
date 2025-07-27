@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enderscape:crafting/veiled_indiscrete_from_discrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_veiled_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "enderscape:veiled_discrete_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_veiled_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enderscape:crafting/veiled_indiscrete_from_discrete"
+    ]
+  }
+}

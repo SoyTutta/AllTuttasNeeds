@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_palm_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "biomesoplenty:palm_discrete_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "biomesoplenty:crafting/palm_indiscrete_from_discrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_palm_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "biomesoplenty:crafting/palm_indiscrete_from_discrete"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "natures_spirit:crafting/willow_indiscrete_from_normal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_willow_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "natures_spirit:willow_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_willow_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "natures_spirit:crafting/willow_indiscrete_from_normal"
+    ]
+  }
+}

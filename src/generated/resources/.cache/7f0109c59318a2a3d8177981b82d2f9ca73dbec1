@@ -1,0 +1,15 @@
+// 1.21.1	2025-07-27T14:05:21.595754	Tags for minecraft:block mod id tuttasdoors
+f4d5cfa97883f0564921999ba1e7068a23e16dd3 data/minecraft/tags/block/doors.json
+d42b86c21ad12e32f0cf1873a78bb82961e88237 data/minecraft/tags/block/guarded_by_piglins.json
+fbc8347f270d9c8cb7ae11d72ab576710bfe3aed data/minecraft/tags/block/mineable/axe.json
+65e8425a693405e1555c68a89b96eb7f023bd819 data/minecraft/tags/block/mineable/pickaxe.json
+d42b86c21ad12e32f0cf1873a78bb82961e88237 data/minecraft/tags/block/needs_iron_tool.json
+349eaf26f21f5626aafebb265e7b7dd46024df64 data/minecraft/tags/block/needs_stone_tool.json
+65e8425a693405e1555c68a89b96eb7f023bd819 data/minecraft/tags/block/walls.json
+fbc8347f270d9c8cb7ae11d72ab576710bfe3aed data/minecraft/tags/block/wooden_doors.json
+b7d9fe3a00a7e293dfd597e6a83e3fdbe63c06d5 data/tuttasdoors/tags/block/doors/sliding.json
+b065e12b264e776d01844d2b92ae6bc730945f67 data/tuttasdoors/tags/block/wooden_doors/discrete.json
+37deb8dc31d0f07aed3ce04d829dd05a3c85914b data/tuttasdoors/tags/block/wooden_doors/door.json
+01294eb683d38a7d0a2a5088241ac4d2a2aafc33 data/tuttasdoors/tags/block/wooden_doors/indiscrete.json
+172aacbc381ae30dea8d592be8fc16a5663cd2ff data/tuttasdoors/tags/block/wooden_doors/pet.json
+0a8c442674ec9f01ca16db0a0325da4d377a1fed data/tuttasdoors/tags/block/wooden_doors/transit.json

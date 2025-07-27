@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "bottom": "enderscape:block/indiscrete_door/celestial_door_bottom",
+    "top": "enderscape:block/indiscrete_door/celestial_door_top"
+  }
+}

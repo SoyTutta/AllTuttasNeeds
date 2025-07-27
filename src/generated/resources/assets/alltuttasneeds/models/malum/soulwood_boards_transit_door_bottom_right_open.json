@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_right_open",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "door": "malum:block/transit_door/soulwood_boards_door_bottom"
+  }
+}

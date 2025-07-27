@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_left_open",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "door": "natures_spirit:block/transit_door/larch_door_top"
+  }
+}

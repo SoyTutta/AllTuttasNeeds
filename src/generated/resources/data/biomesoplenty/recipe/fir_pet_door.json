@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_pet_doors",
+  "key": {
+    "#": {
+      "item": "biomesoplenty:fir_planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "ss",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 2,
+    "id": "biomesoplenty:fir_pet_door"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "blockbox"
+    }
+  ],
+  "values": {
+    "blockbox:copper_bars_sliding_door": {
+      "waxed": "blockbox:waxed_copper_bars_sliding_door"
+    },
+    "blockbox:exposed_copper_bars_sliding_door": {
+      "waxed": "blockbox:waxed_exposed_copper_bars_sliding_door"
+    },
+    "blockbox:oxidized_copper_bars_sliding_door": {
+      "waxed": "blockbox:waxed_oxidized_copper_bars_sliding_door"
+    },
+    "blockbox:weathered_copper_bars_sliding_door": {
+      "waxed": "blockbox:waxed_weathered_copper_bars_sliding_door"
+    }
+  }
+}

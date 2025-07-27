@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_pet_doors",
+  "key": {
+    "#": {
+      "item": "minecraft:oak_planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "ss",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 2,
+    "id": "tuttasdoors:oak_pet_door"
+  }
+}

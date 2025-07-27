@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "natures_spirit:cedar_indiscrete_door"
+    },
+    {
+      "item": "natures_spirit:cedar_planks"
+    },
+    {
+      "item": "natures_spirit:cedar_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "natures_spirit:cedar_door"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "values": [
+    {
+      "id": "tuttasdoors:crimson_normal_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:warped_normal_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:crimson_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:warped_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:crimson_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:warped_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:crimson_pet_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:warped_pet_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:hellbark_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:hellbark_discrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:hellbark_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:hellbark_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:hellbark_pet_door",
+      "required": false
+    }
+  ]
+}

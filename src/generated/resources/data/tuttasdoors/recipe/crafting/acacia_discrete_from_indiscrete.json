@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "minecraft:acacia_door"
+    },
+    {
+      "item": "minecraft:acacia_planks"
+    },
+    {
+      "item": "minecraft:acacia_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdoors:acacia_discrete_door"
+  }
+}

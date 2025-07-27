@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_magic_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "biomesoplenty:magic_discrete_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "biomesoplenty:crafting/magic_indiscrete_from_discrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_magic_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "biomesoplenty:crafting/magic_indiscrete_from_discrete"
+    ]
+  }
+}

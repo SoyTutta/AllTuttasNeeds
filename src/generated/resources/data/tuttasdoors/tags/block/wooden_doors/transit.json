@@ -1,0 +1,240 @@
+{
+  "values": [
+    {
+      "id": "tuttasdoors:oak_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:spruce_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:birch_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:jungle_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:acacia_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:dark_oak_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:mangrove_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:cherry_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:bamboo_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:crimson_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:warped_transit_door",
+      "required": false
+    },
+    {
+      "id": "arts_and_crafts:cork_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:fir_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:pine_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:maple_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:redwood_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:mahogany_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:jacaranda_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:palm_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:willow_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:dead_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:magic_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:umbran_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:hellbark_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:empyreal_transit_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:veiled_transit_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:celestial_transit_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:murublight_transit_door",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:powdery_transit_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:pine_transit_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:willow_transit_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:walnut_transit_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:maple_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:aspen_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cedar_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:coconut_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cypress_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:fir_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:ghaf_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:joshua_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:larch_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:mahogany_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:maple_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:olive_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:palo_verde_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:redwood_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:saxaul_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:sugi_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:willow_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:wisteria_transit_door",
+      "required": false
+    },
+    {
+      "id": "newworld:fir_transit_door",
+      "required": false
+    },
+    {
+      "id": "malum:runewood_transit_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_runewood_transit_door",
+      "required": false
+    },
+    {
+      "id": "malum:runewood_boards_transit_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_runewood_boards_transit_door",
+      "required": false
+    },
+    {
+      "id": "malum:soulwood_transit_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_soulwood_transit_door",
+      "required": false
+    },
+    {
+      "id": "malum:soulwood_boards_transit_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_soulwood_boards_transit_door",
+      "required": false
+    }
+  ]
+}

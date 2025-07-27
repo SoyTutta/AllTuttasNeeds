@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_indiscrete_doors",
+  "key": {
+    "#": {
+      "tag": "malum:runewood_boards"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "s#",
+    "s#",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "malum:runewood_boards_indiscrete_door"
+  }
+}

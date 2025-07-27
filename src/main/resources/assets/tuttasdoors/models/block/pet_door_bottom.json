@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"door": "tuttasdoors:block/pet_door/oak_door",
+		"particle": "#door"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 3],
+			"rotation": {"angle": 0, "axis": "z", "origin": [0, 16, 3]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#door"},
+				"east": {"uv": [13, 0, 16, 16], "rotation": 180, "texture": "#door"},
+				"south": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#door"},
+				"west": {"uv": [16, 0, 13, 16], "rotation": 180, "texture": "#door"},
+				"up": {"uv": [0, 13, 16, 16], "texture": "#door"},
+				"down": {"uv": [0, 16, 16, 13], "texture": "#door"}
+			}
+		}
+	]
+}

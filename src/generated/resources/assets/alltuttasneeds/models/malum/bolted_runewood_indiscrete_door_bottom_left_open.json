@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "bottom": "malum:block/indiscrete_door/bolted_runewood_door_bottom",
+    "top": "malum:block/indiscrete_door/bolted_runewood_door_top"
+  }
+}

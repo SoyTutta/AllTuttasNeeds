@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "bottom": "natures_spirit:block/door/palo_verde_door_bottom",
+    "top": "natures_spirit:block/door/palo_verde_door_top"
+  }
+}

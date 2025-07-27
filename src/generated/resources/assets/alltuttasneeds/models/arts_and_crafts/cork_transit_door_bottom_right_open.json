@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_right_open",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "door": "arts_and_crafts:block/transit_door/cork_door_bottom"
+  }
+}

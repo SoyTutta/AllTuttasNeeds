@@ -1,0 +1,8 @@
+{
+  "parent": "tuttasdoors:block/pet_door_bottom_open",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "door": "enderscape:block/pet_door/murublight_door",
+    "extra": "enderscape:block/pet_door/murublight_door"
+  }
+}

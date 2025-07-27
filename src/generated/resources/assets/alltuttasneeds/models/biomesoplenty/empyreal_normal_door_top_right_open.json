@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "bottom": "biomesoplenty:block/door/empyreal_door_bottom",
+    "top": "biomesoplenty:block/door/empyreal_door_top"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_pet_doors",
+  "key": {
+    "#": {
+      "item": "natures_spirit:palo_verde_planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "ss",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 2,
+    "id": "natures_spirit:palo_verde_pet_door"
+  }
+}

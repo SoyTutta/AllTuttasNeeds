@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bamboo_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tuttasdoors:bamboo_discrete_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasdoors:crafting/bamboo_indiscrete_from_discrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bamboo_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasdoors:crafting/bamboo_indiscrete_from_discrete"
+    ]
+  }
+}

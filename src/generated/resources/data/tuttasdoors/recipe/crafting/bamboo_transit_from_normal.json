@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "minecraft:bamboo_door"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdoors:bamboo_transit_door"
+  }
+}

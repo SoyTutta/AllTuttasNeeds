@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tuttasdoors:item/dark_oak_indiscrete_door"
+  }
+}

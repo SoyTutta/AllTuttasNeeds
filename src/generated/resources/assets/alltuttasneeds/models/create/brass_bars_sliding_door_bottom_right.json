@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/sliding_door_bottom_right",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "door": "create:block/sliding_door/brass_bars_door_bottom"
+  }
+}

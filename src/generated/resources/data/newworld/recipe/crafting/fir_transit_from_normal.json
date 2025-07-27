@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "newworld:fir_normal_door"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "newworld:fir_transit_door"
+  }
+}

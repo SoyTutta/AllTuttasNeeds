@@ -1,0 +1,25 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"side": "nomansland:block/maple/maple_door_sides",
+		"particle": "#door",
+		"door": "tuttasdoors:block/transit_door/maple_door_bottom"
+	},
+	"elements": [
+		{
+			"from": [0, 3, 0],
+			"to": [3, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 16, 16]},
+			"faces": {
+				"north": {"uv": [14.5, 9.5, 16, 16], "texture": "#side"},
+				"east": {"uv": [0, 0, 16, 13], "texture": "#door"},
+				"south": {"uv": [14.5, 9.5, 16, 16], "texture": "#side"},
+				"west": {"uv": [16, 0, 0, 13], "texture": "#door"},
+				"up": {"uv": [0, 13, 16, 16], "rotation": 270, "texture": "#door"},
+				"down": {"uv": [0, 14.5, 8, 16], "rotation": 90, "texture": "#side"}
+			}
+		}
+	]
+}

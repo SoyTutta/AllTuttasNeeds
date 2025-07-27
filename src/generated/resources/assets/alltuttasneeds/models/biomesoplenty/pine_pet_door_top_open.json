@@ -1,0 +1,8 @@
+{
+  "parent": "tuttasdoors:block/pet_door_top_open",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "door": "biomesoplenty:block/pet_door/pine_door",
+    "extra": "biomesoplenty:block/pet_door/pine_door"
+  }
+}

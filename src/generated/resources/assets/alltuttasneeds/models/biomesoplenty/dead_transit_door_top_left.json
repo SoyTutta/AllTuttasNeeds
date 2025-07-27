@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_left",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "door": "biomesoplenty:block/transit_door/dead_door_top"
+  }
+}

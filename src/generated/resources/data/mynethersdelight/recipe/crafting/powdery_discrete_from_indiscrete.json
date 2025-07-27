@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "mynethersdelight:powdery_indiscrete_door"
+    },
+    {
+      "item": "mynethersdelight:powdery_planks"
+    },
+    {
+      "item": "mynethersdelight:powdery_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mynethersdelight:powdery_discrete_door"
+  }
+}

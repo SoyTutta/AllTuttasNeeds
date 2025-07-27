@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "natures_spirit:larch_indiscrete_door"
+    },
+    {
+      "item": "natures_spirit:larch_planks"
+    },
+    {
+      "item": "natures_spirit:larch_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "natures_spirit:larch_door"
+  }
+}

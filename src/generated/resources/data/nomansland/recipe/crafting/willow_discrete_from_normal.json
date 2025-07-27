@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "nomansland:willow_door"
+    },
+    {
+      "item": "nomansland:willow_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "nomansland:willow_discrete_door"
+  }
+}

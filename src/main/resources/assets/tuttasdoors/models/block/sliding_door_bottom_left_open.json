@@ -1,0 +1,63 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "#door",
+		"door": "tuttasdoors:block/sliding_door/iron_bars_door_bottom"
+	},
+	"elements": [
+		{
+			"from": [15, 0, 0],
+			"to": [15, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 16, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 16], "texture": "#door"},
+				"east": {"uv": [16, 0, 0, 16], "texture": "#door"},
+				"south": {"uv": [0, 0, 0, 16], "texture": "#door"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#door"},
+				"up": {"uv": [0, 0, 16, 0], "rotation": 270, "texture": "#door"},
+				"down": {"uv": [0, 0, 16, 0], "rotation": 90, "texture": "#door"}
+			}
+		},
+		{
+			"from": [14, 0.01, 0],
+			"to": [16, 0.01, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 16, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 0], "texture": "#door"},
+				"east": {"uv": [0, 0, 16, 0], "texture": "#door"},
+				"south": {"uv": [0, 0, 2, 0], "texture": "#door"},
+				"west": {"uv": [0, 0, 16, 0], "texture": "#door"},
+				"up": {"uv": [0, 14, 16, 16], "rotation": 270, "texture": "#door"},
+				"down": {"uv": [0, 14, 16, 16], "rotation": 90, "texture": "#door"}
+			}
+		},
+		{
+			"from": [14, 0, 15.99],
+			"to": [16, 16, 15.99],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 16, 8]},
+			"faces": {
+				"north": {"uv": [14, 0, 16, 16], "texture": "#door"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#door"},
+				"south": {"uv": [14, 0, 16, 16], "texture": "#door"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#door"},
+				"up": {"uv": [0, 0, 0, 2], "rotation": 270, "texture": "#door"},
+				"down": {"uv": [0, 0, 0, 2], "rotation": 90, "texture": "#door"}
+			}
+		},
+		{
+			"from": [14, 0, 0.01],
+			"to": [16, 16, 0.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 16, 8]},
+			"faces": {
+				"north": {"uv": [14, 0, 16, 16], "texture": "#door"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#door"},
+				"south": {"uv": [14, 0, 16, 16], "texture": "#door"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#door"},
+				"up": {"uv": [0, 0, 0, 2], "rotation": 270, "texture": "#door"},
+				"down": {"uv": [0, 0, 0, 2], "rotation": 90, "texture": "#door"}
+			}
+		}
+	]
+}

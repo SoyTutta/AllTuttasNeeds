@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "tuttasdoors:bamboo_indiscrete_door"
+    },
+    {
+      "item": "minecraft:bamboo_planks"
+    },
+    {
+      "item": "minecraft:bamboo_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdoors:bamboo_discrete_door"
+  }
+}

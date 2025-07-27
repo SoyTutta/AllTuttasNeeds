@@ -1,0 +1,8 @@
+{
+  "parent": "tuttasdoors:block/alt/transit_door_top_left_open",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "door": "nomansland:block/transit_door/willow_door_top",
+    "side": "nomansland:block/willow/willow_door_sides"
+  }
+}

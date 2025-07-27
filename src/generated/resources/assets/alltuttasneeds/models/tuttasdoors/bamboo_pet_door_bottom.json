@@ -1,0 +1,8 @@
+{
+  "parent": "tuttasdoors:block/pet_door_bottom",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "door": "tuttasdoors:block/pet_door/bamboo_door",
+    "extra": "tuttasdoors:block/pet_door/bamboo_door"
+  }
+}

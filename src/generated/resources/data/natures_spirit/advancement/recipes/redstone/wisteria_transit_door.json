@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "natures_spirit:wisteria_transit_door"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wisteria_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "natures_spirit:wisteria_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wisteria_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "natures_spirit:wisteria_transit_door"
+    ]
+  }
+}

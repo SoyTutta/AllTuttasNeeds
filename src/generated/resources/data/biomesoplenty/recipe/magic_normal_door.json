@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_doors",
+  "key": {
+    "#": {
+      "item": "biomesoplenty:magic_planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "s#",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "biomesoplenty:magic_normal_door"
+  }
+}

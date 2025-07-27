@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "bolted_door_bolting",
+  "ingredients": [
+    {
+      "item": "malum:soulwood_boards_normal_door"
+    },
+    {
+      "item": "minecraft:iron_nugget"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "malum:bolted_soulwood_boards_door"
+  }
+}

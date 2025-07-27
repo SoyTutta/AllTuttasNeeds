@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soulwood_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:barrier"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "malum:soulwood_pet_door"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soulwood_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "malum:soulwood_pet_door"
+    ]
+  }
+}
