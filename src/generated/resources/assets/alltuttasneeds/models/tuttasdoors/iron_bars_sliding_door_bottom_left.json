@@ -1,6 +1,5 @@
 {
   "parent": "tuttasdoors:block/sliding_door_bottom_left",
-  "render_type": "minecraft:translucent",
   "textures": {
     "door": "tuttasdoors:block/sliding_door/iron_bars_door_bottom"
   }

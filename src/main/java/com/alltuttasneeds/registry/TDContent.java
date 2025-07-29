@@ -92,7 +92,7 @@ public class TDContent {
         Supplier<Block> block = BLOCKS.register(name, () -> {
             Block baseDoor = config.baseDoor().get();
             BlockSetType setType = config.setType().get();
-            BlockBehaviour.Properties properties = BlockBehaviour.Properties.ofFullCopy(baseDoor);
+            BlockBehaviour.Properties properties = BlockBehaviour.Properties.ofFullCopy(baseDoor).noOcclusion();
 
             return factory.create(setType, properties);
         });

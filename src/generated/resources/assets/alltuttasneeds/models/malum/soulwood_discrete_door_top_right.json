@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_top_right",
-  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "malum:block/discrete_door/soulwood_door_bottom",
     "top": "malum:block/discrete_door/soulwood_door_top"

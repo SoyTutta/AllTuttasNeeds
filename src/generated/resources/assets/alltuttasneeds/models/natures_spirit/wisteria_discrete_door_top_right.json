@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_top_right",
-  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "natures_spirit:block/discrete_door/wisteria_door_bottom",
     "top": "natures_spirit:block/discrete_door/wisteria_door_top"

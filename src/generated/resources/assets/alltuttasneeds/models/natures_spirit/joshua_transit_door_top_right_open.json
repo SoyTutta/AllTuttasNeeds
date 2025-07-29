@@ -1,6 +1,5 @@
 {
   "parent": "tuttasdoors:block/transit_door_top_right_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "door": "natures_spirit:block/transit_door/joshua_door_top"
   }

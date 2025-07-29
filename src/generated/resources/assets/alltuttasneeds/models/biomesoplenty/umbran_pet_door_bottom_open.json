@@ -1,6 +1,5 @@
 {
   "parent": "tuttasdoors:block/pet_door_bottom_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "door": "biomesoplenty:block/pet_door/umbran_door",
     "extra": "biomesoplenty:block/pet_door/umbran_door"

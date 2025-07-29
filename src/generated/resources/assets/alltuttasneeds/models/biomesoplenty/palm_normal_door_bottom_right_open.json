@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_bottom_right_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "biomesoplenty:block/door/palm_door_bottom",
     "top": "biomesoplenty:block/door/palm_door_top"

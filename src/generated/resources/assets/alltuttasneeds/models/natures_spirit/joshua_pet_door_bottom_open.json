@@ -1,6 +1,5 @@
 {
   "parent": "tuttasdoors:block/pet_door_bottom_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "door": "natures_spirit:block/pet_door/joshua_door",
     "extra": "natures_spirit:block/pet_door/joshua_door"

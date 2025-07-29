@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_bottom_left",
-  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "biomesoplenty:block/indiscrete_door/fir_door_bottom",
     "top": "biomesoplenty:block/indiscrete_door/fir_door_top"

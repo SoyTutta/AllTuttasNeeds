@@ -1,6 +1,5 @@
 {
   "parent": "tuttasdoors:block/pet_door_bottom",
-  "render_type": "minecraft:translucent",
   "textures": {
     "door": "natures_spirit:block/pet_door/saxaul_door",
     "extra": "natures_spirit:block/pet_door/saxaul_door"

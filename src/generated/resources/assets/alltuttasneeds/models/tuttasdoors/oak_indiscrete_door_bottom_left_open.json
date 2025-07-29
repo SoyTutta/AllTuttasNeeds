@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_bottom_left_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "tuttasdoors:block/indiscrete_door/oak_door_bottom",
     "top": "tuttasdoors:block/indiscrete_door/oak_door_top"

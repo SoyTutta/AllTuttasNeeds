@@ -1,6 +1,5 @@
 {
   "parent": "tuttasdoors:block/pet_door_bottom",
-  "render_type": "minecraft:translucent",
   "textures": {
     "door": "malum:block/pet_door/soulwood_boards_door",
     "extra": "malum:block/pet_door/soulwood_boards_door"

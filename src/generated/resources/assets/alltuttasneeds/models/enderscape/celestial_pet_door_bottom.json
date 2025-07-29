@@ -1,6 +1,5 @@
 {
   "parent": "tuttasdoors:block/pet_door_bottom",
-  "render_type": "minecraft:translucent",
   "textures": {
     "door": "enderscape:block/pet_door/celestial_door",
     "extra": "enderscape:block/pet_door/celestial_door"

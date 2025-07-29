@@ -1,6 +1,5 @@
 {
   "parent": "tuttasdoors:block/pet_door_bottom_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "door": "arts_and_crafts:block/pet_door/cork_door",
     "extra": "arts_and_crafts:block/pet_door/cork_door"

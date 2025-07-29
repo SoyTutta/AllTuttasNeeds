@@ -1,6 +1,5 @@
 {
   "parent": "tuttasdoors:block/pet_door_top",
-  "render_type": "minecraft:translucent",
   "textures": {
     "door": "tuttasdoors:block/pet_door/spruce_door",
     "extra": "tuttasdoors:block/pet_door/spruce_door"

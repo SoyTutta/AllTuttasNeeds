@@ -100,46 +100,46 @@ public class TDBlockStates extends BlockStateProvider {
         ResourceLocation bottomTexture = resourceBlock(texturePath + "_bottom", modNamespace);
         ResourceLocation topTexture = resourceBlock(texturePath + "_top", modNamespace);
 
-        ModelFile bl = models().withExistingParent(baseName + "_bottom_left", mcLoc("block/door_bottom_left")).texture("bottom", bottomTexture).texture("top", topTexture).renderType("translucent");
-        ModelFile blo = models().withExistingParent(baseName + "_bottom_left_open", mcLoc("block/door_bottom_left_open")).texture("bottom", bottomTexture).texture("top", topTexture).renderType("translucent");
-        ModelFile br = models().withExistingParent(baseName + "_bottom_right", mcLoc("block/door_bottom_right")).texture("bottom", bottomTexture).texture("top", topTexture).renderType("translucent");
-        ModelFile bro = models().withExistingParent(baseName + "_bottom_right_open", mcLoc("block/door_bottom_right_open")).texture("bottom", bottomTexture).texture("top", topTexture).renderType("translucent");
-        ModelFile tl = models().withExistingParent(baseName + "_top_left", mcLoc("block/door_top_left")).texture("bottom", bottomTexture).texture("top", topTexture).renderType("translucent");
-        ModelFile tlo = models().withExistingParent(baseName + "_top_left_open", mcLoc("block/door_top_left_open")).texture("bottom", bottomTexture).texture("top", topTexture).renderType("translucent");
-        ModelFile tr = models().withExistingParent(baseName + "_top_right", mcLoc("block/door_top_right")).texture("bottom", bottomTexture).texture("top", topTexture).renderType("translucent");
-        ModelFile tro = models().withExistingParent(baseName + "_top_right_open", mcLoc("block/door_top_right_open")).texture("bottom", bottomTexture).texture("top", topTexture).renderType("translucent");
+        ModelFile bl = models().withExistingParent(baseName + "_bottom_left", mcLoc("block/door_bottom_left")).texture("bottom", bottomTexture).texture("top", topTexture);
+        ModelFile blo = models().withExistingParent(baseName + "_bottom_left_open", mcLoc("block/door_bottom_left_open")).texture("bottom", bottomTexture).texture("top", topTexture);
+        ModelFile br = models().withExistingParent(baseName + "_bottom_right", mcLoc("block/door_bottom_right")).texture("bottom", bottomTexture).texture("top", topTexture);
+        ModelFile bro = models().withExistingParent(baseName + "_bottom_right_open", mcLoc("block/door_bottom_right_open")).texture("bottom", bottomTexture).texture("top", topTexture);
+        ModelFile tl = models().withExistingParent(baseName + "_top_left", mcLoc("block/door_top_left")).texture("bottom", bottomTexture).texture("top", topTexture);
+        ModelFile tlo = models().withExistingParent(baseName + "_top_left_open", mcLoc("block/door_top_left_open")).texture("bottom", bottomTexture).texture("top", topTexture);
+        ModelFile tr = models().withExistingParent(baseName + "_top_right", mcLoc("block/door_top_right")).texture("bottom", bottomTexture).texture("top", topTexture);
+        ModelFile tro = models().withExistingParent(baseName + "_top_right_open", mcLoc("block/door_top_right_open")).texture("bottom", bottomTexture).texture("top", topTexture);
 
         doorBlock(block, bl, blo, br, bro, tl, tlo, tr, tro);
     }
 
     public void transitDoorBlockWithRenderType(DoorBlock block, ResourceLocation bottom, ResourceLocation top) {
         String baseName = getUniqueModelPath(block);
-        ModelFile bl = models().withExistingParent(baseName + "_bottom_left", tuttasdoorsLoc("transit_door_bottom_left")).texture("door", bottom).renderType("translucent");
-        ModelFile blo = models().withExistingParent(baseName + "_bottom_left_open", tuttasdoorsLoc("transit_door_bottom_left_open")).texture("door", bottom).renderType("translucent");
-        ModelFile br = models().withExistingParent(baseName + "_bottom_right", tuttasdoorsLoc("transit_door_bottom_right")).texture("door", bottom).renderType("translucent");
-        ModelFile bro = models().withExistingParent(baseName + "_bottom_right_open", tuttasdoorsLoc("transit_door_bottom_right_open")).texture("door", bottom).renderType("translucent");
-        ModelFile tl = models().withExistingParent(baseName + "_top_left", tuttasdoorsLoc("transit_door_top_left")).texture("door", top).renderType("translucent");
-        ModelFile tlo = models().withExistingParent(baseName + "_top_left_open", tuttasdoorsLoc("transit_door_top_left_open")).texture("door", top).renderType("translucent");
-        ModelFile tr = models().withExistingParent(baseName + "_top_right", tuttasdoorsLoc("transit_door_top_right")).texture("door", top).renderType("translucent");
-        ModelFile tro = models().withExistingParent(baseName + "_top_right_open", tuttasdoorsLoc("transit_door_top_right_open")).texture("door", top).renderType("translucent");
+        ModelFile bl = models().withExistingParent(baseName + "_bottom_left", tuttasdoorsLoc("transit_door_bottom_left")).texture("door", bottom);
+        ModelFile blo = models().withExistingParent(baseName + "_bottom_left_open", tuttasdoorsLoc("transit_door_bottom_left_open")).texture("door", bottom);
+        ModelFile br = models().withExistingParent(baseName + "_bottom_right", tuttasdoorsLoc("transit_door_bottom_right")).texture("door", bottom);
+        ModelFile bro = models().withExistingParent(baseName + "_bottom_right_open", tuttasdoorsLoc("transit_door_bottom_right_open")).texture("door", bottom);
+        ModelFile tl = models().withExistingParent(baseName + "_top_left", tuttasdoorsLoc("transit_door_top_left")).texture("door", top);
+        ModelFile tlo = models().withExistingParent(baseName + "_top_left_open", tuttasdoorsLoc("transit_door_top_left_open")).texture("door", top);
+        ModelFile tr = models().withExistingParent(baseName + "_top_right", tuttasdoorsLoc("transit_door_top_right")).texture("door", top);
+        ModelFile tro = models().withExistingParent(baseName + "_top_right_open", tuttasdoorsLoc("transit_door_top_right_open")).texture("door", top);
 
         doorBlock(block, bl, blo, br, bro, tl, tlo, tr, tro);
     }
 
     public void slidingDoorBlockWithRenderType(DoorBlock block, ResourceLocation bottom, ResourceLocation top) {
         String baseName = getUniqueModelPath(block);
-        ModelFile bl = models().withExistingParent(baseName + "_bottom_left", tuttasdoorsLoc("sliding_door_bottom_left")).texture("door", bottom).renderType("translucent");
-        ModelFile blo = models().withExistingParent(baseName + "_bottom_left_open", tuttasdoorsLoc("sliding_door_bottom_left_open")).texture("door", bottom).renderType("translucent");
-        ModelFile blto = models().withExistingParent(baseName + "_bottom_left_true_open", tuttasdoorsLoc("sliding_door_bottom_left_true_open")).texture("door", bottom).renderType("translucent");
-        ModelFile br = models().withExistingParent(baseName + "_bottom_right", tuttasdoorsLoc("sliding_door_bottom_right")).texture("door", bottom).renderType("translucent");
-        ModelFile bro = models().withExistingParent(baseName + "_bottom_right_open", tuttasdoorsLoc("sliding_door_bottom_right_open")).texture("door", bottom).renderType("translucent");
-        ModelFile brto = models().withExistingParent(baseName + "_bottom_right_true_open", tuttasdoorsLoc("sliding_door_bottom_right_true_open")).texture("door", bottom).renderType("translucent");
-        ModelFile tl = models().withExistingParent(baseName + "_top_left", tuttasdoorsLoc("sliding_door_top_left")).texture("door", top).renderType("translucent");
-        ModelFile tlo = models().withExistingParent(baseName + "_top_left_open", tuttasdoorsLoc("sliding_door_top_left_open")).texture("door", top).renderType("translucent");
-        ModelFile tlto = models().withExistingParent(baseName + "_top_left_true_open", tuttasdoorsLoc("sliding_door_top_left_true_open")).texture("door", top).renderType("translucent");
-        ModelFile tr = models().withExistingParent(baseName + "_top_right", tuttasdoorsLoc("sliding_door_top_right")).texture("door", top).renderType("translucent");
-        ModelFile tro = models().withExistingParent(baseName + "_top_right_open", tuttasdoorsLoc("sliding_door_top_right_open")).texture("door", top).renderType("translucent");
-        ModelFile trto = models().withExistingParent(baseName + "_top_right_true_open", tuttasdoorsLoc("sliding_door_top_right_true_open")).texture("door", top).renderType("translucent");
+        ModelFile bl = models().withExistingParent(baseName + "_bottom_left", tuttasdoorsLoc("sliding_door_bottom_left")).texture("door", bottom);
+        ModelFile blo = models().withExistingParent(baseName + "_bottom_left_open", tuttasdoorsLoc("sliding_door_bottom_left_open")).texture("door", bottom);
+        ModelFile blto = models().withExistingParent(baseName + "_bottom_left_true_open", tuttasdoorsLoc("sliding_door_bottom_left_true_open")).texture("door", bottom);
+        ModelFile br = models().withExistingParent(baseName + "_bottom_right", tuttasdoorsLoc("sliding_door_bottom_right")).texture("door", bottom);
+        ModelFile bro = models().withExistingParent(baseName + "_bottom_right_open", tuttasdoorsLoc("sliding_door_bottom_right_open")).texture("door", bottom);
+        ModelFile brto = models().withExistingParent(baseName + "_bottom_right_true_open", tuttasdoorsLoc("sliding_door_bottom_right_true_open")).texture("door", bottom);
+        ModelFile tl = models().withExistingParent(baseName + "_top_left", tuttasdoorsLoc("sliding_door_top_left")).texture("door", top);
+        ModelFile tlo = models().withExistingParent(baseName + "_top_left_open", tuttasdoorsLoc("sliding_door_top_left_open")).texture("door", top);
+        ModelFile tlto = models().withExistingParent(baseName + "_top_left_true_open", tuttasdoorsLoc("sliding_door_top_left_true_open")).texture("door", top);
+        ModelFile tr = models().withExistingParent(baseName + "_top_right", tuttasdoorsLoc("sliding_door_top_right")).texture("door", top);
+        ModelFile tro = models().withExistingParent(baseName + "_top_right_open", tuttasdoorsLoc("sliding_door_top_right_open")).texture("door", top);
+        ModelFile trto = models().withExistingParent(baseName + "_top_right_true_open", tuttasdoorsLoc("sliding_door_top_right_true_open")).texture("door", top);
 
         slidingDoorBlock((SlidingDoorBlock) block, bl, blo, blto, br, bro, brto, tl, tlo, tlto, tr, tro, trto);
     }
@@ -165,10 +165,10 @@ public class TDBlockStates extends BlockStateProvider {
 
     public void petDoorBlockWithRenderType(PetDoorBlock block, ResourceLocation customTexture, ResourceLocation vanillaTexture) {
         String baseName = getUniqueModelPath(block);
-        ModelFile bottom = models().withExistingParent(baseName + "_bottom", tuttasdoorsLoc("pet_door_bottom")).texture("door", customTexture).texture("extra", vanillaTexture).renderType("translucent");
-        ModelFile bottomOpen = models().withExistingParent(baseName + "_bottom_open", tuttasdoorsLoc("pet_door_bottom_open")).texture("door", customTexture).texture("extra", vanillaTexture).renderType("translucent");
-        ModelFile top = models().withExistingParent(baseName + "_top", tuttasdoorsLoc("pet_door_top")).texture("door", customTexture).texture("extra", vanillaTexture).renderType("translucent");
-        ModelFile topOpen = models().withExistingParent(baseName + "_top_open", tuttasdoorsLoc("pet_door_top_open")).texture("door", customTexture).texture("extra", vanillaTexture).renderType("translucent");
+        ModelFile bottom = models().withExistingParent(baseName + "_bottom", tuttasdoorsLoc("pet_door_bottom")).texture("door", customTexture).texture("extra", vanillaTexture);
+        ModelFile bottomOpen = models().withExistingParent(baseName + "_bottom_open", tuttasdoorsLoc("pet_door_bottom_open")).texture("door", customTexture).texture("extra", vanillaTexture);
+        ModelFile top = models().withExistingParent(baseName + "_top", tuttasdoorsLoc("pet_door_top")).texture("door", customTexture).texture("extra", vanillaTexture);
+        ModelFile topOpen = models().withExistingParent(baseName + "_top_open", tuttasdoorsLoc("pet_door_top_open")).texture("door", customTexture).texture("extra", vanillaTexture);
         petDoorBlock(block, bottom, bottomOpen, top, topOpen);
     }
 

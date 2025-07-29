@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_top_left_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "natures_spirit:block/discrete_door/willow_door_bottom",
     "top": "natures_spirit:block/discrete_door/willow_door_top"

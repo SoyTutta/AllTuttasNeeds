@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_top_left_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "enderscape:block/discrete_door/veiled_door_bottom",
     "top": "enderscape:block/discrete_door/veiled_door_top"

@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_top_right_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "biomesoplenty:block/indiscrete_door/redwood_door_bottom",
     "top": "biomesoplenty:block/indiscrete_door/redwood_door_top"

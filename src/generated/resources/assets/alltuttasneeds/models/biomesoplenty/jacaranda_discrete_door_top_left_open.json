@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_top_left_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "biomesoplenty:block/discrete_door/jacaranda_door_bottom",
     "top": "biomesoplenty:block/discrete_door/jacaranda_door_top"

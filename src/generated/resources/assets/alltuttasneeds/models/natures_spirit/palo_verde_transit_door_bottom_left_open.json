@@ -1,6 +1,5 @@
 {
   "parent": "tuttasdoors:block/transit_door_bottom_left_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "door": "natures_spirit:block/transit_door/palo_verde_door_bottom"
   }

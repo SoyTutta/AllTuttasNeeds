@@ -1,6 +1,5 @@
 {
   "parent": "minecraft:block/door_top_left_open",
-  "render_type": "minecraft:translucent",
   "textures": {
     "bottom": "malum:block/indiscrete_door/runewood_boards_door_bottom",
     "top": "malum:block/indiscrete_door/runewood_boards_door_top"
