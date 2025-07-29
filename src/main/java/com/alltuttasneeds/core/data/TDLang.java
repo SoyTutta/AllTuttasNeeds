@@ -24,7 +24,7 @@ public class TDLang extends LanguageProvider {
         DOOR_TYPE_MAP.put("_pet_door", "Door");
         DOOR_TYPE_MAP.put("_normal_door", "Door");
         DOOR_TYPE_MAP.put("_sliding_door", "Door");
-        DOOR_TYPE_MAP.put("boards", "Board");
+        DOOR_TYPE_MAP.put("_boards", "Board");
     }
 
     private final List<DeferredRegister<Block>> allBlockRegistries = new ArrayList<>();

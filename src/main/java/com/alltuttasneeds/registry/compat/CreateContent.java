@@ -43,7 +43,7 @@ public class CreateContent {
         CONFIGS.add(new DoorConfig(
                 "andesite_bars_sliding_door",
                 () -> BlockSetType.COPPER,
-                () -> BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_ANDESITE).sound(SoundType.COPPER),
+                () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_DOOR).sound(SoundType.COPPER),
                 slidingFactory
         ));
 

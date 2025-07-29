@@ -4,6 +4,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -77,16 +79,12 @@ public class TransitDoorBlock extends DoorBlock {
 
     private void handleEntityLogic(BlockState state, ServerLevel level, BlockPos pos) {
         boolean open = state.getValue(OPEN);
-
         List<Entity> entities = level.getEntitiesOfClass(Entity.class, getBoundingBox(pos));
 
         for (Entity entity : entities) {
-            if (entity.isCrouching()) continue;
-
-            boolean hasPlayer = entity instanceof Player ||
-                    entity.getPassengers().stream().anyMatch(p -> p instanceof Player);
-
-            if (!hasPlayer) continue;
+            if (entity.isCrouching() || ((entity instanceof Animal || entity instanceof ItemEntity) && entity.getPassengers().isEmpty())) {
+                continue;
+            }
 
             Direction facing = state.getValue(FACING);
             DoorHingeSide hinge = state.getValue(HINGE);
