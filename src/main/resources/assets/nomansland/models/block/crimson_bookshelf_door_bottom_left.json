@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "nomansland:block/vanilla_woods/crimson_bookshelf",
 		"side": "block/crimson_planks",
-		"door": "nomansland:block/secret_door/crimson_door_bottom"
+		"door": "nomansland:block/secret_door/crimson_bookshelf_door_bottom"
 	}
 }
