@@ -36,6 +36,7 @@ public class ATNDataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
         generator.addProvider(event.includeClient(), new TDLang(output));
+        generator.addProvider(event.includeClient(), new ESLang(output));
 
         TDBlockTags blockTags = new TDBlockTags(output, lookupProvider, helper);
         generator.addProvider(event.includeServer(), blockTags);

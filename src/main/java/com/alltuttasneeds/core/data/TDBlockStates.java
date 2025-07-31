@@ -2,6 +2,7 @@ package com.alltuttasneeds.core.data;
 
 import com.alltuttasneeds.AllTuttasNeeds;
 import com.alltuttasneeds.blocks.PetDoorBlock;
+import com.alltuttasneeds.blocks.SecretDoorBlock;
 import com.alltuttasneeds.blocks.SlidingDoorBlock;
 import com.alltuttasneeds.blocks.TransitDoorBlock;
 import com.alltuttasneeds.registry.TDContent;
@@ -69,6 +70,8 @@ public class TDBlockStates extends BlockStateProvider {
                 petDoorBlockWithRenderType((PetDoorBlock) block, resourceBlock(texturePath, modNamespace), resourceBlock(texturePath, modNamespace));
             } else if (block instanceof TransitDoorBlock) {
                 transitDoorBlockWithRenderType((DoorBlock) block, resourceBlock(texturePath + "_bottom", modNamespace), resourceBlock(texturePath + "_top", modNamespace));
+            } else if (block instanceof SecretDoorBlock) {
+                continue;
             } else if (block instanceof DoorBlock) {
                 registerDoor(supplier, texturePath, modNamespace);
             }

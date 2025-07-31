@@ -9,6 +9,10 @@ import net.minecraft.world.level.block.Block;
 
 public class TDTags
 {
+    public static final TagKey<Block> BOOKSHELF_DOORS = modBlockTag("wooden_doors/fake_bookshelf");
+
+    public static final TagKey<Block> WOODEN_SECRET_DOORS = modBlockTag("wooden_doors/secret");
+
     public static final TagKey<Block> WOODEN_DISCRETE_DOORS = modBlockTag("wooden_doors/discrete");
 
     public static final TagKey<Block> WOODEN_CLASIC_DOORS = modBlockTag("wooden_doors/door");
@@ -21,6 +25,8 @@ public class TDTags
 
     public static final TagKey<Block> SLIDING_DOORS = modBlockTag("doors/sliding");
 
+    public static final TagKey<Item> WOODEN_SECRET_DOORS_ITEMS = modItemTag("wooden_doors/secret");
+
     public static final TagKey<Item> WOODEN_DISCRETE_DOORS_ITEMS = modItemTag("wooden_doors/discrete");
 
     public static final TagKey<Item> WOODEN_CLASIC_DOORS_ITEMS = modItemTag("wooden_doors/door");
@@ -30,6 +36,8 @@ public class TDTags
     public static final TagKey<Item> WOODEN_TRANSIT_DOORS_ITEMS = modItemTag("wooden_doors/transit");
 
     public static final TagKey<Item> WOODEN_PET_DOORS_ITEMS = modItemTag("wooden_doors/pet");
+
+    public static final TagKey<Item> SECRET_DOORS_ITEMS = modItemTag("doors/secret");
 
     public static final TagKey<Item> DISCRETE_DOORS_ITEMS = modItemTag("doors/discrete");
 

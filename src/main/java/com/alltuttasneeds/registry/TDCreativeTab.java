@@ -43,6 +43,28 @@ public class TDCreativeTab {
                     .displayItems((parameters, output) -> {
                         populateDoorFamilies();
 
+                        accept(output, TDContent.DOOR_ITEMS.get("oak_bookshelf_door"));
+                        if (Mods.NOMANSLAND.isLoaded()) {
+                            accept(output, NMLContent.DOOR_ITEMS.get("spruce_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("birch_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("jungle_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("acacia_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("dark_oak_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("mangrove_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("cherry_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("bamboo_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("crimson_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("warped_bookshelf_door"));
+
+                        if (Mods.NEWWORLD.isLoaded()) {
+                            accept(output, NWContent.DOOR_ITEMS.get("fir_bookshelf_door"));
+                        }
+                            accept(output, NMLContent.DOOR_ITEMS.get("pine_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("willow_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("walnut_bookshelf_door"));
+                            accept(output, NMLContent.DOOR_ITEMS.get("maple_bookshelf_door"));
+                        }
+
                         for (DoorFamily family : DOOR_FAMILIES.values()) {
                             for (Supplier<Item> itemSupplier : family.variants().values()) {
                                 accept(output, itemSupplier);

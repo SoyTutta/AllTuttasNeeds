@@ -1,0 +1,8 @@
+{
+	"parent": "tuttasdoors:block/secret_door_top_left_open",
+	"textures": {
+		"fake": "nomansland:block/willow/willow_bookshelf",
+		"side": "nomansland:block/willow/willow_planks",
+		"door": "nomansland:block/secret_door/willow_bookshelf_door_top"
+	}
+}

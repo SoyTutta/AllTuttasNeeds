@@ -75,6 +75,8 @@ public class TDLang extends LanguageProvider {
 
         add("alltuttasneeds.itemGroup.tuttasdoors", "Tutta's Doors");
 
+        add("alltuttasneeds.tooltip.style.secret", "Secret Door: Hidden Entrance, Obvious Exit.");
+
         add("alltuttasneeds.tooltip.style.discreet", "Discreet Door: Full Privacy.");
         add("alltuttasneeds.tooltip.style.indiscreet", "Indiscreet Door: Open View.");
         add("alltuttasneeds.tooltip.style.normal", "Classic Door: Peek Outside.");

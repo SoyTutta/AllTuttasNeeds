@@ -1,7 +1,6 @@
 package com.alltuttasneeds.core.data.tags;
 
 import com.alltuttasneeds.registry.TDTags;
-import com.alltuttasneeds.registry.compat.CreateContent;
 import com.alltuttasneeds.registry.compat.Mods;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -27,6 +26,25 @@ public class TDItemTags extends ItemTagsProvider {
     }
 
     private void registerModTags() {
+        // =================================================================================================
+        // SECRET DOORS
+        // =================================================================================================
+        tag(TDTags.WOODEN_SECRET_DOORS_ITEMS)
+                .addOptional(Mods.TUTTASDOORS.location("oak_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("spruce_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("birch_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("jungle_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("dark_oak_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("mangrove_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("cherry_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("bamboo_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("crimson_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("warped_bookshelf_door"))
+                .addOptional(Mods.NEWWORLD.location("fir_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("pine_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("willow_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("walnut_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("maple_bookshelf_door"));
         // =================================================================================================
         // DISCRETE DOORS
         // =================================================================================================
@@ -355,10 +373,12 @@ public class TDItemTags extends ItemTagsProvider {
         tag(TDTags.INDISCRETE_DOORS_ITEMS).addTag(TDTags.WOODEN_INDISCRETE_DOORS_ITEMS);
         tag(TDTags.TRANSIT_DOORS_ITEMS).addTag(TDTags.WOODEN_TRANSIT_DOORS_ITEMS);
         tag(TDTags.PET_DOORS_ITEMS).addTag(TDTags.WOODEN_PET_DOORS_ITEMS);
+        tag(TDTags.SECRET_DOORS_ITEMS).addTag(TDTags.WOODEN_SECRET_DOORS_ITEMS);
     }
 
     private void registerMinecraftTags() {
         tag(ItemTags.WOODEN_DOORS)
+                .addTag(TDTags.WOODEN_SECRET_DOORS_ITEMS)
                 .addTag(TDTags.WOODEN_DISCRETE_DOORS_ITEMS)
                 .addTag(TDTags.WOODEN_CLASIC_DOORS_ITEMS)
                 .addTag(TDTags.WOODEN_INDISCRETE_DOORS_ITEMS)

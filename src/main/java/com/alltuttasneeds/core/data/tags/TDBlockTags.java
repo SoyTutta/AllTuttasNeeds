@@ -28,6 +28,26 @@ public class TDBlockTags extends BlockTagsProvider {
 
     protected void registerModTags() {
         // =================================================================================================
+        // SECRET DOORS
+        // =================================================================================================
+        tag(TDTags.BOOKSHELF_DOORS)
+                .addOptional(Mods.TUTTASDOORS.location("oak_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("spruce_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("birch_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("jungle_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("dark_oak_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("mangrove_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("cherry_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("bamboo_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("crimson_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("warped_bookshelf_door"))
+                .addOptional(Mods.NEWWORLD.location("fir_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("pine_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("willow_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("walnut_bookshelf_door"))
+                .addOptional(Mods.NOMANSLAND.location("maple_bookshelf_door"));
+        tag(TDTags.WOODEN_SECRET_DOORS).addTag(TDTags.BOOKSHELF_DOORS);
+        // =================================================================================================
         // DISCRETE DOORS
         // =================================================================================================
         tag(TDTags.WOODEN_DISCRETE_DOORS).add(Blocks.SPRUCE_DOOR, Blocks.BIRCH_DOOR, Blocks.DARK_OAK_DOOR, Blocks.MANGROVE_DOOR, Blocks.CRIMSON_DOOR, Blocks.WARPED_DOOR)
@@ -351,7 +371,9 @@ public class TDBlockTags extends BlockTagsProvider {
     }
 
     protected void registerMinecraftTags() {
+        tag(BlockTags.ENCHANTMENT_POWER_PROVIDER).addTag(TDTags.BOOKSHELF_DOORS);
         tag(BlockTags.WOODEN_DOORS)
+                .addTag(TDTags.WOODEN_SECRET_DOORS)
                 .addTag(TDTags.WOODEN_DISCRETE_DOORS)
                 .addTag(TDTags.WOODEN_CLASIC_DOORS)
                 .addTag(TDTags.WOODEN_INDISCRETE_DOORS)
@@ -369,6 +391,7 @@ public class TDBlockTags extends BlockTagsProvider {
 
     protected void registerBlockMineables() {
         tag(BlockTags.MINEABLE_WITH_AXE)
+                .addTag(TDTags.WOODEN_SECRET_DOORS)
                 .addTag(TDTags.WOODEN_DISCRETE_DOORS)
                 .addTag(TDTags.WOODEN_CLASIC_DOORS)
                 .addTag(TDTags.WOODEN_INDISCRETE_DOORS)

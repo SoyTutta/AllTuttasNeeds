@@ -1,17 +1,19 @@
-// 1.21.1	2025-07-27T14:05:21.6509996	Tags for minecraft:item mod id tuttasdoors
+// 1.21.1	2025-07-31T14:06:59.941204	Tags for minecraft:item mod id tuttasdoors
 f4d5cfa97883f0564921999ba1e7068a23e16dd3 data/minecraft/tags/item/doors.json
 2b2966281ca0a6cf9a826a8e4a10517b119eba7c data/minecraft/tags/item/non_flammable_wood.json
 d42b86c21ad12e32f0cf1873a78bb82961e88237 data/minecraft/tags/item/piglin_loved.json
-81612f5157bfe615c8149a2f37ba8efe0f1708e1 data/minecraft/tags/item/wooden_doors.json
+c4f2da0c1a9a6175726908643bb1994ff66d6277 data/minecraft/tags/item/wooden_doors.json
 3ddfb1e4926c5b07494d58c00776f272522fb72d data/minecraft/tags/item/wooden_trapdoors.json
 a5321fffb67f15d23dd803d51915c037636ae902 data/tuttasdoors/tags/item/doors/discrete.json
 e8e31e88aa52e2678a9202ec77d43003be4b5feb data/tuttasdoors/tags/item/doors/door.json
 79888ae57efaa5e6d5a0fa9d03f4840fd0511796 data/tuttasdoors/tags/item/doors/indiscrete.json
 3ddfb1e4926c5b07494d58c00776f272522fb72d data/tuttasdoors/tags/item/doors/pet.json
+304cf746e81e8a62c5cc6d909740e5370a1ad089 data/tuttasdoors/tags/item/doors/secret.json
 b7d9fe3a00a7e293dfd597e6a83e3fdbe63c06d5 data/tuttasdoors/tags/item/doors/sliding.json
 eef264a71e598dcf69d48267d96c27fa3e47f336 data/tuttasdoors/tags/item/doors/transit.json
 b065e12b264e776d01844d2b92ae6bc730945f67 data/tuttasdoors/tags/item/wooden_doors/discrete.json
 37deb8dc31d0f07aed3ce04d829dd05a3c85914b data/tuttasdoors/tags/item/wooden_doors/door.json
 01294eb683d38a7d0a2a5088241ac4d2a2aafc33 data/tuttasdoors/tags/item/wooden_doors/indiscrete.json
 172aacbc381ae30dea8d592be8fc16a5663cd2ff data/tuttasdoors/tags/item/wooden_doors/pet.json
+538c802f3a0e622d4e7decefd3428b974b62ae25 data/tuttasdoors/tags/item/wooden_doors/secret.json
 0a8c442674ec9f01ca16db0a0325da4d377a1fed data/tuttasdoors/tags/item/wooden_doors/transit.json

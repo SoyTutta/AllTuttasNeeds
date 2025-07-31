@@ -21,6 +21,10 @@ public class ClientModEvents {
     private static final Map<TagKey<Item>, Component> TOOLTIP_MAP = new LinkedHashMap<>();
 
     static {
+        TOOLTIP_MAP.put(TDTags.SECRET_DOORS_ITEMS,
+                ATNTextUtils.getTranslation("tooltip.style.secret")
+                        .withStyle(ChatFormatting.BLUE));
+
         TOOLTIP_MAP.put(TDTags.DISCRETE_DOORS_ITEMS,
                 ATNTextUtils.getTranslation("tooltip.style.discreet")
                         .withStyle(ChatFormatting.BLUE));
