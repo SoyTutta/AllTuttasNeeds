@@ -109,6 +109,7 @@ public class CraftingRecipes {
 
     private static final List<BookshelfData> BOOKSHELF_DATA_LIST = List.of(
             new BookshelfData("oak", "tuttasdoors", "minecraft:bookshelf", "tuttasdoors:oak_bookshelf_door"),
+            new BookshelfData("fir", "newworld", "newworld:fir_bookshelf", "newworld:fir_bookshelf_door"),
             new BookshelfData("spruce", "nomansland", "nomansland:spruce_bookshelf", "nomansland:spruce_bookshelf_door"),
             new BookshelfData("birch", "nomansland", "nomansland:birch_bookshelf", "nomansland:birch_bookshelf_door"),
             new BookshelfData("jungle", "nomansland", "nomansland:jungle_bookshelf", "nomansland:jungle_bookshelf_door"),
@@ -210,7 +211,6 @@ public class CraftingRecipes {
         ItemLike plank = getItemLike(wood.plankId());
         registerMainCraftingRecipes(output, wood, plank);
         registerConversionRecipes(output, wood);
-        // --- MODIFICADO: La llamada al método de corte se ha movido al bucle principal ---
     }
 
     private static void registerMainCraftingRecipes(RecipeOutput output, WoodData wood, ItemLike plank) {
