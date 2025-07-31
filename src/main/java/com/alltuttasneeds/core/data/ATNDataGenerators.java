@@ -1,6 +1,8 @@
 package com.alltuttasneeds.core.data;
 
 import com.alltuttasneeds.AllTuttasNeeds;
+import com.alltuttasneeds.core.data.langs.ESLang;
+import com.alltuttasneeds.core.data.langs.USLang;
 import com.alltuttasneeds.core.data.recipes.TDRecipes;
 import com.alltuttasneeds.core.data.tags.TDBlockTags;
 import com.alltuttasneeds.core.data.tags.TDItemTags;
@@ -35,7 +37,7 @@ public class ATNDataGenerators {
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
-        generator.addProvider(event.includeClient(), new TDLang(output));
+        generator.addProvider(event.includeClient(), new USLang(output));
         generator.addProvider(event.includeClient(), new ESLang(output));
 
         TDBlockTags blockTags = new TDBlockTags(output, lookupProvider, helper);

@@ -1,4 +1,4 @@
-package com.alltuttasneeds.core.data;
+package com.alltuttasneeds.core.data.langs;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -14,7 +14,7 @@ import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class TDLang extends LanguageProvider {
+public class USLang extends LanguageProvider {
 
     private static final Map<String, String> DOOR_TYPE_MAP = new LinkedHashMap<>();
     static {
@@ -29,7 +29,7 @@ public class TDLang extends LanguageProvider {
 
     private final List<DeferredRegister<Block>> allBlockRegistries = new ArrayList<>();
 
-    public TDLang(PackOutput output) {
+    public USLang(PackOutput output) {
         super(output, "tuttasdoors", "en_us");
 
         allBlockRegistries.add(TDContent.BLOCKS);
