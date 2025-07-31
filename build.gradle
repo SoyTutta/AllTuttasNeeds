@@ -100,33 +100,33 @@ dependencies {
 
     implementation "maven.modrinth:new_world:1.7.2"
 
-    implementation "maven.modrinth:the-block-box:0.1.1"
+    compileOnly "maven.modrinth:the-block-box:0.1.1"
 
-    implementation "maven.modrinth:farmers-delight:1.21.1-1.2.8"
-    implementation "maven.modrinth:my-nethers-delight:1.8"
+    compileOnly "maven.modrinth:farmers-delight:1.21.1-1.2.8"
+    compileOnly "maven.modrinth:my-nethers-delight:1.8"
 
-    implementation "maven.modrinth:malum:1.7.3.1"
-    implementation "maven.modrinth:lodestonelib:1.7.1"
-    implementation "maven.modrinth:curios:9.5.1+1.21.1"
+    compileOnly "maven.modrinth:malum:1.7.3.1"
+    compileOnly "maven.modrinth:lodestonelib:1.7.1"
+    compileOnly "maven.modrinth:curios:9.5.1+1.21.1"
 
-    implementation "maven.modrinth:no-mans-land:1.3.1"
+    compileOnly "maven.modrinth:no-mans-land:1.3.1"
     implementation "com.terraformersmc:biolith-neoforge:3.0.1"
-    implementation "maven.modrinth:mixed-litter:0.1.2"
+    compileOnly "maven.modrinth:mixed-litter:0.1.2"
 
-    implementation "curse.maven:enderscape-536638:6738966"
-    implementation "maven.modrinth:trimmed:1.21-3.0.0+neoforge"
-    implementation "maven.modrinth:yacl:3.7.1+1.21.1-neoforge"
+    compileOnly "curse.maven:enderscape-536638:6738966"
+    compileOnly "maven.modrinth:trimmed:1.21-3.0.0+neoforge"
+    compileOnly "maven.modrinth:yacl:3.7.1+1.21.1-neoforge"
 
-    implementation "curse.maven:artsandcrafts-1034791:6746626"
-    implementation "curse.maven:jinxedlib-1203401:6727693"
+    compileOnly "curse.maven:artsandcrafts-1034791:6746626"
+    compileOnly "curse.maven:jinxedlib-1203401:6727693"
 
-    implementation "maven.modrinth:natures-spirit:sUhwOqbY"
+    compileOnly "maven.modrinth:natures-spirit:sUhwOqbY"
 
-    implementation "curse.maven:create-328085:6641610"
+    compileOnly "curse.maven:create-328085:6641610"
 
-    implementation "curse.maven:biomes-o-plenty-220318:6631072"
-    implementation "curse.maven:terrablender-neoforge-940057:6054947"
-    implementation "curse.maven:glitchcore-955399:5660740"
+    compileOnly "curse.maven:biomes-o-plenty-220318:6631072"
+    compileOnly "curse.maven:terrablender-neoforge-940057:6054947"
+    compileOnly "curse.maven:glitchcore-955399:5660740"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
