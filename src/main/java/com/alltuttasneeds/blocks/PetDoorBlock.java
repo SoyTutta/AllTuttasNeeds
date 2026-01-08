@@ -1,10 +1,12 @@
 package com.alltuttasneeds.blocks;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -13,9 +15,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -86,7 +91,28 @@ public class PetDoorBlock extends TrapDoorBlock {
         super.entityInside(state, level, pos, entity);
 
         if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
-            if (!state.getValue(OPEN) && !entity.isCrouching()) {
+
+            if (entity instanceof Player player) {
+
+                boolean validPose = player.isCrouching() || player.isSwimming();
+
+                if (!validPose) {
+                    return;
+                }
+
+                HitResult result = player.pick(5.0D, 0.0F, false);
+
+                if (result.getType() == HitResult.Type.BLOCK) {
+                    BlockHitResult blockHit = (BlockHitResult) result;
+                    if (!blockHit.getBlockPos().equals(pos)) {
+                        return;
+                    }
+                } else {
+                    return;
+                }
+            }
+
+            if (!state.getValue(OPEN)) {
                 this.setOpen(null, level, state, pos, true);
             }
 
@@ -117,6 +143,43 @@ public class PetDoorBlock extends TrapDoorBlock {
         }
     }
 
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        BlockState blockstate = this.defaultBlockState();
+        FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+        Direction direction = context.getClickedFace();
+
+        boolean isSneaking = context.getPlayer() != null && context.getPlayer().isShiftKeyDown();
+
+        if (!context.replacingClickedOnBlock() && direction.getAxis().isHorizontal()) {
+            blockstate = blockstate.setValue(FACING, direction);
+
+            boolean hitTopPart = context.getClickLocation().y - (double)context.getClickedPos().getY() > 0.5D;
+
+            if (isSneaking) {
+                blockstate = blockstate.setValue(HALF, hitTopPart ? Half.BOTTOM : Half.TOP);
+            } else {
+                blockstate = blockstate.setValue(HALF, hitTopPart ? Half.TOP : Half.BOTTOM);
+            }
+
+        } else {
+            blockstate = blockstate.setValue(FACING, context.getHorizontalDirection().getOpposite());
+            Half standardHalf = (direction == Direction.UP) ? Half.BOTTOM : Half.TOP;
+
+            if (isSneaking) {
+                blockstate = blockstate.setValue(HALF, standardHalf == Half.BOTTOM ? Half.TOP : Half.BOTTOM);
+            } else {
+                blockstate = blockstate.setValue(HALF, standardHalf);
+            }
+        }
+
+        if (context.getLevel().hasNeighborSignal(context.getClickedPos())) {
+            blockstate = blockstate.setValue(OPEN, true).setValue(POWERED, true);
+        }
+
+        return blockstate.setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+    }
+    
     private static AABB getBoundingBox(BlockPos pos) {
         double offset = 0.05;
         return new AABB(

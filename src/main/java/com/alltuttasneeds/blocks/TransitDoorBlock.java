@@ -4,9 +4,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
+import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -82,8 +83,17 @@ public class TransitDoorBlock extends DoorBlock {
         List<Entity> entities = level.getEntitiesOfClass(Entity.class, getBoundingBox(pos));
 
         for (Entity entity : entities) {
-            if (entity.isCrouching() || ((entity instanceof Animal || entity instanceof ItemEntity) && entity.getPassengers().isEmpty())) {
+            if (entity.isCrouching() || entity instanceof ItemEntity) {
                 continue;
+            }
+
+            if (entity instanceof Animal) {
+                boolean isMounted = !entity.getPassengers().isEmpty();
+                boolean isTamed = (entity instanceof TamableAnimal tamable && tamable.isTame());
+
+                if (!isMounted && !isTamed) {
+                    continue;
+                }
             }
 
             Direction facing = state.getValue(FACING);
@@ -131,5 +141,15 @@ public class TransitDoorBlock extends DoorBlock {
                 pos.getY() + 1 + offset,
                 pos.getZ() + 1 + offset
         );
+    }
+
+    @Override
+    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
+        switch (pathComputationType) {
+            case LAND, AIR:
+                return true;
+            default:
+                return false;
+        }
     }
 }

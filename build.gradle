@@ -98,6 +98,9 @@ dependencies {
     compileOnly "mezz.jei:jei-$minecraft_version-neoforge-api:19.21.0.247"
     localRuntime "mezz.jei:jei-$minecraft_version-neoforge:19.21.0.247"
 
+    implementation "maven.modrinth:clutter-no-more:1.1.7+1.21.1-neoforge"
+    implementation "maven.modrinth:moonlight:1.21-2.23.6-neoforge"
+
     implementation "maven.modrinth:new_world:1.7.2"
 
     implementation "maven.modrinth:the-block-box:0.1.1"
