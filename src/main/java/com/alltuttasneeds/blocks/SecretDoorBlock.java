@@ -5,6 +5,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -12,8 +13,15 @@ import net.minecraft.world.phys.BlockHitResult;
 
 public class SecretDoorBlock extends DoorBlock {
 
-    public SecretDoorBlock(BlockSetType type, Properties properties) {
+    private final java.util.function.Supplier<Block> disguise;
+
+    public SecretDoorBlock(BlockSetType type, Properties properties, java.util.function.Supplier<Block> disguise) {
         super(type, properties);
+        this.disguise = disguise;
+    }
+
+    public Block getDisguiseBlock() {
+        return disguise.get();
     }
 
     @Override

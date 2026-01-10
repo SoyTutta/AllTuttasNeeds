@@ -89,7 +89,8 @@ public class NWContent {
                     Block baseBookshelf = config.bookshelf().get();
                     BlockSetType setType = config.setType().get();
                     BlockBehaviour.Properties properties = BlockBehaviour.Properties.ofFullCopy(baseBookshelf).noOcclusion();
-                    return new SecretDoorBlock(setType, properties);
+
+                    return new SecretDoorBlock(setType, properties, config.bookshelf());
                 });
 
                 DOORS.put(name, block);

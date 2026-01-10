@@ -9,8 +9,6 @@ import com.alltuttasneeds.blocks.PetDoorBlock;
 import com.alltuttasneeds.blocks.SecretDoorBlock;
 import com.alltuttasneeds.blocks.SlidingDoorBlock;
 import com.alltuttasneeds.blocks.TransitDoorBlock;
-import com.alltuttasneeds.registry.compat.NMLContent;
-import com.farcr.nomansland.common.registry.blocks.NMLBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -115,7 +113,8 @@ public class TDContent {
                 Block baseBookshelf = config.bookshelf().get();
                 BlockSetType setType = config.setType().get();
                 BlockBehaviour.Properties properties = BlockBehaviour.Properties.ofFullCopy(baseBookshelf).noOcclusion();
-                return new SecretDoorBlock(setType, properties);
+
+                return new SecretDoorBlock(setType, properties, config.bookshelf());
             });
 
             DOORS.put(name, block);
