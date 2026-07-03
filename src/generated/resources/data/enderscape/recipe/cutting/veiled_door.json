@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "enderscape:veiled_door"
+        },
+        {
+          "item": "enderscape:veiled_indiscrete_door"
+        },
+        {
+          "item": "enderscape:veiled_transit_door"
+        },
+        {
+          "item": "enderscape:veiled_pet_door"
+        },
+        {
+          "item": "enderscape:veiled_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "enderscape:veiled_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "add": {
+    "biomesoplenty:dead_discrete_door": [
+      "biomesoplenty:dead_normal_door",
+      "biomesoplenty:dead_door",
+      "biomesoplenty:dead_transit_door"
+    ],
+    "biomesoplenty:dead_trapdoor": [
+      "biomesoplenty:dead_pet_door"
+    ],
+    "biomesoplenty:empyreal_door": [
+      "biomesoplenty:empyreal_normal_door",
+      "biomesoplenty:empyreal_indiscrete_door",
+      "biomesoplenty:empyreal_transit_door"
+    ],
+    "biomesoplenty:empyreal_trapdoor": [
+      "biomesoplenty:empyreal_pet_door"
+    ],
+    "biomesoplenty:fir_door": [
+      "biomesoplenty:fir_normal_door",
+      "biomesoplenty:fir_indiscrete_door",
+      "biomesoplenty:fir_transit_door"
+    ],
+    "biomesoplenty:fir_trapdoor": [
+      "biomesoplenty:fir_pet_door"
+    ],
+    "biomesoplenty:hellbark_discrete_door": [
+      "biomesoplenty:hellbark_door",
+      "biomesoplenty:hellbark_indiscrete_door",
+      "biomesoplenty:hellbark_transit_door"
+    ],
+    "biomesoplenty:hellbark_trapdoor": [
+      "biomesoplenty:hellbark_pet_door"
+    ],
+    "biomesoplenty:jacaranda_discrete_door": [
+      "biomesoplenty:jacaranda_normal_door",
+      "biomesoplenty:jacaranda_door",
+      "biomesoplenty:jacaranda_transit_door"
+    ],
+    "biomesoplenty:jacaranda_trapdoor": [
+      "biomesoplenty:jacaranda_pet_door"
+    ],
+    "biomesoplenty:magic_discrete_door": [
+      "biomesoplenty:magic_normal_door",
+      "biomesoplenty:magic_door",
+      "biomesoplenty:magic_transit_door"
+    ],
+    "biomesoplenty:magic_trapdoor": [
+      "biomesoplenty:magic_pet_door"
+    ],
+    "biomesoplenty:mahogany_discrete_door": [
+      "biomesoplenty:mahogany_normal_door",
+      "biomesoplenty:mahogany_door",
+      "biomesoplenty:mahogany_transit_door"
+    ],
+    "biomesoplenty:mahogany_trapdoor": [
+      "biomesoplenty:mahogany_pet_door"
+    ],
+    "biomesoplenty:maple_door": [
+      "biomesoplenty:maple_normal_door",
+      "biomesoplenty:maple_indiscrete_door",
+      "biomesoplenty:maple_transit_door"
+    ],
+    "biomesoplenty:maple_trapdoor": [
+      "biomesoplenty:maple_pet_door"
+    ],
+    "biomesoplenty:palm_discrete_door": [
+      "biomesoplenty:palm_normal_door",
+      "biomesoplenty:palm_door",
+      "biomesoplenty:palm_transit_door"
+    ],
+    "biomesoplenty:palm_trapdoor": [
+      "biomesoplenty:palm_pet_door"
+    ],
+    "biomesoplenty:pine_door": [
+      "biomesoplenty:pine_normal_door",
+      "biomesoplenty:pine_indiscrete_door",
+      "biomesoplenty:pine_transit_door"
+    ],
+    "biomesoplenty:pine_trapdoor": [
+      "biomesoplenty:pine_pet_door"
+    ],
+    "biomesoplenty:redwood_door": [
+      "biomesoplenty:redwood_normal_door",
+      "biomesoplenty:redwood_indiscrete_door",
+      "biomesoplenty:redwood_transit_door"
+    ],
+    "biomesoplenty:redwood_trapdoor": [
+      "biomesoplenty:redwood_pet_door"
+    ],
+    "biomesoplenty:umbran_discrete_door": [
+      "biomesoplenty:umbran_door",
+      "biomesoplenty:umbran_indiscrete_door",
+      "biomesoplenty:umbran_transit_door"
+    ],
+    "biomesoplenty:umbran_trapdoor": [
+      "biomesoplenty:umbran_pet_door"
+    ],
+    "biomesoplenty:willow_discrete_door": [
+      "biomesoplenty:willow_normal_door",
+      "biomesoplenty:willow_door",
+      "biomesoplenty:willow_transit_door"
+    ],
+    "biomesoplenty:willow_trapdoor": [
+      "biomesoplenty:willow_pet_door"
+    ]
+  }
+}

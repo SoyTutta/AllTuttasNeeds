@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_right_open",
+  "textures": {
+    "door": "environmental:block/transit_door/plum_door_bottom"
+  }
+}

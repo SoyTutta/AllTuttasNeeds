@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_driftwood_bookshelf": {
+      "conditions": {
+        "items": [
+          {
+            "items": "upgrade_aquatic:driftwood_bookshelf"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "upgrade_aquatic:crafting/driftwood_bookshelf_door"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_driftwood_bookshelf"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "upgrade_aquatic:crafting/driftwood_bookshelf_door"
+    ]
+  }
+}

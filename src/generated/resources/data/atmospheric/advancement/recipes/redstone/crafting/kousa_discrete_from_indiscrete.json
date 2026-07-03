@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_kousa_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:kousa_indiscrete_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:crafting/kousa_discrete_from_indiscrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_kousa_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:crafting/kousa_discrete_from_indiscrete"
+    ]
+  }
+}

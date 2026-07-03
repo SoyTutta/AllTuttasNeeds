@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "discrete_doors",
+  "key": {
+    "#": {
+      "item": "architects_palette:twisted_planks"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "architects_palette:twisted_discrete_door"
+  }
+}

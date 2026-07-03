@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left",
+  "textures": {
+    "bottom": "tuttasdoors:block/indiscrete_door/mangrove_door_bottom",
+    "top": "tuttasdoors:block/indiscrete_door/mangrove_door_top"
+  }
+}

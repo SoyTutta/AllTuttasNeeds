@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fir_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "biomesoplenty:fir_normal_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "biomesoplenty:crafting/fir_indiscrete_from_normal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fir_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "biomesoplenty:crafting/fir_indiscrete_from_normal"
+    ]
+  }
+}

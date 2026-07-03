@@ -1,0 +1,12 @@
+{
+  "add": {
+    "autumnity:maple_discrete_door": [
+      "autumnity:maple_door",
+      "autumnity:maple_indiscrete_door",
+      "autumnity:maple_transit_door"
+    ],
+    "autumnity:maple_trapdoor": [
+      "autumnity:maple_pet_door"
+    ]
+  }
+}

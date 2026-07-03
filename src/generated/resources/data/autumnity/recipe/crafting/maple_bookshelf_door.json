@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "secret_doors",
+  "key": {
+    "#": {
+      "item": "autumnity:maple_bookshelf"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "autumnity:maple_bookshelf_door"
+  }
+}

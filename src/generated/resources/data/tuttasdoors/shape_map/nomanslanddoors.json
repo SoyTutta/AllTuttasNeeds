@@ -1,0 +1,36 @@
+{
+  "add": {
+    "nomansland:maple_door": [
+      "nomansland:maple_normal_door",
+      "nomansland:maple_indiscrete_door",
+      "nomansland:maple_transit_door"
+    ],
+    "nomansland:maple_trapdoor": [
+      "nomansland:maple_pet_door"
+    ],
+    "nomansland:pine_discrete_door": [
+      "nomansland:pine_door",
+      "nomansland:pine_indiscrete_door",
+      "nomansland:pine_transit_door"
+    ],
+    "nomansland:pine_trapdoor": [
+      "nomansland:pine_pet_door"
+    ],
+    "nomansland:walnut_discrete_door": [
+      "nomansland:walnut_door",
+      "nomansland:walnut_indiscrete_door",
+      "nomansland:walnut_transit_door"
+    ],
+    "nomansland:walnut_trapdoor": [
+      "nomansland:walnut_pet_door"
+    ],
+    "nomansland:willow_discrete_door": [
+      "nomansland:willow_door",
+      "nomansland:willow_indiscrete_door",
+      "nomansland:willow_transit_door"
+    ],
+    "nomansland:willow_trapdoor": [
+      "nomansland:willow_pet_door"
+    ]
+  }
+}

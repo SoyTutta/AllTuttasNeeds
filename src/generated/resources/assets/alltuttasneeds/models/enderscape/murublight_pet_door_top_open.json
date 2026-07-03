@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_top_open",
+  "textures": {
+    "door": "enderscape:block/pet_door/murublight_door",
+    "extra": "enderscape:block/pet_door/murublight_door"
+  }
+}

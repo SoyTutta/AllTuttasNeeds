@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "secret_doors",
+  "key": {
+    "#": {
+      "item": "woodworks:cherry_bookshelf"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "woodworks:cherry_bookshelf_door"
+  }
+}

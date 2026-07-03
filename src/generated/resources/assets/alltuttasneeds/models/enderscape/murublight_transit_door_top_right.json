@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_right",
+  "textures": {
+    "door": "enderscape:block/transit_door/murublight_door_top"
+  }
+}

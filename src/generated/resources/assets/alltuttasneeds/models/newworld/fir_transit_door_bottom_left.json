@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_left",
+  "textures": {
+    "door": "newworld:block/transit_door/fir_door_bottom"
+  }
+}

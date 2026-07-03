@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_right_open",
+  "textures": {
+    "door": "atmospheric:block/transit_door/morado_door_bottom"
+  }
+}

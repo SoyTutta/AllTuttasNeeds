@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "secret_door_conversion",
+  "ingredients": [
+    {
+      "item": "nomansland:cherry_bookshelf"
+    },
+    {
+      "tag": "tuttasdoors:wooden_doors/discrete"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "nomansland:cherry_bookshelf_door"
+  }
+}

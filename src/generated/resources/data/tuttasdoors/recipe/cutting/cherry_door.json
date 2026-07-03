@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minecraft:cherry_door"
+        },
+        {
+          "item": "tuttasdoors:cherry_indiscrete_door"
+        },
+        {
+          "item": "tuttasdoors:cherry_transit_door"
+        },
+        {
+          "item": "tuttasdoors:cherry_pet_door"
+        },
+        {
+          "item": "tuttasdoors:cherry_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:cherry_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

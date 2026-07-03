@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_bottom",
+  "textures": {
+    "door": "tuttasdoors:block/pet_door/acacia_door",
+    "extra": "tuttasdoors:block/pet_door/acacia_door"
+  }
+}

@@ -1,0 +1,8 @@
+{
+	"parent": "tuttasdoors:block/secret_door_top_left",
+	"textures": {
+		"fake": "atmospheric:block/kousa_bookshelf",
+		"side": "atmospheric:block/kousa_planks",
+		"door": "woodworks:block/secret_door/kousa_bookshelf_door_top"
+	}
+}

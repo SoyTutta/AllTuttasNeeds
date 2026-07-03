@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "natures_spirit:saxaul_normal_door"
+        },
+        {
+          "item": "natures_spirit:saxaul_indiscrete_door"
+        },
+        {
+          "item": "natures_spirit:saxaul_transit_door"
+        },
+        {
+          "item": "natures_spirit:saxaul_pet_door"
+        },
+        {
+          "item": "natures_spirit:saxaul_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "natures_spirit:saxaul_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

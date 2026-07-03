@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_right",
+  "textures": {
+    "door": "atmospheric:block/transit_door/grimwood_door_top"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_bottom",
+  "textures": {
+    "door": "arts_and_crafts:block/pet_door/cork_door",
+    "extra": "arts_and_crafts:block/pet_door/cork_door"
+  }
+}

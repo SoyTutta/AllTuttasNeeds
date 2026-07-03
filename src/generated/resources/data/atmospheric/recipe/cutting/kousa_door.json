@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "atmospheric:kousa_normal_door"
+        },
+        {
+          "item": "atmospheric:kousa_indiscrete_door"
+        },
+        {
+          "item": "atmospheric:kousa_transit_door"
+        },
+        {
+          "item": "atmospheric:kousa_pet_door"
+        },
+        {
+          "item": "atmospheric:kousa_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "atmospheric:kousa_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

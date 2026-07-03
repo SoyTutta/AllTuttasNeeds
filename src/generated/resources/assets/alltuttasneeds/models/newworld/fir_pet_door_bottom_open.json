@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_bottom_open",
+  "textures": {
+    "door": "newworld:block/pet_door/fir_door",
+    "extra": "newworld:block/pet_door/fir_door"
+  }
+}

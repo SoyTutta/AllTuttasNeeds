@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_left_open",
+  "textures": {
+    "door": "abundant_atmosphere:block/transit_door/red_bamboo_door_bottom"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "abundant_atmosphere:red_bamboo_door"
+        },
+        {
+          "item": "abundant_atmosphere:red_bamboo_indiscrete_door"
+        },
+        {
+          "item": "abundant_atmosphere:red_bamboo_transit_door"
+        },
+        {
+          "item": "abundant_atmosphere:red_bamboo_pet_door"
+        },
+        {
+          "item": "abundant_atmosphere:red_bamboo_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "abundant_atmosphere:red_bamboo_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

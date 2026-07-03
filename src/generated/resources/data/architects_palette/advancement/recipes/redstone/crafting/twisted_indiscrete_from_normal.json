@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "architects_palette:crafting/twisted_indiscrete_from_normal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_twisted_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "architects_palette:twisted_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_twisted_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "architects_palette:crafting/twisted_indiscrete_from_normal"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "arts_and_crafts:cork_normal_door"
+        },
+        {
+          "item": "arts_and_crafts:cork_indiscrete_door"
+        },
+        {
+          "item": "arts_and_crafts:cork_transit_door"
+        },
+        {
+          "item": "arts_and_crafts:cork_pet_door"
+        },
+        {
+          "item": "arts_and_crafts:cork_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "arts_and_crafts:cork_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

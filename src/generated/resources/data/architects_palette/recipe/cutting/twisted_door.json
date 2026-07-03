@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "architects_palette:twisted_door"
+        },
+        {
+          "item": "architects_palette:twisted_indiscrete_door"
+        },
+        {
+          "item": "architects_palette:twisted_transit_door"
+        },
+        {
+          "item": "architects_palette:twisted_pet_door"
+        },
+        {
+          "item": "architects_palette:twisted_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "architects_palette:twisted_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

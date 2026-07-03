@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "malum:soulwood_boards_normal_door"
+    },
+    {
+      "tag": "malum:soulwood_boards"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "malum:soulwood_boards_door"
+  }
+}

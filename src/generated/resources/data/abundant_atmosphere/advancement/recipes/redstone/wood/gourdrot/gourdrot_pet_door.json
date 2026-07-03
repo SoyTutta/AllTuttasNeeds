@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gourdrot_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "abundant_atmosphere:gourdrot_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abundant_atmosphere:wood/gourdrot/gourdrot_pet_door"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gourdrot_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abundant_atmosphere:wood/gourdrot/gourdrot_pet_door"
+    ]
+  }
+}

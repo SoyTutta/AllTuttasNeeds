@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/sliding_door_bottom_right",
+  "textures": {
+    "door": "architects_palette:block/sliding_door/entwine_bars_door_bottom"
+  }
+}

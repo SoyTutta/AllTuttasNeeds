@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:palm_door"
+    },
+    {
+      "item": "biomesoplenty:palm_planks"
+    },
+    {
+      "item": "biomesoplenty:palm_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "biomesoplenty:palm_discrete_door"
+  }
+}

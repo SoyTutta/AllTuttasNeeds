@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "tuttasdoors:block/door/birch_door_bottom",
+    "top": "tuttasdoors:block/door/birch_door_top"
+  }
+}

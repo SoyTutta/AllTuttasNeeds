@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "natures_spirit:redwood_pet_door"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "natures_spirit:blocks/redwood_pet_door"
+}

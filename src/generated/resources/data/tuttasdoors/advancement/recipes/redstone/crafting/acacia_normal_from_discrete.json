@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_acacia_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tuttasdoors:acacia_discrete_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasdoors:crafting/acacia_normal_from_discrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_acacia_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasdoors:crafting/acacia_normal_from_discrete"
+    ]
+  }
+}

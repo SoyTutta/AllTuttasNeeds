@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:maple_normal_door"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "biomesoplenty:maple_transit_door"
+  }
+}

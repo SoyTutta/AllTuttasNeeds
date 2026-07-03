@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_top_open",
+  "textures": {
+    "door": "abundant_atmosphere:block/pet_door/red_bamboo_door",
+    "extra": "abundant_atmosphere:block/pet_door/red_bamboo_door"
+  }
+}

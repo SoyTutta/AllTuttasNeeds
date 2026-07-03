@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "textures": {
+    "bottom": "enderscape:block/indiscrete_door/murublight_door_bottom",
+    "top": "enderscape:block/indiscrete_door/murublight_door_top"
+  }
+}

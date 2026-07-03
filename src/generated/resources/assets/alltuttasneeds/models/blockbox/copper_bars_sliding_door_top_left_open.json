@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/sliding_door_top_left_open",
+  "textures": {
+    "door": "blockbox:block/sliding_door/copper_bars_door_top"
+  }
+}

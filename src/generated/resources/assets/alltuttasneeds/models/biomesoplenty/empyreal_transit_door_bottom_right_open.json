@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_right_open",
+  "textures": {
+    "door": "biomesoplenty:block/transit_door/empyreal_door_bottom"
+  }
+}

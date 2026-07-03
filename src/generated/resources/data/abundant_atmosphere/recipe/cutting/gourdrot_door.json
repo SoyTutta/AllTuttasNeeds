@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "abundant_atmosphere:gourdrot_normal_door"
+        },
+        {
+          "item": "abundant_atmosphere:gourdrot_indiscrete_door"
+        },
+        {
+          "item": "abundant_atmosphere:gourdrot_transit_door"
+        },
+        {
+          "item": "abundant_atmosphere:gourdrot_pet_door"
+        },
+        {
+          "item": "abundant_atmosphere:gourdrot_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "abundant_atmosphere:gourdrot_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

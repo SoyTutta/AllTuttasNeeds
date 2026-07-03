@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gourdrot_bookshelf": {
+      "conditions": {
+        "items": [
+          {
+            "items": "abundant_atmosphere:gourdrot_bookshelf"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abundant_atmosphere:crafting/gourdrot_bookshelf_door"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gourdrot_bookshelf"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abundant_atmosphere:crafting/gourdrot_bookshelf_door"
+    ]
+  }
+}

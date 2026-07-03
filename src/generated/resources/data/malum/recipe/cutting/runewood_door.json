@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "malum:runewood_door"
+        },
+        {
+          "item": "malum:runewood_indiscrete_door"
+        },
+        {
+          "item": "malum:runewood_transit_door"
+        },
+        {
+          "item": "malum:runewood_pet_door"
+        },
+        {
+          "item": "malum:runewood_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "malum:runewood_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

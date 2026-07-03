@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "secret_doors",
+  "key": {
+    "#": {
+      "item": "environmental:wisteria_bookshelf"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "environmental:wisteria_bookshelf_door"
+  }
+}

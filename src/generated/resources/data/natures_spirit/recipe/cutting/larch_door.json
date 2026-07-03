@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "natures_spirit:larch_normal_door"
+        },
+        {
+          "item": "natures_spirit:larch_indiscrete_door"
+        },
+        {
+          "item": "natures_spirit:larch_transit_door"
+        },
+        {
+          "item": "natures_spirit:larch_pet_door"
+        },
+        {
+          "item": "natures_spirit:larch_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "natures_spirit:larch_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

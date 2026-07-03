@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "natures_spirit:cypress_door"
+        },
+        {
+          "item": "natures_spirit:cypress_indiscrete_door"
+        },
+        {
+          "item": "natures_spirit:cypress_transit_door"
+        },
+        {
+          "item": "natures_spirit:cypress_pet_door"
+        },
+        {
+          "item": "natures_spirit:cypress_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "natures_spirit:cypress_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

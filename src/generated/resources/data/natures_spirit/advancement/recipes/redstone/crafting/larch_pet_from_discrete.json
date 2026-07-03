@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_larch_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "natures_spirit:larch_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "natures_spirit:crafting/larch_pet_from_discrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_larch_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "natures_spirit:crafting/larch_pet_from_discrete"
+    ]
+  }
+}

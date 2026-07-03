@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "abundant_atmosphere:red_bamboo_indiscrete_door"
+    },
+    {
+      "item": "abundant_atmosphere:red_bamboo_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "abundant_atmosphere:red_bamboo_door"
+  }
+}

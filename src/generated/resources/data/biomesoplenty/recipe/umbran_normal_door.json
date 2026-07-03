@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_doors",
+  "key": {
+    "#": {
+      "item": "biomesoplenty:umbran_planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "s#",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "biomesoplenty:umbran_door"
+  }
+}

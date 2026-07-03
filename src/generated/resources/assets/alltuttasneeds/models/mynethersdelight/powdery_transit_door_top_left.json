@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_left",
+  "textures": {
+    "door": "mynethersdelight:block/transit_door/powdery_door_top"
+  }
+}

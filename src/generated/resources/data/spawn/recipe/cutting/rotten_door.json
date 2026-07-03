@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "spawn:rotten_normal_door"
+        },
+        {
+          "item": "spawn:rotten_indiscrete_door"
+        },
+        {
+          "item": "spawn:rotten_transit_door"
+        },
+        {
+          "item": "spawn:rotten_pet_door"
+        },
+        {
+          "item": "spawn:rotten_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "spawn:rotten_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

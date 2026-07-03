@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "enderscape:veiled_indiscrete_door"
+    },
+    {
+      "item": "enderscape:veiled_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "enderscape:veiled_door"
+  }
+}

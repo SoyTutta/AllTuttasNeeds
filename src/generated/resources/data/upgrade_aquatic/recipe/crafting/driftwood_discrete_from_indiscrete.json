@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "upgrade_aquatic:driftwood_indiscrete_door"
+    },
+    {
+      "item": "upgrade_aquatic:driftwood_planks"
+    },
+    {
+      "item": "upgrade_aquatic:driftwood_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "upgrade_aquatic:driftwood_door"
+  }
+}

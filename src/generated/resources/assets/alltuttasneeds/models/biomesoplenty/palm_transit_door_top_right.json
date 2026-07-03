@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_right",
+  "textures": {
+    "door": "biomesoplenty:block/transit_door/palm_door_top"
+  }
+}

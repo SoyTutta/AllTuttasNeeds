@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "sliding_doors",
+  "key": {
+    "#": {
+      "item": "create:brass_bars"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "create:brass_bars_sliding_door"
+  }
+}

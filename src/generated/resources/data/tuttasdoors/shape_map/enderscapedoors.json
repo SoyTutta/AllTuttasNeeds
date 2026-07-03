@@ -1,0 +1,28 @@
+{
+  "add": {
+    "enderscape:celestial_door": [
+      "enderscape:celestial_normal_door",
+      "enderscape:celestial_indiscrete_door",
+      "enderscape:celestial_transit_door"
+    ],
+    "enderscape:celestial_trapdoor": [
+      "enderscape:celestial_pet_door"
+    ],
+    "enderscape:murublight_door": [
+      "enderscape:murublight_normal_door",
+      "enderscape:murublight_indiscrete_door",
+      "enderscape:murublight_transit_door"
+    ],
+    "enderscape:murublight_trapdoor": [
+      "enderscape:murublight_pet_door"
+    ],
+    "enderscape:veiled_discrete_door": [
+      "enderscape:veiled_door",
+      "enderscape:veiled_indiscrete_door",
+      "enderscape:veiled_transit_door"
+    ],
+    "enderscape:veiled_trapdoor": [
+      "enderscape:veiled_pet_door"
+    ]
+  }
+}

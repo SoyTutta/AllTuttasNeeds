@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soulwood_boards_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "malum:soulwood_boards_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "malum:crafting/soulwood_boards_indiscrete_from_discrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soulwood_boards_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "malum:crafting/soulwood_boards_indiscrete_from_discrete"
+    ]
+  }
+}

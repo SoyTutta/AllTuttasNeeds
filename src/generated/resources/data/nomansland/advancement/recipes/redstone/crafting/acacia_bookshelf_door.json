@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_acacia_bookshelf": {
+      "conditions": {
+        "items": [
+          {
+            "items": "nomansland:acacia_bookshelf"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "nomansland:crafting/acacia_bookshelf_door"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_acacia_bookshelf"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "nomansland:crafting/acacia_bookshelf_door"
+    ]
+  }
+}

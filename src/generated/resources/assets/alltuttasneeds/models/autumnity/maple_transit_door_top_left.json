@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_left",
+  "textures": {
+    "door": "autumnity:block/transit_door/maple_door_top"
+  }
+}

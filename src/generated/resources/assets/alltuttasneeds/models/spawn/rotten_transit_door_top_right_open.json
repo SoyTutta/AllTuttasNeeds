@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_right_open",
+  "textures": {
+    "door": "spawn:block/transit_door/rotten_door_top"
+  }
+}

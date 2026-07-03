@@ -1,0 +1,12 @@
+{
+  "add": {
+    "caverns_and_chasms:azalea_door": [
+      "caverns_and_chasms:azalea_normal_door",
+      "caverns_and_chasms:azalea_indiscrete_door",
+      "caverns_and_chasms:azalea_transit_door"
+    ],
+    "caverns_and_chasms:azalea_trapdoor": [
+      "caverns_and_chasms:azalea_pet_door"
+    ]
+  }
+}

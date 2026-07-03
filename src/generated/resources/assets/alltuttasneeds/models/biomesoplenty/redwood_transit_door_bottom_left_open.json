@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_left_open",
+  "textures": {
+    "door": "biomesoplenty:block/transit_door/redwood_door_bottom"
+  }
+}

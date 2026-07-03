@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "caverns_and_chasms:golden_bars_sliding_door",
+      "required": false
+    },
+    {
+      "id": "blockbox:golden_bars_sliding_door",
+      "required": false
+    }
+  ]
+}

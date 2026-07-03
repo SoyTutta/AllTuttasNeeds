@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_bottom_open",
+  "textures": {
+    "door": "natures_spirit:block/pet_door/fir_door",
+    "extra": "natures_spirit:block/pet_door/fir_door"
+  }
+}

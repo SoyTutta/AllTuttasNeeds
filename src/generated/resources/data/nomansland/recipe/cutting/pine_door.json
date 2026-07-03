@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "nomansland:pine_door"
+        },
+        {
+          "item": "nomansland:pine_indiscrete_door"
+        },
+        {
+          "item": "nomansland:pine_transit_door"
+        },
+        {
+          "item": "nomansland:pine_pet_door"
+        },
+        {
+          "item": "nomansland:pine_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "nomansland:pine_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

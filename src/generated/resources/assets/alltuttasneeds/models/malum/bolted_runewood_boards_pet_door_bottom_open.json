@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_bottom_open",
+  "textures": {
+    "door": "malum:block/pet_door/bolted_runewood_boards_door",
+    "extra": "malum:block/pet_door/bolted_runewood_boards_door"
+  }
+}

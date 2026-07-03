@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/sliding_door_top_right_true_open",
+  "textures": {
+    "door": "caverns_and_chasms:block/sliding_door/oxidized_copper_bars_door_top"
+  }
+}

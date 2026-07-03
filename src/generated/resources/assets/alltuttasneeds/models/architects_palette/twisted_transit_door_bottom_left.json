@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_left",
+  "textures": {
+    "door": "architects_palette:block/transit_door/twisted_door_bottom"
+  }
+}

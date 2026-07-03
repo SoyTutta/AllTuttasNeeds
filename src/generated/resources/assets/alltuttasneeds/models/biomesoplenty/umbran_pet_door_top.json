@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_top",
+  "textures": {
+    "door": "biomesoplenty:block/pet_door/umbran_door",
+    "extra": "biomesoplenty:block/pet_door/umbran_door"
+  }
+}

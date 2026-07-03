@@ -1,0 +1,8 @@
+{
+	"parent": "tuttasdoors:block/secret_door_bottom_right_open",
+	"textures": {
+		"fake": "abundant_atmosphere:block/nml/gourdrot_bookshelf",
+		"side": "abundant_atmosphere:block/gourdrot_planks",
+		"door": "abundant_atmosphere:block/secret_door/gourdrot_bookshelf_door_bottom"
+	}
+}

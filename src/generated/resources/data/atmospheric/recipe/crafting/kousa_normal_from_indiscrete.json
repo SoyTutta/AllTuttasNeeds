@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "atmospheric:kousa_indiscrete_door"
+    },
+    {
+      "item": "atmospheric:kousa_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "atmospheric:kousa_normal_door"
+  }
+}

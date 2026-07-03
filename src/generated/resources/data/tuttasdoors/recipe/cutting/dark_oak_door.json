@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "tuttasdoors:dark_oak_normal_door"
+        },
+        {
+          "item": "tuttasdoors:dark_oak_indiscrete_door"
+        },
+        {
+          "item": "tuttasdoors:dark_oak_transit_door"
+        },
+        {
+          "item": "tuttasdoors:dark_oak_pet_door"
+        },
+        {
+          "item": "minecraft:dark_oak_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:dark_oak_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "environmental:wisteria_normal_door"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wisteria_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "environmental:wisteria_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wisteria_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "environmental:wisteria_normal_door"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "atmospheric:laurel_normal_door"
+        },
+        {
+          "item": "atmospheric:laurel_indiscrete_door"
+        },
+        {
+          "item": "atmospheric:laurel_transit_door"
+        },
+        {
+          "item": "atmospheric:laurel_pet_door"
+        },
+        {
+          "item": "atmospheric:laurel_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "atmospheric:laurel_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

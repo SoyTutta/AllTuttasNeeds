@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_left",
+  "textures": {
+    "door": "environmental:block/transit_door/wisteria_door_bottom"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_right_open",
+  "textures": {
+    "door": "abundant_atmosphere:block/transit_door/gourdrot_door_top"
+  }
+}

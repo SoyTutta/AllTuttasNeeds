@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_kousa_bookshelf": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:kousa_bookshelf"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:crafting/kousa_bookshelf_door"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_kousa_bookshelf"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:crafting/kousa_bookshelf_door"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_left_open",
+  "textures": {
+    "door": "enderscape:block/transit_door/veiled_door_bottom"
+  }
+}

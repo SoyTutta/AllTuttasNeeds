@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_right_open",
+  "textures": {
+    "door": "upgrade_aquatic:block/transit_door/driftwood_door_top"
+  }
+}

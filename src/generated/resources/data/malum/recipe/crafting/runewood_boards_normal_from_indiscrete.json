@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "malum:runewood_boards_indiscrete_door"
+    },
+    {
+      "tag": "malum:runewood_boards"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "malum:runewood_boards_normal_door"
+  }
+}

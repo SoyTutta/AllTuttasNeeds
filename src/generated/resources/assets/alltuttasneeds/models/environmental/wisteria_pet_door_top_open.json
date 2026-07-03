@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_top_open",
+  "textures": {
+    "door": "environmental:block/pet_door/wisteria_door",
+    "extra": "environmental:block/pet_door/wisteria_door"
+  }
+}

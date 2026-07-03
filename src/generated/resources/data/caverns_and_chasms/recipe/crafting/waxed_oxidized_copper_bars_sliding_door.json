@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "waxed_copper_sliding_doors",
+  "ingredients": [
+    {
+      "item": "caverns_and_chasms:oxidized_copper_bars_sliding_door"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "caverns_and_chasms:waxed_oxidized_copper_bars_sliding_door"
+  }
+}

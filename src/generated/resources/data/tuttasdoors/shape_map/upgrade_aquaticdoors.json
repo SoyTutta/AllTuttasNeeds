@@ -1,0 +1,20 @@
+{
+  "add": {
+    "upgrade_aquatic:driftwood_door": [
+      "upgrade_aquatic:driftwood_normal_door",
+      "upgrade_aquatic:driftwood_indiscrete_door",
+      "upgrade_aquatic:driftwood_transit_door"
+    ],
+    "upgrade_aquatic:driftwood_trapdoor": [
+      "upgrade_aquatic:driftwood_pet_door"
+    ],
+    "upgrade_aquatic:river_door": [
+      "upgrade_aquatic:river_normal_door",
+      "upgrade_aquatic:river_indiscrete_door",
+      "upgrade_aquatic:river_transit_door"
+    ],
+    "upgrade_aquatic:river_trapdoor": [
+      "upgrade_aquatic:river_pet_door"
+    ]
+  }
+}

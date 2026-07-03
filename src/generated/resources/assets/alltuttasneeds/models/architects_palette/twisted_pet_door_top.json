@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_top",
+  "textures": {
+    "door": "architects_palette:block/pet_door/twisted_door",
+    "extra": "architects_palette:block/pet_door/twisted_door"
+  }
+}

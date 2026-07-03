@@ -1,0 +1,8 @@
+{
+	"parent": "tuttasdoors:block/secret_door_bottom_right",
+	"textures": {
+		"fake": "abundant_atmosphere:block/nml/aspen_bookshelf",
+		"side": "abundant_atmosphere:block/aspen_planks",
+		"door": "abundant_atmosphere:block/secret_door/aspen_bookshelf_door_bottom"
+	}
+}

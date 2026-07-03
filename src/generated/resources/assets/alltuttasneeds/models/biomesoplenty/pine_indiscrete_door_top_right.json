@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "biomesoplenty:block/indiscrete_door/pine_door_bottom",
+    "top": "biomesoplenty:block/indiscrete_door/pine_door_top"
+  }
+}

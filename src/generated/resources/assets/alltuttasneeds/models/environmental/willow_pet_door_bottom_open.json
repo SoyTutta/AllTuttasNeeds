@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_bottom_open",
+  "textures": {
+    "door": "environmental:block/pet_door/willow_door",
+    "extra": "environmental:block/pet_door/willow_door"
+  }
+}

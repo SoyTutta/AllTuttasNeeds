@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "spawn:date_door"
+        },
+        {
+          "item": "spawn:date_indiscrete_door"
+        },
+        {
+          "item": "spawn:date_transit_door"
+        },
+        {
+          "item": "spawn:date_pet_door"
+        },
+        {
+          "item": "spawn:date_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "spawn:date_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

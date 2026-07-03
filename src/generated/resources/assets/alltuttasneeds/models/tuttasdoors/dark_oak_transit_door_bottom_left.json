@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_left",
+  "textures": {
+    "door": "tuttasdoors:block/transit_door/dark_oak_door_bottom"
+  }
+}

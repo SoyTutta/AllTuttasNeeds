@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "woodworks:item/jungle_bookshelf_door"
+  }
+}

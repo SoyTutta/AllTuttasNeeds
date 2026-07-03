@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "waxed_copper_sliding_doors",
+  "ingredients": [
+    {
+      "item": "blockbox:copper_bars_sliding_door"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "blockbox:waxed_copper_bars_sliding_door"
+  }
+}

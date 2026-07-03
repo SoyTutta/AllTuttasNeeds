@@ -1,0 +1,20 @@
+{
+  "add": {
+    "spawn:date_discrete_door": [
+      "spawn:date_door",
+      "spawn:date_indiscrete_door",
+      "spawn:date_transit_door"
+    ],
+    "spawn:date_trapdoor": [
+      "spawn:date_pet_door"
+    ],
+    "spawn:rotten_door": [
+      "spawn:rotten_normal_door",
+      "spawn:rotten_indiscrete_door",
+      "spawn:rotten_transit_door"
+    ],
+    "spawn:rotten_trapdoor": [
+      "spawn:rotten_pet_door"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_bottom",
+  "textures": {
+    "door": "atmospheric:block/pet_door/grimwood_door",
+    "extra": "atmospheric:block/pet_door/grimwood_door"
+  }
+}

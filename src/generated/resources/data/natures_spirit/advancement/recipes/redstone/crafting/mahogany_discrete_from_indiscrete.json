@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mahogany_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "natures_spirit:mahogany_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "natures_spirit:crafting/mahogany_discrete_from_indiscrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mahogany_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "natures_spirit:crafting/mahogany_discrete_from_indiscrete"
+    ]
+  }
+}

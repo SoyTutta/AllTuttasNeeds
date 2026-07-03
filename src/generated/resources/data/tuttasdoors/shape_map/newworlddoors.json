@@ -1,0 +1,12 @@
+{
+  "add": {
+    "newworld:fir_door": [
+      "newworld:fir_normal_door",
+      "newworld:fir_indiscrete_door",
+      "newworld:fir_transit_door"
+    ],
+    "newworld:fir_trapdoor": [
+      "newworld:fir_pet_door"
+    ]
+  }
+}

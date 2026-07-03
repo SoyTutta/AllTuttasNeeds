@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_entwine_bars": {
+      "conditions": {
+        "items": [
+          {
+            "items": "architects_palette:entwine_bars"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "architects_palette:entwine_bars_sliding_door"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_entwine_bars"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "architects_palette:entwine_bars_sliding_door"
+    ]
+  }
+}

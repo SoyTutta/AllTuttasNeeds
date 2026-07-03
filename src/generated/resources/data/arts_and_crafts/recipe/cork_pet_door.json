@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_pet_doors",
+  "key": {
+    "#": {
+      "item": "arts_and_crafts:cork_planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "ss",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 2,
+    "id": "arts_and_crafts:cork_pet_door"
+  }
+}

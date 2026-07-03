@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/sliding_door_bottom_left",
+  "textures": {
+    "door": "blockbox:block/sliding_door/golden_bars_door_bottom"
+  }
+}

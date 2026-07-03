@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_doors",
+  "key": {
+    "#": {
+      "item": "minecraft:crimson_planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "s#",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "tuttasdoors:crimson_normal_door"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "nomansland:walnut_door"
+        },
+        {
+          "item": "nomansland:walnut_indiscrete_door"
+        },
+        {
+          "item": "nomansland:walnut_transit_door"
+        },
+        {
+          "item": "nomansland:walnut_pet_door"
+        },
+        {
+          "item": "nomansland:walnut_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "nomansland:walnut_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

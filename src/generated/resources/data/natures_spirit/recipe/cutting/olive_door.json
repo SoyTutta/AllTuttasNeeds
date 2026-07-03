@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "natures_spirit:olive_door"
+        },
+        {
+          "item": "natures_spirit:olive_indiscrete_door"
+        },
+        {
+          "item": "natures_spirit:olive_transit_door"
+        },
+        {
+          "item": "natures_spirit:olive_pet_door"
+        },
+        {
+          "item": "natures_spirit:olive_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "natures_spirit:olive_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

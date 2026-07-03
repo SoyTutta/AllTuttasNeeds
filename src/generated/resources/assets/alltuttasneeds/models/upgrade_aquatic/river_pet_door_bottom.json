@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_bottom",
+  "textures": {
+    "door": "upgrade_aquatic:block/pet_door/river_door",
+    "extra": "upgrade_aquatic:block/pet_door/river_door"
+  }
+}

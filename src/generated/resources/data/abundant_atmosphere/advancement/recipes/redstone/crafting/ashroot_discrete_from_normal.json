@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ashroot_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "abundant_atmosphere:ashroot_normal_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abundant_atmosphere:crafting/ashroot_discrete_from_normal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ashroot_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abundant_atmosphere:crafting/ashroot_discrete_from_normal"
+    ]
+  }
+}

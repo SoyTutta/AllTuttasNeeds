@@ -1,0 +1,60 @@
+{
+  "add": {
+    "atmospheric:aspen_discrete_door": [
+      "atmospheric:aspen_normal_door",
+      "atmospheric:aspen_door",
+      "atmospheric:aspen_transit_door"
+    ],
+    "atmospheric:aspen_trapdoor": [
+      "atmospheric:aspen_pet_door"
+    ],
+    "atmospheric:grimwood_door": [
+      "atmospheric:grimwood_normal_door",
+      "atmospheric:grimwood_indiscrete_door",
+      "atmospheric:grimwood_transit_door"
+    ],
+    "atmospheric:grimwood_trapdoor": [
+      "atmospheric:grimwood_pet_door"
+    ],
+    "atmospheric:kousa_door": [
+      "atmospheric:kousa_normal_door",
+      "atmospheric:kousa_indiscrete_door",
+      "atmospheric:kousa_transit_door"
+    ],
+    "atmospheric:kousa_trapdoor": [
+      "atmospheric:kousa_pet_door"
+    ],
+    "atmospheric:laurel_door": [
+      "atmospheric:laurel_normal_door",
+      "atmospheric:laurel_indiscrete_door",
+      "atmospheric:laurel_transit_door"
+    ],
+    "atmospheric:laurel_trapdoor": [
+      "atmospheric:laurel_pet_door"
+    ],
+    "atmospheric:morado_door": [
+      "atmospheric:morado_normal_door",
+      "atmospheric:morado_indiscrete_door",
+      "atmospheric:morado_transit_door"
+    ],
+    "atmospheric:morado_trapdoor": [
+      "atmospheric:morado_pet_door"
+    ],
+    "atmospheric:rosewood_door": [
+      "atmospheric:rosewood_normal_door",
+      "atmospheric:rosewood_indiscrete_door",
+      "atmospheric:rosewood_transit_door"
+    ],
+    "atmospheric:rosewood_trapdoor": [
+      "atmospheric:rosewood_pet_door"
+    ],
+    "atmospheric:yucca_door": [
+      "atmospheric:yucca_normal_door",
+      "atmospheric:yucca_indiscrete_door",
+      "atmospheric:yucca_transit_door"
+    ],
+    "atmospheric:yucca_trapdoor": [
+      "atmospheric:yucca_pet_door"
+    ]
+  }
+}

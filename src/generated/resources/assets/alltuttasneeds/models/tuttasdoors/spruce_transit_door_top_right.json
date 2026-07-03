@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_right",
+  "textures": {
+    "door": "tuttasdoors:block/transit_door/spruce_door_top"
+  }
+}

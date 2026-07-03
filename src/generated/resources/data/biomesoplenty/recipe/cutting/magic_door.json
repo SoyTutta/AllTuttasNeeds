@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "biomesoplenty:magic_normal_door"
+        },
+        {
+          "item": "biomesoplenty:magic_door"
+        },
+        {
+          "item": "biomesoplenty:magic_transit_door"
+        },
+        {
+          "item": "biomesoplenty:magic_pet_door"
+        },
+        {
+          "item": "biomesoplenty:magic_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "biomesoplenty:magic_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

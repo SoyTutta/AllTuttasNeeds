@@ -1,0 +1,8 @@
+{
+	"parent": "tuttasdoors:block/secret_door_bottom_left",
+	"textures": {
+		"fake": "nomansland:block/vanilla_woods/birch_bookshelf",
+		"side": "block/birch_planks",
+		"door": "nomansland:block/secret_door/birch_bookshelf_door_bottom"
+	}
+}

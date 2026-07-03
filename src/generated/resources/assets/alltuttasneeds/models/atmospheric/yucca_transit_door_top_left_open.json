@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_left_open",
+  "textures": {
+    "door": "atmospheric:block/transit_door/yucca_door_top"
+  }
+}

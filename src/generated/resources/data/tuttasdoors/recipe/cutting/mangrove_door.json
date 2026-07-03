@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "tuttasdoors:mangrove_normal_door"
+        },
+        {
+          "item": "tuttasdoors:mangrove_indiscrete_door"
+        },
+        {
+          "item": "tuttasdoors:mangrove_transit_door"
+        },
+        {
+          "item": "tuttasdoors:mangrove_pet_door"
+        },
+        {
+          "item": "minecraft:mangrove_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:mangrove_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

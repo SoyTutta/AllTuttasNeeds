@@ -1,0 +1,68 @@
+{
+  "add": {
+    "malum:bolted_runewood_boards_discrete_door": [
+      "malum:bolted_runewood_boards_door",
+      "malum:bolted_runewood_boards_indiscrete_door",
+      "malum:bolted_runewood_boards_transit_door"
+    ],
+    "malum:bolted_runewood_boards_trapdoor": [
+      "malum:bolted_runewood_boards_pet_door"
+    ],
+    "malum:bolted_runewood_discrete_door": [
+      "malum:bolted_runewood_door",
+      "malum:bolted_runewood_indiscrete_door",
+      "malum:bolted_runewood_transit_door"
+    ],
+    "malum:bolted_runewood_trapdoor": [
+      "malum:bolted_runewood_pet_door"
+    ],
+    "malum:bolted_soulwood_boards_discrete_door": [
+      "malum:bolted_soulwood_boards_door",
+      "malum:bolted_soulwood_boards_indiscrete_door",
+      "malum:bolted_soulwood_boards_transit_door"
+    ],
+    "malum:bolted_soulwood_boards_trapdoor": [
+      "malum:bolted_soulwood_boards_pet_door"
+    ],
+    "malum:bolted_soulwood_discrete_door": [
+      "malum:bolted_soulwood_door",
+      "malum:bolted_soulwood_indiscrete_door",
+      "malum:bolted_soulwood_transit_door"
+    ],
+    "malum:bolted_soulwood_trapdoor": [
+      "malum:bolted_soulwood_pet_door"
+    ],
+    "malum:runewood_boards_door": [
+      "malum:runewood_boards_normal_door",
+      "malum:runewood_boards_indiscrete_door",
+      "malum:runewood_boards_transit_door"
+    ],
+    "malum:runewood_boards_trapdoor": [
+      "malum:runewood_boards_pet_door"
+    ],
+    "malum:runewood_discrete_door": [
+      "malum:runewood_door",
+      "malum:runewood_indiscrete_door",
+      "malum:runewood_transit_door"
+    ],
+    "malum:runewood_trapdoor": [
+      "malum:runewood_pet_door"
+    ],
+    "malum:soulwood_boards_door": [
+      "malum:soulwood_boards_normal_door",
+      "malum:soulwood_boards_indiscrete_door",
+      "malum:soulwood_boards_transit_door"
+    ],
+    "malum:soulwood_boards_trapdoor": [
+      "malum:soulwood_boards_pet_door"
+    ],
+    "malum:soulwood_discrete_door": [
+      "malum:soulwood_door",
+      "malum:soulwood_indiscrete_door",
+      "malum:soulwood_transit_door"
+    ],
+    "malum:soulwood_trapdoor": [
+      "malum:soulwood_pet_door"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_runewood_boards_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "malum:runewood_boards_indiscrete_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "malum:crafting/runewood_boards_discrete_from_indiscrete"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_runewood_boards_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "malum:crafting/runewood_boards_discrete_from_indiscrete"
+    ]
+  }
+}

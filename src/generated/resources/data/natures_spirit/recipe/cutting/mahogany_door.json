@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "natures_spirit:mahogany_normal_door"
+        },
+        {
+          "item": "natures_spirit:mahogany_door"
+        },
+        {
+          "item": "natures_spirit:mahogany_transit_door"
+        },
+        {
+          "item": "natures_spirit:mahogany_pet_door"
+        },
+        {
+          "item": "natures_spirit:mahogany_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "natures_spirit:mahogany_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

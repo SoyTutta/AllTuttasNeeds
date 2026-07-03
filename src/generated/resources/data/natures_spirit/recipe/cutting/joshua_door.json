@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "natures_spirit:joshua_door"
+        },
+        {
+          "item": "natures_spirit:joshua_indiscrete_door"
+        },
+        {
+          "item": "natures_spirit:joshua_transit_door"
+        },
+        {
+          "item": "natures_spirit:joshua_pet_door"
+        },
+        {
+          "item": "natures_spirit:joshua_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "natures_spirit:joshua_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

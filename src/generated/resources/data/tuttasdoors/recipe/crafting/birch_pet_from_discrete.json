@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "minecraft:birch_door"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "tuttasdoors:birch_pet_door"
+  }
+}

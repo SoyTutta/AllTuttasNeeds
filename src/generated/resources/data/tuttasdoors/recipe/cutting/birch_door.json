@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "tuttasdoors:birch_normal_door"
+        },
+        {
+          "item": "tuttasdoors:birch_indiscrete_door"
+        },
+        {
+          "item": "tuttasdoors:birch_transit_door"
+        },
+        {
+          "item": "tuttasdoors:birch_pet_door"
+        },
+        {
+          "item": "minecraft:birch_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:birch_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

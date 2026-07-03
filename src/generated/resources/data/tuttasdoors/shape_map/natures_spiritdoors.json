@@ -1,0 +1,140 @@
+{
+  "add": {
+    "natures_spirit:aspen_discrete_door": [
+      "natures_spirit:aspen_door",
+      "natures_spirit:aspen_indiscrete_door",
+      "natures_spirit:aspen_transit_door"
+    ],
+    "natures_spirit:aspen_trapdoor": [
+      "natures_spirit:aspen_pet_door"
+    ],
+    "natures_spirit:cedar_door": [
+      "natures_spirit:cedar_normal_door",
+      "natures_spirit:cedar_indiscrete_door",
+      "natures_spirit:cedar_transit_door"
+    ],
+    "natures_spirit:cedar_trapdoor": [
+      "natures_spirit:cedar_pet_door"
+    ],
+    "natures_spirit:coconut_discrete_door": [
+      "natures_spirit:coconut_normal_door",
+      "natures_spirit:coconut_door",
+      "natures_spirit:coconut_transit_door"
+    ],
+    "natures_spirit:coconut_trapdoor": [
+      "natures_spirit:coconut_pet_door"
+    ],
+    "natures_spirit:cypress_discrete_door": [
+      "natures_spirit:cypress_door",
+      "natures_spirit:cypress_indiscrete_door",
+      "natures_spirit:cypress_transit_door"
+    ],
+    "natures_spirit:cypress_trapdoor": [
+      "natures_spirit:cypress_pet_door"
+    ],
+    "natures_spirit:fir_discrete_door": [
+      "natures_spirit:fir_door",
+      "natures_spirit:fir_indiscrete_door",
+      "natures_spirit:fir_transit_door"
+    ],
+    "natures_spirit:fir_trapdoor": [
+      "natures_spirit:fir_pet_door"
+    ],
+    "natures_spirit:ghaf_discrete_door": [
+      "natures_spirit:ghaf_normal_door",
+      "natures_spirit:ghaf_door",
+      "natures_spirit:ghaf_transit_door"
+    ],
+    "natures_spirit:ghaf_trapdoor": [
+      "natures_spirit:ghaf_pet_door"
+    ],
+    "natures_spirit:joshua_discrete_door": [
+      "natures_spirit:joshua_door",
+      "natures_spirit:joshua_indiscrete_door",
+      "natures_spirit:joshua_transit_door"
+    ],
+    "natures_spirit:joshua_trapdoor": [
+      "natures_spirit:joshua_pet_door"
+    ],
+    "natures_spirit:larch_door": [
+      "natures_spirit:larch_normal_door",
+      "natures_spirit:larch_indiscrete_door",
+      "natures_spirit:larch_transit_door"
+    ],
+    "natures_spirit:larch_trapdoor": [
+      "natures_spirit:larch_pet_door"
+    ],
+    "natures_spirit:mahogany_discrete_door": [
+      "natures_spirit:mahogany_normal_door",
+      "natures_spirit:mahogany_door",
+      "natures_spirit:mahogany_transit_door"
+    ],
+    "natures_spirit:mahogany_trapdoor": [
+      "natures_spirit:mahogany_pet_door"
+    ],
+    "natures_spirit:maple_discrete_door": [
+      "natures_spirit:maple_door",
+      "natures_spirit:maple_indiscrete_door",
+      "natures_spirit:maple_transit_door"
+    ],
+    "natures_spirit:maple_trapdoor": [
+      "natures_spirit:maple_pet_door"
+    ],
+    "natures_spirit:olive_discrete_door": [
+      "natures_spirit:olive_door",
+      "natures_spirit:olive_indiscrete_door",
+      "natures_spirit:olive_transit_door"
+    ],
+    "natures_spirit:olive_trapdoor": [
+      "natures_spirit:olive_pet_door"
+    ],
+    "natures_spirit:palo_verde_door": [
+      "natures_spirit:palo_verde_normal_door",
+      "natures_spirit:palo_verde_indiscrete_door",
+      "natures_spirit:palo_verde_transit_door"
+    ],
+    "natures_spirit:palo_verde_trapdoor": [
+      "natures_spirit:palo_verde_pet_door"
+    ],
+    "natures_spirit:redwood_discrete_door": [
+      "natures_spirit:redwood_door",
+      "natures_spirit:redwood_indiscrete_door",
+      "natures_spirit:redwood_transit_door"
+    ],
+    "natures_spirit:redwood_trapdoor": [
+      "natures_spirit:redwood_pet_door"
+    ],
+    "natures_spirit:saxaul_door": [
+      "natures_spirit:saxaul_normal_door",
+      "natures_spirit:saxaul_indiscrete_door",
+      "natures_spirit:saxaul_transit_door"
+    ],
+    "natures_spirit:saxaul_trapdoor": [
+      "natures_spirit:saxaul_pet_door"
+    ],
+    "natures_spirit:sugi_door": [
+      "natures_spirit:sugi_normal_door",
+      "natures_spirit:sugi_indiscrete_door",
+      "natures_spirit:sugi_transit_door"
+    ],
+    "natures_spirit:sugi_trapdoor": [
+      "natures_spirit:sugi_pet_door"
+    ],
+    "natures_spirit:willow_discrete_door": [
+      "natures_spirit:willow_door",
+      "natures_spirit:willow_indiscrete_door",
+      "natures_spirit:willow_transit_door"
+    ],
+    "natures_spirit:willow_trapdoor": [
+      "natures_spirit:willow_pet_door"
+    ],
+    "natures_spirit:wisteria_discrete_door": [
+      "natures_spirit:wisteria_door",
+      "natures_spirit:wisteria_indiscrete_door",
+      "natures_spirit:wisteria_transit_door"
+    ],
+    "natures_spirit:wisteria_trapdoor": [
+      "natures_spirit:wisteria_pet_door"
+    ]
+  }
+}

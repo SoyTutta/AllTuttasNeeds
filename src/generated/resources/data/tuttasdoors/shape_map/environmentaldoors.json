@@ -1,0 +1,36 @@
+{
+  "add": {
+    "environmental:pine_door": [
+      "environmental:pine_normal_door",
+      "environmental:pine_indiscrete_door",
+      "environmental:pine_transit_door"
+    ],
+    "environmental:pine_trapdoor": [
+      "environmental:pine_pet_door"
+    ],
+    "environmental:plum_discrete_door": [
+      "environmental:plum_normal_door",
+      "environmental:plum_door",
+      "environmental:plum_transit_door"
+    ],
+    "environmental:plum_trapdoor": [
+      "environmental:plum_pet_door"
+    ],
+    "environmental:willow_discrete_door": [
+      "environmental:willow_normal_door",
+      "environmental:willow_door",
+      "environmental:willow_transit_door"
+    ],
+    "environmental:willow_trapdoor": [
+      "environmental:willow_pet_door"
+    ],
+    "environmental:wisteria_discrete_door": [
+      "environmental:wisteria_door",
+      "environmental:wisteria_indiscrete_door",
+      "environmental:wisteria_transit_door"
+    ],
+    "environmental:wisteria_trapdoor": [
+      "environmental:wisteria_pet_door"
+    ]
+  }
+}

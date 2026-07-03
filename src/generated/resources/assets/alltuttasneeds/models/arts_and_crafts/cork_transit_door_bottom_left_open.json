@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_left_open",
+  "textures": {
+    "door": "arts_and_crafts:block/transit_door/cork_door_bottom"
+  }
+}

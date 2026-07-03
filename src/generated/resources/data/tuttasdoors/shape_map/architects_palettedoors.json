@@ -1,0 +1,12 @@
+{
+  "add": {
+    "architects_palette:twisted_discrete_door": [
+      "architects_palette:twisted_door",
+      "architects_palette:twisted_indiscrete_door",
+      "architects_palette:twisted_transit_door"
+    ],
+    "architects_palette:twisted_trapdoor": [
+      "architects_palette:twisted_pet_door"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_left",
+  "textures": {
+    "door": "caverns_and_chasms:block/transit_door/azalea_door_top"
+  }
+}

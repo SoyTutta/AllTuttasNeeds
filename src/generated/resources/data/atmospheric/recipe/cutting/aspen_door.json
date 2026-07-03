@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "atmospheric:aspen_normal_door"
+        },
+        {
+          "item": "atmospheric:aspen_door"
+        },
+        {
+          "item": "atmospheric:aspen_transit_door"
+        },
+        {
+          "item": "atmospheric:aspen_pet_door"
+        },
+        {
+          "item": "atmospheric:aspen_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "atmospheric:aspen_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

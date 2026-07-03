@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_top",
+  "textures": {
+    "door": "spawn:block/pet_door/date_door",
+    "extra": "spawn:block/pet_door/date_door"
+  }
+}

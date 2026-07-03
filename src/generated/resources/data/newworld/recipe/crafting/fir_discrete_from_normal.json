@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "newworld:fir_normal_door"
+    },
+    {
+      "item": "newworld:fir_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "newworld:fir_door"
+  }
+}

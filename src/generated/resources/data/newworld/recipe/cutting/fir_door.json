@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "newworld:fir_normal_door"
+        },
+        {
+          "item": "newworld:fir_indiscrete_door"
+        },
+        {
+          "item": "newworld:fir_transit_door"
+        },
+        {
+          "item": "newworld:fir_pet_door"
+        },
+        {
+          "item": "newworld:fir_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "newworld:fir_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

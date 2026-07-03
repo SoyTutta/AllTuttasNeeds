@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "atmospheric:grimwood_normal_door"
+        },
+        {
+          "item": "atmospheric:grimwood_indiscrete_door"
+        },
+        {
+          "item": "atmospheric:grimwood_transit_door"
+        },
+        {
+          "item": "atmospheric:grimwood_pet_door"
+        },
+        {
+          "item": "atmospheric:grimwood_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "atmospheric:grimwood_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

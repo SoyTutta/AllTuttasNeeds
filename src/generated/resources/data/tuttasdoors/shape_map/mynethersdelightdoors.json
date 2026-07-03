@@ -1,0 +1,12 @@
+{
+  "add": {
+    "mynethersdelight:powdery_discrete_door": [
+      "mynethersdelight:powdery_door",
+      "mynethersdelight:powdery_indiscrete_door",
+      "mynethersdelight:powdery_transit_door"
+    ],
+    "mynethersdelight:powdery_trapdoor": [
+      "mynethersdelight:powdery_pet_door"
+    ]
+  }
+}

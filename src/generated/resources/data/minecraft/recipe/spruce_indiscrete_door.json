@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_indiscrete_doors",
+  "key": {
+    "#": {
+      "item": "minecraft:spruce_planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "s#",
+    "s#",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "tuttasdoors:spruce_indiscrete_door"
+  }
+}

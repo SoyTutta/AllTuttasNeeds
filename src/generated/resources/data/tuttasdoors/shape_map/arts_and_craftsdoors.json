@@ -1,0 +1,12 @@
+{
+  "add": {
+    "arts_and_crafts:cork_door": [
+      "arts_and_crafts:cork_normal_door",
+      "arts_and_crafts:cork_indiscrete_door",
+      "arts_and_crafts:cork_transit_door"
+    ],
+    "arts_and_crafts:cork_trapdoor": [
+      "arts_and_crafts:cork_pet_door"
+    ]
+  }
+}

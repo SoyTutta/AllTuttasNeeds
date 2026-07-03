@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "biomesoplenty:mahogany_normal_door"
+        },
+        {
+          "item": "biomesoplenty:mahogany_door"
+        },
+        {
+          "item": "biomesoplenty:mahogany_transit_door"
+        },
+        {
+          "item": "biomesoplenty:mahogany_pet_door"
+        },
+        {
+          "item": "biomesoplenty:mahogany_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "biomesoplenty:mahogany_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

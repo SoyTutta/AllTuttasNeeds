@@ -1,0 +1,8 @@
+{
+	"parent": "tuttasdoors:block/secret_door_top_right_open",
+	"textures": {
+		"fake": "atmospheric:block/laurel_bookshelf",
+		"side": "atmospheric:block/laurel_planks",
+		"door": "woodworks:block/secret_door/laurel_bookshelf_door_top"
+	}
+}

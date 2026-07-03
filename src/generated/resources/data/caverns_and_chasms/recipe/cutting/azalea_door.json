@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "caverns_and_chasms:azalea_normal_door"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_indiscrete_door"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_transit_door"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_pet_door"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "caverns_and_chasms:azalea_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

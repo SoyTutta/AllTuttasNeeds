@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "atmospheric:morado_normal_door"
+        },
+        {
+          "item": "atmospheric:morado_indiscrete_door"
+        },
+        {
+          "item": "atmospheric:morado_transit_door"
+        },
+        {
+          "item": "atmospheric:morado_pet_door"
+        },
+        {
+          "item": "atmospheric:morado_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "atmospheric:morado_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

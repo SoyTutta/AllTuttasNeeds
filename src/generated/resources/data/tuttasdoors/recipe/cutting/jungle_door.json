@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minecraft:jungle_door"
+        },
+        {
+          "item": "tuttasdoors:jungle_indiscrete_door"
+        },
+        {
+          "item": "tuttasdoors:jungle_transit_door"
+        },
+        {
+          "item": "tuttasdoors:jungle_pet_door"
+        },
+        {
+          "item": "tuttasdoors:jungle_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:jungle_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

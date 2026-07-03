@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_indiscrete_doors",
+  "key": {
+    "#": {
+      "item": "natures_spirit:joshua_planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "s#",
+    "s#",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "natures_spirit:joshua_indiscrete_door"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "nomansland:willow_door"
+        },
+        {
+          "item": "nomansland:willow_indiscrete_door"
+        },
+        {
+          "item": "nomansland:willow_transit_door"
+        },
+        {
+          "item": "nomansland:willow_pet_door"
+        },
+        {
+          "item": "nomansland:willow_discrete_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "nomansland:willow_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

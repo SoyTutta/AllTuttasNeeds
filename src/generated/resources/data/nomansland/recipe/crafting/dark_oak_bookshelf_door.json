@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "secret_doors",
+  "key": {
+    "#": {
+      "item": "nomansland:dark_oak_bookshelf"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "nomansland:dark_oak_bookshelf_door"
+  }
+}

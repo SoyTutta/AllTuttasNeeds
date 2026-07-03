@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "atmospheric:rosewood_normal_door"
+        },
+        {
+          "item": "atmospheric:rosewood_indiscrete_door"
+        },
+        {
+          "item": "atmospheric:rosewood_transit_door"
+        },
+        {
+          "item": "atmospheric:rosewood_pet_door"
+        },
+        {
+          "item": "atmospheric:rosewood_door"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "atmospheric:rosewood_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

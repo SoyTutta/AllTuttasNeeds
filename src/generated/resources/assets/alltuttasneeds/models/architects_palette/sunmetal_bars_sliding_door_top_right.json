@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/sliding_door_top_right",
+  "textures": {
+    "door": "architects_palette:block/sliding_door/sunmetal_bars_door_top"
+  }
+}

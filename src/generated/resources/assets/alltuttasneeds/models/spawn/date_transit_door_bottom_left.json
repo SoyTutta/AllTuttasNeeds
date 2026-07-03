@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_left",
+  "textures": {
+    "door": "spawn:block/transit_door/date_door_bottom"
+  }
+}

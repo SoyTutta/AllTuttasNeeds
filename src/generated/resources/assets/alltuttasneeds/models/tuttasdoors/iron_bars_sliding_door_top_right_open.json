@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/sliding_door_top_right_open",
+  "textures": {
+    "door": "tuttasdoors:block/sliding_door/iron_bars_door_top"
+  }
+}

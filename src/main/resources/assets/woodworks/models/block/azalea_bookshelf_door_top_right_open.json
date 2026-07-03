@@ -1,0 +1,8 @@
+{
+	"parent": "tuttasdoors:block/secret_door_top_right_open",
+	"textures": {
+		"fake": "caverns_and_chasms:block/azalea_bookshelf",
+		"side": "caverns_and_chasms:block/azalea_planks",
+		"door": "woodworks:block/secret_door/azalea_bookshelf_door_top"
+	}
+}

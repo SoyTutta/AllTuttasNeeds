@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "sliding_doors",
+  "key": {
+    "#": {
+      "item": "blockbox:waxed_copper_bars"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "blockbox:waxed_copper_bars_sliding_door"
+  }
+}

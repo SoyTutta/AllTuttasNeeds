@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:yucca_door"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yucca_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:yucca_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yucca_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:yucca_door"
+    ]
+  }
+}

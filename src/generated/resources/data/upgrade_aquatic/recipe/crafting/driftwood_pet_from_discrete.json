@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "upgrade_aquatic:driftwood_door"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "upgrade_aquatic:driftwood_pet_door"
+  }
+}

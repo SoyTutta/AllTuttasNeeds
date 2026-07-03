@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_right_open",
+  "textures": {
+    "door": "upgrade_aquatic:block/transit_door/river_door_bottom"
+  }
+}

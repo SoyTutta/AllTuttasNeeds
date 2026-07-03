@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "environmental:block/indiscrete_door/pine_door_bottom",
+    "top": "environmental:block/indiscrete_door/pine_door_top"
+  }
+}
