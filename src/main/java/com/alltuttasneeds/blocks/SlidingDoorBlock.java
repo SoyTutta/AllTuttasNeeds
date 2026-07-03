@@ -108,17 +108,21 @@ public class SlidingDoorBlock extends DoorBlock {
     }
 
     private static BlockState updateInWall(BlockState st, LevelReader world, BlockPos pos) {
-        Direction face       = st.getValue(FACING);
-        DoorHingeSide hinge   = st.getValue(HINGE);
-        Direction side        = hinge == DoorHingeSide.LEFT ? face.getCounterClockWise() : face.getClockWise();
-        Direction vert        = st.getValue(HALF) == DoubleBlockHalf.UPPER ? Direction.DOWN : Direction.UP;
+        Direction face = st.getValue(FACING);
+        DoorHingeSide hinge = st.getValue(HINGE);
+        Direction side = hinge == DoorHingeSide.LEFT ? face.getCounterClockWise() : face.getClockWise();
+        Direction vert = st.getValue(HALF) == DoubleBlockHalf.UPPER ? Direction.DOWN : Direction.UP;
 
-        for (BlockPos p : new BlockPos[]{ pos.relative(side), pos.relative(side).relative(vert) }) {
-            BlockState bs = world.getBlockState(p);
-            if (bs.isSolid() && !(bs.getBlock() instanceof SlidingDoorBlock) && !(bs.getBlock() instanceof IronBarsBlock) && !bs.is(TDTags.POSSIBLE_SLIDING)) {
-                return st.setValue(IN_WALL, true);
-            }
-        }
-        return st.setValue(IN_WALL, false);
+        BlockPos sidePos = pos.relative(side);
+        boolean blocked = blocksSliding(world.getBlockState(sidePos))
+                || blocksSliding(world.getBlockState(sidePos.relative(vert)));
+        return st.setValue(IN_WALL, blocked);
+    }
+
+    private static boolean blocksSliding(BlockState state) {
+        return state.isSolid()
+                && !(state.getBlock() instanceof SlidingDoorBlock)
+                && !(state.getBlock() instanceof IronBarsBlock)
+                && !state.is(TDTags.POSSIBLE_SLIDING);
     }
 }

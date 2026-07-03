@@ -1,24 +1,25 @@
 package com.alltuttasneeds.registry.compat;
 
-import com.alltuttasneeds.blocks.PetDoorBlock;
-import com.alltuttasneeds.blocks.TransitDoorBlock;
+import com.alltuttasneeds.registry.compat.framework.CompatRegistrar;
+import com.alltuttasneeds.registry.compat.framework.ModCompat;
+import com.alltuttasneeds.registry.compat.framework.WoodFamily;
 import com.soytutta.mynethersdelight.common.registry.MNDBlocks;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
-public class MNDContent {
+import static com.alltuttasneeds.registry.compat.framework.DoorVariant.*;
+
+/** My Nether's Delight door compatibility. */
+public final class MNDContent implements ModCompat {
+    public static final MNDContent INSTANCE = new MNDContent();
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, "mynethersdelight");
     public static final DeferredRegister<Item>  ITEMS  = DeferredRegister.create(Registries.ITEM,  "mynethersdelight");
@@ -26,47 +27,24 @@ public class MNDContent {
     public static final Map<String, Supplier<? extends Block>> DOORS      = new HashMap<>();
     public static final Map<String, Supplier<Item>>  DOOR_ITEMS = new HashMap<>();
 
-    private static class SafeAccess {
-        static final Supplier<BlockSetType> POWDERY_SET = () -> BlockSetType.BAMBOO;
-
-        static final Supplier<? extends Block> POWDERY_DOOR = MNDBlocks.POWDERY_DOOR;
-    }
-
-    record WoodConfig(Supplier<BlockSetType> type, String woodName, Supplier<? extends Block> baseDoor, boolean discrete, boolean indiscrete, boolean transit, boolean pet) {}
-
-    private static final List<WoodConfig> CONFIGS = List.of(
-            new WoodConfig(SafeAccess.POWDERY_SET,"powdery",  SafeAccess.POWDERY_DOOR, true, true, true, true)
+    private static final List<WoodFamily> WOOD_FAMILIES = List.of(
+            new WoodFamily("mynethersdelight:powdery", "powdery",
+                    () -> BlockSetType.BAMBOO, MNDBlocks.POWDERY_DOOR,
+                    List.of(DISCRETE, ORIGINAL, INDISCRETE, TRANSIT, PET, TRAPDOOR), true)
     );
 
     static {
-        for (WoodConfig cfg : CONFIGS) {
-            if (cfg.discrete())   register(cfg.woodName(), "discrete_door",   cfg.type(), cfg.baseDoor(), DoorBlock::new);
-            if (cfg.indiscrete()) register(cfg.woodName(), "indiscrete_door", cfg.type(), cfg.baseDoor(), DoorBlock::new);
-            if (cfg.transit())    register(cfg.woodName(), "transit_door",    cfg.type(), cfg.baseDoor(), TransitDoorBlock::new);
-            if (cfg.pet())        register(cfg.woodName(), "pet_door",        cfg.type(), cfg.baseDoor(), PetDoorBlock::new);
-        }
+        CompatRegistrar.registerWoodFamilies(BLOCKS, ITEMS, DOORS, DOOR_ITEMS, WOOD_FAMILIES);
     }
 
-    private static void register(
-            String woodName,
-            String variant,
-            Supplier<BlockSetType> setTypeSupplier,
-            Supplier<? extends Block> baseDoor,
-            BiFunction<BlockSetType, BlockBehaviour.Properties, Block> factory
-    ) {
-        String name = woodName + "_" + variant;
-        Supplier<Block> block = BLOCKS.register(name,
-                () -> {
-                    BlockSetType resolvedSetType = setTypeSupplier.get();
-                    BlockBehaviour.Properties properties = BlockBehaviour.Properties.ofFullCopy(baseDoor.get());
-                    return factory.apply(resolvedSetType, properties);
-                }
-        );
-        DOORS.put(name, block);
+    private MNDContent() {}
 
-        Supplier<Item> item = ITEMS.register(name,
-                () -> new BlockItem(block.get(), new Item.Properties())
-        );
-        DOOR_ITEMS.put(name, item);
-    }
+    @Override public Mods mod() { return Mods.MYNETHERSDELIGHT; }
+    @Override public String namespace() { return "mynethersdelight"; }
+    @Override public DeferredRegister<Block> blocks() { return BLOCKS; }
+    @Override public DeferredRegister<Item> items() { return ITEMS; }
+    @Override public Map<String, Supplier<? extends Block>> doors() { return DOORS; }
+    @Override public Map<String, Supplier<Item>> doorItems() { return DOOR_ITEMS; }
+    @Override public List<WoodFamily> woodFamilies() { return WOOD_FAMILIES; }
+    @Override public String recipeFolder(WoodFamily family) { return "crafting/"; }
 }

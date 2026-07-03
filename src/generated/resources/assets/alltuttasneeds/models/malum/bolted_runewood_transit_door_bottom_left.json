@@ -1,6 +1,0 @@
-{
-  "parent": "tuttasdoors:block/transit_door_bottom_left",
-  "textures": {
-    "door": "malum:block/transit_door/bolted_runewood_door_bottom"
-  }
-}

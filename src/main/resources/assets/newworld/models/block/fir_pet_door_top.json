@@ -1,8 +1,0 @@
-{
-  "parent": "tuttasdoors:block/pet_door_top",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "door": "newworld:block/pet_door/fir_door",
-    "extra": "newworld:block/fir_door_top"
-  }
-}

@@ -29,7 +29,7 @@ public class ClientModEvents {
                 ATNTextUtils.getTranslation("tooltip.style.discreet")
                         .withStyle(ChatFormatting.BLUE));
 
-        TOOLTIP_MAP.put(TDTags.CLASIC_DOORS_ITEMS,
+        TOOLTIP_MAP.put(TDTags.CLASSIC_DOORS_ITEMS,
                 ATNTextUtils.getTranslation("tooltip.style.normal")
                         .withStyle(ChatFormatting.AQUA));
 

@@ -11,11 +11,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.phys.BlockHitResult;
 
+import java.util.function.Supplier;
+
 public class SecretDoorBlock extends DoorBlock {
 
-    private final java.util.function.Supplier<Block> disguise;
+    private final Supplier<Block> disguise;
 
-    public SecretDoorBlock(BlockSetType type, Properties properties, java.util.function.Supplier<Block> disguise) {
+    public SecretDoorBlock(BlockSetType type, Properties properties, Supplier<Block> disguise) {
         super(type, properties);
         this.disguise = disguise;
     }

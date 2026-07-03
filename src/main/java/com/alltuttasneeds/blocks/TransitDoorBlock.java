@@ -7,33 +7,46 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import javax.annotation.Nullable;
 import java.util.List;
-
 public class TransitDoorBlock extends DoorBlock {
 
-    protected static final VoxelShape SOUTH_AABB = Block.box(0.0F, 0.0F, 0.0F, 16.0F, 16.0F, 3.0F);
-    protected static final VoxelShape NORTH_AABB = Block.box(0.0F, 0.0F, 13.0F, 16.0F, 16.0F, 16.0F);
-    protected static final VoxelShape WEST_AABB = Block.box(13.0F, 0.0F, 0.0F, 16.0F, 16.0F, 16.0F);
-    protected static final VoxelShape EAST_AABB = Block.box(0.0F, 0.0F, 0.0F, 3.0F, 16.0F, 16.0F);
+    protected static final VoxelShape LOWER_SOUTH_AABB = Block.box(0.0F, 3.0F, 0.0F, 16.0F, 16.0F, 3.0F);
+    protected static final VoxelShape LOWER_NORTH_AABB = Block.box(0.0F, 3.0F, 13.0F, 16.0F, 16.0F, 16.0F);
+    protected static final VoxelShape LOWER_WEST_AABB  = Block.box(13.0F, 3.0F, 0.0F, 16.0F, 16.0F, 16.0F);
+    protected static final VoxelShape LOWER_EAST_AABB  = Block.box(0.0F, 3.0F, 0.0F, 3.0F, 16.0F, 16.0F);
+    protected static final VoxelShape UPPER_SOUTH_AABB = Block.box(0.0F, 0.0F, 0.0F, 16.0F, 14.0F, 3.0F);
+    protected static final VoxelShape UPPER_NORTH_AABB = Block.box(0.0F, 0.0F, 13.0F, 16.0F, 14.0F, 16.0F);
+    protected static final VoxelShape UPPER_WEST_AABB  = Block.box(13.0F, 0.0F, 0.0F, 16.0F, 14.0F, 16.0F);
+    protected static final VoxelShape UPPER_EAST_AABB  = Block.box(0.0F, 0.0F, 0.0F, 3.0F, 14.0F, 16.0F);
 
-    protected static final VoxelShape SOUTH_ENTITY_AABB = Block.box(0.0F, 0.0F, 1.0F, 16.0F, 16.0F, 2.0F);
-    protected static final VoxelShape NORTH_ENTITY_AABB = Block.box(0.0F, 0.0F, 14.0F, 16.0F, 16.0F, 15.0F);
-    protected static final VoxelShape WEST_ENTITY_AABB = Block.box(14.0F, 0.0F, 0.0F, 15.0F, 16.0F, 16.0F);
-    protected static final VoxelShape EAST_ENTITY_AABB = Block.box(1.0F, 0.0F, 0.0F, 2.0F, 16.0F, 16.0F);
+    protected static final VoxelShape LOWER_SOUTH_ENTITY_AABB = Block.box(0.0F, 3.0F, 1.0F, 16.0F, 16.0F, 2.0F);
+    protected static final VoxelShape LOWER_NORTH_ENTITY_AABB = Block.box(0.0F, 3.0F, 14.0F, 16.0F, 16.0F, 15.0F);
+    protected static final VoxelShape LOWER_WEST_ENTITY_AABB  = Block.box(14.0F, 3.0F, 0.0F, 15.0F, 16.0F, 16.0F);
+    protected static final VoxelShape LOWER_EAST_ENTITY_AABB  = Block.box(1.0F, 3.0F, 0.0F, 2.0F, 16.0F, 16.0F);
+    protected static final VoxelShape UPPER_SOUTH_ENTITY_AABB = Block.box(0.0F, 0.0F, 1.0F, 16.0F, 14.0F, 2.0F);
+    protected static final VoxelShape UPPER_NORTH_ENTITY_AABB = Block.box(0.0F, 0.0F, 14.0F, 16.0F, 14.0F, 15.0F);
+    protected static final VoxelShape UPPER_WEST_ENTITY_AABB  = Block.box(14.0F, 0.0F, 0.0F, 15.0F, 14.0F, 16.0F);
+    protected static final VoxelShape UPPER_EAST_ENTITY_AABB  = Block.box(1.0F, 0.0F, 0.0F, 2.0F, 14.0F, 16.0F);
 
     public TransitDoorBlock(BlockSetType type, Properties properties) {
         super(type, properties);
@@ -42,33 +55,41 @@ public class TransitDoorBlock extends DoorBlock {
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
-        boolean flag = !(Boolean)state.getValue(OPEN);
-        boolean flag1 = state.getValue(HINGE) == DoorHingeSide.RIGHT;
-        VoxelShape var10000;
-        switch (direction) {
-            case SOUTH -> var10000 = flag ? SOUTH_AABB : (flag1 ? EAST_AABB : WEST_AABB);
-            case WEST -> var10000 = flag ? WEST_AABB : (flag1 ? SOUTH_AABB : NORTH_AABB);
-            case NORTH -> var10000 = flag ? NORTH_AABB : (flag1 ? WEST_AABB : EAST_AABB);
-            default -> var10000 = flag ? EAST_AABB : (flag1 ? NORTH_AABB : SOUTH_AABB);
-        }
+        boolean closed    = !state.getValue(OPEN);
+        boolean rightHinge = state.getValue(HINGE) == DoorHingeSide.RIGHT;
+        boolean isUpper   = state.getValue(HALF) == DoubleBlockHalf.UPPER;
 
-        return var10000;
+        VoxelShape south = isUpper ? UPPER_SOUTH_AABB : LOWER_SOUTH_AABB;
+        VoxelShape north = isUpper ? UPPER_NORTH_AABB : LOWER_NORTH_AABB;
+        VoxelShape west  = isUpper ? UPPER_WEST_AABB  : LOWER_WEST_AABB;
+        VoxelShape east  = isUpper ? UPPER_EAST_AABB  : LOWER_EAST_AABB;
+
+        return switch (direction) {
+            case SOUTH -> closed ? south : (rightHinge ? east  : west);
+            case WEST  -> closed ? west  : (rightHinge ? south : north);
+            case NORTH -> closed ? north : (rightHinge ? west  : east);
+            default    -> closed ? east  : (rightHinge ? north : south);
+        };
     }
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
-        boolean flag = !(Boolean)state.getValue(OPEN);
-        boolean flag1 = state.getValue(HINGE) == DoorHingeSide.RIGHT;
-        VoxelShape entityShape;
-        switch (direction) {
-            case SOUTH -> entityShape = flag ? SOUTH_ENTITY_AABB : (flag1 ? EAST_ENTITY_AABB : WEST_ENTITY_AABB);
-            case WEST -> entityShape = flag ? WEST_ENTITY_AABB : (flag1 ? SOUTH_ENTITY_AABB : NORTH_ENTITY_AABB);
-            case NORTH -> entityShape = flag ? NORTH_ENTITY_AABB : (flag1 ? WEST_ENTITY_AABB : EAST_ENTITY_AABB);
-            default -> entityShape = flag ? EAST_ENTITY_AABB : (flag1 ? NORTH_ENTITY_AABB : SOUTH_ENTITY_AABB);
-        }
+        boolean closed     = !state.getValue(OPEN);
+        boolean rightHinge = state.getValue(HINGE) == DoorHingeSide.RIGHT;
+        boolean isUpper    = state.getValue(HALF) == DoubleBlockHalf.UPPER;
 
-        return entityShape;
+        VoxelShape south = isUpper ? UPPER_SOUTH_ENTITY_AABB : LOWER_SOUTH_ENTITY_AABB;
+        VoxelShape north = isUpper ? UPPER_NORTH_ENTITY_AABB : LOWER_NORTH_ENTITY_AABB;
+        VoxelShape west  = isUpper ? UPPER_WEST_ENTITY_AABB  : LOWER_WEST_ENTITY_AABB;
+        VoxelShape east  = isUpper ? UPPER_EAST_ENTITY_AABB  : LOWER_EAST_ENTITY_AABB;
+
+        return switch (direction) {
+            case SOUTH -> closed ? south : (rightHinge ? east  : west);
+            case WEST  -> closed ? west  : (rightHinge ? south : north);
+            case NORTH -> closed ? north : (rightHinge ? west  : east);
+            default    -> closed ? east  : (rightHinge ? north : south);
+        };
     }
 
     @Override
@@ -89,14 +110,13 @@ public class TransitDoorBlock extends DoorBlock {
 
             if (entity instanceof Animal) {
                 boolean isMounted = !entity.getPassengers().isEmpty();
-                boolean isTamed = (entity instanceof TamableAnimal tamable && tamable.isTame());
-
+                boolean isTamed   = (entity instanceof TamableAnimal tamable && tamable.isTame());
                 if (!isMounted && !isTamed) {
                     continue;
                 }
             }
 
-            Direction facing = state.getValue(FACING);
+            Direction facing   = state.getValue(FACING);
             DoorHingeSide hinge = state.getValue(HINGE);
 
             Direction hingeSide = (hinge == DoorHingeSide.RIGHT)
@@ -123,12 +143,21 @@ public class TransitDoorBlock extends DoorBlock {
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (isReceivingRedstonePower(state, level, pos)) {
+            return;
+        }
+
         if (!level.getEntitiesOfClass(Entity.class, getBoundingBox(pos)).isEmpty()) {
             handleEntityLogic(state, level, pos);
-            level.scheduleTick(pos, this, 10);
+            level.scheduleTick(pos, this, 20);
             return;
         }
         this.setOpen(null, level, state, pos, false);
+    }
+
+    private static boolean isReceivingRedstonePower(BlockState state, ServerLevel level, BlockPos pos) {
+        BlockPos lowerPos = state.getValue(HALF) == DoubleBlockHalf.LOWER ? pos : pos.below();
+        return level.hasNeighborSignal(lowerPos) || level.hasNeighborSignal(lowerPos.above());
     }
 
     private static AABB getBoundingBox(BlockPos pos) {
@@ -144,12 +173,67 @@ public class TransitDoorBlock extends DoorBlock {
     }
 
     @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
-        switch (pathComputationType) {
-            case LAND, AIR:
-                return true;
-            default:
-                return false;
+    protected boolean isPathfindable(BlockState state, PathComputationType type) {
+        return type != PathComputationType.WATER;
+    }
+
+    private Direction getHingeDirection(BlockState state) {
+        return state.getValue(HINGE) == DoorHingeSide.LEFT
+                ? state.getValue(FACING).getCounterClockWise()
+                : state.getValue(FACING).getClockWise();
+    }
+
+    private boolean hasHingeSupport(LevelReader level, BlockPos pos, Direction dir) {
+        pos = pos.relative(dir);
+        return level.getBlockState(pos).isFaceSturdy(level, pos, dir.getOpposite());
+    }
+
+    private boolean hasFloorSupport(LevelReader level, BlockPos pos) {
+        pos = pos.below();
+        return level.getBlockState(pos).isFaceSturdy(level, pos, Direction.UP);
+    }
+
+    @Override
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockPos base = state.getValue(HALF) == DoubleBlockHalf.LOWER ? pos : pos.below();
+        Direction hinge = getHingeDirection(state);
+
+        return hasFloorSupport(level, base)
+                || hasHingeSupport(level, base, hinge)
+                && hasHingeSupport(level, base.above(), hinge);
+    }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        BlockState state = super.getStateForPlacement(context);
+        if (state == null) return null;
+
+        BlockPos pos = context.getClickedPos();
+        Direction hinge = getHingeDirection(state);
+
+        return hasFloorSupport(context.getLevel(), pos)
+                || hasHingeSupport(context.getLevel(), pos, hinge)
+                && hasHingeSupport(context.getLevel(), pos.above(), hinge)
+                ? state
+                : null;
+    }
+
+    @Override
+    protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+                                     LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+        DoubleBlockHalf half = state.getValue(HALF);
+
+        if (direction.getAxis() == Direction.Axis.Y
+                && (half == DoubleBlockHalf.LOWER) == (direction == Direction.UP)) {
+            return neighborState.getBlock() instanceof DoorBlock
+                    && neighborState.getValue(HALF) != half
+                    ? neighborState.setValue(HALF, half)
+                    : Blocks.AIR.defaultBlockState();
         }
+
+        return state.canSurvive(level, pos)
+                ? super.updateShape(state, direction, neighborState, level, pos, neighborPos)
+                : Blocks.AIR.defaultBlockState();
     }
 }

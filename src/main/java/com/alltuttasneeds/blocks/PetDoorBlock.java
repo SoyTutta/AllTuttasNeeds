@@ -19,8 +19,6 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -92,24 +90,12 @@ public class PetDoorBlock extends TrapDoorBlock {
 
         if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
 
-            if (entity instanceof Player player) {
-
-                boolean validPose = player.isCrouching() || player.isSwimming();
-
-                if (!validPose) {
-                    return;
-                }
-
-                HitResult result = player.pick(5.0D, 0.0F, false);
-
-                if (result.getType() == HitResult.Type.BLOCK) {
-                    BlockHitResult blockHit = (BlockHitResult) result;
-                    if (!blockHit.getBlockPos().equals(pos)) {
-                        return;
-                    }
-                } else {
-                    return;
-                }
+            if (entity instanceof Player player
+                    && state.getValue(HALF) == Half.TOP
+                    && !(player.isCrouching()
+                    || player.isSwimming()
+                    || player.getBoundingBox().maxY <= pos.getY() + 1.0)) {
+                return;
             }
 
             if (!state.getValue(OPEN)) {
@@ -122,6 +108,10 @@ public class PetDoorBlock extends TrapDoorBlock {
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (state.getValue(POWERED)) {
+            return;
+        }
+
         if (!level.getEntitiesOfClass(Entity.class, getBoundingBox(pos)).isEmpty()) {
             level.scheduleTick(pos, state.getBlock(), 20);
             return;
@@ -145,41 +135,37 @@ public class PetDoorBlock extends TrapDoorBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        BlockState blockstate = this.defaultBlockState();
-        FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
-        Direction direction = context.getClickedFace();
+        Player player = context.getPlayer();
+        Direction face = context.getClickedFace();
+        FluidState fluid = context.getLevel().getFluidState(context.getClickedPos());
 
-        boolean isSneaking = context.getPlayer() != null && context.getPlayer().isShiftKeyDown();
+        Direction facing = face.getAxis().isHorizontal()
+                ? face
+                : context.getHorizontalDirection();
 
-        if (!context.replacingClickedOnBlock() && direction.getAxis().isHorizontal()) {
-            blockstate = blockstate.setValue(FACING, direction);
+        boolean invert = player != null && player.isShiftKeyDown();
 
-            boolean hitTopPart = context.getClickLocation().y - (double)context.getClickedPos().getY() > 0.5D;
+        Half half = (player != null && player.getLookAngle().y > 0)
+                ? Half.TOP
+                : Half.BOTTOM;
 
-            if (isSneaking) {
-                blockstate = blockstate.setValue(HALF, hitTopPart ? Half.BOTTOM : Half.TOP);
-            } else {
-                blockstate = blockstate.setValue(HALF, hitTopPart ? Half.TOP : Half.BOTTOM);
-            }
-
-        } else {
-            blockstate = blockstate.setValue(FACING, context.getHorizontalDirection().getOpposite());
-            Half standardHalf = (direction == Direction.UP) ? Half.BOTTOM : Half.TOP;
-
-            if (isSneaking) {
-                blockstate = blockstate.setValue(HALF, standardHalf == Half.BOTTOM ? Half.TOP : Half.BOTTOM);
-            } else {
-                blockstate = blockstate.setValue(HALF, standardHalf);
-            }
+        if (invert) {
+            half = half == Half.TOP ? Half.BOTTOM : Half.TOP;
         }
+
+        BlockState state = defaultBlockState()
+                .setValue(FACING, facing)
+                .setValue(HALF, half)
+                .setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
 
         if (context.getLevel().hasNeighborSignal(context.getClickedPos())) {
-            blockstate = blockstate.setValue(OPEN, true).setValue(POWERED, true);
+            state = state.setValue(OPEN, true)
+                    .setValue(POWERED, true);
         }
 
-        return blockstate.setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+        return state;
     }
-    
+
     private static AABB getBoundingBox(BlockPos pos) {
         double offset = 0.05;
         return new AABB(

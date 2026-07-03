@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_left",
-  "textures": {
-    "bottom": "mynethersdelight:block/discrete_door/powdery_door_bottom",
-    "top": "mynethersdelight:block/discrete_door/powdery_door_top"
-  }
-}

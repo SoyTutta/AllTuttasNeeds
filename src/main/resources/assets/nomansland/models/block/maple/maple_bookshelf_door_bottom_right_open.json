@@ -1,8 +1,0 @@
-{
-	"parent": "tuttasdoors:block/secret_door_bottom_right_open",
-	"textures": {
-		"fake": "nomansland:block/maple/maple_bookshelf",
-		"side": "nomansland:block/maple/maple_planks",
-		"door": "nomansland:block/secret_door/maple_bookshelf_door_bottom"
-	}
-}

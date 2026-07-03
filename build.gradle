@@ -53,7 +53,6 @@ neoForge {
     runs {
         client {
             client()
-
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         }
 
@@ -75,7 +74,6 @@ neoForge {
 
         configureEach {
             systemProperty 'forge.logging.markers', 'REGISTRIES'
-
             logLevel = org.slf4j.event.Level.DEBUG
         }
     }
@@ -98,40 +96,60 @@ dependencies {
     compileOnly "mezz.jei:jei-$minecraft_version-neoforge-api:19.21.0.247"
     localRuntime "mezz.jei:jei-$minecraft_version-neoforge:19.21.0.247"
 
-    implementation "maven.modrinth:jade:15.10.4+neoforge"
+    implementation "maven.modrinth:jade:15.10.5+neoforge"
 
-    implementation "maven.modrinth:clutter-no-more:1.1.8+1.21.1-neoforge"
-    implementation "maven.modrinth:moonlight:1.21-2.23.6-neoforge"
+    //implementation "maven.modrinth:clutter-no-more:2.0.3+1.21.1-neoforge"
+    implementation "maven.modrinth:moonlight:1.21-2.29.29-neoforge"
 
     implementation "maven.modrinth:new_world:1.7.2"
 
+    implementation "maven.modrinth:vanillabackport:rUSWdBok"
+    implementation "maven.modrinth:i6fiqm5y:v7P0nBi2"
+
     implementation "maven.modrinth:the-block-box:0.1.1"
 
-    implementation "maven.modrinth:farmers-delight:1.21.1-1.2.8"
+    implementation "maven.modrinth:farmers-delight:1.21.1-1.3.2"
     implementation "maven.modrinth:my-nethers-delight:1.8"
 
-    implementation "maven.modrinth:malum:1.7.3.1"
-    implementation "maven.modrinth:lodestonelib:1.7.1"
+    implementation "curse.maven:malum-484064:7307339"
+    implementation "maven.modrinth:lodestonelib:1.8.2"
     implementation "maven.modrinth:curios:9.5.1+1.21.1"
 
-    implementation "maven.modrinth:no-mans-land:1.3.1"
-    implementation "com.terraformersmc:biolith-neoforge:3.0.1"
-    implementation "maven.modrinth:mixed-litter:0.1.2"
+    implementation "maven.modrinth:no-mans-land:1.5.9"
+    implementation "maven.modrinth:biolith:xaeaSA9Q"
+    implementation "maven.modrinth:mixed-litter:1.2.2"
 
     implementation "curse.maven:enderscape-536638:6738966"
     implementation "maven.modrinth:trimmed:1.21-3.0.0+neoforge"
     implementation "maven.modrinth:yacl:3.7.1+1.21.1-neoforge"
 
-    implementation "curse.maven:artsandcrafts-1034791:6746626"
+    implementation "curse.maven:artsandcrafts-1034791:8041062"
     implementation "curse.maven:jinxedlib-1203401:6727693"
 
-    implementation "maven.modrinth:natures-spirit:sUhwOqbY"
+    implementation "maven.modrinth:natures-spirit:2.2.5-1.21.1"
 
-    implementation "curse.maven:create-328085:6641610"
+    implementation "curse.maven:create-328085:7963363"
 
-    implementation "curse.maven:biomes-o-plenty-220318:6631072"
+    implementation "curse.maven:biomes-o-plenty-220318:7251965"
     implementation "curse.maven:terrablender-neoforge-940057:6054947"
-    implementation "curse.maven:glitchcore-955399:5660740"
+    implementation "maven.modrinth:glitchcore:S2TfWrZR"
+
+    implementation "maven.modrinth:architects-palette:1.4.0-beta.5N"
+
+    implementation "maven.modrinth:abundant-atmosphere:1.21.1-2.0.0-beta"
+
+    implementation "maven.modrinth:blueprint:8.1.0"
+
+    implementation "maven.modrinth:upgrade-aquatic:7.0.1"
+    implementation "maven.modrinth:atmospheric:7.0.1"
+    implementation "maven.modrinth:autumnity:6.0.1"
+    implementation "maven.modrinth:environmental:5.0.1"
+    implementation "maven.modrinth:caverns-and-chasms:3.0.0"
+    implementation "maven.modrinth:gallery:2.0.1"
+
+    implementation "maven.modrinth:spawn-mod:4.0.4"
+
+    implementation "maven.modrinth:woodworks:4.0.2"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

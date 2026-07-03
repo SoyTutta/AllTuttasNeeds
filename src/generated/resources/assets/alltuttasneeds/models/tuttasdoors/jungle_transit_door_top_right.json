@@ -1,6 +1,0 @@
-{
-  "parent": "tuttasdoors:block/transit_door_top_right",
-  "textures": {
-    "door": "tuttasdoors:block/transit_door/jungle_door_top"
-  }
-}

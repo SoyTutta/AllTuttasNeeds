@@ -1,6 +1,0 @@
-{
-  "parent": "tuttasdoors:block/transit_door_top_right_open",
-  "textures": {
-    "door": "natures_spirit:block/transit_door/cypress_door_top"
-  }
-}

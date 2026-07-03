@@ -1,8 +1,0 @@
-{
-	"parent": "tuttasdoors:block/secret_door_top_right_open",
-	"textures": {
-		"fake": "newworld:block/fir_bookshelf",
-		"side": "newworld:block/fir_planks",
-		"door": "newworld:block/secret_door/fir_bookshelf_door_top"
-	}
-}

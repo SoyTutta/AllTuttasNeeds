@@ -1,6 +1,0 @@
-{
-  "parent": "tuttasdoors:block/transit_door_bottom_right_open",
-  "textures": {
-    "door": "natures_spirit:block/transit_door/larch_door_bottom"
-  }
-}

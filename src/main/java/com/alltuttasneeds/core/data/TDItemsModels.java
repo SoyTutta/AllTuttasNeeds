@@ -1,6 +1,6 @@
 package com.alltuttasneeds.core.data;
 
-import com.alltuttasneeds.registry.TDContent;
+import com.alltuttasneeds.registry.compat.framework.CompatRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -8,7 +8,7 @@ import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
-import java.util.*;
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class TDItemsModels extends ItemModelProvider {
@@ -20,7 +20,7 @@ public class TDItemsModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        registerFromMap(TDContent.DOOR_ITEMS, "tuttasdoors");
+        CompatRegistry.loaded().forEach(compat -> registerFromMap(compat.doorItems(), compat.namespace()));
     }
 
     private void registerFromMap(Map<String, Supplier<Item>> itemMap, String modNamespace) {
@@ -36,10 +36,10 @@ public class TDItemsModels extends ItemModelProvider {
     }
 
     private String itemName(Item item) {
-        return BuiltInRegistries.ITEM.getKey(item).getPath();
+        return BuiltInRegistries.ITEM.getKey(item).toString();
     }
 
     private ResourceLocation resourceItem(String name, String modNamespace) {
-        return ResourceLocation.fromNamespaceAndPath(modNamespace, "item/" + name);
+        return ResourceLocation.fromNamespaceAndPath(modNamespace, "item/" + name.replace("waxed_", ""));
     }
 }

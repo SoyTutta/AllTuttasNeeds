@@ -1,12 +1,10 @@
 package com.alltuttasneeds.core.data.langs;
 
-import com.alltuttasneeds.registry.TDContent;
-import com.alltuttasneeds.registry.compat.*;
+import com.alltuttasneeds.registry.compat.framework.CompatRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -86,51 +84,23 @@ public class ESLang extends LanguageProvider {
         MATERIAL_TRANSLATION_MAP.put("sugi", "sugi");
         MATERIAL_TRANSLATION_MAP.put("wisteria", "glicina");
 
-        MATERIAL_TRANSLATION_MAP.put("walnut", "nogal");
+        MATERIAL_TRANSLATION_MAP.put("ashroot", "raíz de fresno");
+        MATERIAL_TRANSLATION_MAP.put("gourdrot", "tallo de calabaza");
+        MATERIAL_TRANSLATION_MAP.put("red_bamboo", "bambú rojo");
     }
 
-    private final List<DeferredRegister<Block>> allBlockRegistries = new ArrayList<>();
+    private final List<DeferredHolder<Block, ? extends Block>> allBlocks = new ArrayList<>();
 
     public ESLang(PackOutput output) {
         super(output, "tuttasdoors", "es_es");
 
-        allBlockRegistries.add(TDContent.BLOCKS);
-        if (Mods.NOMANSLAND.isLoaded()) {
-            allBlockRegistries.add(NMLContent.BLOCKS);
-        }
-        if (Mods.BLOCKBOX.isLoaded()) {
-            allBlockRegistries.add(BBContent.BLOCKS);
-        }
-        if (Mods.NEWWORLD.isLoaded()) {
-            allBlockRegistries.add(NWContent.BLOCKS);
-        }
-        if (Mods.MYNETHERSDELIGHT.isLoaded()) {
-            allBlockRegistries.add(MNDContent.BLOCKS);
-        }
-        if (Mods.ENDERSCAPE.isLoaded()) {
-            allBlockRegistries.add(ESContent.BLOCKS);
-        }
-        if (Mods.ARTS_AND_CRAFTS.isLoaded()) {
-            allBlockRegistries.add(ACContent.BLOCKS);
-        }
-        if (Mods.BIOMESOPLENTY.isLoaded()) {
-            allBlockRegistries.add(BoPContent.BLOCKS);
-        }
-        if (Mods.NATURES_SPIRIT.isLoaded()) {
-            allBlockRegistries.add(NSContent.BLOCKS);
-        }
-        if (Mods.CREATE.isLoaded()) {
-            allBlockRegistries.add(CreateContent.BLOCKS);
-        }
-        if (Mods.MALUM.isLoaded()) {
-            allBlockRegistries.add(MalumContent.BLOCKS);
-        }
+        CompatRegistry.loaded().forEach(compat ->
+                compat.blocks().getEntries().forEach(allBlocks::add));
     }
 
     @Override
     protected void addTranslations() {
-        allBlockRegistries.stream()
-                .flatMap(deferredRegister -> deferredRegister.getEntries().stream())
+        allBlocks.stream()
                 .map(DeferredHolder::get)
                 .forEach(this::addBlockTranslation);
 

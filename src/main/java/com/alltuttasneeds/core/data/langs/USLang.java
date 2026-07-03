@@ -1,18 +1,15 @@
 package com.alltuttasneeds.core.data.langs;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.alltuttasneeds.registry.TDContent;
-import com.alltuttasneeds.registry.compat.*;
-import com.alltuttasneeds.registry.compat.NWContent;
+import com.alltuttasneeds.registry.compat.framework.CompatRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class USLang extends LanguageProvider {
 
@@ -27,49 +24,21 @@ public class USLang extends LanguageProvider {
         DOOR_TYPE_MAP.put("_boards", "Board");
     }
 
-    private final List<DeferredRegister<Block>> allBlockRegistries = new ArrayList<>();
+    private final List<DeferredHolder<Block, ? extends Block>> allBlocks = new ArrayList<>();
 
     public USLang(PackOutput output) {
         super(output, "tuttasdoors", "en_us");
 
-        allBlockRegistries.add(TDContent.BLOCKS);
-
-        if (Mods.NOMANSLAND.isLoaded()) {
-            allBlockRegistries.add(NMLContent.BLOCKS);
-        }
-        if (Mods.BLOCKBOX.isLoaded()) {
-            allBlockRegistries.add(BBContent.BLOCKS);
-        }
-        if (Mods.NEWWORLD.isLoaded()) {
-            allBlockRegistries.add(NWContent.BLOCKS);
-        }
-        if (Mods.MYNETHERSDELIGHT.isLoaded()) {
-            allBlockRegistries.add(MNDContent.BLOCKS);
-        }
-        if (Mods.ENDERSCAPE.isLoaded()) {
-            allBlockRegistries.add(ESContent.BLOCKS);
-        }
-        if (Mods.ARTS_AND_CRAFTS.isLoaded()) {
-            allBlockRegistries.add(ACContent.BLOCKS);
-        }
-        if (Mods.BIOMESOPLENTY.isLoaded()) {
-            allBlockRegistries.add(BoPContent.BLOCKS);
-        }
-        if (Mods.NATURES_SPIRIT.isLoaded()) {
-            allBlockRegistries.add(NSContent.BLOCKS);
-        }
-        if (Mods.CREATE.isLoaded()) {
-            allBlockRegistries.add(CreateContent.BLOCKS);
-        }
-        if (Mods.MALUM.isLoaded()) {
-            allBlockRegistries.add(MalumContent.BLOCKS);
-        }
+        // Was 10 manual "if (Mods.X.isLoaded()) allBlockRegistries.add(XContent.BLOCKS)" lines.
+        // CompatRegistry.loaded() already filters to loaded mods, and each compat exposes its
+        // DeferredRegister<Block> via blocks().
+        CompatRegistry.loaded().forEach(compat ->
+                compat.blocks().getEntries().forEach(allBlocks::add));
     }
 
     @Override
     protected void addTranslations() {
-        allBlockRegistries.stream()
-                .flatMap(deferredRegister -> deferredRegister.getEntries().stream())
+        allBlocks.stream()
                 .map(DeferredHolder::get)
                 .forEach(this::addBlockTranslation);
 

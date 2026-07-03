@@ -20,16 +20,12 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("unused")
 @EventBusSubscriber(modid = AllTuttasNeeds.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class ATNDataGenerators {
-
-    public ATNDataGenerators() {
-    }
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
@@ -46,6 +42,7 @@ public class ATNDataGenerators {
 
         generator.addProvider(event.includeServer(), new TDRecipes(output, lookupProvider));
         generator.addProvider(event.includeServer(), new DataMaps(output, lookupProvider));
+        generator.addProvider(event.includeServer(), new ShapeMapProvider(output));
 
         generator.addProvider(event.includeServer(), new LootTableProvider(output, Collections.emptySet(), List.of(
                 new LootTableProvider.SubProviderEntry(BlockLootTables::new, LootContextParamSets.BLOCK)
@@ -59,6 +56,5 @@ public class ATNDataGenerators {
         TDBlockStates blockStates = new TDBlockStates(output, helper);
         generator.addProvider(event.includeClient(), blockStates);
         generator.addProvider(event.includeClient(), new TDItemsModels(output, blockStates.models().existingFileHelper));
-
     }
 }
