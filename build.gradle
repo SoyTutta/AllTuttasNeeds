@@ -136,7 +136,7 @@ dependencies {
 
     implementation "maven.modrinth:architects-palette:1.4.0-beta.5N"
 
-    implementation "maven.modrinth:abundant-atmosphere:1.21.1-2.0.0-beta"
+    implementation "maven.modrinth:abundant-atmosphere:1.21.1-2.0.0-beta2.1"
 
     implementation "maven.modrinth:blueprint:8.1.0"
 

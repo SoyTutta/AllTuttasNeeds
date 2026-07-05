@@ -1,7 +1,7 @@
 {
 	"parent": "tuttasdoors:block/secret_door_top_left",
 	"textures": {
-		"fake": "abundant_atmosphere:block/nml/ashroot_bookshelf",
+		"fake": "abundant_atmosphere:block/integration/nomansland/ashroot_bookshelf",
 		"side": "abundant_atmosphere:block/ashroot_planks",
 		"door": "abundant_atmosphere:block/secret_door/ashroot_bookshelf_door_top"
 	}
