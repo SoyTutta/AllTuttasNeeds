@@ -16,11 +16,17 @@ out
 # gradle
 build
 .gradle
+src/generated/resources/.cache/
 
 # other
 eclipse
 run
 runs
 run-data
+desktop.ini
+Thumbs.db
 
 repo
+
+# local documentation
+AllTuttasNeeds_DevWiki.md

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tuttasbeds:soft_bed"
+    },
+    {
+      "item": "minecraft:orange_wool"
+    },
+    {
+      "item": "minecraft:orange_wool"
+    },
+    {
+      "item": "minecraft:orange_wool"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasbeds:soft_bed_orange_wool_blanket"
+  }
+}

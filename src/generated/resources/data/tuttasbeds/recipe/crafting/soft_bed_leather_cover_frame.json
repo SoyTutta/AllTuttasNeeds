@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tuttasbeds:bed_frame"
+    },
+    {
+      "item": "tuttasbeds:soft_mattress_leather_cover"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasbeds:soft_bed_leather_cover"
+  }
+}

@@ -10,6 +10,8 @@ config="alltuttasneeds.mixins.json"
     version="${mod_version}"
     displayName="${mod_name}"
     authors="${mod_authors}"
+    displayURL="https://github.com/SoyTutta/AllTuttasNeeds"
+    issueTrackerURL="https://github.com/SoyTutta/AllTuttasNeeds/issues"
     description='''${mod_description}'''
 
 [[dependencies.${mod_id}]]
@@ -172,5 +174,12 @@ side="BOTH"
 modId="vanillabackport"
 type="optional"
 versionRange="[1.0,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="farmersdelight"
+type="optional"
+versionRange="[1.2,)"
 ordering="AFTER"
 side="BOTH"

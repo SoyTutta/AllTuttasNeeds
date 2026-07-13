@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasbeds:block/template/bed/center_head",
+  "textures": {
+    "0": "tuttasbeds:block/straw_bed_wool_blanket/yellow"
+  }
+}

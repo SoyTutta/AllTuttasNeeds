@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tuttasbeds:bed_frame"
+    },
+    {
+      "item": "tuttasbeds:wheat_mattress_wheat_cover"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasbeds:wheat_bed_wheat_cover"
+  }
+}

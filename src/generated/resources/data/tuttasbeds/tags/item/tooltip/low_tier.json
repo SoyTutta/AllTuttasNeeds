@@ -1,0 +1,28 @@
+{
+  "values": [
+    "tuttasbeds:wheat_mattress_wheat_cover",
+    "tuttasbeds:wheat_mattress_leather_cover",
+    "tuttasbeds:wheat_mattress_canvas_cover",
+    "tuttasbeds:wheat_bed_wheat_cover",
+    "tuttasbeds:wheat_bed_leather_cover",
+    "tuttasbeds:wheat_bed_canvas_cover",
+    "tuttasbeds:soft_mattress_wheat_cover",
+    "tuttasbeds:soft_mattress_leather_cover",
+    "tuttasbeds:soft_mattress_canvas_cover",
+    "tuttasbeds:soft_bed_wheat_cover",
+    "tuttasbeds:soft_bed_leather_cover",
+    "tuttasbeds:soft_bed_canvas_cover",
+    "farmersdelight:canvas_mattress_wheat_cover",
+    "farmersdelight:canvas_mattress_leather_cover",
+    "farmersdelight:canvas_mattress_canvas_cover",
+    "farmersdelight:canvas_bed_wheat_cover",
+    "farmersdelight:canvas_bed_leather_cover",
+    "farmersdelight:canvas_bed_canvas_cover",
+    "farmersdelight:straw_mattress_wheat_cover",
+    "farmersdelight:straw_mattress_leather_cover",
+    "farmersdelight:straw_mattress_canvas_cover",
+    "farmersdelight:straw_bed_wheat_cover",
+    "farmersdelight:straw_bed_leather_cover",
+    "farmersdelight:straw_bed_canvas_cover"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_canvas": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:canvas"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_straw_bale": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:straw_bale"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "farmersdelight:crafting/canvas_mattress"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_canvas",
+      "has_straw_bale"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "farmersdelight:crafting/canvas_mattress"
+    ]
+  }
+}

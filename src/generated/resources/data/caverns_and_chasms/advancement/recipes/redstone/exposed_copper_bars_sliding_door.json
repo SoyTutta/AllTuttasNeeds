@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_exposed_copper_bars": {

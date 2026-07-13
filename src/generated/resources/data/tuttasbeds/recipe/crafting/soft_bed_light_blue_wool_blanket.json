@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tuttasbeds:soft_bed"
+    },
+    {
+      "item": "minecraft:light_blue_wool"
+    },
+    {
+      "item": "minecraft:light_blue_wool"
+    },
+    {
+      "item": "minecraft:light_blue_wool"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasbeds:soft_bed_light_blue_wool_blanket"
+  }
+}

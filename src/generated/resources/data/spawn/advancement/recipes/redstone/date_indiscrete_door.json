@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "spawn"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_date_planks": {

@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasbeds:block/template/mattress/head",
+  "textures": {
+    "0": "tuttasbeds:block/canvas_mattress_leather_cover/brown"
+  }
+}

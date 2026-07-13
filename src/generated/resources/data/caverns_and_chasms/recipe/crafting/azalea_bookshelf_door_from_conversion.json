@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
   "type": "minecraft:crafting_shapeless",
   "category": "redstone",
   "group": "secret_door_conversion",

@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasbeds:block/template/bed_bunk/single_head",
+  "textures": {
+    "0": "tuttasbeds:block/soft_bed_wool_blanket/cyan"
+  }
+}

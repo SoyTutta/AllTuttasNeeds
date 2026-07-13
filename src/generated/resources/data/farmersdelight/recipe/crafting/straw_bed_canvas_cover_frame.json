@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tuttasbeds:bed_frame"
+    },
+    {
+      "item": "farmersdelight:straw_mattress_canvas_cover"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:straw_bed_canvas_cover"
+  }
+}

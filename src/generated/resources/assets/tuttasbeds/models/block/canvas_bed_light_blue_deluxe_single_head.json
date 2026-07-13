@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasbeds:block/template/bed/single_head",
+  "textures": {
+    "0": "tuttasbeds:block/canvas_bed_deluxe/light_blue"
+  }
+}

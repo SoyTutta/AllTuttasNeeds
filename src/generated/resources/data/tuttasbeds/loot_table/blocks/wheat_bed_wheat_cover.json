@@ -1,0 +1,81 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "minecraft:silk_touch",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "tuttasbeds:wheat_bed_wheat_cover",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "part": "head"
+              }
+            }
+          ],
+          "name": "tuttasbeds:wheat_bed_wheat_cover"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "minecraft:silk_touch",
+                    "levels": {
+                      "min": 1
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "tuttasbeds:wheat_bed_wheat_cover",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "part": "head"
+              }
+            }
+          ],
+          "name": "tuttasbeds:wheat_bed"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "tuttasbeds:blocks/wheat_bed_wheat_cover"
+}

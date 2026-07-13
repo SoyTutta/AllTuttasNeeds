@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tuttasbeds:wheat_bed"
+    },
+    {
+      "item": "minecraft:cyan_wool"
+    },
+    {
+      "item": "minecraft:cyan_wool"
+    },
+    {
+      "item": "minecraft:cyan_wool"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasbeds:wheat_bed_cyan_wool_blanket"
+  }
+}

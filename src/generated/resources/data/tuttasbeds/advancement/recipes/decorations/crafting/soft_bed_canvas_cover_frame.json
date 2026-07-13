@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_base": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tuttasbeds:bed_frame"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasbeds:crafting/soft_bed_canvas_cover_frame"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_base"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasbeds:crafting/soft_bed_canvas_cover_frame"
+    ]
+  }
+}

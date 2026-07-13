@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "abundant_atmosphere"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_gourdrot_door": {

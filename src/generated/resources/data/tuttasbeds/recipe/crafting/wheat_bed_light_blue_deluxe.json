@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "tuttasbeds:wheat_bed_light_blue_wool_blanket"
+    },
+    "P": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": [
+    " P ",
+    "P#P",
+    " P "
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasbeds:wheat_bed_light_blue_deluxe"
+  }
+}

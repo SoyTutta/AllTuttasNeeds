@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasbeds:block/template/bed/left_foot",
+  "textures": {
+    "0": "tuttasbeds:block/soft_bed_leather_blanket/pink"
+  }
+}

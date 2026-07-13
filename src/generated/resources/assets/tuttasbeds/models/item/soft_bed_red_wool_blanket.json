@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasbeds:item/template/bed",
+  "textures": {
+    "0": "tuttasbeds:block/soft_bed_wool_blanket/red",
+    "frame": "tuttasbeds:block/frame/brown"
+  }
+}

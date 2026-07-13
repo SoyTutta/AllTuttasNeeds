@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tuttasbeds:wheat_bed"
+    },
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:white_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasbeds:wheat_bed_white_leather_blanket"
+  }
+}

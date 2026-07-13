@@ -40,6 +40,11 @@ repositories {
 base {
     archivesName = mod_id
 }
+
+tasks.named('jar', Jar).configure {
+    from('LICENSE')
+}
+
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 neoForge {
@@ -69,6 +74,18 @@ neoForge {
 
         data {
             data()
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+
+        doorsData {
+            data()
+            systemProperty 'alltuttasneeds.datagen.profile', 'doors'
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+
+        bedsData {
+            data()
+            systemProperty 'alltuttasneeds.datagen.profile', 'beds'
             programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
         }
 

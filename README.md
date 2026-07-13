@@ -1,25 +1,31 @@
+# All Tutta's Needs
 
-Installation information
-=======
+All Tutta's Needs is a modular NeoForge mod for Minecraft 1.21.1 that combines
+Tutta's Doors and Tutta's Beds in one configurable project.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## Modules
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+- **Tutta's Doors** adds discreet, normal, indiscreet, transit, pet, sliding
+  and secret bookshelf doors across vanilla and supported wood families.
+- **Tutta's Beds** adds bed frames, mattresses, covers, blankets, connected
+  beds, bunk beds and different comfort tiers.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+Each module can be disabled separately in the startup configuration. Most
+content sets and gameplay mechanics also have their own options for modpack
+authors.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+## Compatibility
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+Door compatibility is available for Vanilla Backport, No Man's Land, New
+World, Abundant Atmosphere, Caverns & Chasms, Upgrade Aquatic, Atmospheric,
+Environmental, Autumnity, Spawn, Nature's Spirit, Biomes O' Plenty, Enderscape,
+Arts & Crafts, My Nether's Delight, Architect's Palette, Malum, Create,
+BlockBox and Woodworks.
+
+Farmer's Delight adds straw and canvas mattress materials and canvas covers.
+Every compatibility is optional.
+
+## Issues
+
+Please report bugs through the
+[GitHub issue tracker](https://github.com/SoyTutta/AllTuttasNeeds/issues).

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tuttasbeds:soft_bed"
+    },
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:purple_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasbeds:soft_bed_purple_leather_blanket"
+  }
+}

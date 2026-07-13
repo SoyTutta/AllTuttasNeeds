@@ -4,9 +4,17 @@
   "package": "com.alltuttasneeds.core.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "DoorDropFixMixin"
+    "DoorDropFixMixin",
+    "AcquirePoiMixin",
+    "LivingEntityBedHeightMixin",
+    "PlayerSleepDurationMixin",
+    "SleepInBedMixin",
+    "WakeUpFromBunkMixin",
+    "BlockEntityTypeBedMixin"
   ],
-  "client": [],
+  "client": [
+    "BedRendererMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

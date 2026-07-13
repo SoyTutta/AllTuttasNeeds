@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "blockbox"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_golden_bars": {

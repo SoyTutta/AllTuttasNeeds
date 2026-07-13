@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_normal_bed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tuttasbeds:wheat_bed_brown_wool_blanket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasbeds:crafting/wheat_bed_brown_deluxe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_normal_bed"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasbeds:crafting/wheat_bed_brown_deluxe"
+    ]
+  }
+}

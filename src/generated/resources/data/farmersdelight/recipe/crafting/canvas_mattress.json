@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "farmersdelight:canvas"
+    },
+    "S": {
+      "item": "farmersdelight:straw_bale"
+    }
+  },
+  "pattern": [
+    "###",
+    "SSS",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:canvas_mattress"
+  }
+}

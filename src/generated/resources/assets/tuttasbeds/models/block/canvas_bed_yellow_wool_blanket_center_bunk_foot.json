@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasbeds:block/template/bed_bunk/center_foot",
+  "textures": {
+    "0": "tuttasbeds:block/canvas_bed_wool_blanket/yellow"
+  }
+}

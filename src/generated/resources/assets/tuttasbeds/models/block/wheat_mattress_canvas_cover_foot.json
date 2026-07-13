@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasbeds:block/template/mattress/foot",
+  "textures": {
+    "0": "tuttasbeds:block/wheat_mattress_canvas_cover/brown"
+  }
+}

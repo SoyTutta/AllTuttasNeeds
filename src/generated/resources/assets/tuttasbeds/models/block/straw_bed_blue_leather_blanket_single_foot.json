@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasbeds:block/template/bed/single_foot",
+  "textures": {
+    "0": "tuttasbeds:block/straw_bed_leather_blanket/blue"
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "variants": {
+    "bed_position=center,bunk=false,facing=east,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_foot",
+      "y": 270
+    },
+    "bed_position=center,bunk=false,facing=east,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_head",
+      "y": 270
+    },
+    "bed_position=center,bunk=false,facing=north,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_foot",
+      "y": 180
+    },
+    "bed_position=center,bunk=false,facing=north,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_head",
+      "y": 180
+    },
+    "bed_position=center,bunk=false,facing=south,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_foot"
+    },
+    "bed_position=center,bunk=false,facing=south,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_head"
+    },
+    "bed_position=center,bunk=false,facing=west,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_foot",
+      "y": 90
+    },
+    "bed_position=center,bunk=false,facing=west,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_head",
+      "y": 90
+    },
+    "bed_position=center,bunk=true,facing=east,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_bunk_foot",
+      "y": 270
+    },
+    "bed_position=center,bunk=true,facing=east,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_bunk_head",
+      "y": 270
+    },
+    "bed_position=center,bunk=true,facing=north,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_bunk_foot",
+      "y": 180
+    },
+    "bed_position=center,bunk=true,facing=north,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_bunk_head",
+      "y": 180
+    },
+    "bed_position=center,bunk=true,facing=south,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_bunk_foot"
+    },
+    "bed_position=center,bunk=true,facing=south,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_bunk_head"
+    },
+    "bed_position=center,bunk=true,facing=west,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_bunk_foot",
+      "y": 90
+    },
+    "bed_position=center,bunk=true,facing=west,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_center_bunk_head",
+      "y": 90
+    },
+    "bed_position=left,bunk=false,facing=east,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_foot",
+      "y": 270
+    },
+    "bed_position=left,bunk=false,facing=east,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_head",
+      "y": 270
+    },
+    "bed_position=left,bunk=false,facing=north,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_foot",
+      "y": 180
+    },
+    "bed_position=left,bunk=false,facing=north,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_head",
+      "y": 180
+    },
+    "bed_position=left,bunk=false,facing=south,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_foot"
+    },
+    "bed_position=left,bunk=false,facing=south,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_head"
+    },
+    "bed_position=left,bunk=false,facing=west,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_foot",
+      "y": 90
+    },
+    "bed_position=left,bunk=false,facing=west,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_head",
+      "y": 90
+    },
+    "bed_position=left,bunk=true,facing=east,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_bunk_foot",
+      "y": 270
+    },
+    "bed_position=left,bunk=true,facing=east,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_bunk_head",
+      "y": 270
+    },
+    "bed_position=left,bunk=true,facing=north,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_bunk_foot",
+      "y": 180
+    },
+    "bed_position=left,bunk=true,facing=north,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_bunk_head",
+      "y": 180
+    },
+    "bed_position=left,bunk=true,facing=south,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_bunk_foot"
+    },
+    "bed_position=left,bunk=true,facing=south,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_bunk_head"
+    },
+    "bed_position=left,bunk=true,facing=west,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_bunk_foot",
+      "y": 90
+    },
+    "bed_position=left,bunk=true,facing=west,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_left_bunk_head",
+      "y": 90
+    },
+    "bed_position=right,bunk=false,facing=east,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_foot",
+      "y": 270
+    },
+    "bed_position=right,bunk=false,facing=east,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_head",
+      "y": 270
+    },
+    "bed_position=right,bunk=false,facing=north,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_foot",
+      "y": 180
+    },
+    "bed_position=right,bunk=false,facing=north,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_head",
+      "y": 180
+    },
+    "bed_position=right,bunk=false,facing=south,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_foot"
+    },
+    "bed_position=right,bunk=false,facing=south,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_head"
+    },
+    "bed_position=right,bunk=false,facing=west,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_foot",
+      "y": 90
+    },
+    "bed_position=right,bunk=false,facing=west,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_head",
+      "y": 90
+    },
+    "bed_position=right,bunk=true,facing=east,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_bunk_foot",
+      "y": 270
+    },
+    "bed_position=right,bunk=true,facing=east,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_bunk_head",
+      "y": 270
+    },
+    "bed_position=right,bunk=true,facing=north,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_bunk_foot",
+      "y": 180
+    },
+    "bed_position=right,bunk=true,facing=north,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_bunk_head",
+      "y": 180
+    },
+    "bed_position=right,bunk=true,facing=south,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_bunk_foot"
+    },
+    "bed_position=right,bunk=true,facing=south,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_bunk_head"
+    },
+    "bed_position=right,bunk=true,facing=west,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_bunk_foot",
+      "y": 90
+    },
+    "bed_position=right,bunk=true,facing=west,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_right_bunk_head",
+      "y": 90
+    },
+    "bed_position=single,bunk=false,facing=east,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_foot",
+      "y": 270
+    },
+    "bed_position=single,bunk=false,facing=east,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_head",
+      "y": 270
+    },
+    "bed_position=single,bunk=false,facing=north,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_foot",
+      "y": 180
+    },
+    "bed_position=single,bunk=false,facing=north,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_head",
+      "y": 180
+    },
+    "bed_position=single,bunk=false,facing=south,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_foot"
+    },
+    "bed_position=single,bunk=false,facing=south,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_head"
+    },
+    "bed_position=single,bunk=false,facing=west,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_foot",
+      "y": 90
+    },
+    "bed_position=single,bunk=false,facing=west,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_head",
+      "y": 90
+    },
+    "bed_position=single,bunk=true,facing=east,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_bunk_foot",
+      "y": 270
+    },
+    "bed_position=single,bunk=true,facing=east,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_bunk_head",
+      "y": 270
+    },
+    "bed_position=single,bunk=true,facing=north,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_bunk_foot",
+      "y": 180
+    },
+    "bed_position=single,bunk=true,facing=north,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_bunk_head",
+      "y": 180
+    },
+    "bed_position=single,bunk=true,facing=south,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_bunk_foot"
+    },
+    "bed_position=single,bunk=true,facing=south,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_bunk_head"
+    },
+    "bed_position=single,bunk=true,facing=west,part=foot": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_bunk_foot",
+      "y": 90
+    },
+    "bed_position=single,bunk=true,facing=west,part=head": {
+      "model": "tuttasbeds:block/wheat_bed_light_blue_deluxe_single_bunk_head",
+      "y": 90
+    }
+  }
+}
