@@ -113,6 +113,27 @@ public final class TBRecipes {
     private static void registerMattress(RecipeOutput output, MattressFamily family) {
         Block mattress = family.looseMattress().get();
         ResourceLocation mattressId = BuiltInRegistries.BLOCK.getKey(mattress);
+
+        if (mattressId.getNamespace().equals("tuttasbeds")) {
+            if (family.material().id().equals("wheat")) {
+                ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, mattress)
+                        .pattern("###")
+                        .define('#', Items.HAY_BLOCK)
+                        .unlockedBy("has_hay_bale", has(Items.HAY_BLOCK))
+                        .save(output, idFor(mattress));
+                return;
+            }
+
+            if (family.material().id().equals("soft")) {
+                ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, mattress)
+                        .pattern("###")
+                        .define('#', ItemTags.WOOL)
+                        .unlockedBy("has_wool", has(ItemTags.WOOL))
+                        .save(output, idFor(mattress));
+                return;
+            }
+        }
+
         if (!mattressId.getNamespace().equals("farmersdelight")) return;
 
         Item strawBale = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "straw_bale"));
