@@ -1,6 +1,10 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "environmental"
     }
@@ -8,24 +12,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "environmental:pine_normal_door"
-        },
-        {
-          "item": "environmental:pine_indiscrete_door"
-        },
-        {
-          "item": "environmental:pine_transit_door"
-        },
-        {
-          "item": "environmental:pine_pet_door"
-        },
-        {
-          "item": "environmental:pine_door"
-        }
-      ]
+      "item": "environmental:pine_door"
     }
   ],
   "result": [

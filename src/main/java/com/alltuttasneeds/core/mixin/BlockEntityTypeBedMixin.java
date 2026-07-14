@@ -2,6 +2,7 @@ package com.alltuttasneeds.core.mixin;
 
 import com.alltuttasneeds.beds.block.LooseMattressBlock;
 import com.alltuttasneeds.beds.block.TuttaBedBlock;
+import com.alltuttasneeds.beds.config.TBConfig;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -15,6 +16,7 @@ public abstract class BlockEntityTypeBedMixin {
 
     @Inject(method = "isValid", at = @At("HEAD"), cancellable = true)
     private void alltuttasneeds$allowTuttaBeds(BlockState state, CallbackInfoReturnable<Boolean> cir) {
+        if (!TBConfig.isModuleEnabled()) return;
         if ((BlockEntityType<?>) (Object) this != BlockEntityType.BED) return;
 
         Block block = state.getBlock();

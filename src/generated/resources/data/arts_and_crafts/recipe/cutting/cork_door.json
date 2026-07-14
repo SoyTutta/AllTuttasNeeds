@@ -1,6 +1,10 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "arts_and_crafts"
     }
@@ -8,24 +12,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "arts_and_crafts:cork_normal_door"
-        },
-        {
-          "item": "arts_and_crafts:cork_indiscrete_door"
-        },
-        {
-          "item": "arts_and_crafts:cork_transit_door"
-        },
-        {
-          "item": "arts_and_crafts:cork_pet_door"
-        },
-        {
-          "item": "arts_and_crafts:cork_door"
-        }
-      ]
+      "item": "arts_and_crafts:cork_door"
     }
   ],
   "result": [

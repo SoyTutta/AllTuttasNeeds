@@ -93,15 +93,16 @@ public class TransitDoorBlock extends DoorBlock {
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (!TDConfig.transitAutomaticClosingEnabled.get()) return;
         if (!level.getEntitiesOfClass(Entity.class, getBoundingBox(pos)).isEmpty()) {
-            level.scheduleTick(pos, this, 20);
+            level.scheduleTick(pos, this, TDConfig.automaticClosingDelay());
             return;
         }
 
         if (TDConfig.shouldAutomaticallyClose(isReceivingRedstonePower(state, level, pos))) {
             this.setOpen(null, level, state, pos, false);
         } else if (state.getValue(OPEN)) {
-            level.scheduleTick(pos, this, 20);
+            level.scheduleTick(pos, this, TDConfig.automaticClosingDelay());
         }
     }
 
@@ -109,8 +110,9 @@ public class TransitDoorBlock extends DoorBlock {
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         InteractionResult result = super.useWithoutItem(state, level, pos, player, hitResult);
         BlockState updated = level.getBlockState(pos);
-        if (!level.isClientSide && updated.is(this) && updated.getValue(OPEN)) {
-            level.scheduleTick(pos, this, 20);
+        if (!level.isClientSide && TDConfig.transitAutomaticClosingEnabled.get()
+                && updated.is(this) && updated.getValue(OPEN)) {
+            level.scheduleTick(pos, this, TDConfig.automaticClosingDelay());
         }
         return result;
     }
@@ -134,8 +136,8 @@ public class TransitDoorBlock extends DoorBlock {
             open = true;
         }
 
-        if (!level.isClientSide && open) {
-            level.scheduleTick(pos, this, 20);
+        if (!level.isClientSide && open && TDConfig.transitAutomaticClosingEnabled.get()) {
+            level.scheduleTick(pos, this, TDConfig.automaticClosingDelay());
         }
     }
 

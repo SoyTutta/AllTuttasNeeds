@@ -1,5 +1,6 @@
 package com.alltuttasneeds.core.mixin;
 
+import com.alltuttasneeds.doors.config.TDConfig;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
@@ -25,6 +26,7 @@ public abstract class DoorDropFixMixin {
             cancellable = true
     )
     private static void tuttasdoors$fixDoorDrop(BlockState state, ServerLevel level, BlockPos pos, BlockEntity blockEntity, Entity entity, ItemStack tool, CallbackInfoReturnable<List<ItemStack>> cir) {
+        if (!TDConfig.isModuleEnabled()) return;
         if (state.hasProperty(DoorBlock.HALF) &&
                 state.getValue(DoorBlock.HALF) == DoubleBlockHalf.UPPER) {
             cir.setReturnValue(List.of());

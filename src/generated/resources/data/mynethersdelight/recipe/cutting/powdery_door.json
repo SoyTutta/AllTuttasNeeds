@@ -1,6 +1,10 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "mynethersdelight"
     }
@@ -8,24 +12,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "mynethersdelight:powdery_door"
-        },
-        {
-          "item": "mynethersdelight:powdery_indiscrete_door"
-        },
-        {
-          "item": "mynethersdelight:powdery_transit_door"
-        },
-        {
-          "item": "mynethersdelight:powdery_pet_door"
-        },
-        {
-          "item": "mynethersdelight:powdery_discrete_door"
-        }
-      ]
+      "item": "mynethersdelight:powdery_door"
     }
   ],
   "result": [

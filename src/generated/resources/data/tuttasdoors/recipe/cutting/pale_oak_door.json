@@ -1,6 +1,10 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "vanillabackport"
     }
@@ -8,24 +12,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "tuttasdoors:pale_oak_normal_door"
-        },
-        {
-          "item": "tuttasdoors:pale_oak_indiscrete_door"
-        },
-        {
-          "item": "tuttasdoors:pale_oak_transit_door"
-        },
-        {
-          "item": "tuttasdoors:pale_oak_pet_door"
-        },
-        {
-          "item": "minecraft:pale_oak_door"
-        }
-      ]
+      "item": "minecraft:pale_oak_door"
     }
   ],
   "result": [

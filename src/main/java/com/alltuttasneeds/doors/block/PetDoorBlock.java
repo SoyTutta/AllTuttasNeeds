@@ -89,15 +89,16 @@ public class PetDoorBlock extends TrapDoorBlock {
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (!TDConfig.petAutomaticClosingEnabled.get()) return;
         if (!level.getEntitiesOfClass(Entity.class, getBoundingBox(pos)).isEmpty()) {
-            level.scheduleTick(pos, state.getBlock(), 20);
+            level.scheduleTick(pos, state.getBlock(), TDConfig.automaticClosingDelay());
             return;
         }
 
         if (TDConfig.shouldAutomaticallyClose(state.getValue(POWERED))) {
             this.setOpen(null, level, state, pos, false);
         } else if (state.getValue(OPEN)) {
-            level.scheduleTick(pos, state.getBlock(), 20);
+            level.scheduleTick(pos, state.getBlock(), TDConfig.automaticClosingDelay());
         }
     }
 
@@ -105,8 +106,9 @@ public class PetDoorBlock extends TrapDoorBlock {
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         InteractionResult result = super.useWithoutItem(state, level, pos, player, hitResult);
         BlockState updated = level.getBlockState(pos);
-        if (!level.isClientSide && updated.is(this) && updated.getValue(OPEN)) {
-            level.scheduleTick(pos, this, 20);
+        if (!level.isClientSide && TDConfig.petAutomaticClosingEnabled.get()
+                && updated.is(this) && updated.getValue(OPEN)) {
+            level.scheduleTick(pos, this, TDConfig.automaticClosingDelay());
         }
         return result;
     }
@@ -144,8 +146,8 @@ public class PetDoorBlock extends TrapDoorBlock {
         if (updated.getValue(WATERLOGGED)) {
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
-        if (open) {
-            level.scheduleTick(pos, this, 20);
+        if (open && TDConfig.petAutomaticClosingEnabled.get()) {
+            level.scheduleTick(pos, this, TDConfig.automaticClosingDelay());
         }
     }
 

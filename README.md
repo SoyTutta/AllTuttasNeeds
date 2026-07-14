@@ -10,9 +10,11 @@ Tutta's Doors and Tutta's Beds in one configurable project.
 - **Tutta's Beds** adds bed frames, mattresses, covers, blankets, connected
   beds, bunk beds and different comfort tiers.
 
-Each module can be disabled separately in the startup configuration. Most
-content sets and gameplay mechanics also have their own options for modpack
-authors.
+Each module can be disabled separately in the startup configuration. Disabling
+a module also leaves the corresponding vanilla and modded content unchanged.
+Most content sets and gameplay mechanics have their own options for modpack
+authors. Disabling the consistent door set restores the original door recipes;
+transit and pet conversions then use the original door as their ingredient.
 
 ## Compatibility
 

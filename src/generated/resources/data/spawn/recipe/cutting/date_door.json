@@ -1,6 +1,10 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "spawn"
     }
@@ -8,24 +12,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "spawn:date_door"
-        },
-        {
-          "item": "spawn:date_indiscrete_door"
-        },
-        {
-          "item": "spawn:date_transit_door"
-        },
-        {
-          "item": "spawn:date_pet_door"
-        },
-        {
-          "item": "spawn:date_discrete_door"
-        }
-      ]
+      "item": "spawn:date_door"
     }
   ],
   "result": [

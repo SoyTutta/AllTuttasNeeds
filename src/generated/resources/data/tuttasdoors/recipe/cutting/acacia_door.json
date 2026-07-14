@@ -1,25 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    }
+  ],
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "tuttasdoors:acacia_normal_door"
-        },
-        {
-          "item": "minecraft:acacia_door"
-        },
-        {
-          "item": "tuttasdoors:acacia_transit_door"
-        },
-        {
-          "item": "tuttasdoors:acacia_pet_door"
-        },
-        {
-          "item": "tuttasdoors:acacia_discrete_door"
-        }
-      ]
+      "item": "minecraft:acacia_door"
     }
   ],
   "result": [

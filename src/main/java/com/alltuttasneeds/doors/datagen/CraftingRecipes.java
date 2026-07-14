@@ -1,5 +1,8 @@
 package com.alltuttasneeds.doors.datagen;
 
+import com.alltuttasneeds.AllTuttasNeeds;
+import com.alltuttasneeds.core.condition.DoorSetEnabledCondition;
+import com.alltuttasneeds.core.condition.ModuleEnabledCondition;
 import com.alltuttasneeds.doors.TDTags;
 import com.alltuttasneeds.doors.compat.CompatRegistry;
 import com.alltuttasneeds.doors.compat.DoorTag;
@@ -20,7 +23,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
+import net.neoforged.neoforge.common.conditions.NotCondition;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -31,28 +36,54 @@ import static com.alltuttasneeds.doors.datagen.RecipeIngredients.getItemLike;
 public class CraftingRecipes {
 
     public static void register(RecipeOutput output) {
+        RecipeOutput enabledOutput = output.withConditions(ModuleEnabledCondition.DOORS);
         CompatRegistry.loaded().forEach(compat -> {
-            RecipeOutput compatOutput = conditional(output, compat.mod());
+            RecipeOutput compatOutput = conditional(enabledOutput, compat.mod());
             compat.woodFamilies().forEach(family -> registerFamilyRecipes(compatOutput, family, compat));
         });
 
-        registerSecretDoorRecipes(output);
-        registerSlidingDoorRecipes(output);
-        registerWaxingRecipes(output);
+        registerSecretDoorRecipes(enabledOutput.withConditions(DoorSetEnabledCondition.SECRET));
+        registerSlidingDoorRecipes(enabledOutput.withConditions(DoorSetEnabledCondition.LATERAL));
+        registerWaxingRecipes(enabledOutput.withConditions(DoorSetEnabledCondition.LATERAL));
+        registerOriginalDoorRecipes(output.withConditions(new NotCondition(DoorSetEnabledCondition.CONSISTENT)));
     }
 
     private static void registerFamilyRecipes(RecipeOutput output, WoodFamily family, ModCompat compat) {
         EnumSet<DoorVariant> registered = family.registeredVariants();
 
-        String plankId = family.resolvedPlankId();
-        Ingredient plank = plankId.startsWith("#")
-                ? Ingredient.of(TagKey.create(Registries.ITEM, ResourceLocation.tryParse(plankId.substring(1))))
-                : Ingredient.of(getItemLike(plankId));
+        Ingredient plank = plankIngredient(family);
 
         if (plank.isEmpty()) return;
 
         registerMainCraftingRecipes(output, family, compat, plank, registered);
         registerConversionRecipes(output, family, compat, plank, registered);
+    }
+
+    private static void registerOriginalDoorRecipes(RecipeOutput output) {
+        CompatRegistry.loaded().forEach(compat -> {
+            RecipeOutput compatOutput = conditional(output, compat.mod());
+            compat.woodFamilies().forEach(family -> {
+                Ingredient plank = plankIngredient(family);
+                ItemLike originalDoor = getItemLike(family.originalLocation().toString());
+                if (plank.isEmpty() || originalDoor.asItem() == Items.AIR) return;
+
+                ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, originalDoor, 3)
+                        .pattern("##").pattern("##").pattern("##")
+                        .define('#', plank)
+                        .group("wooden_door")
+                        .unlockedBy("has_planks", hasPlank(family))
+                        .save(compatOutput, ResourceLocation.fromNamespaceAndPath(
+                                AllTuttasNeeds.MODID,
+                                "vanilla/" + family.familyNamespace() + "/" + family.registryName() + "_door"));
+            });
+        });
+    }
+
+    private static Ingredient plankIngredient(WoodFamily family) {
+        String plankId = family.resolvedPlankId();
+        return plankId.startsWith("#")
+                ? Ingredient.of(TagKey.create(Registries.ITEM, ResourceLocation.tryParse(plankId.substring(1))))
+                : Ingredient.of(getItemLike(plankId));
     }
 
     private static void registerMainCraftingRecipes(RecipeOutput output, WoodFamily family, ModCompat compat,
@@ -69,29 +100,43 @@ public class CraftingRecipes {
     private static void registerConversionRecipes(RecipeOutput output, WoodFamily family, ModCompat compat,
                                                   Ingredient plank, EnumSet<DoorVariant> registered) {
         String base = family.originalLocation().toString();
+        ItemLike originalDoor   = getItemLike(base);
 
         ItemLike normalDoor     = registered.contains(DoorVariant.NORMAL)
-                ? getDoorItem(family, compat, DoorVariant.NORMAL)     : getItemLike(base);
+                ? getDoorItem(family, compat, DoorVariant.NORMAL)     : originalDoor;
         ItemLike discreteDoor   = registered.contains(DoorVariant.DISCRETE)
-                ? getDoorItem(family, compat, DoorVariant.DISCRETE)   : getItemLike(base);
+                ? getDoorItem(family, compat, DoorVariant.DISCRETE)   : originalDoor;
         ItemLike indiscreteDoor = registered.contains(DoorVariant.INDISCRETE)
-                ? getDoorItem(family, compat, DoorVariant.INDISCRETE) : getItemLike(base);
+                ? getDoorItem(family, compat, DoorVariant.INDISCRETE) : originalDoor;
 
         Ingredient stick = Ingredient.of(Items.STICK);
+        RecipeOutput consistentOutput = output.withConditions(DoorSetEnabledCondition.CONSISTENT);
 
-        createConversionRecipe(output, normalDoor,     1, List.of(Ingredient.of(discreteDoor),   stick),        "normal_from_discrete",     family, compat);
-        createConversionRecipe(output, discreteDoor,   1, List.of(Ingredient.of(normalDoor),     plank),        "discrete_from_normal",     family, compat);
-        createConversionRecipe(output, normalDoor,     1, List.of(Ingredient.of(indiscreteDoor), plank),        "normal_from_indiscrete",   family, compat);
-        createConversionRecipe(output, indiscreteDoor, 1, List.of(Ingredient.of(normalDoor),     stick),        "indiscrete_from_normal",   family, compat);
-        createConversionRecipe(output, discreteDoor,   1, List.of(Ingredient.of(indiscreteDoor), plank, plank), "discrete_from_indiscrete", family, compat);
-        createConversionRecipe(output, indiscreteDoor, 1, List.of(Ingredient.of(discreteDoor),   stick, stick), "indiscrete_from_discrete", family, compat);
+        createConversionRecipe(consistentOutput, normalDoor,     1, List.of(Ingredient.of(discreteDoor),   stick),        "normal_from_discrete",     family, compat);
+        createConversionRecipe(consistentOutput, discreteDoor,   1, List.of(Ingredient.of(normalDoor),     plank),        "discrete_from_normal",     family, compat);
+        createConversionRecipe(consistentOutput, normalDoor,     1, List.of(Ingredient.of(indiscreteDoor), plank),        "normal_from_indiscrete",   family, compat);
+        createConversionRecipe(consistentOutput, indiscreteDoor, 1, List.of(Ingredient.of(normalDoor),     stick),        "indiscrete_from_normal",   family, compat);
+        createConversionRecipe(consistentOutput, discreteDoor,   1, List.of(Ingredient.of(indiscreteDoor), plank, plank), "discrete_from_indiscrete", family, compat);
+        createConversionRecipe(consistentOutput, indiscreteDoor, 1, List.of(Ingredient.of(discreteDoor),   stick, stick), "indiscrete_from_discrete", family, compat);
 
-        if (registered.contains(DoorVariant.TRANSIT))
-            createConversionRecipe(output, getDoorItem(family, compat, DoorVariant.TRANSIT), 1,
+        if (registered.contains(DoorVariant.TRANSIT)) {
+            RecipeOutput transitOutput = output.withConditions(DoorSetEnabledCondition.TRANSIT);
+            createConversionRecipe(transitOutput.withConditions(DoorSetEnabledCondition.CONSISTENT),
+                    getDoorItem(family, compat, DoorVariant.TRANSIT), 1,
                     List.of(Ingredient.of(normalDoor)), "transit_from_normal", family, compat);
-        if (registered.contains(DoorVariant.PET))
-            createConversionRecipe(output, getDoorItem(family, compat, DoorVariant.PET), 2,
+            createConversionRecipe(transitOutput.withConditions(new NotCondition(DoorSetEnabledCondition.CONSISTENT)),
+                    getDoorItem(family, compat, DoorVariant.TRANSIT), 1,
+                    List.of(Ingredient.of(originalDoor)), "transit_from_original", family, compat);
+        }
+        if (registered.contains(DoorVariant.PET)) {
+            RecipeOutput petOutput = output.withConditions(DoorSetEnabledCondition.PET);
+            createConversionRecipe(petOutput.withConditions(DoorSetEnabledCondition.CONSISTENT),
+                    getDoorItem(family, compat, DoorVariant.PET), 2,
                     List.of(Ingredient.of(discreteDoor)), "pet_from_discrete", family, compat);
+            createConversionRecipe(petOutput.withConditions(new NotCondition(DoorSetEnabledCondition.CONSISTENT)),
+                    getDoorItem(family, compat, DoorVariant.PET), 2,
+                    List.of(Ingredient.of(originalDoor)), "pet_from_original", family, compat);
+        }
     }
 
     private static void createShapedDoorRecipe(RecipeOutput output, DoorVariant variant, WoodFamily family,
@@ -119,12 +164,13 @@ public class CraftingRecipes {
 
         builder.unlockedBy("has_" + family.registryName() + "_planks", hasPlank(family));
 
+        RecipeOutput variantOutput = output.withConditions(DoorSetEnabledCondition.forSet(variant.set()));
         ResourceLocation desiredId = shapeRecipeId(variant, family, compat);
         ResourceLocation defaultId = BuiltInRegistries.ITEM.getKey(result.asItem());
         if (desiredId.equals(defaultId)) {
-            builder.save(output);
+            builder.save(variantOutput);
         } else {
-            builder.save(output, desiredId);
+            builder.save(variantOutput, desiredId);
         }
     }
 
@@ -175,12 +221,13 @@ public class CraftingRecipes {
                             .requires(anyDiscreteDoor)
                             .group("secret_door_conversion")
                             .unlockedBy("has_any_discrete_door", has(TDTags.WOODEN_DISCRETE_DOORS_ITEMS))
-                            .save(compatOutput, ResourceLocation.fromNamespaceAndPath(
+                            .save(compatOutput.withConditions(DoorSetEnabledCondition.CONSISTENT), ResourceLocation.fromNamespaceAndPath(
                                     compat.namespace(), "crafting/" + secret.woodName() + "_bookshelf_door_from_conversion"));
                 });
         });
 
-        createCrossCompatBookshelfRecipe(conditional(output, Mods.NOMANSLAND, Mods.NEWWORLD), "fir", "nomansland:fir_bookshelf",
+        createCrossCompatBookshelfRecipe(conditional(output, Mods.NOMANSLAND, Mods.NEWWORLD)
+                        .withConditions(DoorSetEnabledCondition.CONSISTENT), "fir", "nomansland:fir_bookshelf",
                 "newworld:fir_bookshelf_door", "newworld", anyDiscreteDoor);
     }
 
@@ -271,6 +318,6 @@ public class CraftingRecipes {
                 .distinct()
                 .map(mod -> new ModLoadedCondition(mod.id()))
                 .toList();
-        return conditions.isEmpty() ? output : output.withConditions(conditions.toArray(ModLoadedCondition[]::new));
+        return conditions.isEmpty() ? output : output.withConditions(conditions.toArray(ICondition[]::new));
     }
 }

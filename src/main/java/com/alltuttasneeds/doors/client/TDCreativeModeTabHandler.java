@@ -7,6 +7,7 @@ import com.alltuttasneeds.doors.compat.ExtraDoor;
 import com.alltuttasneeds.doors.compat.ModCompat;
 import com.alltuttasneeds.doors.compat.SecretDoorFamily;
 import com.alltuttasneeds.doors.compat.WoodFamily;
+import com.alltuttasneeds.doors.config.TDConfig;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -31,6 +32,7 @@ public final class TDCreativeModeTabHandler {
 
     @SubscribeEvent
     public static void onBuildContents(final BuildCreativeModeTabContentsEvent event) {
+        if (!TDConfig.isModuleEnabled()) return;
         CompatRegistry.loaded().forEach(compat -> {
             for (WoodFamily family : compat.woodFamilies()) {
                 injectWoodFamily(event, family, compat);

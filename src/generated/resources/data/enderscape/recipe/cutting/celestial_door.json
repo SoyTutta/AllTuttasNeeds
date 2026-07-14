@@ -1,6 +1,10 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "enderscape"
     }
@@ -8,24 +12,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "enderscape:celestial_normal_door"
-        },
-        {
-          "item": "enderscape:celestial_indiscrete_door"
-        },
-        {
-          "item": "enderscape:celestial_transit_door"
-        },
-        {
-          "item": "enderscape:celestial_pet_door"
-        },
-        {
-          "item": "enderscape:celestial_door"
-        }
-      ]
+      "item": "enderscape:celestial_door"
     }
   ],
   "result": [

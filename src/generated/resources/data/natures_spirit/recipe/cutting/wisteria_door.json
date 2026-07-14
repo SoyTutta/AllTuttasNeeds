@@ -1,6 +1,10 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "natures_spirit"
     }
@@ -8,24 +12,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "natures_spirit:wisteria_door"
-        },
-        {
-          "item": "natures_spirit:wisteria_indiscrete_door"
-        },
-        {
-          "item": "natures_spirit:wisteria_transit_door"
-        },
-        {
-          "item": "natures_spirit:wisteria_pet_door"
-        },
-        {
-          "item": "natures_spirit:wisteria_discrete_door"
-        }
-      ]
+      "item": "natures_spirit:wisteria_door"
     }
   ],
   "result": [

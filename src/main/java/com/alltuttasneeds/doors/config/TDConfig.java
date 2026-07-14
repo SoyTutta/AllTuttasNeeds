@@ -13,7 +13,10 @@ public final class TDConfig {
     public static ModConfigSpec.BooleanValue moduleEnabled;
     public static ModConfigSpec.BooleanValue tooltipsEnabled;
     public static ModConfigSpec.BooleanValue transitAutomaticOpeningEnabled;
+    public static ModConfigSpec.BooleanValue transitAutomaticClosingEnabled;
     public static ModConfigSpec.BooleanValue petAutomaticOpeningEnabled;
+    public static ModConfigSpec.BooleanValue petAutomaticClosingEnabled;
+    public static ModConfigSpec.IntValue automaticClosingDelayTicks;
     public static ModConfigSpec.BooleanValue invertAutomaticClosingRedstone;
 
     private static final Map<DoorSet, ModConfigSpec.BooleanValue> SET_ENABLED = new EnumMap<>(DoorSet.class);
@@ -21,7 +24,8 @@ public final class TDConfig {
     public static void init(ModConfigSpec.Builder builder) {
         builder.push("general");
         moduleEnabled = builder
-                .comment("Master switch for the whole doors module. Disabling registers none of its content and hides its creative tab.")
+                .comment("Master switch for Tutta's Doors. Disabling it removes the module's content and creative tab",
+                        "and leaves vanilla and other mods' doors unchanged.")
                 .define("moduleEnabled", true);
         builder.pop();
 
@@ -29,7 +33,7 @@ public final class TDConfig {
         for (DoorSet set : DoorSet.values()) {
             String key = set.name().toLowerCase(Locale.ROOT) + "Enabled";
             ModConfigSpec.BooleanValue value = builder
-                    .comment("Whether the " + set.name().toLowerCase(Locale.ROOT) + " door set is registered, for every wood family/compat mod.")
+                    .comment("Enables the " + set.name().toLowerCase(Locale.ROOT) + " door set for every available wood family.")
                     .define(key, true);
             SET_ENABLED.put(set, value);
         }
@@ -37,27 +41,37 @@ public final class TDConfig {
 
         builder.push("behavior");
         tooltipsEnabled = builder
-                .comment("Whether Tuttas Doors adds its style tooltips to door items.")
+                .comment("Shows Tutta's Doors style descriptions on door items.")
                 .define("tooltipsEnabled", true);
         transitAutomaticOpeningEnabled = builder
-                .comment("Whether Transit Doors open automatically for eligible entities.")
+                .comment("Allows Transit Doors to open automatically for eligible entities.")
                 .define("transitAutomaticOpeningEnabled", true);
+        transitAutomaticClosingEnabled = builder
+                .comment("Allows Transit Doors to close automatically after entities move away.")
+                .define("transitAutomaticClosingEnabled", true);
         petAutomaticOpeningEnabled = builder
-                .comment("Whether Pet Doors open automatically for entities.")
+                .comment("Allows Pet Doors to open automatically for entities.")
                 .define("petAutomaticOpeningEnabled", true);
+        petAutomaticClosingEnabled = builder
+                .comment("Allows Pet Doors to close automatically after entities move away.")
+                .define("petAutomaticClosingEnabled", true);
+        automaticClosingDelayTicks = builder
+                .comment("Delay before an automatically closing door checks whether it can close.",
+                        "20 ticks equals one second.")
+                .defineInRange("automaticClosingDelayTicks", 20, 1, 1200);
         invertAutomaticClosingRedstone = builder
-                .comment("Normally automatic opening and closing are allowed without redstone and blocked while powered.",
-                        "When enabled, both automatic behaviors are allowed only while powered.")
+                .comment("By default, automatic opening and closing work without redstone and stop while powered.",
+                        "Enable this to make both behaviors work only while powered.")
                 .define("invertAutomaticClosingRedstone", false);
         builder.pop();
     }
 
     public static boolean isModuleEnabled() {
-        return moduleEnabled.get();
+        return moduleEnabled != null && moduleEnabled.get();
     }
 
     public static boolean isSetEnabled(DoorSet set) {
-        return moduleEnabled.get() && SET_ENABLED.get(set).get();
+        return isModuleEnabled() && SET_ENABLED.get(set).get();
     }
 
     public static boolean isVariantEnabled(DoorVariant variant) {
@@ -66,7 +80,7 @@ public final class TDConfig {
     }
 
     public static boolean anySetEnabled() {
-        if (!moduleEnabled.get()) return false;
+        if (!isModuleEnabled()) return false;
         for (ModConfigSpec.BooleanValue value : SET_ENABLED.values()) {
             if (value.get()) return true;
         }
@@ -75,5 +89,9 @@ public final class TDConfig {
 
     public static boolean shouldAutomaticallyClose(boolean powered) {
         return invertAutomaticClosingRedstone.get() == powered;
+    }
+
+    public static int automaticClosingDelay() {
+        return automaticClosingDelayTicks.get();
     }
 }

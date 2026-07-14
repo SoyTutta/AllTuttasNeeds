@@ -1,25 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    }
+  ],
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "minecraft:bamboo_door"
-        },
-        {
-          "item": "tuttasdoors:bamboo_indiscrete_door"
-        },
-        {
-          "item": "tuttasdoors:bamboo_transit_door"
-        },
-        {
-          "item": "tuttasdoors:bamboo_pet_door"
-        },
-        {
-          "item": "tuttasdoors:bamboo_discrete_door"
-        }
-      ]
+      "item": "minecraft:bamboo_door"
     }
   ],
   "result": [

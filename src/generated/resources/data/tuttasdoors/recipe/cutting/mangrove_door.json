@@ -1,25 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    }
+  ],
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "tuttasdoors:mangrove_normal_door"
-        },
-        {
-          "item": "tuttasdoors:mangrove_indiscrete_door"
-        },
-        {
-          "item": "tuttasdoors:mangrove_transit_door"
-        },
-        {
-          "item": "tuttasdoors:mangrove_pet_door"
-        },
-        {
-          "item": "minecraft:mangrove_door"
-        }
-      ]
+      "item": "minecraft:mangrove_door"
     }
   ],
   "result": [

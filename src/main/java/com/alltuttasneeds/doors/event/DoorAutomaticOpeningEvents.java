@@ -33,6 +33,7 @@ public final class DoorAutomaticOpeningEvents {
 
     @SubscribeEvent
     public static void onEntityTick(EntityTickEvent.Pre event) {
+        if (!TDConfig.isModuleEnabled()) return;
         Entity entity = event.getEntity();
         if (!(entity.level() instanceof ServerLevel level) || entity.isSpectator()) return;
         if (!TDConfig.transitAutomaticOpeningEnabled.get() && !TDConfig.petAutomaticOpeningEnabled.get()) return;
@@ -84,7 +85,9 @@ public final class DoorAutomaticOpeningEvents {
         if (!state.getValue(DoorBlock.OPEN)) {
             door.setOpen(null, level, state, pos, true);
         }
-        level.scheduleTick(pos, door, 20);
+        if (TDConfig.transitAutomaticClosingEnabled.get()) {
+            level.scheduleTick(pos, door, TDConfig.automaticClosingDelay());
+        }
     }
 
     private static boolean isTransitEntityEligible(Entity entity) {
@@ -129,6 +132,8 @@ public final class DoorAutomaticOpeningEvents {
         if (!state.getValue(PetDoorBlock.OPEN)) {
             door.setOpen(null, level, state, pos, true);
         }
-        level.scheduleTick(pos, door, 20);
+        if (TDConfig.petAutomaticClosingEnabled.get()) {
+            level.scheduleTick(pos, door, TDConfig.automaticClosingDelay());
+        }
     }
 }

@@ -1,6 +1,10 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "biomesoplenty"
     }
@@ -8,24 +12,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "biomesoplenty:redwood_normal_door"
-        },
-        {
-          "item": "biomesoplenty:redwood_indiscrete_door"
-        },
-        {
-          "item": "biomesoplenty:redwood_transit_door"
-        },
-        {
-          "item": "biomesoplenty:redwood_pet_door"
-        },
-        {
-          "item": "biomesoplenty:redwood_door"
-        }
-      ]
+      "item": "biomesoplenty:redwood_door"
     }
   ],
   "result": [

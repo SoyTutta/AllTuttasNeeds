@@ -11,6 +11,8 @@ import com.alltuttasneeds.beds.config.SleepEffectConfig;
 import com.alltuttasneeds.beds.config.TBConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -36,16 +38,19 @@ public final class TBEvents {
 
     @SubscribeEvent
     public static void onAddReloadListeners(AddReloadListenerEvent event) {
+        if (!TBConfig.isModuleEnabled()) return;
         event.addListener(new BedCoverIngredients());
         event.addListener(new BedBlanketIngredients());
     }
 
     @SubscribeEvent
     public static void onPlayerSetSpawn(PlayerSetSpawnEvent event) {
+        if (!TBConfig.isModuleEnabled()) return;
         BlockPos spawn = event.getNewSpawn();
         if (spawn == null) return;
 
         Block block = event.getEntity().getCommandSenderWorld().getBlockState(spawn).getBlock();
+        if (isVanillaBed(block) && !TBConfig.vanillaBedsUseTierSpawnRules.get()) return;
         BedTier tier = BedTierResolver.resolve(block);
         if (tier != null && !TBConfig.setsSpawn(tier)) {
             event.setCanceled(true);
@@ -54,6 +59,7 @@ public final class TBEvents {
 
     @SubscribeEvent
     public static void onCanPlayerSleep(CanPlayerSleepEvent event) {
+        if (!TBConfig.isModuleEnabled()) return;
         if (!TBConfig.deluxeIgnoresNearbyMonsters.get() || event.getProblem() != BedSleepingProblem.NOT_SAFE) return;
         if (BedTierResolver.resolve(event.getState().getBlock()) == BedTier.DELUXE) {
             event.setProblem(null);
@@ -62,6 +68,7 @@ public final class TBEvents {
 
     @SubscribeEvent
     public static void onPlayerRespawnPosition(PlayerRespawnPositionEvent event) {
+        if (!TBConfig.isModuleEnabled()) return;
         ServerPlayer player = (ServerPlayer) event.getEntity();
         BlockPos respawnPos = player.getRespawnPosition();
         if (respawnPos == null) return;
@@ -93,6 +100,7 @@ public final class TBEvents {
 
     @SubscribeEvent
     public static void onPlayerWakeUp(PlayerWakeUpEvent event) {
+        if (!TBConfig.isModuleEnabled()) return;
         Player player = event.getEntity();
         if (player.level().isClientSide()) return;
         if (event.wakeImmediately() || !player.isSleepingLongEnough()) return;
@@ -100,6 +108,7 @@ public final class TBEvents {
         player.getSleepingPos().ifPresent(pos -> {
             BlockState state = player.level().getBlockState(pos);
             Block block = state.getBlock();
+            if (isVanillaBed(block) && !TBConfig.vanillaBedsUseTierWakeEffects.get()) return;
             BedTier tier = BedTierResolver.resolve(block);
             if (tier == null) return;
             SleepEffectConfig effects = TBConfig.effectsFor(tier);
@@ -107,6 +116,11 @@ public final class TBEvents {
             effects.resolveEffect().ifPresent(effect ->
                     player.addEffect(new MobEffectInstance(effect, effects.durationTicks(), 0)));
         });
+    }
+
+    private static boolean isVanillaBed(Block block) {
+        return block instanceof BedBlock
+                && BuiltInRegistries.BLOCK.getKey(block).getNamespace().equals(ResourceLocation.DEFAULT_NAMESPACE);
     }
 
 }

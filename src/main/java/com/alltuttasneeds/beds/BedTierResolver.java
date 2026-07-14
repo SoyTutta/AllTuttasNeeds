@@ -16,11 +16,16 @@ public final class BedTierResolver {
 
     @Nullable
     public static BedTier resolve(Block block) {
+        if (!TBConfig.isModuleEnabled()) return null;
         if (!(block instanceof BedBlock)) return null;
 
-        BedTier override = configuredTier(block);
-        if (override != null) return override;
+        ResourceLocation id = BuiltInRegistries.BLOCK.getKey(block);
+        BedTier tier = configuredTier(id);
+        if (tier == null) tier = automaticTier(block);
+        return isExcluded(id, tier) ? null : tier;
+    }
 
+    private static BedTier automaticTier(Block block) {
         if (block instanceof BedFrameBlock) return BedTier.BASIC;
         if (block instanceof LooseMattressBlock mattress) {
             return mattress.cover() == null ? BedTier.BASIC : BedTier.LOW;
@@ -34,13 +39,30 @@ public final class BedTierResolver {
     }
 
     @Nullable
-    private static BedTier configuredTier(Block block) {
-        ResourceLocation id = BuiltInRegistries.BLOCK.getKey(block);
-        if (matches(id, TBConfig.deluxeTierGameplay.blockOverrides.get())) return BedTier.DELUXE;
-        if (matches(id, TBConfig.normalTierGameplay.blockOverrides.get())) return BedTier.NORMAL;
-        if (matches(id, TBConfig.lowTierGameplay.blockOverrides.get())) return BedTier.LOW;
-        if (matches(id, TBConfig.basicTierGameplay.blockOverrides.get())) return BedTier.BASIC;
+    private static BedTier configuredTier(ResourceLocation id) {
+        if (matches(id, TBConfig.deluxeTierGameplay.blockOverrides.get()) && !isExcluded(id, BedTier.DELUXE)) {
+            return BedTier.DELUXE;
+        }
+        if (matches(id, TBConfig.normalTierGameplay.blockOverrides.get()) && !isExcluded(id, BedTier.NORMAL)) {
+            return BedTier.NORMAL;
+        }
+        if (matches(id, TBConfig.lowTierGameplay.blockOverrides.get()) && !isExcluded(id, BedTier.LOW)) {
+            return BedTier.LOW;
+        }
+        if (matches(id, TBConfig.basicTierGameplay.blockOverrides.get()) && !isExcluded(id, BedTier.BASIC)) {
+            return BedTier.BASIC;
+        }
         return null;
+    }
+
+    private static boolean isExcluded(ResourceLocation id, BedTier tier) {
+        Iterable<? extends String> exclusions = switch (tier) {
+            case BASIC -> TBConfig.basicTierGameplay.blockExclusions.get();
+            case LOW -> TBConfig.lowTierGameplay.blockExclusions.get();
+            case NORMAL -> TBConfig.normalTierGameplay.blockExclusions.get();
+            case DELUXE -> TBConfig.deluxeTierGameplay.blockExclusions.get();
+        };
+        return matches(id, exclusions);
     }
 
     private static boolean matches(ResourceLocation id, Iterable<? extends String> patterns) {

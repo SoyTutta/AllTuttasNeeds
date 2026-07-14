@@ -1,25 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    }
+  ],
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "tuttasdoors:spruce_normal_door"
-        },
-        {
-          "item": "tuttasdoors:spruce_indiscrete_door"
-        },
-        {
-          "item": "tuttasdoors:spruce_transit_door"
-        },
-        {
-          "item": "tuttasdoors:spruce_pet_door"
-        },
-        {
-          "item": "minecraft:spruce_door"
-        }
-      ]
+      "item": "minecraft:spruce_door"
     }
   ],
   "result": [

@@ -1,5 +1,7 @@
 package com.alltuttasneeds.doors.datagen;
 
+import com.alltuttasneeds.core.condition.DoorSetEnabledCondition;
+import com.alltuttasneeds.core.condition.ModuleEnabledCondition;
 import com.alltuttasneeds.doors.compat.CompatRegistry;
 import com.alltuttasneeds.doors.compat.DoorVariant;
 import com.alltuttasneeds.doors.compat.ModCompat;
@@ -9,18 +11,14 @@ import com.alltuttasneeds.core.Mods;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
-import java.util.ArrayList;
 import java.util.EnumSet;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static com.alltuttasneeds.doors.datagen.RecipeIngredients.getDoorItem;
 import static com.alltuttasneeds.doors.datagen.RecipeIngredients.getItemLike;
@@ -28,10 +26,12 @@ import static com.alltuttasneeds.doors.datagen.RecipeIngredients.getItemLike;
 public class CuttingRecipes {
 
     public static void register(RecipeOutput output) {
+        RecipeOutput enabledOutput = output.withConditions(ModuleEnabledCondition.DOORS);
         CompatRegistry.loaded().forEach(compat -> {
-            RecipeOutput compatOutput = conditional(output, compat.mod());
+            RecipeOutput compatOutput = conditional(enabledOutput, compat.mod());
             compat.woodFamilies().forEach(family -> cutDoorsToPlank(compatOutput, family, compat));
-            compat.secretDoorFamilies().forEach(secret -> cutSecretDoorToBookshelf(compatOutput, secret, compat));
+            compat.secretDoorFamilies().forEach(secret -> cutSecretDoorToBookshelf(
+                    compatOutput.withConditions(DoorSetEnabledCondition.SECRET), secret, compat));
         });
     }
 
@@ -39,31 +39,40 @@ public class CuttingRecipes {
         ItemLike plank = getItemLike(family.cuttingOutputId());
         if (plank.asItem() == Items.AIR) return;
 
-        String baseDoorId = family.originalLocation().toString();
         EnumSet<DoorVariant> registered = family.registeredVariants();
-        List<ItemLike> doors = new ArrayList<>();
-        Set<Item> seen = new HashSet<>();
 
-        for (DoorVariant variant : List.of(DoorVariant.NORMAL, DoorVariant.INDISCRETE, DoorVariant.TRANSIT, DoorVariant.PET, DoorVariant.DISCRETE)) {
-            ItemLike door;
-            if (registered.contains(variant)) {
-                door = getDoorItem(family, compat, variant);
-            } else if (variant == DoorVariant.NORMAL || variant == DoorVariant.DISCRETE || variant == DoorVariant.INDISCRETE) {
-                door = getItemLike(baseDoorId);
-            } else {
-                continue;
-            }
-            if (door.asItem() != Items.AIR && seen.add(door.asItem())) doors.add(door);
-        }
+        createDoorCuttingRecipe(output, getItemLike(family.originalLocation().toString()), plank,
+                compat, family.registryName() + "_door");
+        createDoorCuttingRecipes(output.withConditions(DoorSetEnabledCondition.CONSISTENT), family, compat,
+                plank, registered, List.of(DoorVariant.NORMAL, DoorVariant.INDISCRETE, DoorVariant.DISCRETE),
+                family.registryName() + "_consistent_doors");
+        createDoorCuttingRecipes(output.withConditions(DoorSetEnabledCondition.TRANSIT), family, compat,
+                plank, registered, List.of(DoorVariant.TRANSIT), family.registryName() + "_transit_door");
+        createDoorCuttingRecipes(output.withConditions(DoorSetEnabledCondition.PET), family, compat,
+                plank, registered, List.of(DoorVariant.PET), family.registryName() + "_pet_door");
+    }
 
-        if (doors.isEmpty()) return;
+    private static void createDoorCuttingRecipes(RecipeOutput output, WoodFamily family, ModCompat compat,
+                                                 ItemLike plank, EnumSet<DoorVariant> registered,
+                                                 List<DoorVariant> variants, String recipeName) {
+        ItemLike[] doors = variants.stream()
+                .filter(registered::contains)
+                .map(variant -> getDoorItem(family, compat, variant))
+                .filter(door -> door.asItem() != Items.AIR)
+                .toArray(ItemLike[]::new);
+        if (doors.length == 0) return;
 
         CuttingBoardRecipeBuilder.cuttingRecipe(
-                Ingredient.of(doors.toArray(ItemLike[]::new)),
-                Ingredient.of(ItemTags.AXES),
-                plank, 1
-        ).build(output, ResourceLocation.fromNamespaceAndPath(
-                compat.namespace(), "cutting/" + family.registryName() + "_door"));
+                Ingredient.of(doors), Ingredient.of(ItemTags.AXES), plank, 1
+        ).build(output, ResourceLocation.fromNamespaceAndPath(compat.namespace(), "cutting/" + recipeName));
+    }
+
+    private static void createDoorCuttingRecipe(RecipeOutput output, ItemLike door, ItemLike plank,
+                                                ModCompat compat, String recipeName) {
+        if (door.asItem() == Items.AIR) return;
+        CuttingBoardRecipeBuilder.cuttingRecipe(
+                Ingredient.of(door), Ingredient.of(ItemTags.AXES), plank, 1
+        ).build(output, ResourceLocation.fromNamespaceAndPath(compat.namespace(), "cutting/" + recipeName));
     }
 
     private static void cutSecretDoorToBookshelf(RecipeOutput output, SecretDoorFamily secret, ModCompat compat) {

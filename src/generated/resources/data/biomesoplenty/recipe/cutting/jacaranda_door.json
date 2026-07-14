@@ -1,6 +1,10 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "biomesoplenty"
     }
@@ -8,24 +12,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "biomesoplenty:jacaranda_normal_door"
-        },
-        {
-          "item": "biomesoplenty:jacaranda_door"
-        },
-        {
-          "item": "biomesoplenty:jacaranda_transit_door"
-        },
-        {
-          "item": "biomesoplenty:jacaranda_pet_door"
-        },
-        {
-          "item": "biomesoplenty:jacaranda_discrete_door"
-        }
-      ]
+      "item": "biomesoplenty:jacaranda_door"
     }
   ],
   "result": [

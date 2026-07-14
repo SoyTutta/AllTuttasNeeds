@@ -9,15 +9,18 @@ public final class TierGameplayConfig {
     public final ModConfigSpec.DoubleValue sleepDurationMultiplier;
     public final SleepEffectConfig wakeEffect;
     public final ModConfigSpec.ConfigValue<List<? extends String>> blockOverrides;
+    public final ModConfigSpec.ConfigValue<List<? extends String>> blockExclusions;
 
     private TierGameplayConfig(ModConfigSpec.BooleanValue setsSpawn,
                                ModConfigSpec.DoubleValue sleepDurationMultiplier,
                                SleepEffectConfig wakeEffect,
-                               ModConfigSpec.ConfigValue<List<? extends String>> blockOverrides) {
+                               ModConfigSpec.ConfigValue<List<? extends String>> blockOverrides,
+                               ModConfigSpec.ConfigValue<List<? extends String>> blockExclusions) {
         this.setsSpawn = setsSpawn;
         this.sleepDurationMultiplier = sleepDurationMultiplier;
         this.wakeEffect = wakeEffect;
         this.blockOverrides = blockOverrides;
+        this.blockExclusions = blockExclusions;
     }
 
     static TierGameplayConfig define(ModConfigSpec.Builder builder, String section, boolean defaultSetsSpawn,
@@ -37,8 +40,13 @@ public final class TierGameplayConfig {
                         "Use a full ID such as \"minecraft:red_bed\" or a namespace wildcard such as \"minecraft:*\".",
                         "If a block appears in multiple tiers, the highest tier wins.")
                 .defineList("blockOverrides", List.of(), TierGameplayConfig::isValidBlockPattern);
+        ModConfigSpec.ConfigValue<List<? extends String>> blockExclusions = builder
+                .comment("Block IDs that cannot use this tier.",
+                        "Use a full ID or namespace wildcard, following the same format as blockOverrides.",
+                        "A bed excluded from its resolved tier keeps its normal behavior without tier mechanics.")
+                .defineList("blockExclusions", List.of(), TierGameplayConfig::isValidBlockPattern);
         builder.pop();
-        return new TierGameplayConfig(setsSpawn, sleepDurationMultiplier, wakeEffect, blockOverrides);
+        return new TierGameplayConfig(setsSpawn, sleepDurationMultiplier, wakeEffect, blockOverrides, blockExclusions);
     }
 
     private static boolean isValidBlockPattern(Object value) {

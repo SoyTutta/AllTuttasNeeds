@@ -25,6 +25,8 @@ public final class TBConfig {
     public static ModConfigSpec.BooleanValue villagersCanUseTuttaBeds;
     public static ModConfigSpec.BooleanValue tieredSleepDurationEnabled;
     public static ModConfigSpec.BooleanValue vanillaBedsUseTieredSleepDuration;
+    public static ModConfigSpec.BooleanValue vanillaBedsUseTierSpawnRules;
+    public static ModConfigSpec.BooleanValue vanillaBedsUseTierWakeEffects;
     public static ModConfigSpec.BooleanValue deluxeIgnoresNearbyMonsters;
     public static TierGameplayConfig basicTierGameplay;
     public static TierGameplayConfig lowTierGameplay;
@@ -51,10 +53,11 @@ public final class TBConfig {
     public static void init(ModConfigSpec.Builder builder) {
         builder.push("general");
         moduleEnabled = builder
-                .comment("Master switch for the whole beds module. Disabling registers none of its content.")
+                .comment("Master switch for the whole beds module. Disabling registers none of its content",
+                        "and leaves vanilla and other mods' bed behavior unchanged.")
                 .define("moduleEnabled", true);
         tooltipsEnabled = builder
-                .comment("Whether Tuttas Beds adds descriptive tooltips to its items.")
+                .comment("Shows Tutta's Beds descriptions on bed items.")
                 .define("tooltipsEnabled", true);
         builder.pop();
 
@@ -92,12 +95,6 @@ public final class TBConfig {
         builder.pop();
 
         builder.push("gameplay");
-        builder.push("villagers");
-        villagersCanUseTuttaBeds = builder
-                .comment("Whether villagers can claim and sleep in Tuttas Beds, loose mattresses and bed frames.")
-                .define("canUseTuttaBeds", true);
-        builder.pop();
-
         builder.push("tiers");
         tieredSleepDurationEnabled = builder
                 .comment("Whether the time required to complete sleep changes with the bed tier.",
@@ -107,6 +104,13 @@ public final class TBConfig {
                 .comment("Whether vanilla Minecraft beds use the Tier BASIC sleep-duration multiplier.",
                         "When disabled, vanilla beds always keep vanilla's five-second sleep duration.")
                 .define("vanillaBedsUseTieredSleepDuration", true);
+        vanillaBedsUseTierSpawnRules = builder
+                .comment("Whether vanilla Minecraft beds use their resolved tier's respawn rule.",
+                        "When disabled, vanilla beds always set spawn normally.")
+                .define("vanillaBedsUseTierSpawnRules", true);
+        vanillaBedsUseTierWakeEffects = builder
+                .comment("Whether vanilla Minecraft beds apply their resolved tier's wake effect.")
+                .define("vanillaBedsUseTierWakeEffects", true);
         basicTierGameplay = TierGameplayConfig.define(builder, "basic", false, 2.0D, false, 0);
         lowTierGameplay = TierGameplayConfig.define(builder, "low", true, 1.5D, false, 0);
         normalTierGameplay = TierGameplayConfig.define(builder, "normal", true, 1.0D, true, 5);
@@ -129,14 +133,17 @@ public final class TBConfig {
         normalTierSleepMultiplier = normalTierGameplay.sleepDurationMultiplier;
         deluxeTierSleepMultiplier = deluxeTierGameplay.sleepDurationMultiplier;
 
+        builder.push("villagers");
+        villagersCanUseTuttaBeds = builder
+                .comment("Allows villagers to claim and sleep in Tutta's Beds, loose mattresses and bed frames.")
+                .define("canUseTuttaBeds", true);
+        builder.pop();
+
         builder.push("interactions");
         directApplyDisabled = builder
-                .comment("Cover/blanket suffixes (e.g. \"wool_blanket\", \"wheat_cover\") that can NOT be applied",
-                        "by directly interacting with a mattress/bed. A disabled one can still be obtained",
-                        "however its own recipe allows (crafting, for blankets) — this only turns off the",
-                        "interaction shortcut. Applies to every material with that suffix, native or from any",
-                        "compat. Wool/leather blankets are off by default; every Tier LOW cover is on by default",
-                        "(not listed here) since interaction is currently their only way to be applied at all.")
+                .comment("Cover and blanket suffixes that cannot be applied directly to a mattress or bed.",
+                        "This only disables the interaction shortcut; normal recipes still work.",
+                        "The list applies to native and compatible materials with the same suffix.")
                 .defineList("directApplyDisabled", List.of("wool_blanket", "leather_blanket"), o -> o instanceof String);
         builder.pop();
         builder.pop();
@@ -159,6 +166,10 @@ public final class TBConfig {
 
     public static SleepEffectConfig effectsFor(BedTier tier) {
         return gameplayFor(tier).wakeEffect;
+    }
+
+    public static boolean isModuleEnabled() {
+        return moduleEnabled != null && moduleEnabled.get();
     }
 
     public static boolean setsSpawn(BedTier tier) {

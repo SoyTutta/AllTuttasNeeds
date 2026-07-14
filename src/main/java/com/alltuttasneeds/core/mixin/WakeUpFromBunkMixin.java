@@ -1,6 +1,7 @@
 package com.alltuttasneeds.core.mixin;
 
 import com.alltuttasneeds.beds.BunkBedPositions;
+import com.alltuttasneeds.beds.config.TBConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
@@ -28,6 +29,7 @@ public abstract class WakeUpFromBunkMixin extends Entity {
 
     @Inject(method = "stopSleeping", at = @At("HEAD"), cancellable = true)
     private void alltuttasneeds$wakeBesideLowestBed(CallbackInfo ci) {
+        if (!TBConfig.isModuleEnabled()) return;
         LivingEntity entity = (LivingEntity) (Object) this;
         Optional<BlockPos> sleepingPos = entity.getSleepingPos();
         if (sleepingPos.isEmpty() || !this.level().hasChunkAt(sleepingPos.get())) return;

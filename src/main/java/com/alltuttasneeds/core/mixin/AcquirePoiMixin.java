@@ -32,7 +32,7 @@ public abstract class AcquirePoiMixin {
     private static void alltuttasneeds$prioritizeBeds(Mob mob,
                                                       Set<Pair<Holder<PoiType>, BlockPos>> pois,
                                                       CallbackInfoReturnable<Path> cir) {
-        if (!TBConfig.villagersCanUseTuttaBeds.get()) return;
+        if (!TBConfig.isModuleEnabled() || !TBConfig.villagersCanUseTuttaBeds.get()) return;
         Map<Integer, Set<BlockPos>> bedsByPriority = new HashMap<>();
 
         for (Pair<Holder<PoiType>, BlockPos> poi : pois) {

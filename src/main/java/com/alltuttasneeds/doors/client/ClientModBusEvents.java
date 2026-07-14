@@ -2,6 +2,7 @@ package com.alltuttasneeds.doors.client;
 
 import com.alltuttasneeds.AllTuttasNeeds;
 import com.alltuttasneeds.doors.compat.CompatRegistry;
+import com.alltuttasneeds.doors.config.TDConfig;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.neoforged.api.distmarker.Dist;
@@ -14,6 +15,7 @@ public class ClientModBusEvents {
 
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
+        if (!TDConfig.isModuleEnabled()) return;
         event.enqueueWork(() -> {
             RenderType cutout = RenderType.cutout();
             RenderType translucent = RenderType.translucent();

@@ -2,6 +2,7 @@ package com.alltuttasneeds.core.mixin;
 
 import com.alltuttasneeds.beds.block.BedFrameBlock;
 import com.alltuttasneeds.beds.block.LooseMattressBlock;
+import com.alltuttasneeds.beds.config.TBConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -21,6 +22,7 @@ public abstract class LivingEntityBedHeightMixin extends Entity {
 
     @Inject(at = @At("HEAD"), method = "setPosToBed", cancellable = true)
     private void alltuttasneeds$setPosToReducedHeightBed(BlockPos pos, CallbackInfo info) {
+        if (!TBConfig.isModuleEnabled()) return;
         Block block = this.level().getBlockState(pos).getBlock();
         if (block instanceof BedFrameBlock || block instanceof LooseMattressBlock) {
             this.setPos(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D);

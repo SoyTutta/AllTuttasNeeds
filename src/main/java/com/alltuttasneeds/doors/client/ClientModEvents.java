@@ -55,7 +55,7 @@ public final class ClientModEvents {
 
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
-        if (!TDConfig.tooltipsEnabled.get()) return;
+        if (!TDConfig.isModuleEnabled() || !TDConfig.tooltipsEnabled.get()) return;
 
         var itemStack = event.getItemStack();
         if (itemStack.isEmpty()) {

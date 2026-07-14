@@ -1,25 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    }
+  ],
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "tuttasdoors:crimson_normal_door"
-        },
-        {
-          "item": "tuttasdoors:crimson_indiscrete_door"
-        },
-        {
-          "item": "tuttasdoors:crimson_transit_door"
-        },
-        {
-          "item": "tuttasdoors:crimson_pet_door"
-        },
-        {
-          "item": "minecraft:crimson_door"
-        }
-      ]
+      "item": "minecraft:crimson_door"
     }
   ],
   "result": [

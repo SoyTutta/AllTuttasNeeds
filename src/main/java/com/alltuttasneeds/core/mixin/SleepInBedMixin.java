@@ -24,6 +24,7 @@ public abstract class SleepInBedMixin {
     @Inject(method = "checkExtraStartConditions", at = @At("HEAD"), cancellable = true)
     private void alltuttasneeds$respectVillagerBedConfig(ServerLevel level, LivingEntity entity,
                                                          CallbackInfoReturnable<Boolean> cir) {
+        if (!TBConfig.isModuleEnabled()) return;
         if (TBConfig.villagersCanUseTuttaBeds.get()) return;
         entity.getBrain().getMemory(MemoryModuleType.HOME).ifPresent(home -> {
             Block block = level.getBlockState(home.pos()).getBlock();
@@ -36,6 +37,7 @@ public abstract class SleepInBedMixin {
     @Inject(method = "canStillUse", at = @At("HEAD"), cancellable = true)
     private void alltuttasneeds$allowReducedHeightBeds(ServerLevel level, LivingEntity entity, long gameTime,
                                                        CallbackInfoReturnable<Boolean> cir) {
+        if (!TBConfig.isModuleEnabled()) return;
         Optional<GlobalPos> home = entity.getBrain().getMemory(MemoryModuleType.HOME);
         if (home.isEmpty() || home.get().dimension() != level.dimension()) return;
 

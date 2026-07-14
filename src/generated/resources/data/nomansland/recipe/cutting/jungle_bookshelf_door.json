@@ -1,8 +1,16 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "nomansland"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "secret"
     }
   ],
   "type": "farmersdelight:cutting",

@@ -1,25 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    }
+  ],
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "tuttasdoors:dark_oak_normal_door"
-        },
-        {
-          "item": "tuttasdoors:dark_oak_indiscrete_door"
-        },
-        {
-          "item": "tuttasdoors:dark_oak_transit_door"
-        },
-        {
-          "item": "tuttasdoors:dark_oak_pet_door"
-        },
-        {
-          "item": "minecraft:dark_oak_door"
-        }
-      ]
+      "item": "minecraft:dark_oak_door"
     }
   ],
   "result": [

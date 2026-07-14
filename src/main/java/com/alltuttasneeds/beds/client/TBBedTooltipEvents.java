@@ -31,7 +31,7 @@ public final class TBBedTooltipEvents {
 
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
-        if (!TBConfig.tooltipsEnabled.get() || event.getItemStack().isEmpty()) return;
+        if (!TBConfig.isModuleEnabled() || !TBConfig.tooltipsEnabled.get() || event.getItemStack().isEmpty()) return;
 
         if (!(event.getItemStack().getItem() instanceof BlockItem blockItem)) return;
         BedTier tier = BedTierResolver.resolve(blockItem.getBlock());

@@ -1,12 +1,92 @@
 {
   "add": {
-    "minecraft:pale_oak_door": [
-      "tuttasdoors:pale_oak_normal_door",
-      "tuttasdoors:pale_oak_indiscrete_door",
-      "tuttasdoors:pale_oak_transit_door"
+    "minecraft:acacia_trapdoor": [
+      "tuttasdoors:acacia_pet_door"
     ],
-    "minecraft:pale_oak_trapdoor": [
-      "tuttasdoors:pale_oak_pet_door"
+    "minecraft:bamboo_trapdoor": [
+      "tuttasdoors:bamboo_pet_door"
+    ],
+    "minecraft:birch_door": [
+      "tuttasdoors:birch_normal_door",
+      "tuttasdoors:birch_indiscrete_door",
+      "tuttasdoors:birch_transit_door"
+    ],
+    "minecraft:birch_trapdoor": [
+      "tuttasdoors:birch_pet_door"
+    ],
+    "minecraft:cherry_trapdoor": [
+      "tuttasdoors:cherry_pet_door"
+    ],
+    "minecraft:crimson_door": [
+      "tuttasdoors:crimson_normal_door",
+      "tuttasdoors:crimson_indiscrete_door",
+      "tuttasdoors:crimson_transit_door"
+    ],
+    "minecraft:crimson_trapdoor": [
+      "tuttasdoors:crimson_pet_door"
+    ],
+    "minecraft:dark_oak_door": [
+      "tuttasdoors:dark_oak_normal_door",
+      "tuttasdoors:dark_oak_indiscrete_door",
+      "tuttasdoors:dark_oak_transit_door"
+    ],
+    "minecraft:dark_oak_trapdoor": [
+      "tuttasdoors:dark_oak_pet_door"
+    ],
+    "minecraft:jungle_trapdoor": [
+      "tuttasdoors:jungle_pet_door"
+    ],
+    "minecraft:mangrove_door": [
+      "tuttasdoors:mangrove_normal_door",
+      "tuttasdoors:mangrove_indiscrete_door",
+      "tuttasdoors:mangrove_transit_door"
+    ],
+    "minecraft:mangrove_trapdoor": [
+      "tuttasdoors:mangrove_pet_door"
+    ],
+    "minecraft:oak_trapdoor": [
+      "tuttasdoors:oak_pet_door"
+    ],
+    "minecraft:spruce_door": [
+      "tuttasdoors:spruce_normal_door",
+      "tuttasdoors:spruce_indiscrete_door",
+      "tuttasdoors:spruce_transit_door"
+    ],
+    "minecraft:spruce_trapdoor": [
+      "tuttasdoors:spruce_pet_door"
+    ],
+    "minecraft:warped_door": [
+      "tuttasdoors:warped_normal_door",
+      "tuttasdoors:warped_indiscrete_door",
+      "tuttasdoors:warped_transit_door"
+    ],
+    "minecraft:warped_trapdoor": [
+      "tuttasdoors:warped_pet_door"
+    ],
+    "tuttasdoors:acacia_discrete_door": [
+      "tuttasdoors:acacia_normal_door",
+      "minecraft:acacia_door",
+      "tuttasdoors:acacia_transit_door"
+    ],
+    "tuttasdoors:bamboo_discrete_door": [
+      "minecraft:bamboo_door",
+      "tuttasdoors:bamboo_indiscrete_door",
+      "tuttasdoors:bamboo_transit_door"
+    ],
+    "tuttasdoors:cherry_discrete_door": [
+      "minecraft:cherry_door",
+      "tuttasdoors:cherry_indiscrete_door",
+      "tuttasdoors:cherry_transit_door"
+    ],
+    "tuttasdoors:jungle_discrete_door": [
+      "minecraft:jungle_door",
+      "tuttasdoors:jungle_indiscrete_door",
+      "tuttasdoors:jungle_transit_door"
+    ],
+    "tuttasdoors:oak_discrete_door": [
+      "minecraft:oak_door",
+      "tuttasdoors:oak_indiscrete_door",
+      "tuttasdoors:oak_transit_door"
     ]
   }
 }

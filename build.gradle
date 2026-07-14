@@ -115,7 +115,7 @@ dependencies {
 
     implementation "maven.modrinth:jade:15.10.5+neoforge"
 
-    implementation "maven.modrinth:clutter-no-more:2.0.3+1.21.1-neoforge"
+    //implementation "maven.modrinth:clutter-no-more:2.0.3+1.21.1-neoforge"
     implementation "maven.modrinth:moonlight:1.21-2.29.29-neoforge"
 
     implementation "maven.modrinth:new_world:1.7.2"

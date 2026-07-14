@@ -1,6 +1,10 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "atmospheric"
     }
@@ -8,24 +12,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "type": "neoforge:compound",
-      "children": [
-        {
-          "item": "atmospheric:yucca_normal_door"
-        },
-        {
-          "item": "atmospheric:yucca_indiscrete_door"
-        },
-        {
-          "item": "atmospheric:yucca_transit_door"
-        },
-        {
-          "item": "atmospheric:yucca_pet_door"
-        },
-        {
-          "item": "atmospheric:yucca_door"
-        }
-      ]
+      "item": "atmospheric:yucca_door"
     }
   ],
   "result": [

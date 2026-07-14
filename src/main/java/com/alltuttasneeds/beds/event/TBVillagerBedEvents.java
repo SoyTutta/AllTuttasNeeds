@@ -22,6 +22,7 @@ public final class TBVillagerBedEvents {
 
     @SubscribeEvent
     public static void onCommonSetup(FMLCommonSetupEvent event) {
+        if (!TBConfig.isModuleEnabled()) return;
         event.enqueueWork(() -> {
             if (!TBConfig.villagersCanUseTuttaBeds.get()) return;
             Holder<PoiType> home = BuiltInRegistries.POINT_OF_INTEREST_TYPE.getHolder(PoiTypes.HOME).orElseThrow();

@@ -62,14 +62,13 @@ public abstract class PlayerSleepDurationMixin {
 
     @Unique
     private static boolean alltuttasneeds$usesTieredSleepDuration(Player player) {
-        if (!TBConfig.tieredSleepDurationEnabled.get()) return false;
-        if (TBConfig.vanillaBedsUseTieredSleepDuration.get()) return true;
-
+        if (!TBConfig.isModuleEnabled() || !TBConfig.tieredSleepDurationEnabled.get()) return false;
         return player.getSleepingPos()
                 .map(pos -> player.level().getBlockState(pos).getBlock())
-                .map(PlayerSleepDurationMixin::alltuttasneeds$isVanillaBed)
-                .map(isVanilla -> !isVanilla)
-                .orElse(true);
+                .filter(block -> BedTierResolver.resolve(block) != null)
+                .map(block -> TBConfig.vanillaBedsUseTieredSleepDuration.get()
+                        || !alltuttasneeds$isVanillaBed(block))
+                .orElse(false);
     }
 
     @Unique
