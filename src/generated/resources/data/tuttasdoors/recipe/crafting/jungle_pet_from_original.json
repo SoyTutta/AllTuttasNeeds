@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "pet"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "alltuttasneeds:door_set_enabled",
+        "set": "consistent"
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "minecraft:jungle_door"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "tuttasdoors:jungle_pet_door"
+  }
+}

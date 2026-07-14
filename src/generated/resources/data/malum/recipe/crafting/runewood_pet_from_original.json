@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "pet"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "alltuttasneeds:door_set_enabled",
+        "set": "consistent"
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "malum:runewood_door"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "malum:runewood_pet_door"
+  }
+}

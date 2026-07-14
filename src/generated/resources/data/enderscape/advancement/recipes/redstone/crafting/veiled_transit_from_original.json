@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderscape"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "transit"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "alltuttasneeds:door_set_enabled",
+        "set": "consistent"
+      }
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enderscape:crafting/veiled_transit_from_original"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_veiled_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "enderscape:veiled_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_veiled_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enderscape:crafting/veiled_transit_from_original"
+    ]
+  }
+}

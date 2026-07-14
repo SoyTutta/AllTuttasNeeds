@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "atmospheric"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "transit"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "alltuttasneeds:door_set_enabled",
+        "set": "consistent"
+      }
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atmospheric:crafting/yucca_transit_from_original"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yucca_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:yucca_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yucca_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atmospheric:crafting/yucca_transit_from_original"
+    ]
+  }
+}

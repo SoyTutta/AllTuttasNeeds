@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "architects_palette"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "pet"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "alltuttasneeds:door_set_enabled",
+        "set": "consistent"
+      }
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "architects_palette:crafting/twisted_pet_from_original"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_twisted_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "architects_palette:twisted_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_twisted_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "architects_palette:crafting/twisted_pet_from_original"
+    ]
+  }
+}
