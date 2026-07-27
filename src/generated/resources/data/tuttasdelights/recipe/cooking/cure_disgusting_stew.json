@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "undead"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "cookingtime": 400,
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "tuttasdelights:disgusting_stew"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:beef_stew"
+  }
+}

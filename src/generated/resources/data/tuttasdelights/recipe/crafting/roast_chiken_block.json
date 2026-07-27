@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:cooked_chicken"
+    },
+    {
+      "tag": "c:foods/cooked_potato"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "c:foods/cooked_potato"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:roast_chicken_block"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "ancient"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasdelights:cooking/ancient_ribs_with_seeds"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasdelights:cooking/ancient_ribs_with_seeds"
+    ]
+  }
+}

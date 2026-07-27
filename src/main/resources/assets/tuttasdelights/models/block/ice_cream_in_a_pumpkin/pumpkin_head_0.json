@@ -1,0 +1,27 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"ambientocclusion": "false",
+	"textures": {
+		"0": "farmersdelight:block/stuffed_pumpkin_bottom",
+		"1": "tuttasdelights:block/ice_cream_in_a_pumpkin_side",
+		"2": "farmersdelight:block/stuffed_pumpkin_top",
+		"8": "tuttasdelights:block/ice_cream_in_a_pumpkin_face",
+		"particle": "minecraft:block/pumpkin_side"
+	},
+	"elements": [
+		{
+			"name": "pumpkin",
+			"from": [1.99, -0.01, 1.99],
+			"to": [14.01, 10.01, 14.01],
+			"faces": {
+				"north": {"uv": [2, 6, 14, 16], "texture": "#8"},
+				"east": {"uv": [2, 6, 14, 16], "texture": "#1"},
+				"south": {"uv": [2, 6, 14, 16], "texture": "#1"},
+				"west": {"uv": [2, 6, 14, 16], "texture": "#1"},
+				"up": {"uv": [2, 2, 14, 14], "texture": "#2"},
+				"down": {"uv": [2, 2, 14, 14], "texture": "#0"}
+			}
+		}
+	]
+}

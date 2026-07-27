@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "ancient"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "tuttasdelights:ancient_ribs"
+    },
+    {
+      "tag": "c:foods/cooked_egg"
+    },
+    {
+      "tag": "c:foods/onion"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:ribs_with_eggs"
+  }
+}

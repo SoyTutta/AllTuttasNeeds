@@ -1,0 +1,45 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "ancient"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasdelights:crafting/ancient_salad"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_torchflower_or_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:torchflower"
+          },
+          {
+            "items": "minecraft:torchflower_seeds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_torchflower_or_seeds"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasdelights:crafting/ancient_salad"
+    ]
+  }
+}

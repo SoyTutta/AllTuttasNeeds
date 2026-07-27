@@ -1,0 +1,37 @@
+{
+  "multipart": [
+    { "when": { "facing": "north", "bites": "0" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_0" } },
+    { "when": { "facing": "north", "bites": "1" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_1" } },
+    { "when": { "facing": "north", "bites": "2" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_2" } },
+    { "when": { "facing": "north", "bites": "3" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_3" } },
+    { "when": { "facing": "east",  "bites": "0" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_0", "y": 90 } },
+    { "when": { "facing": "east",  "bites": "1" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_1", "y": 90 } },
+    { "when": { "facing": "east",  "bites": "2" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_2", "y": 90 } },
+    { "when": { "facing": "east",  "bites": "3" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_3", "y": 90 } },
+    { "when": { "facing": "south", "bites": "0" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_0", "y": 180 } },
+    { "when": { "facing": "south", "bites": "1" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_1", "y": 180 } },
+    { "when": { "facing": "south", "bites": "2" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_2", "y": 180 } },
+    { "when": { "facing": "south", "bites": "3" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_3", "y": 180 } },
+    { "when": { "facing": "west",  "bites": "0" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_0", "y": 270 } },
+    { "when": { "facing": "west",  "bites": "1" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_1", "y": 270 } },
+    { "when": { "facing": "west",  "bites": "2" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_2", "y": 270 } },
+    { "when": { "facing": "west",  "bites": "3" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/ice_cream_golem_3", "y": 270 } },
+
+    { "when": { "facing": "north", "pumpkin": "true", "bites": "0" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_0" } },
+    { "when": { "facing": "north", "pumpkin": "true", "bites": "1" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_1" } },
+    { "when": { "facing": "north", "pumpkin": "true", "bites": "2" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_2" } },
+    { "when": { "facing": "north", "pumpkin": "true", "bites": "3" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_3" } },
+    { "when": { "facing": "east",  "pumpkin": "true", "bites": "0" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_0", "y": 90 } },
+    { "when": { "facing": "east",  "pumpkin": "true", "bites": "1" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_1", "y": 90 } },
+    { "when": { "facing": "east",  "pumpkin": "true", "bites": "2" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_2", "y": 90 } },
+    { "when": { "facing": "east",  "pumpkin": "true", "bites": "3" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_3", "y": 90 } },
+    { "when": { "facing": "south", "pumpkin": "true", "bites": "0" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_0", "y": 180 } },
+    { "when": { "facing": "south", "pumpkin": "true", "bites": "1" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_1", "y": 180 } },
+    { "when": { "facing": "south", "pumpkin": "true", "bites": "2" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_2", "y": 180 } },
+    { "when": { "facing": "south", "pumpkin": "true", "bites": "3" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_3", "y": 180 } },
+    { "when": { "facing": "west",  "pumpkin": "true", "bites": "0" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_0", "y": 270 } },
+    { "when": { "facing": "west",  "pumpkin": "true", "bites": "1" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_1", "y": 270 } },
+    { "when": { "facing": "west",  "pumpkin": "true", "bites": "2" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_2", "y": 270 } },
+    { "when": { "facing": "west",  "pumpkin": "true", "bites": "3" }, "apply": { "model": "tuttasdelights:block/ice_cream_in_a_pumpkin/pumpkin_head_3", "y": 270 } }
+  ]
+}

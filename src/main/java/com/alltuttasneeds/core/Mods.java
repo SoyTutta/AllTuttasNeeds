@@ -14,6 +14,7 @@ public enum Mods {
     CREATE             ("create"),
     ENDERSCAPE         ("enderscape"),
     MALUM              ("malum"),
+    MINERS_DELIGHT     ("minersdelight"),
     MYNETHERSDELIGHT   ("mynethersdelight"),
     NATURES_SPIRIT     ("natures_spirit"),
     NEWWORLD           ("newworld"),
@@ -25,7 +26,8 @@ public enum Mods {
     ATMOSPHERIC ("atmospheric"),
     SPAWN ("spawn"),
     WOODWORKS ("woodworks"),
-    FARMERS_DELIGHT ("farmersdelight");
+    FARMERS_DELIGHT ("farmersdelight"),
+    BREWIN_AND_CHEWIN ("brewinandchewin");
 
     private final String id;
 

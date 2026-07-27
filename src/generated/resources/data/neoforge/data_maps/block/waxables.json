@@ -1,27 +1,139 @@
 {
   "values": {
     "blockbox:copper_bars_sliding_door": {
+      "neoforge:conditions": [
+        {
+          "type": "alltuttasneeds:module_enabled",
+          "module": "doors"
+        },
+        {
+          "type": "alltuttasneeds:door_set_enabled",
+          "set": "lateral"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "blockbox"
+        }
+      ],
       "waxed": "blockbox:waxed_copper_bars_sliding_door"
     },
     "blockbox:exposed_copper_bars_sliding_door": {
+      "neoforge:conditions": [
+        {
+          "type": "alltuttasneeds:module_enabled",
+          "module": "doors"
+        },
+        {
+          "type": "alltuttasneeds:door_set_enabled",
+          "set": "lateral"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "blockbox"
+        }
+      ],
       "waxed": "blockbox:waxed_exposed_copper_bars_sliding_door"
     },
     "blockbox:oxidized_copper_bars_sliding_door": {
+      "neoforge:conditions": [
+        {
+          "type": "alltuttasneeds:module_enabled",
+          "module": "doors"
+        },
+        {
+          "type": "alltuttasneeds:door_set_enabled",
+          "set": "lateral"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "blockbox"
+        }
+      ],
       "waxed": "blockbox:waxed_oxidized_copper_bars_sliding_door"
     },
     "blockbox:weathered_copper_bars_sliding_door": {
+      "neoforge:conditions": [
+        {
+          "type": "alltuttasneeds:module_enabled",
+          "module": "doors"
+        },
+        {
+          "type": "alltuttasneeds:door_set_enabled",
+          "set": "lateral"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "blockbox"
+        }
+      ],
       "waxed": "blockbox:waxed_weathered_copper_bars_sliding_door"
     },
     "caverns_and_chasms:copper_bars_sliding_door": {
+      "neoforge:conditions": [
+        {
+          "type": "alltuttasneeds:module_enabled",
+          "module": "doors"
+        },
+        {
+          "type": "alltuttasneeds:door_set_enabled",
+          "set": "lateral"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        }
+      ],
       "waxed": "caverns_and_chasms:waxed_copper_bars_sliding_door"
     },
     "caverns_and_chasms:exposed_copper_bars_sliding_door": {
+      "neoforge:conditions": [
+        {
+          "type": "alltuttasneeds:module_enabled",
+          "module": "doors"
+        },
+        {
+          "type": "alltuttasneeds:door_set_enabled",
+          "set": "lateral"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        }
+      ],
       "waxed": "caverns_and_chasms:waxed_exposed_copper_bars_sliding_door"
     },
     "caverns_and_chasms:oxidized_copper_bars_sliding_door": {
+      "neoforge:conditions": [
+        {
+          "type": "alltuttasneeds:module_enabled",
+          "module": "doors"
+        },
+        {
+          "type": "alltuttasneeds:door_set_enabled",
+          "set": "lateral"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        }
+      ],
       "waxed": "caverns_and_chasms:waxed_oxidized_copper_bars_sliding_door"
     },
     "caverns_and_chasms:weathered_copper_bars_sliding_door": {
+      "neoforge:conditions": [
+        {
+          "type": "alltuttasneeds:module_enabled",
+          "module": "doors"
+        },
+        {
+          "type": "alltuttasneeds:door_set_enabled",
+          "set": "lateral"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        }
+      ],
       "waxed": "caverns_and_chasms:waxed_weathered_copper_bars_sliding_door"
     }
   }

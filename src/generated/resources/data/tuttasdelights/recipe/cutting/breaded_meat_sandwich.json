@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "breaded"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "tuttasdelights:breaded_meat_sandwich"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "tuttasdelights:half_a_breaded_meat_sandwich"
+      }
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:item_ability",
+      "action": "knife_dig"
+    },
+    {
+      "tag": "c:tools/knife"
+    }
+  ]
+}

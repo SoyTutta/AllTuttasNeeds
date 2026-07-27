@@ -1,0 +1,37 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "slime"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "c": {
+      "item": "minecraft:sugar_cane"
+    },
+    "s": {
+      "item": "tuttasdelights:slimecube"
+    },
+    "w": {
+      "tag": "c:buckets/water"
+    }
+  },
+  "pattern": [
+    "sss",
+    "SwS",
+    "ccc"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:slime_jelly"
+  }
+}

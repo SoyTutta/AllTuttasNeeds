@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "tuttasdelights:item/frog_legs_on_a_stick"
+  }
+}

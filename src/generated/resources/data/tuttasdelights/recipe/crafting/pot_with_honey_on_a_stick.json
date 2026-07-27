@@ -1,0 +1,42 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "ancient"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:pitcher_pod"
+      },
+      {
+        "item": "tuttasdelights:pot_slice"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:pitcher_pod"
+      },
+      {
+        "item": "tuttasdelights:pot_slice"
+      }
+    ],
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:pot_with_honey_on_a_stick"
+  }
+}

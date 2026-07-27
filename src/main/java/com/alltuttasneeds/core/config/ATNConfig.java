@@ -2,6 +2,7 @@ package com.alltuttasneeds.core.config;
 
 import com.alltuttasneeds.beds.config.TBConfig;
 import com.alltuttasneeds.doors.config.TDConfig;
+import com.alltuttasneeds.delights.config.DelightsConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
@@ -20,6 +21,10 @@ public final class ATNConfig {
 
         builder.push("beds");
         TBConfig.init(builder);
+        builder.pop();
+
+        builder.push("delights");
+        DelightsConfig.init(builder);
         builder.pop();
 
         SPEC = builder.build();

@@ -1,0 +1,184 @@
+{
+  "variants": {
+    "facing=east,part=head,servings=0": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_leftover_top",
+      "y": 270
+    },
+    "facing=east,part=head,servings=1": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage4_top",
+      "y": 270
+    },
+    "facing=east,part=head,servings=2": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage3_top",
+      "y": 270
+    },
+    "facing=east,part=head,servings=3": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage2_top",
+      "y": 270
+    },
+    "facing=east,part=head,servings=4": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage1_top",
+      "y": 270
+    },
+    "facing=east,part=head,servings=5": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage0_top",
+      "y": 270
+    },
+    "facing=north,part=head,servings=0": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_leftover_top",
+      "y": 180
+    },
+    "facing=north,part=head,servings=1": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage4_top",
+      "y": 180
+    },
+    "facing=north,part=head,servings=2": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage3_top",
+      "y": 180
+    },
+    "facing=north,part=head,servings=3": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage2_top",
+      "y": 180
+    },
+    "facing=north,part=head,servings=4": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage1_top",
+      "y": 180
+    },
+    "facing=north,part=head,servings=5": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage0_top",
+      "y": 180
+    },
+    "facing=south,part=head,servings=0": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_leftover_top"
+    },
+    "facing=south,part=head,servings=1": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage4_top"
+    },
+    "facing=south,part=head,servings=2": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage3_top"
+    },
+    "facing=south,part=head,servings=3": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage2_top"
+    },
+    "facing=south,part=head,servings=4": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage1_top"
+    },
+    "facing=south,part=head,servings=5": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage0_top"
+    },
+    "facing=west,part=head,servings=0": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_leftover_top",
+      "y": 90
+    },
+    "facing=west,part=head,servings=1": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage4_top",
+      "y": 90
+    },
+    "facing=west,part=head,servings=2": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage3_top",
+      "y": 90
+    },
+    "facing=west,part=head,servings=3": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage2_top",
+      "y": 90
+    },
+    "facing=west,part=head,servings=4": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage1_top",
+      "y": 90
+    },
+    "facing=west,part=head,servings=5": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage0_top",
+      "y": 90
+    },
+    "facing=east,part=foot,servings=0": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_leftover_bottom",
+      "y": 270
+    },
+    "facing=east,part=foot,servings=1": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage4_bottom",
+      "y": 270
+    },
+    "facing=east,part=foot,servings=2": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage3_bottom",
+      "y": 270
+    },
+    "facing=east,part=foot,servings=3": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage2_bottom",
+      "y": 270
+    },
+    "facing=east,part=foot,servings=4": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage1_bottom",
+      "y": 270
+    },
+    "facing=east,part=foot,servings=5": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage0_bottom",
+      "y": 270
+    },
+    "facing=north,part=foot,servings=0": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_leftover_bottom",
+      "y": 180
+    },
+    "facing=north,part=foot,servings=1": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage4_bottom",
+      "y": 180
+    },
+    "facing=north,part=foot,servings=2": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage3_bottom",
+      "y": 180
+    },
+    "facing=north,part=foot,servings=3": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage2_bottom",
+      "y": 180
+    },
+    "facing=north,part=foot,servings=4": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage1_bottom",
+      "y": 180
+    },
+    "facing=north,part=foot,servings=5": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage0_bottom",
+      "y": 180
+    },
+    "facing=south,part=foot,servings=0": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_leftover_bottom"
+    },
+    "facing=south,part=foot,servings=1": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage4_bottom"
+    },
+    "facing=south,part=foot,servings=2": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage3_bottom"
+    },
+    "facing=south,part=foot,servings=3": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage2_bottom"
+    },
+    "facing=south,part=foot,servings=4": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage1_bottom"
+    },
+    "facing=south,part=foot,servings=5": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage0_bottom"
+    },
+    "facing=west,part=foot,servings=0": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_leftover_bottom",
+      "y": 90
+    },
+    "facing=west,part=foot,servings=1": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage4_bottom",
+      "y": 90
+    },
+    "facing=west,part=foot,servings=2": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage3_bottom",
+      "y": 90
+    },
+    "facing=west,part=foot,servings=3": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage2_bottom",
+      "y": 90
+    },
+    "facing=west,part=foot,servings=4": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage1_bottom",
+      "y": 90
+    },
+    "facing=west,part=foot,servings=5": {
+      "model": "tuttasdelights:block/suckling_pig_with_vegetables/suckling_pig_with_vegetables_stage0_bottom",
+      "y": 90
+    }
+  }
+}

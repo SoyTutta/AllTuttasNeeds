@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tuttasdelights:item/ribs_with_eggs"
+  }
+}

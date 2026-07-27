@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "extra_meals"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:crops/beetroot"
+    },
+    {
+      "tag": "c:crops/beetroot"
+    },
+    {
+      "tag": "c:foods/boiled_egg"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:beet_and_egg_salad"
+  }
+}

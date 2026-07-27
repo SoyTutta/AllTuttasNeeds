@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "undead"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mynethersdelight"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rotten_minced_beef": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tuttasdelights:rotten_minced_beef"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mynethersdelight:crafting/rotten_sausage"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rotten_minced_beef"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mynethersdelight:crafting/rotten_sausage"
+    ]
+  }
+}

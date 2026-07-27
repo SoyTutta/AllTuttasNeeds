@@ -1,0 +1,24 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"ambientocclusion": "false",
+	"textures": {
+		"10": "tuttasdelights:block/ice_cream_faces/ice_cream_default"
+	},
+	"elements": [
+		{
+			"name": "face",
+			"from": [4, 6.01, 4],
+			"to": [12, 6.01, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4.21978, 7.81805]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 0], "texture": "#10"},
+				"east": {"uv": [0, 0, 0, 0], "rotation": 90, "texture": "#10"},
+				"south": {"uv": [0, 0, 0, 0], "rotation": 180, "texture": "#10"},
+				"west": {"uv": [0, 0, 0, 0], "rotation": 270, "texture": "#10"},
+				"up": {"uv": [4, 4, 12, 12], "rotation": 180, "texture": "#10"},
+				"down": {"uv": [0, 0, 0, 0], "rotation": 180, "texture": "#10"}
+			}
+		}
+	]
+}

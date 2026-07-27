@@ -1,0 +1,133 @@
+{
+  "variants": {
+    "facing=north,second_jelly=false,bites=0": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state0",
+      "y": 0
+    },
+    "facing=north,second_jelly=false,bites=1": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state1",
+      "y": 0
+    },
+    "facing=north,second_jelly=false,bites=2": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state2",
+      "y": 0
+    },
+    "facing=north,second_jelly=false,bites=3": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state3",
+      "y": 0
+    },
+    "facing=east,second_jelly=false,bites=0": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state0",
+      "y": 90
+    },
+    "facing=east,second_jelly=false,bites=1": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state1",
+      "y": 90
+    },
+    "facing=east,second_jelly=false,bites=2": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state2",
+      "y": 90
+    },
+    "facing=east,second_jelly=false,bites=3": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state3",
+      "y": 90
+    },
+    "facing=south,second_jelly=false,bites=0": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state0",
+      "y": 180
+    },
+    "facing=south,second_jelly=false,bites=1": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state1",
+      "y": 180
+    },
+    "facing=south,second_jelly=false,bites=2": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state2",
+      "y": 180
+    },
+    "facing=south,second_jelly=false,bites=3": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state3",
+      "y": 180
+    },
+    "facing=west,second_jelly=false,bites=0": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state0",
+      "y": 270
+    },
+    "facing=west,second_jelly=false,bites=1": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state1",
+      "y": 270
+    },
+    "facing=west,second_jelly=false,bites=2": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state2",
+      "y": 270
+    },
+    "facing=west,second_jelly=false,bites=3": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/slime_state3",
+      "y": 270
+    },
+
+    "facing=north,second_jelly=true,bites=0": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state0",
+      "y": 0
+    },
+    "facing=north,second_jelly=true,bites=1": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state1",
+      "y": 0
+    },
+    "facing=north,second_jelly=true,bites=2": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state2",
+      "y": 0
+    },
+    "facing=north,second_jelly=true,bites=3": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state3",
+      "y": 0
+    },
+    "facing=east,second_jelly=true,bites=0": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state0",
+      "y": 90
+    },
+    "facing=east,second_jelly=true,bites=1": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state1",
+      "y": 90
+    },
+    "facing=east,second_jelly=true,bites=2": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state2",
+      "y": 90
+    },
+    "facing=east,second_jelly=true,bites=3": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state3",
+      "y": 90
+    },
+    "facing=south,second_jelly=true,bites=0": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state0",
+      "y": 180
+    },
+    "facing=south,second_jelly=true,bites=1": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state1",
+      "y": 180
+    },
+    "facing=south,second_jelly=true,bites=2": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state2",
+      "y": 180
+    },
+    "facing=south,second_jelly=true,bites=3": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state3",
+      "y": 180
+    },
+    "facing=west,second_jelly=true,bites=0": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state0",
+      "y": 270
+    },
+    "facing=west,second_jelly=true,bites=1": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state1",
+      "y": 270
+    },
+    "facing=west,second_jelly=true,bites=2": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state2",
+      "y": 270
+    },
+    "facing=west,second_jelly=true,bites=3": {
+      "model": "tuttasdelights:block/slime_jelly_blocks/big_slime_state3",
+      "y": 270
+    }
+  }
+}

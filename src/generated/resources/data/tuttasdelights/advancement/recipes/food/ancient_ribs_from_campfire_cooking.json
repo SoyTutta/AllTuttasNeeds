@@ -1,0 +1,42 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "ancient"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "ancient_ribs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tuttasdelights:ancient_ribs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasdelights:ancient_ribs_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "ancient_ribs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasdelights:ancient_ribs_from_campfire_cooking"
+    ]
+  }
+}

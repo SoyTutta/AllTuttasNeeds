@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tuttasdelights:item/breaded_meat_with_mashed_potato"
+  }
+}

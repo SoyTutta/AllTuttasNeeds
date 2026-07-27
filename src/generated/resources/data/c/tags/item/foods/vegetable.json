@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "tuttasdelights:potato_slices",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:pot_slice",
+      "required": false
+    }
+  ]
+}

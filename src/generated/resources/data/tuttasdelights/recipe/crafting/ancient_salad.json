@@ -1,0 +1,42 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "ancient"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:torchflower"
+    },
+    [
+      {
+        "item": "minecraft:torchflower"
+      },
+      {
+        "item": "minecraft:torchflower_seeds"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:torchflower"
+      },
+      {
+        "item": "minecraft:torchflower_seeds"
+      }
+    ],
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:ancient_salad"
+  }
+}

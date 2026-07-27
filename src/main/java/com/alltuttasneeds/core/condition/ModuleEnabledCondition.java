@@ -2,6 +2,7 @@ package com.alltuttasneeds.core.condition;
 
 import com.alltuttasneeds.beds.config.TBConfig;
 import com.alltuttasneeds.doors.config.TDConfig;
+import com.alltuttasneeds.delights.config.DelightsConfig;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -13,12 +14,14 @@ public record ModuleEnabledCondition(String module) implements ICondition {
     ).apply(instance, ModuleEnabledCondition::new));
 
     public static final ModuleEnabledCondition DOORS = new ModuleEnabledCondition("doors");
+    public static final ModuleEnabledCondition DELIGHTS = new ModuleEnabledCondition("delights");
 
     @Override
     public boolean test(IContext context) {
         return switch (module) {
             case "doors" -> TDConfig.isModuleEnabled();
             case "beds" -> TBConfig.isModuleEnabled();
+            case "delights" -> DelightsConfig.isModuleEnabled();
             default -> false;
         };
     }

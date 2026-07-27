@@ -1,0 +1,42 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "slime"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_squishmallow": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tuttasdelights:smoked_squishmallow"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasdelights:squishmallow_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_squishmallow"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasdelights:squishmallow_from_campfire_cooking"
+    ]
+  }
+}

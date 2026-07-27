@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "undead"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bone"
+    },
+    {
+      "tag": "c:foods/rotten_meals"
+    },
+    {
+      "tag": "c:foods/rotten_meals"
+    },
+    {
+      "tag": "c:foods/rotten_meals"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:rotten_meat_on_a_bone"
+  }
+}

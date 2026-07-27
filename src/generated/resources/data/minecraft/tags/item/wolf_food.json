@@ -1,0 +1,22 @@
+{
+  "values": [
+    "#c:foods/rotten_meals",
+    "#c:foods/frog_meat",
+    {
+      "id": "tuttasdelights:broken_bones",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_meat_on_a_bone",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_ham",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:half_a_hotdog",
+      "required": false
+    }
+  ]
+}

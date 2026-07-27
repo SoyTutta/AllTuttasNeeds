@@ -1,0 +1,45 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "undead"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/rotten_meals"
+    },
+    {
+      "tag": "c:foods/rotten_meals"
+    },
+    {
+      "tag": "c:foods/rotten_vegetables"
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:foods/rotten_meals"
+        },
+        {
+          "tag": "c:foods/rotten_vegetables"
+        },
+        {
+          "item": "farmersdelight:straw"
+        }
+      ]
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:disgusting_stew"
+  }
+}

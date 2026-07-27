@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "ancient"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:foods/bread"
+    },
+    {
+      "item": "tuttasdelights:ancient_boiled_egg"
+    },
+    {
+      "item": "tuttasdelights:ancient_boiled_egg"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:ancient_egg_sandwich"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "values": [
+    "#farmersdelight:meals",
+    "#farmersdelight:snacks",
+    "#farmersdelight:sweets",
+    "#farmersdelight:drinks",
+    "#farmersdelight:feasts",
+    {
+      "id": "tuttasdelights:mint_lettuce",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_bacon",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_minced_beef",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_mutton_chops",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_chicken_cuts",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_sausage",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_meat_on_a_bone",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_ham",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:pot_slice",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:ancient_boiled_egg",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:ancient_ribs",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:cooked_ancient_ribs",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:raw_breaded_meat",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:cooked_breaded_meat",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:potato_slices",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:baked_potato_slices",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:fries_potatoes",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:raw_frog_leg",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:cooked_frog_leg",
+      "required": false
+    }
+  ]
+}

@@ -8,7 +8,9 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public final class ShapeMapProvider implements DataProvider {
@@ -22,22 +24,25 @@ public final class ShapeMapProvider implements DataProvider {
     @Override
     public CompletableFuture<?> run(CachedOutput cache) {
         List<CompletableFuture<?>> futures = new ArrayList<>();
+        Map<String, JsonObject> shapeMaps = new LinkedHashMap<>();
 
         CompatRegistry.loaded().forEach(compat -> {
             List<WoodFamily> families = compat.woodFamilies();
             if (families.isEmpty()) return;
 
-            JsonObject add = new JsonObject();
+            JsonObject add = shapeMaps.computeIfAbsent(compat.namespace(), namespace -> new JsonObject());
             for (WoodFamily family : families) {
                 buildFamily(family, compat.namespace(), add);
             }
-            if (add.size() == 0) return;
+        });
 
+        shapeMaps.forEach((namespace, add) -> {
+            if (add.size() == 0) return;
             JsonObject root = new JsonObject();
             root.add("add", add);
 
             var path = output.getOutputFolder(PackOutput.Target.DATA_PACK)
-                    .resolve("tuttasdoors/shape_map/" + compat.namespace() + "doors.json");
+                    .resolve("tuttasdoors/shape_map/" + namespace + "doors.json");
 
             futures.add(DataProvider.saveStable(cache, root, path));
         });

@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "ancient"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ancient_boiled_egg_or_pitcher_pot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:pitcher_pod"
+          },
+          {
+            "items": "tuttasdelights:pot_slice"
+          },
+          {
+            "items": "tuttasdelights:ancient_boiled_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasdelights:crafting/ancient_breakfast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ancient_boiled_egg_or_pitcher_pot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasdelights:crafting/ancient_breakfast"
+    ]
+  }
+}

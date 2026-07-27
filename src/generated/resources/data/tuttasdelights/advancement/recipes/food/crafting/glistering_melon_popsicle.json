@@ -1,0 +1,42 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "frozen_treats"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_melon_popsicle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:melon_popsicle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasdelights:crafting/glistering_melon_popsicle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_melon_popsicle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasdelights:crafting/glistering_melon_popsicle"
+    ]
+  }
+}

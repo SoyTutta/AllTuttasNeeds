@@ -1,0 +1,10 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    }
+  ],
+  "type": "farmersdelight:food_serving",
+  "category": "misc"
+}

@@ -68,5 +68,6 @@ public final class AAContent implements ModCompat {
     @Override public Map<String, Supplier<Item>> doorItems() { return DOOR_ITEMS; }
     @Override public List<WoodFamily> woodFamilies() { return WOOD_FAMILIES; }
     @Override public List<SecretDoorFamily> secretDoorFamilies() { return SECRET_DOOR_FAMILIES; }
+    @Override public List<Mods> secretDoorDependencies() { return List.of(Mods.NOMANSLAND); }
     @Override public String recipeFolder(WoodFamily family) { return "wood/" + family.registryName() + "/"; }
 }

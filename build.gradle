@@ -47,6 +47,13 @@ tasks.named('jar', Jar).configure {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+sourceSets {
+    datagen {
+        compileClasspath += main.output + main.compileClasspath
+        runtimeClasspath += main.output + main.compileClasspath
+    }
+}
+
 neoForge {
     version = project.neo_version
 
@@ -74,18 +81,28 @@ neoForge {
 
         data {
             data()
+            sourceSet = sourceSets.datagen
             programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
         }
 
         doorsData {
             data()
+            sourceSet = sourceSets.datagen
             systemProperty 'alltuttasneeds.datagen.profile', 'doors'
             programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
         }
 
         bedsData {
             data()
+            sourceSet = sourceSets.datagen
             systemProperty 'alltuttasneeds.datagen.profile', 'beds'
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+
+        delightsData {
+            data()
+            sourceSet = sourceSets.datagen
+            systemProperty 'alltuttasneeds.datagen.profile', 'delights'
             programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
         }
 
@@ -105,6 +122,9 @@ neoForge {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 configurations {
+    datagenRuntime
+    compileOnly.extendsFrom datagenRuntime
+    datagenRuntimeOnly.extendsFrom datagenRuntime
     runtimeClasspath.extendsFrom localRuntime
 }
 
@@ -113,60 +133,88 @@ dependencies {
     compileOnly "mezz.jei:jei-$minecraft_version-neoforge-api:19.21.0.247"
     localRuntime "mezz.jei:jei-$minecraft_version-neoforge:19.21.0.247"
 
-    implementation "maven.modrinth:jade:15.10.5+neoforge"
+    compileOnly "maven.modrinth:jade:15.10.5+neoforge"
+    localRuntime "maven.modrinth:jade:15.10.5+neoforge"
 
-    //implementation "maven.modrinth:clutter-no-more:2.0.3+1.21.1-neoforge"
-    implementation "maven.modrinth:moonlight:1.21-2.29.29-neoforge"
+    datagenRuntime "maven.modrinth:moonlight:1.21-2.29.29-neoforge"
 
-    implementation "maven.modrinth:new_world:1.7.2"
+    datagenRuntime "maven.modrinth:new_world:1.7.2"
+    localRuntime "maven.modrinth:new_world:1.7.2"
 
-    implementation "maven.modrinth:vanillabackport:rUSWdBok"
-    implementation "maven.modrinth:i6fiqm5y:v7P0nBi2"
+    datagenRuntime "maven.modrinth:vanillabackport:rUSWdBok"
+    datagenRuntime "maven.modrinth:i6fiqm5y:v7P0nBi2"
 
-    implementation "maven.modrinth:the-block-box:0.1.1"
+    datagenRuntime "maven.modrinth:the-block-box:0.1.1"
 
-    implementation "maven.modrinth:farmers-delight:1.21.1-1.3.2"
-    implementation "maven.modrinth:my-nethers-delight:1.8"
+    datagenRuntime "curse.maven:malum-484064:7307339"
+    datagenRuntime "maven.modrinth:lodestonelib:1.8.2"
+    datagenRuntime "maven.modrinth:curios:9.5.1+1.21.1"
 
-    implementation "curse.maven:malum-484064:7307339"
-    implementation "maven.modrinth:lodestonelib:1.8.2"
-    implementation "maven.modrinth:curios:9.5.1+1.21.1"
+    datagenRuntime "maven.modrinth:no-mans-land:1.5.12"
+    localRuntime "maven.modrinth:no-mans-land:1.5.12"
+    datagenRuntime "maven.modrinth:biolith:EAjbdreT"
+    localRuntime "maven.modrinth:biolith:EAjbdreT"
+    datagenRuntime "maven.modrinth:mixed-litter:1.2.2"
+    localRuntime "maven.modrinth:mixed-litter:1.2.2"
 
-    implementation "maven.modrinth:no-mans-land:1.5.9"
-    implementation "maven.modrinth:biolith:xaeaSA9Q"
-    implementation "maven.modrinth:mixed-litter:1.2.2"
+    datagenRuntime "curse.maven:enderscape-536638:6738966"
+    datagenRuntime "maven.modrinth:trimmed:1.21-3.0.0+neoforge"
+    datagenRuntime "maven.modrinth:yacl:3.7.1+1.21.1-neoforge"
 
-    implementation "curse.maven:enderscape-536638:6738966"
-    implementation "maven.modrinth:trimmed:1.21-3.0.0+neoforge"
-    implementation "maven.modrinth:yacl:3.7.1+1.21.1-neoforge"
+    datagenRuntime "curse.maven:artsandcrafts-1034791:8041062"
+    datagenRuntime "curse.maven:jinxedlib-1203401:6727693"
 
-    implementation "curse.maven:artsandcrafts-1034791:8041062"
-    implementation "curse.maven:jinxedlib-1203401:6727693"
+    datagenRuntime "maven.modrinth:natures-spirit:2.2.5-1.21.1"
 
-    implementation "maven.modrinth:natures-spirit:2.2.5-1.21.1"
+    datagenRuntime "curse.maven:create-328085:7963363"
 
-    implementation "curse.maven:create-328085:7963363"
+    datagenRuntime "curse.maven:biomes-o-plenty-220318:7251965"
+    datagenRuntime "curse.maven:terrablender-neoforge-940057:6054947"
+    datagenRuntime "maven.modrinth:glitchcore:S2TfWrZR"
 
-    implementation "curse.maven:biomes-o-plenty-220318:7251965"
-    implementation "curse.maven:terrablender-neoforge-940057:6054947"
-    implementation "maven.modrinth:glitchcore:S2TfWrZR"
+    datagenRuntime "maven.modrinth:architects-palette:1.4.0-beta.5N"
 
-    implementation "maven.modrinth:architects-palette:1.4.0-beta.5N"
+    datagenRuntime "maven.modrinth:abundant-atmosphere:1.21.1-2.0.0-beta2.1"
+    localRuntime "maven.modrinth:abundant-atmosphere:1.21.1-2.0.0-beta2.1"
 
-    implementation "maven.modrinth:abundant-atmosphere:1.21.1-2.0.0-beta2.1"
+    datagenRuntime "maven.modrinth:blueprint:8.1.0"
+    localRuntime "maven.modrinth:blueprint:8.1.0"
 
-    implementation "maven.modrinth:blueprint:8.1.0"
+    datagenRuntime "maven.modrinth:upgrade-aquatic:7.0.1"
+    localRuntime "maven.modrinth:upgrade-aquatic:7.0.1"
+    datagenRuntime "maven.modrinth:atmospheric:7.0.1"
+    localRuntime "maven.modrinth:atmospheric:7.0.1"
+    datagenRuntime "maven.modrinth:autumnity:6.0.1"
+    localRuntime "maven.modrinth:autumnity:6.0.1"
+    datagenRuntime "maven.modrinth:environmental:5.0.1"
+    localRuntime "maven.modrinth:environmental:5.0.1"
+    datagenRuntime "maven.modrinth:caverns-and-chasms:3.0.0"
+    localRuntime "maven.modrinth:caverns-and-chasms:3.0.0"
+    datagenRuntime "maven.modrinth:gallery:2.0.1"
 
-    implementation "maven.modrinth:upgrade-aquatic:7.0.1"
-    implementation "maven.modrinth:atmospheric:7.0.1"
-    implementation "maven.modrinth:autumnity:6.0.1"
-    implementation "maven.modrinth:environmental:5.0.1"
-    implementation "maven.modrinth:caverns-and-chasms:3.0.0"
-    implementation "maven.modrinth:gallery:2.0.1"
 
-    implementation "maven.modrinth:spawn-mod:4.0.4"
+    datagenRuntime "maven.modrinth:woodworks:4.0.2"
 
-    implementation "maven.modrinth:woodworks:4.0.2"
+    // Delights compat
+    datagenRuntime "maven.modrinth:farmers-delight:1.21.1-1.3.2"
+    localRuntime "maven.modrinth:farmers-delight:1.21.1-1.3.2"
+    datagenRuntime "maven.modrinth:my-nethers-delight:1.10.2"
+    localRuntime "maven.modrinth:my-nethers-delight:1.10.2"
+    datagenRuntime "maven.modrinth:miners-delight:1.4.5"
+    localRuntime "maven.modrinth:miners-delight:1.4.5"
+    localRuntime "maven.modrinth:lodestonelib:1.8.2"
+    datagenRuntime "maven.modrinth:brewin-and-chewin:4.2.5+1.21.1-neoforge"
+    localRuntime "maven.modrinth:brewin-and-chewin:4.2.5+1.21.1-neoforge"
+
+    datagenRuntime "maven.modrinth:abnormals-delight:6.0.2"
+    localRuntime "maven.modrinth:abnormals-delight:6.0.2"
+
+    datagenRuntime "curse.maven:spawn-mod-935694:8507225"
+    localRuntime "curse.maven:spawn-mod-935694:8507225"
+    datagenRuntime "maven.modrinth:teallib:1.3.teal"
+    localRuntime "maven.modrinth:teallib:1.3.teal"
+
+    localRuntime "maven.modrinth:appleskin:3.0.9+mc1.21"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

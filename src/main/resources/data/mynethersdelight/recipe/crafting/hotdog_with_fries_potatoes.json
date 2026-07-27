@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "potato"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mynethersdelight"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mynethersdelight:hotdog"
+    },
+    {
+      "item": "tuttasdelights:fries_potatoes"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mynethersdelight:hotdog_with_fries_potatoes"
+  }
+}

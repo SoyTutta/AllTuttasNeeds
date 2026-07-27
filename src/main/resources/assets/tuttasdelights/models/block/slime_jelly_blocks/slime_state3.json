@@ -1,0 +1,47 @@
+{
+	"credit": "Made with Blockbench",
+	"render_type": "minecraft:translucent",
+	"texture_size": [48, 32],
+	"textures": {
+		"0": "tuttasdelights:block/slime_jelly",
+		"particle": "minecraft:block/slime_block"
+	},
+	"elements": [
+		{
+			"name": "slime1",
+			"from": [1, 0, 8],
+			"to": [8, 8, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 1]},
+			"faces": {
+				"north": {"uv": [2.33333, 4, 4.66667, 8], "texture": "#0"},
+				"east": {"uv": [4.66667, 4, 2.33333, 8], "texture": "#0"},
+				"south": {"uv": [0, 0, 2.33333, 4], "texture": "#0"},
+				"west": {"uv": [2.33333, 0, 4.66667, 4], "texture": "#0"},
+				"up": {"uv": [7, 1, 9.33333, 4.5], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [7, 1, 9.33333, 4.5], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"name": "nucleo1",
+			"from": [1.99, 0.99, 9],
+			"to": [6.99, 7.01, 14.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-1, 1, 2]},
+			"faces": {
+				"north": {"uv": [12.33333, 13, 14, 16], "texture": "#0"},
+				"east": {"uv": [10.66667, 13, 12.33333, 16], "texture": "#0"},
+				"south": {"uv": [10.66667, 13, 12.33333, 16], "texture": "#0"},
+				"west": {"uv": [12.33333, 13, 14, 16], "texture": "#0"},
+				"up": {"uv": [10.66667, 10.5, 12.33333, 13], "texture": "#0"},
+				"down": {"uv": [10.66667, 8, 12.33333, 10.5], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "slime_jelly",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

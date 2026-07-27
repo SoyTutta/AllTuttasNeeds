@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "undead"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "tuttasdelights:broken_bones"
+    },
+    "r": {
+      "item": "tuttasdelights:rotten_minced_beef"
+    }
+  },
+  "pattern": [
+    "#",
+    "r"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:rotten_mutton_chops"
+  }
+}

@@ -112,5 +112,6 @@ public final class CACContent implements ModCompat {
     @Override public List<WoodFamily> woodFamilies()                    { return WOOD_FAMILIES; }
     @Override public List<ExtraDoor> extraDoors()                       { return EXTRA_DOORS; }
     @Override public List<SecretDoorFamily> secretDoorFamilies()        { return SECRET_DOOR_FAMILIES; }
+    @Override public List<Mods> secretDoorDependencies()                { return List.of(Mods.WOODWORKS); }
     @Override public List<WeatheringDoorChain.Link> weatheringLinks()   { return COPPER_CHAIN.oxidationLinks(); }
 }

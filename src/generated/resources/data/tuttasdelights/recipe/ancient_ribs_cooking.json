@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "ancient"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "tuttasdelights:ancient_ribs"
+  },
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:cooked_ancient_ribs"
+  }
+}

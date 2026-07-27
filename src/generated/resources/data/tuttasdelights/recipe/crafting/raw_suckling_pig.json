@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "suckling_pig"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:porkchop"
+    },
+    "H": {
+      "item": "farmersdelight:ham"
+    },
+    "b": {
+      "item": "farmersdelight:bacon"
+    }
+  },
+  "pattern": [
+    "HB ",
+    "BbB",
+    " Bb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:raw_suckling_pig"
+  }
+}

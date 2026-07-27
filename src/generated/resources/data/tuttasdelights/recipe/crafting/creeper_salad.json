@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "creeper"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:gunpowders"
+    },
+    {
+      "item": "tuttasdelights:mint_lettuce"
+    },
+    {
+      "item": "tuttasdelights:mint_lettuce"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:creeper_salad"
+  }
+}

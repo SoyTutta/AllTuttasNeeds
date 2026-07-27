@@ -7,6 +7,8 @@ import com.alltuttasneeds.beds.TBCreativeTab;
 import com.alltuttasneeds.doors.TDCreativeTab;
 import com.alltuttasneeds.doors.compat.CompatRegistry;
 import com.alltuttasneeds.doors.config.TDConfig;
+import com.alltuttasneeds.delights.DelightsModule;
+import com.alltuttasneeds.delights.config.DelightsConfig;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -18,7 +20,6 @@ public class AllTuttasNeeds {
     public AllTuttasNeeds(IEventBus modEventBus, ModContainer modContainer) {
         ATNConfig.register(modContainer);
         ATNConditions.register(modEventBus);
-
         CompatRegistry.loaded().forEach(compat -> compat.registerToBus(modEventBus));
         if (TDConfig.anySetEnabled()) {
             TDCreativeTab.TABS.register(modEventBus);
@@ -27,5 +28,9 @@ public class AllTuttasNeeds {
         BedCompatRegistry.registerFamilies();
         BedCompatRegistry.loaded().forEach(compat -> compat.registerToBus(modEventBus));
         TBCreativeTab.TABS.register(modEventBus);
+
+        if (DelightsConfig.isModuleEnabled()) {
+            DelightsModule.register(modEventBus);
+        }
     }
 }

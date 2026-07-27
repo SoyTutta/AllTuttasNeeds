@@ -1,0 +1,94 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "suckling_pig"
+    }
+  ],
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "pool1",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tuttasdelights:suckling_pig_with_vegetables"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "tuttasdelights:suckling_pig_with_vegetables_block",
+          "properties": {
+            "servings": "5",
+            "part": "head"
+          }
+        }
+      ]
+    },
+    {
+      "name": "pool2",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tuttasdelights:plate_of_suckling_pig_with_vegetables"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:block_state_property",
+            "block": "tuttasdelights:suckling_pig_with_vegetables_block",
+            "properties": {
+              "servings": "5"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:block_state_property",
+            "block": "tuttasdelights:suckling_pig_with_vegetables_block",
+            "properties": {
+              "servings": "0"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "tuttasdelights:suckling_pig_with_vegetables_block",
+          "properties": {
+            "part": "head"
+          }
+        }
+      ]
+    },
+    {
+      "name": "pool3",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bowl"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "tuttasdelights:suckling_pig_with_vegetables_block",
+          "properties": {
+            "servings": "0",
+            "part": "head"
+          }
+        }
+      ]
+    }
+  ]
+}

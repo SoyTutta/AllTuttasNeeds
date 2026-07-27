@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#tuttasdelights:foods/cooked_frog_legs",
+    {
+      "id": "tuttasdelights:pot_slice",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:mint_lettuce",
+      "required": false
+    }
+  ]
+}

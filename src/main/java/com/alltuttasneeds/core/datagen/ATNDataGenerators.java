@@ -1,7 +1,7 @@
 package com.alltuttasneeds.core.datagen;
 
 import com.alltuttasneeds.AllTuttasNeeds;
-import com.alltuttasneeds.doors.datagen.BlockLootTables;
+import com.alltuttasneeds.doors.datagen.ConditionalBlockLootTableProvider;
 import com.alltuttasneeds.doors.datagen.DataMaps;
 import com.alltuttasneeds.doors.datagen.ESLang;
 import com.alltuttasneeds.beds.datagen.TBBlockLootTables;
@@ -66,10 +66,7 @@ public class ATNDataGenerators {
         generator.addProvider(doorsServer, new DataMaps(output, lookupProvider));
         generator.addProvider(doorsServer, new ShapeMapProvider(output));
 
-        generator.addProvider(doorsServer, named("Tuttas Doors Loot Tables", new LootTableProvider(
-                output, Collections.emptySet(), List.of(
-                new LootTableProvider.SubProviderEntry(BlockLootTables::new, LootContextParamSets.BLOCK)
-        ), lookupProvider)));
+        generator.addProvider(doorsServer, new ConditionalBlockLootTableProvider(output, lookupProvider));
         generator.addProvider(bedsServer, named("Tuttas Beds Loot Tables", new LootTableProvider(
                 output, Collections.emptySet(), List.of(
                 new LootTableProvider.SubProviderEntry(TBBlockLootTables::new, LootContextParamSets.BLOCK)
@@ -102,6 +99,7 @@ public class ATNDataGenerators {
             return switch (System.getProperty("alltuttasneeds.datagen.profile", "all")) {
                 case "doors" -> new DataProfile(true, false);
                 case "beds" -> new DataProfile(false, true);
+                case "delights" -> new DataProfile(false, false);
                 default -> new DataProfile(true, true);
             };
         }

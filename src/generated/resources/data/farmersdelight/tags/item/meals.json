@@ -1,0 +1,96 @@
+{
+  "values": [
+    {
+      "id": "tuttasdelights:sticky_green_noodles",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:creeper_salad",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:disgusting_stew",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:ribs_with_eggs",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:ancient_ribs_with_seeds",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:ancient_breakfast",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:pasta_with_pot",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:ancient_salad",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:plate_of_ancient_soft-boiled_egg_and_bread",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:potato_omelet",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:napolitana_with_fries_potatoes",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:breaded_meat_with_mashed_potato",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:breaded_meat_with_pasta",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:mashed_potato_with_meatballs",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:plate_of_potato_and_meat_pie",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:cooked_pasta",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:froggle_rice_chowder",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:honey_wings",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:plate_of_muzzle_with_vegetables",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:plate_of_ham_with_vegetables",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:plate_of_suckling_pig_with_vegetables",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:beet_and_egg_salad",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:pasta_with_beet",
+      "required": false
+    }
+  ]
+}

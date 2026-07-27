@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "frozen_treats"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "farmersdelight:melon_popsicle"
+    },
+    "g": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "pattern": [
+    "ggg",
+    "g#g",
+    "ggg"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:glistering_melon_popsicle"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "potato"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasdelights:potato_slices_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "potato_slices": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tuttasdelights:potato_slices"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "potato_slices"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasdelights:potato_slices_cooking"
+    ]
+  }
+}

@@ -202,7 +202,7 @@ public class CraftingRecipes {
         Ingredient anyDiscreteDoor = Ingredient.of(TDTags.WOODEN_DISCRETE_DOORS_ITEMS);
 
         CompatRegistry.loaded().forEach(compat -> {
-            RecipeOutput compatOutput = conditional(output, compat.mod());
+            RecipeOutput compatOutput = secretDoorOutput(output, compat);
                 compat.secretDoorFamilies().forEach(secret -> {
                     ItemLike bookshelf = () -> secret.bookshelf().get().asItem();
                     ItemLike secretDoor = getItemLike(compat.namespace() + ":" + secret.woodName() + "_bookshelf_door");
@@ -319,5 +319,13 @@ public class CraftingRecipes {
                 .map(mod -> new ModLoadedCondition(mod.id()))
                 .toList();
         return conditions.isEmpty() ? output : output.withConditions(conditions.toArray(ICondition[]::new));
+    }
+
+    private static RecipeOutput secretDoorOutput(RecipeOutput output, ModCompat compat) {
+        output = conditional(output, compat.mod());
+        for (Mods dependency : compat.secretDoorDependencies()) {
+            output = conditional(output, dependency);
+        }
+        return output;
     }
 }

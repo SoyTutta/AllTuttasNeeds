@@ -26,6 +26,7 @@ public interface ModCompat {
 
     default List<WoodFamily> woodFamilies()             { return List.of(); }
     default List<SecretDoorFamily> secretDoorFamilies() { return List.of(); }
+    default List<Mods> secretDoorDependencies()         { return List.of(); }
     default List<ExtraDoor> extraDoors()                { return List.of(); }
 
     default boolean isLoaded() { return mod().isLoaded(); }

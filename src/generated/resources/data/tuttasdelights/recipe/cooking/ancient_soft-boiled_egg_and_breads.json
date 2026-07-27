@@ -1,0 +1,49 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "ancient"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 300,
+  "experience": 4.0,
+  "ingredients": [
+    {
+      "item": "minecraft:sniffer_egg"
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minecraft:torchflower_seeds"
+        },
+        {
+          "item": "minecraft:torchflower"
+        }
+      ]
+    },
+    {
+      "tag": "c:foods/onion"
+    },
+    {
+      "tag": "c:foods/bread"
+    },
+    {
+      "tag": "c:foods/bread"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:ancient_soft-boiled_egg_and_breads"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "values": [
+    "minecraft:rotten_flesh",
+    {
+      "id": "tuttasdelights:rotten_bacon",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_minced_beef",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_chicken_cuts",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_mutton_chops",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:rotten_sausage",
+      "required": false
+    }
+  ]
+}

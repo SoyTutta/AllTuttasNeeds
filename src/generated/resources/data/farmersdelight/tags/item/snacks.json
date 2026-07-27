@@ -1,0 +1,104 @@
+{
+  "values": [
+    {
+      "id": "tuttasdelights:slime_dumplings",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:pot_with_honey_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:ancient_egg_sandwich",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:half_a_ancient_egg_sandwich",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:breaded_meat_sandwich",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:half_a_breaded_meat_sandwich",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:froggle_sandwich",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:half_a_froggle_sandwich",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:frog_legs_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:half_a_bacon_sandwich",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:half_a_egg_sandwich",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:half_a_chicken_sandwich",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:half_a_hamburger",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:half_a_nether_burger",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:half_a_hotdog",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:half_a_hotdog_with_fries_potatoes",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:half_a_hotdog_with_mixed_salad",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:half_a_hotdog_with_nether_salad",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:half_a_chilidog",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:half_a_ham_and_cheese_sandwich",
+      "required": false
+    },
+    {
+      "id": "minersdelight:half_a_vegan_hamburger",
+      "required": false
+    },
+    {
+      "id": "minersdelight:half_a_caveburger",
+      "required": false
+    },
+    {
+      "id": "minersdelight:half_a_insect_sandwich",
+      "required": false
+    },
+    {
+      "id": "minersdelight:half_a_squid_sandwich",
+      "required": false
+    },
+    {
+      "id": "spawn:half_a_tuna_sandwich",
+      "required": false
+    }
+  ]
+}

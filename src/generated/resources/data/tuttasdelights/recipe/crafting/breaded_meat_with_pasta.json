@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "potato"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "breaded"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "extra_meals"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tuttasdelights:cooked_pasta"
+    },
+    {
+      "tag": "c:foods/cooked_egg"
+    },
+    {
+      "item": "tuttasdelights:cooked_breaded_meat"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:breaded_meat_with_pasta"
+  }
+}

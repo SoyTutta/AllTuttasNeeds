@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "tuttasdelights:raw_frog_leg",
+      "required": false
+    },
+    {
+      "id": "nomansland:frog_leg",
+      "required": false
+    }
+  ]
+}

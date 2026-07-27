@@ -13,6 +13,10 @@
       "modid": "atmospheric"
     },
     {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
       "type": "alltuttasneeds:door_set_enabled",
       "set": "consistent"
     }

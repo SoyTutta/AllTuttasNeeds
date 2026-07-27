@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "tuttasdelights:cooked_frog_leg",
+      "required": false
+    },
+    {
+      "id": "nomansland:cooked_frog_leg",
+      "required": false
+    }
+  ]
+}

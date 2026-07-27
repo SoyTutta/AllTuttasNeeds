@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "tuttasdelights:block/potato_and_meat_pie_block",
+		"particle": "farmersdelight:block/tray_bottom"
+	},
+	"elements": [
+		{
+			"name": "plate",
+			"from": [0, 0, 1],
+			"to": [16, 2, 15],
+			"faces": {
+				"north": {"uv": [8, 13.5, 16, 14.5], "texture": "#0"},
+				"east": {"uv": [8.5, 14.5, 15.5, 15.5], "texture": "#0"},
+				"south": {"uv": [8, 13.5, 16, 14.5], "texture": "#0"},
+				"west": {"uv": [8.5, 14.5, 15.5, 15.5], "texture": "#0"},
+				"up": {"uv": [8, 7.5, 16, 0.5], "texture": "#0"},
+				"down": {"uv": [8, 7.5, 16, 14.5], "texture": "#0", "cullface": "down"}
+			}
+		}
+	]
+}

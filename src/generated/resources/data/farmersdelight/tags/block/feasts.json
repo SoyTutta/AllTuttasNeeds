@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "tuttasdelights:suckling_pig_with_vegetables_block",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:potato_and_meat_pie_block",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:ancient_soft-boiled_egg_and_breads_block",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:ice_cream_in_a_pumpkin_head_block",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:mint_roulette_block",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:slime_jelly_block",
+      "required": false
+    }
+  ]
+}

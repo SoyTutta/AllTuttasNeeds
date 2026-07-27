@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:baked_potato",
+    {
+      "id": "tuttasdelights:baked_potato_slices",
+      "required": false
+    }
+  ]
+}

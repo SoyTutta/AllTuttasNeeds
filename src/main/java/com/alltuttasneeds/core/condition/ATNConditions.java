@@ -17,6 +17,10 @@ public final class ATNConditions {
             CONDITION_CODECS.register("module_enabled", () -> ModuleEnabledCondition.CODEC);
     public static final Supplier<MapCodec<DoorSetEnabledCondition>> DOOR_SET_ENABLED =
             CONDITION_CODECS.register("door_set_enabled", () -> DoorSetEnabledCondition.CODEC);
+    public static final Supplier<MapCodec<DelightGroupEnabledCondition>> DELIGHT_GROUP_ENABLED =
+            CONDITION_CODECS.register("delight_group_enabled", () -> DelightGroupEnabledCondition.CODEC);
+    public static final Supplier<MapCodec<DelightRecipeEnabledCondition>> DELIGHT_RECIPE_ENABLED =
+            CONDITION_CODECS.register("delight_recipe_enabled", () -> DelightRecipeEnabledCondition.CODEC);
 
     private ATNConditions() {}
 

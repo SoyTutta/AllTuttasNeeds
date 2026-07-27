@@ -1,0 +1,60 @@
+{
+  "values": [
+    {
+      "id": "tuttasdelights:squishmallow",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:smoked_squishmallow",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:mintmallow_bite",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:slime_jelly_slice",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:sweet_trigger",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:glistering_melon_popsicle",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:cocoa_popsicle",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:mint_popsicle",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:sweet_berries_popsicle",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:glow_berries_popsicle",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:apple_popsicle",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:golden_apple_popsicle",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:torch_popsicle",
+      "required": false
+    },
+    {
+      "id": "tuttasdelights:pumpkin_head_slice",
+      "required": false
+    }
+  ]
+}

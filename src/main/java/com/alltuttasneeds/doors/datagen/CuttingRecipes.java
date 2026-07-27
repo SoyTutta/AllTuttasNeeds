@@ -31,7 +31,8 @@ public class CuttingRecipes {
             RecipeOutput compatOutput = conditional(enabledOutput, compat.mod());
             compat.woodFamilies().forEach(family -> cutDoorsToPlank(compatOutput, family, compat));
             compat.secretDoorFamilies().forEach(secret -> cutSecretDoorToBookshelf(
-                    compatOutput.withConditions(DoorSetEnabledCondition.SECRET), secret, compat));
+                    secretDoorOutput(enabledOutput, compat)
+                            .withConditions(DoorSetEnabledCondition.SECRET), secret, compat));
         });
     }
 
@@ -92,5 +93,13 @@ public class CuttingRecipes {
         return mod == Mods.ALLTUTTASNEEDS
                 ? output
                 : output.withConditions(new ModLoadedCondition(mod.id()));
+    }
+
+    private static RecipeOutput secretDoorOutput(RecipeOutput output, ModCompat compat) {
+        output = conditional(output, compat.mod());
+        for (Mods dependency : compat.secretDoorDependencies()) {
+            output = conditional(output, dependency);
+        }
+        return output;
     }
 }

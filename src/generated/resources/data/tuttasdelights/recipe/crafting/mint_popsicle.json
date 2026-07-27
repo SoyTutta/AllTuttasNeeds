@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "frozen_treats"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "creeper"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "tuttasdelights:mint_lettuce"
+    },
+    "-": {
+      "item": "minecraft:stick"
+    },
+    "i": {
+      "item": "minecraft:ice"
+    }
+  },
+  "pattern": [
+    " ##",
+    "i##",
+    "-i "
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:mint_popsicle"
+  }
+}

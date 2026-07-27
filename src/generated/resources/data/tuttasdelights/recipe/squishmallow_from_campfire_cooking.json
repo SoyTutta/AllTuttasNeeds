@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "slime"
+    }
+  ],
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "tuttasdelights:squishmallow"
+  },
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:smoked_squishmallow"
+  }
+}

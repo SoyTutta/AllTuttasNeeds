@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tuttasdelights:item/beet_and_egg_salad"
+  }
+}

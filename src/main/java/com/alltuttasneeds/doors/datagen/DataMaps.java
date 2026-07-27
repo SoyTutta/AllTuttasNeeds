@@ -1,10 +1,15 @@
 package com.alltuttasneeds.doors.datagen;
 
+import com.alltuttasneeds.core.Mods;
+import com.alltuttasneeds.core.condition.DoorSetEnabledCondition;
+import com.alltuttasneeds.core.condition.ModuleEnabledCondition;
 import com.alltuttasneeds.doors.compat.CompatRegistry;
 import com.alltuttasneeds.doors.compat.WeatheringDoorChain;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.conditions.ICondition;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.data.DataMapProvider;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import net.neoforged.neoforge.registries.datamaps.builtin.Oxidizable;
@@ -26,6 +31,7 @@ public class DataMaps extends DataMapProvider {
         var waxables = builder(NeoForgeDataMaps.WAXABLES);
 
         CompatRegistry.loaded().forEach(compat -> {
+            ICondition[] conditions = conditions(compat.mod());
             for (WeatheringDoorChain.Link link : compat.weatheringLinks()) {
                 Supplier<? extends Block> from = compat.doors().get(link.from());
                 Supplier<? extends Block> waxed = compat.doors().get(link.waxed());
@@ -40,11 +46,22 @@ public class DataMaps extends DataMapProvider {
                         throw new IllegalStateException(
                                 "Missing oxidation destination block: " + compat.namespace() + ":" + link.to());
                     }
-                    oxidizables.add(from.get().builtInRegistryHolder(), new Oxidizable(to.get()), false);
+                    oxidizables.add(from.get().builtInRegistryHolder(), new Oxidizable(to.get()), false, conditions);
                 }
 
-                waxables.add(from.get().builtInRegistryHolder(), new Waxable(waxed.get()), false);
+                waxables.add(from.get().builtInRegistryHolder(), new Waxable(waxed.get()), false, conditions);
             }
         });
+    }
+
+    private static ICondition[] conditions(Mods mod) {
+        if (mod == Mods.ALLTUTTASNEEDS) {
+            return new ICondition[]{ModuleEnabledCondition.DOORS, DoorSetEnabledCondition.LATERAL};
+        }
+        return new ICondition[]{
+                ModuleEnabledCondition.DOORS,
+                DoorSetEnabledCondition.LATERAL,
+                new ModLoadedCondition(mod.id())
+        };
     }
 }

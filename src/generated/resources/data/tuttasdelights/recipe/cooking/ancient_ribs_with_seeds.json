@@ -1,0 +1,55 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "ancient"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "tuttasdelights:ancient_ribs"
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minecraft:pitcher_pod"
+        },
+        {
+          "item": "tuttasdelights:pot_slice"
+        }
+      ]
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minecraft:pitcher_pod"
+        },
+        {
+          "item": "tuttasdelights:pot_slice"
+        },
+        {
+          "item": "minecraft:torchflower_seeds"
+        },
+        {
+          "item": "minecraft:torchflower"
+        }
+      ]
+    },
+    {
+      "item": "minecraft:torchflower"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:ancient_ribs_with_seeds"
+  }
+}

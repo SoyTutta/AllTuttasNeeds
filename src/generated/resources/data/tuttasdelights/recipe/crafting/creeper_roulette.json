@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "creeper"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "tuttasdelights:creeper_salad"
+    },
+    "m": {
+      "item": "tuttasdelights:mint_lettuce"
+    },
+    "s": {
+      "item": "tuttasdelights:sweet_trigger"
+    }
+  },
+  "pattern": [
+    "msm",
+    "mcm"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:mint_roulette"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "frozen_treats"
+    }
+  ],
+  "type": "farmersdelight:pastry_slicing",
+  "conditions": [
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "items": "#farmersdelight:tools/knives"
+      }
+    },
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "tuttasdelights:ice_cream_in_a_pumpkin_head_block",
+      "properties": {
+        "pumpkin": "true"
+      }
+    }
+  ],
+  "slice": "tuttasdelights:pumpkin_head_slice"
+}

@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "fd_sweet_berry_cheesecake",
+  "key": {
+    "O": {
+      "item": "farmersdelight:pie_crust"
+    },
+    "m": {
+      "type": "tuttasdelights:configurable_cheese"
+    },
+    "s": {
+      "item": "minecraft:sweet_berries"
+    }
+  },
+  "pattern": [
+    "sss",
+    "sss",
+    "mOm"
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:sweet_berry_cheesecake"
+  }
+}

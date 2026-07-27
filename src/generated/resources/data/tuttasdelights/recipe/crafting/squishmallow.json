@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "slime"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "tuttasdelights:slimecube"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:squishmallow"
+  }
+}

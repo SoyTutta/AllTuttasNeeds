@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "breaded"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "tuttasdelights:raw_breaded_meat"
+  },
+  "result": {
+    "count": 1,
+    "id": "tuttasdelights:cooked_breaded_meat"
+  }
+}

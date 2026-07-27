@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mynethersdelight"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mynethersdelight:bullet_pepper"
+    },
+    {
+      "tag": "c:foods/cooked_pork"
+    },
+    {
+      "type": "tuttasdelights:configurable_cheese"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mynethersdelight:stuffed_pepper"
+  }
+}

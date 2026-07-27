@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "delights"
+    },
+    {
+      "type": "alltuttasneeds:delight_group_enabled",
+      "group": "slime"
+    }
+  ],
+  "type": "tuttasdelights:remplace_item",
+  "conditions": [
+  ],
+  "entity": "minecraft:slime",
+  "item": "tuttasdelights:slimecube",
+  "replaces": "minecraft:slime_ball"
+}

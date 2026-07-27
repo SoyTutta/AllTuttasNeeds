@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tuttasdelights:item/plate_of_ancient_soft-boiled_egg_and_bread"
+  }
+}
