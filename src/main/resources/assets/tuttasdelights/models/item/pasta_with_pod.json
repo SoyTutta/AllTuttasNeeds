@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/pot_slice"
+    "layer0": "tuttasdelights:item/pasta_with_pod"
   }
 }

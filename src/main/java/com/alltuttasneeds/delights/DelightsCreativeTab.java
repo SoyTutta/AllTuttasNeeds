@@ -192,15 +192,15 @@ public class DelightsCreativeTab {
 
     private static void addAncient(CreativeModeTab.Output output) {
         if (!DelightsConfig.isGroupEnabled(DelightGroup.ANCIENT)) return;
-        output.accept(DelightsItems.POT_SLICE.get());
+        output.accept(DelightsItems.POD_SLICE.get());
         output.accept(DelightsItems.ANCIENT_BOILED_EGG.get());
         output.accept(DelightsItems.ANCIENT_RIBS.get());
         output.accept(DelightsItems.COOKED_ANCIENT_RIBS.get());
         output.accept(DelightsItems.RIBS_WITH_EGGS.get());
         output.accept(DelightsItems.ANCIENT_RIBS_WITH_SEEDS.get());
         output.accept(DelightsItems.ANCIENT_BREAKFAST.get());
-        output.accept(DelightsItems.PASTA_WITH_POT.get());
-        output.accept(DelightsItems.POT_WITH_HONEY_ON_A_STICK.get());
+        output.accept(DelightsItems.PASTA_WITH_POD.get());
+        output.accept(DelightsItems.POD_WITH_HONEY_ON_A_STICK.get());
         output.accept(DelightsItems.ANCIENT_SALAD.get());
         output.accept(DelightsItems.ANCIENT_EGG_SANDWICH.get());
         output.accept(DelightsItems.HALF_A_ANCIENT_EGG_SANDWICH.get());

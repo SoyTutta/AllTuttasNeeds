@@ -137,18 +137,25 @@ dependencies {
     localRuntime "maven.modrinth:jade:15.10.5+neoforge"
 
     datagenRuntime "maven.modrinth:moonlight:1.21-2.29.29-neoforge"
+    localRuntime "maven.modrinth:moonlight:1.21-2.29.29-neoforge"
 
     datagenRuntime "maven.modrinth:new_world:1.7.2"
     localRuntime "maven.modrinth:new_world:1.7.2"
 
     datagenRuntime "maven.modrinth:vanillabackport:rUSWdBok"
+    localRuntime "maven.modrinth:vanillabackport:rUSWdBok"
     datagenRuntime "maven.modrinth:i6fiqm5y:v7P0nBi2"
+    localRuntime "maven.modrinth:i6fiqm5y:v7P0nBi2"
 
     datagenRuntime "maven.modrinth:the-block-box:0.1.1"
+    localRuntime "maven.modrinth:the-block-box:0.1.1"
 
     datagenRuntime "curse.maven:malum-484064:7307339"
+    localRuntime "curse.maven:malum-484064:7307339"
     datagenRuntime "maven.modrinth:lodestonelib:1.8.2"
+    localRuntime "maven.modrinth:lodestonelib:1.8.2"
     datagenRuntime "maven.modrinth:curios:9.5.1+1.21.1"
+    localRuntime "maven.modrinth:curios:9.5.1+1.21.1"
 
     datagenRuntime "maven.modrinth:no-mans-land:1.5.12"
     localRuntime "maven.modrinth:no-mans-land:1.5.12"
@@ -158,21 +165,32 @@ dependencies {
     localRuntime "maven.modrinth:mixed-litter:1.2.2"
 
     datagenRuntime "curse.maven:enderscape-536638:6738966"
+    localRuntime "curse.maven:enderscape-536638:6738966"
     datagenRuntime "maven.modrinth:trimmed:1.21-3.0.0+neoforge"
+    localRuntime "maven.modrinth:trimmed:1.21-3.0.0+neoforge"
     datagenRuntime "maven.modrinth:yacl:3.7.1+1.21.1-neoforge"
+    localRuntime "maven.modrinth:yacl:3.7.1+1.21.1-neoforge"
 
     datagenRuntime "curse.maven:artsandcrafts-1034791:8041062"
+    localRuntime "curse.maven:artsandcrafts-1034791:8041062"
     datagenRuntime "curse.maven:jinxedlib-1203401:6727693"
+    localRuntime "curse.maven:jinxedlib-1203401:6727693"
 
     datagenRuntime "maven.modrinth:natures-spirit:2.2.5-1.21.1"
+    localRuntime "maven.modrinth:natures-spirit:2.2.5-1.21.1"
 
     datagenRuntime "curse.maven:create-328085:7963363"
+    localRuntime "curse.maven:create-328085:7963363"
 
     datagenRuntime "curse.maven:biomes-o-plenty-220318:7251965"
+    localRuntime "curse.maven:biomes-o-plenty-220318:7251965"
     datagenRuntime "curse.maven:terrablender-neoforge-940057:6054947"
+    localRuntime "curse.maven:terrablender-neoforge-940057:6054947"
     datagenRuntime "maven.modrinth:glitchcore:S2TfWrZR"
+    localRuntime "maven.modrinth:glitchcore:S2TfWrZR"
 
     datagenRuntime "maven.modrinth:architects-palette:1.4.0-beta.5N"
+    localRuntime "maven.modrinth:architects-palette:1.4.0-beta.5N"
 
     datagenRuntime "maven.modrinth:abundant-atmosphere:1.21.1-2.0.0-beta2.1"
     localRuntime "maven.modrinth:abundant-atmosphere:1.21.1-2.0.0-beta2.1"
@@ -192,19 +210,21 @@ dependencies {
     localRuntime "maven.modrinth:caverns-and-chasms:3.0.0"
     datagenRuntime "maven.modrinth:gallery:2.0.1"
 
-
     datagenRuntime "maven.modrinth:woodworks:4.0.2"
 
     // Delights compat
     datagenRuntime "maven.modrinth:farmers-delight:1.21.1-1.3.2"
     localRuntime "maven.modrinth:farmers-delight:1.21.1-1.3.2"
-    datagenRuntime "maven.modrinth:my-nethers-delight:1.10.2"
-    localRuntime "maven.modrinth:my-nethers-delight:1.10.2"
+    datagenRuntime "maven.modrinth:my-nethers-delight:1.10.4"
+    localRuntime "maven.modrinth:my-nethers-delight:1.10.4"
     datagenRuntime "maven.modrinth:miners-delight:1.4.5"
     localRuntime "maven.modrinth:miners-delight:1.4.5"
     localRuntime "maven.modrinth:lodestonelib:1.8.2"
-    datagenRuntime "maven.modrinth:brewin-and-chewin:4.2.5+1.21.1-neoforge"
-    localRuntime "maven.modrinth:brewin-and-chewin:4.2.5+1.21.1-neoforge"
+    datagenRuntime "maven.modrinth:brewin-and-chewin:4.4.0+1.21.1-neoforge"
+    localRuntime "maven.modrinth:brewin-and-chewin:4.4.0+1.21.1-neoforge"
+
+    localRuntime "maven.modrinth:windswept:4.0.0"
+    localRuntime "maven.modrinth:windswept-delights:2.0.1"
 
     datagenRuntime "maven.modrinth:abnormals-delight:6.0.2"
     localRuntime "maven.modrinth:abnormals-delight:6.0.2"

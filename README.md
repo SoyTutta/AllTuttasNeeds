@@ -61,10 +61,12 @@ set.
 Guardian, Elder Guardian and Potluck content is currently under development. It
 is not registered, generated or configurable in release builds.
 
-Development runs currently load only JEI and the Tutta's Delights ecosystem:
-Farmer's Delight, My Nether's Delight, Miner's Delight, Brewin' and Chewin' and
-their required libraries. Other optional compatibilities remain available to
-the compiler but are not loaded by `runClient`.
+Development runs load a selected compatibility profile rather than every
+supported mod. The current `runClient` profile includes JEI, Jade, AppleSkin,
+several door integrations, the Tutta's Delights ecosystem and their required
+libraries. `build.gradle` is the source of truth for this `localRuntime`
+selection; the broader compatibility matrix remains available through
+`datagenRuntime`.
 
 - `./gradlew.bat compileJava` checks the Java sources.
 - `./gradlew.bat runDoorsData` regenerates only Tutta's Doors data.

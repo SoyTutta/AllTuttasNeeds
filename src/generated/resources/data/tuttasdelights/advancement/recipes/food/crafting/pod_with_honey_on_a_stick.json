@@ -11,21 +11,35 @@
   ],
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_pitcher_pod": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:pitcher_pod"
+          },
+          {
+            "items": "tuttasdelights:pod_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tuttasdelights:cooking/pasta_with_pot"
+        "recipe": "tuttasdelights:crafting/pod_with_honey_on_a_stick"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pitcher_pod"
     ]
   ],
   "rewards": {
     "recipes": [
-      "tuttasdelights:cooking/pasta_with_pot"
+      "tuttasdelights:crafting/pod_with_honey_on_a_stick"
     ]
   }
 }

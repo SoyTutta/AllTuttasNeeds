@@ -261,17 +261,17 @@ public class CraftingRecipes {
         }
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DelightsItems.ANCIENT_BREAKFAST.get())
-                .requires(Ingredient.of(Items.PITCHER_POD,DelightsItems.POT_SLICE.get()),3)
+                .requires(Ingredient.of(Items.PITCHER_POD,DelightsItems.POD_SLICE.get()),3)
                 .requires(DelightsItems.ANCIENT_BOILED_EGG.get(),2)
                 .requires(Items.BOWL)
-                .unlockedBy("has_ancient_boiled_egg_or_pitcher_pot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PITCHER_POD,DelightsItems.POT_SLICE.get(),DelightsItems.ANCIENT_BOILED_EGG.get()))
+                .unlockedBy("has_ancient_boiled_egg_or_pitcher_pod", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PITCHER_POD,DelightsItems.POD_SLICE.get(),DelightsItems.ANCIENT_BOILED_EGG.get()))
                 .save(groups(output, ANCIENT), "tuttasdelights:crafting/ancient_breakfast");
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DelightsItems.POT_WITH_HONEY_ON_A_STICK.get())
-                .requires(Ingredient.of(Items.PITCHER_POD,DelightsItems.POT_SLICE.get()),2)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DelightsItems.POD_WITH_HONEY_ON_A_STICK.get())
+                .requires(Ingredient.of(Items.PITCHER_POD,DelightsItems.POD_SLICE.get()),2)
                 .requires(Items.STICK)
                 .requires(Items.HONEY_BOTTLE)
-                .unlockedBy("has_pitcher_pot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PITCHER_POD,DelightsItems.POT_SLICE.get()))
-                .save(groups(output, ANCIENT), "tuttasdelights:crafting/pot_with_honey_on_a_stick");
+                .unlockedBy("has_pitcher_pod", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PITCHER_POD,DelightsItems.POD_SLICE.get()))
+                .save(groups(output, ANCIENT), "tuttasdelights:crafting/pod_with_honey_on_a_stick");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DelightsItems.ANCIENT_SALAD.get())
                 .requires(Items.TORCHFLOWER)
                 .requires(Ingredient.of(Items.TORCHFLOWER,Items.TORCHFLOWER_SEEDS),2)

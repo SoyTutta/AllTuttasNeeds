@@ -7,22 +7,14 @@ import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 public class USLang extends LanguageProvider {
 
-    private static final Map<String, String> DOOR_TYPE_MAP = new LinkedHashMap<>();
-    static {
-        DOOR_TYPE_MAP.put("_discrete_door", "Door");
-        DOOR_TYPE_MAP.put("_indiscrete_door", "Door");
-        DOOR_TYPE_MAP.put("_transit_door", "Door");
-        DOOR_TYPE_MAP.put("_pet_door", "Door");
-        DOOR_TYPE_MAP.put("_normal_door", "Door");
-        DOOR_TYPE_MAP.put("_sliding_door", "Door");
-        DOOR_TYPE_MAP.put("_boards", "Board");
-    }
+    private static final Set<String> INHERITED_DOOR_SUFFIXES = Set.of(
+            "_discrete_door", "_normal_door", "_indiscrete_door", "_transit_door", "_pet_door"
+    );
 
     private final List<DeferredHolder<Block, ? extends Block>> allBlocks = new ArrayList<>();
 
@@ -57,17 +49,13 @@ public class USLang extends LanguageProvider {
         String descriptionId = block.getDescriptionId();
         String path = block.builtInRegistryHolder().key().location().getPath();
 
-        for (Map.Entry<String, String> entry : DOOR_TYPE_MAP.entrySet()) {
-            String suffix = entry.getKey();
-            if (path.endsWith(suffix)) {
-                String materialName = path.substring(0, path.length() - suffix.length());
-                String formattedMaterial = toTitleCase(materialName, "_");
-                String doorType = entry.getValue();
+        if (INHERITED_DOOR_SUFFIXES.stream().anyMatch(path::endsWith)) return;
 
-                String finalName = (formattedMaterial + " " + doorType).trim();
-                add(descriptionId, finalName);
-                return;
-            }
+        String slidingSuffix = "_sliding_door";
+        if (path.endsWith(slidingSuffix)) {
+            String materialName = path.substring(0, path.length() - slidingSuffix.length());
+            add(descriptionId, toTitleCase(materialName, "_") + " Door");
+            return;
         }
 
         add(descriptionId, toTitleCase(path, "_"));

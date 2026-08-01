@@ -108,16 +108,16 @@ public class CookingRecipes {
                 .save(groups(output, ANCIENT), "tuttasdelights:cooking/ribs_with_eggs");
         CookingPotRecipeBuilder.cookingPotRecipe(DelightsItems.ANCIENT_RIBS_WITH_SEEDS.get(), 1, 200, 2.0F)
                 .addIngredient(DelightsItems.ANCIENT_RIBS.get())
-                .addIngredient(Ingredient.of(Items.PITCHER_POD,DelightsItems.POT_SLICE.get()))
-                .addIngredient(Ingredient.of(Items.PITCHER_POD,DelightsItems.POT_SLICE.get(),Items.TORCHFLOWER_SEEDS,Items.TORCHFLOWER))
+                .addIngredient(Ingredient.of(Items.PITCHER_POD,DelightsItems.POD_SLICE.get()))
+                .addIngredient(Ingredient.of(Items.PITCHER_POD,DelightsItems.POD_SLICE.get(),Items.TORCHFLOWER_SEEDS,Items.TORCHFLOWER))
                 .addIngredient(Items.TORCHFLOWER)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(groups(output, ANCIENT), "tuttasdelights:cooking/ancient_ribs_with_seeds");
-        CookingPotRecipeBuilder.cookingPotRecipe(DelightsItems.PASTA_WITH_POT.get(), 1, 200, 2.0F)
-                .addIngredient(CommonTags.Items.FOODS_PASTA).addIngredient(Ingredient.of(Items.PITCHER_POD,DelightsItems.POT_SLICE.get()),2)
+        CookingPotRecipeBuilder.cookingPotRecipe(DelightsItems.PASTA_WITH_POD.get(), 1, 200, 2.0F)
+                .addIngredient(CommonTags.Items.FOODS_PASTA).addIngredient(Ingredient.of(Items.PITCHER_POD,DelightsItems.POD_SLICE.get()),2)
                 .addIngredient(ModItems.TOMATO_SAUCE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .save(groups(output, ANCIENT), "tuttasdelights:cooking/pasta_with_pot");
+                .save(groups(output, ANCIENT), "tuttasdelights:cooking/pasta_with_pod");
         CookingPotRecipeBuilder.cookingPotRecipe(DelightsItems.ANCIENT_SOFT_BOILED_EGG_AND_BREADS.get(), 1, 300, 4.0F,Items.BOWL)
                 .addIngredient(Items.SNIFFER_EGG).addIngredient(Ingredient.of(Items.TORCHFLOWER_SEEDS,Items.TORCHFLOWER))
                 .addIngredient(CommonTags.Items.FOODS_ONION).addIngredient(Tags.Items.FOODS_BREAD).addIngredient(Tags.Items.FOODS_BREAD)

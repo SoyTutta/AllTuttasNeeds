@@ -148,8 +148,8 @@ public class DelightsItems {
 
     /// Sniffers
     /// /// ingredients
-    public static final Supplier<Item> POT_SLICE = register(ANCIENT, "pot_slice", ()  ->
-            new ConsumableItem(foodItem(DelightsFoodValues.POT_SLICE))
+    public static final Supplier<Item> POD_SLICE = register(ANCIENT, "pod_slice", ()  ->
+            new ConsumableItem(foodItem(DelightsFoodValues.POD_SLICE))
     );
     public static final Supplier<Item> ANCIENT_BOILED_EGG = register(ANCIENT, "ancient_boiled_egg", ()  ->
             new ConsumableItem(foodItem(DelightsFoodValues.ANCIENT_BOILED_EGG))
@@ -170,11 +170,11 @@ public class DelightsItems {
     public static final Supplier<Item> ANCIENT_BREAKFAST = register(ANCIENT, "ancient_breakfast", ()  ->
             new ConsumableItem(bowlFoodItem(DelightsFoodValues.ANCIENT_BREAKFAST), true)
     );
-    public static final Supplier<Item> PASTA_WITH_POT = register(ANCIENT, "pasta_with_pot", ()  ->
-            new ConsumableItem(bowlFoodItem(DelightsFoodValues.PASTA_WITH_POT), true)
+    public static final Supplier<Item> PASTA_WITH_POD = register(ANCIENT, "pasta_with_pod", ()  ->
+            new ConsumableItem(bowlFoodItem(DelightsFoodValues.PASTA_WITH_POD), true)
     );
-    public static final Supplier<Item> POT_WITH_HONEY_ON_A_STICK = register(ANCIENT, "pot_with_honey_on_a_stick", ()  ->
-            new ConsumableItem(foodItem(DelightsFoodValues.POT_WITH_HONEY_ON_A_STICK))
+    public static final Supplier<Item> POD_WITH_HONEY_ON_A_STICK = register(ANCIENT, "pod_with_honey_on_a_stick", ()  ->
+            new ConsumableItem(foodItem(DelightsFoodValues.POD_WITH_HONEY_ON_A_STICK))
     );
     public static final Supplier<Item> ANCIENT_SALAD = register(ANCIENT, "ancient_salad", ()  ->
             new ConsumableItem(bowlFoodItem(DelightsFoodValues.ANCIENT_SALAD),false)

@@ -139,7 +139,7 @@ public class DelightsFoodValues
                 .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 3600, 0, false, false), 1.0F)
                 .build();
 
-        public static final FoodProperties POT_SLICE = (new FoodProperties.Builder())
+        public static final FoodProperties POD_SLICE = (new FoodProperties.Builder())
                 .nutrition(1).saturationModifier(0.3F)
                 .build();
         public static final FoodProperties ANCIENT_BOILED_EGG = (new FoodProperties.Builder())
@@ -163,11 +163,11 @@ public class DelightsFoodValues
                 .nutrition(10).saturationModifier(0.6F)
                 .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1200, 0, false, false), 1.0F)
                 .build();
-        public static final FoodProperties PASTA_WITH_POT = (new FoodProperties.Builder())
+        public static final FoodProperties PASTA_WITH_POD = (new FoodProperties.Builder())
                 .nutrition(12).saturationModifier(0.7F)
                 .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 3600, 0, false, false), 1.0F)
                 .build();
-        public static final FoodProperties POT_WITH_HONEY_ON_A_STICK = (new FoodProperties.Builder())
+        public static final FoodProperties POD_WITH_HONEY_ON_A_STICK = (new FoodProperties.Builder())
                 .nutrition(6).saturationModifier(0.5F)
                 .build();
         public static final FoodProperties ANCIENT_SALAD = (new FoodProperties.Builder())

@@ -93,7 +93,7 @@ public class DelightsItemTags extends ItemTagsProvider {
                 .addOptional(id("rotten_sausage"))
                 .addOptional(id("rotten_meat_on_a_bone"))
                 .addOptional(id("rotten_ham"))
-                .addOptional(id("pot_slice"))
+                .addOptional(id("pod_slice"))
                 .addOptional(id("ancient_boiled_egg"))
                 .addOptional(id("ancient_ribs"))
                 .addOptional(id("cooked_ancient_ribs"))
@@ -109,7 +109,7 @@ public class DelightsItemTags extends ItemTagsProvider {
         tag(Tags.Items.FOODS_RAW_FISH).addOptional(id("raw_frog_leg"));
         tag(Tags.Items.FOODS_VEGETABLE)
                 .addOptional(id("potato_slices"))
-                .addOptional(id("pot_slice"));
+                .addOptional(id("pod_slice"));
         tag(Tags.Items.CROPS_POTATO).addOptional(id("potato_slices"));
         tag(Tags.Items.SLIMEBALLS).addOptional(id("slimecube"));
         tag(Tags.Items.BONES).addOptional(id("broken_bones"));
@@ -120,7 +120,7 @@ public class DelightsItemTags extends ItemTagsProvider {
     private void registerModTags() {
         addOptional(ModTags.Items.MEALS,
                 "sticky_green_noodles", "creeper_salad", "disgusting_stew", "ribs_with_eggs",
-                "ancient_ribs_with_seeds", "ancient_breakfast", "pasta_with_pot", "ancient_salad",
+                "ancient_ribs_with_seeds", "ancient_breakfast", "pasta_with_pod", "ancient_salad",
                 "plate_of_ancient_soft-boiled_egg_and_bread", "potato_omelet",
                 "napolitana_with_fries_potatoes", "breaded_meat_with_mashed_potato",
                 "breaded_meat_with_pasta", "mashed_potato_with_meatballs", "plate_of_potato_and_meat_pie",
@@ -128,7 +128,7 @@ public class DelightsItemTags extends ItemTagsProvider {
                 "plate_of_ham_with_vegetables", "plate_of_suckling_pig_with_vegetables",
                 "beet_and_egg_salad", "pasta_with_beet");
         addOptional(ModTags.Items.SNACKS,
-                "slime_dumplings", "pot_with_honey_on_a_stick", "ancient_egg_sandwich",
+                "slime_dumplings", "pod_with_honey_on_a_stick", "ancient_egg_sandwich",
                 "half_a_ancient_egg_sandwich", "breaded_meat_sandwich", "half_a_breaded_meat_sandwich",
                 "froggle_sandwich", "half_a_froggle_sandwich", "frog_legs_on_a_stick",
                 "half_a_bacon_sandwich", "half_a_egg_sandwich", "half_a_chicken_sandwich", "half_a_hamburger");
@@ -186,7 +186,7 @@ public class DelightsItemTags extends ItemTagsProvider {
         tag(CompatTags.FOOD_JERKY_MEAT).addTag(DelightsCommonTags.ROTTEN_MEALS);
         tag(CompatTags.FOOD_PIZZA_TOPPING)
                 .addTag(DelightsTags.COOKED_FROG_LEGS)
-                .addOptional(id("pot_slice"))
+                .addOptional(id("pod_slice"))
                 .addOptional(id("mint_lettuce"));
     }
 

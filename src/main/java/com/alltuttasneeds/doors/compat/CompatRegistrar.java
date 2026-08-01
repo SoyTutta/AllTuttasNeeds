@@ -121,7 +121,22 @@ public final class CompatRegistrar {
         });
 
         doors.put(name, block);
-        Supplier<Item> item = items.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        Supplier<Item> item = items.register(name, () ->
+                new OriginalDoorNamedBlockItem(block.get(), baseDoor));
         doorItems.put(name, item);
+    }
+
+    private static final class OriginalDoorNamedBlockItem extends BlockItem {
+        private final Supplier<? extends Block> originalDoor;
+
+        private OriginalDoorNamedBlockItem(Block block, Supplier<? extends Block> originalDoor) {
+            super(block, new Item.Properties());
+            this.originalDoor = originalDoor;
+        }
+
+        @Override
+        public String getDescriptionId() {
+            return originalDoor.get().asItem().getDescriptionId();
+        }
     }
 }

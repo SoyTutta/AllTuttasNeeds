@@ -71,7 +71,7 @@ public class CuttingRecipes {
                 .save(groups(output, POTATO));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BAKED_POTATO), KNIVES, DelightsItems.BAKED_POTATO_SLICES.get(), 2)
                 .save(groups(output, POTATO));
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.PITCHER_POD), KNIVES, DelightsItems.POT_SLICE.get(), 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.PITCHER_POD), KNIVES, DelightsItems.POD_SLICE.get(), 2)
                 .save(groups(output, ANCIENT));
     }
 
