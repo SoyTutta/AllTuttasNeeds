@@ -7,6 +7,7 @@ import com.alltuttasneeds.delights.config.DelightGroup;
 import com.alltuttasneeds.delights.config.DelightsConfig;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.neoforge.data.loading.DatagenModLoader;
@@ -22,6 +23,15 @@ import static com.alltuttasneeds.delights.config.DelightGroup.*;
 
 public class DelightsItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, "tuttasdelights");
+
+    static {
+        ITEMS.addAlias(ResourceLocation.fromNamespaceAndPath("tuttasdelights", "pot_slice"),
+                ResourceLocation.fromNamespaceAndPath("tuttasdelights", "pod_slice"));
+        ITEMS.addAlias(ResourceLocation.fromNamespaceAndPath("tuttasdelights", "pasta_with_pot"),
+                ResourceLocation.fromNamespaceAndPath("tuttasdelights", "pasta_with_pod"));
+        ITEMS.addAlias(ResourceLocation.fromNamespaceAndPath("tuttasdelights", "pot_with_honey_on_a_stick"),
+                ResourceLocation.fromNamespaceAndPath("tuttasdelights", "pod_with_honey_on_a_stick"));
+    }
 
     public static Item.Properties basicItem() {
         return (new Item.Properties());
