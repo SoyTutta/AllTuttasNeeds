@@ -71,14 +71,14 @@ public class DelightsItems {
     /// Creeper
     /// /// ingredients
     public static final Supplier<Item> MINT_LETTUCE = register(CREEPER, "mint_lettuce", ()  ->
-            new MintConsumableItem(foodItem(DelightsFoodValues.MINT_LETTUCE))
+            new MintConsumableItem(foodItem(DelightsFoodValues.MINT_LETTUCE), 0.25F, 4.0F)
     );
     /// /// meals
     public static final Supplier<Item> SWEET_TRIGGER = register(CREEPER, "sweet_trigger", ()  ->
-            new MintConsumableItem(foodItem(DelightsFoodValues.SWEET_TRIGGER))
+            new MintConsumableItem(foodItem(DelightsFoodValues.SWEET_TRIGGER), 0.15F, 4.0F)
     );
     public static final Supplier<Item> CREEPER_SALAD = register(CREEPER, "creeper_salad", ()  ->
-            new CreeperSaladItem(bowlFoodItem(DelightsFoodValues.CREEPER_SALAD))
+            new CreeperSaladItem(bowlFoodItem(DelightsFoodValues.CREEPER_SALAD), 0.75F, 16.0F)
     );
     /// /// feasts
     public static final Supplier<Item> MINT_ROULETTE = register(CREEPER, "mint_roulette", ()  ->
@@ -295,7 +295,7 @@ public class DelightsItems {
     );
 
     public static final Supplier<Item> MINT_POPSICLE = register(FROZEN_TREATS, "mint_popsicle", ()  ->
-            new MintPopsicleItem(foodItem(DelightsFoodValues.MINT_POPSICLE).rarity(Rarity.UNCOMMON))
+            new MintPopsicleItem(foodItem(DelightsFoodValues.MINT_POPSICLE).rarity(Rarity.UNCOMMON), 0.5F, 8.0F)
     );
     public static final Supplier<Item> SWEET_BERRIES_POPSICLE = register(FROZEN_TREATS, "sweet_berries_popsicle", ()  ->
             new PopsicleItem(foodItem(DelightsFoodValues.SWEET_BERRIES_POPSICLE))

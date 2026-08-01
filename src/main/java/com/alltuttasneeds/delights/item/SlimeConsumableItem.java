@@ -3,6 +3,7 @@ package com.alltuttasneeds.delights.item;
 import com.alltuttasneeds.delights.DelightsTextUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.util.RandomSource;
@@ -19,10 +20,15 @@ import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SlimeConsumableItem extends ConsumableItem {
     private static final int EFFECT_TRANSFER_DURATION = 200;
+    private static final double EFFECT_STEAL_PERCENTAGE_PER_LEVEL = 0.10;
+    private static final double MAX_EFFECT_STEAL_PERCENTAGE = 0.50;
+    private static final int HUNGER_COST_PER_LEVEL = 4;
+    private static final ThreadLocal<Boolean> DEFER_SLIME_EFFECTS = new ThreadLocal<>();
     private final boolean hasFoodEffectTooltip;
     private final boolean hasCustomTooltip;
 
@@ -44,7 +50,26 @@ public class SlimeConsumableItem extends ConsumableItem {
         this.hasCustomTooltip = hasCustomTooltip;
     }
 
+    @Override
+    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
+        if (level.isClientSide) return super.finishUsingItem(stack, level, consumer);
+
+        ItemStack result;
+        DEFER_SLIME_EFFECTS.set(true);
+        try {
+            result = super.finishUsingItem(stack, level, consumer);
+        } finally {
+            DEFER_SLIME_EFFECTS.remove();
+        }
+
+        affectConsumer(stack, level, consumer);
+        return result;
+    }
+
+    @Override
     public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
+        if (Boolean.TRUE.equals(DEFER_SLIME_EFFECTS.get())) return;
+
         if (!level.isClientSide) {
             MobEffectInstance currentEffect = consumer.getEffect(MobEffects.OOZING);
             int newAmplifier = 0;
@@ -63,11 +88,16 @@ public class SlimeConsumableItem extends ConsumableItem {
                     newDuration = Math.min(currentDuration + 200, 6000);
                 }
 
-                double slimeChance = 0.05 * (newAmplifier + 1);
+                double slimeChance = 0.15 * (newAmplifier + 1);
 
                 if (random.nextDouble() < slimeChance) {
-                    int slimeCount = (newAmplifier % 2 == 1) ? 2 : 1;
-                    int slimeSize = (newAmplifier >= 2) ? 2 : 1;
+                    int effectLevel = newAmplifier + 1;
+                    boolean maximumLevel = effectLevel == 5;
+                    int slimeCount = maximumLevel ? 1 : effectLevel;
+                    int slimeSize = maximumLevel ? 2 : 1;
+
+                    List<Slime> spawnedSlimes = new ArrayList<>();
+                    int successfulLevels = 0;
 
                     for (int i = 0; i < slimeCount; i++) {
                         Slime slime = EntityType.SLIME.create(level);
@@ -77,12 +107,20 @@ public class SlimeConsumableItem extends ConsumableItem {
                                     consumer.getY() + consumer.getEyeHeight(),
                                     consumer.getZ() + (random.nextDouble() - 0.5) * 2);
 
-                            if (level.addFreshEntity(slime) && consumer instanceof Player player) {
-                                player.getFoodData().setFoodLevel(Math.max(0,
-                                        player.getFoodData().getFoodLevel() - slimeSize * 4));
-                                transferEffects(player, slime);
+                            if (level.addFreshEntity(slime)) {
+                                spawnedSlimes.add(slime);
+                                successfulLevels += maximumLevel ? effectLevel : 1;
                             }
                         }
+                    }
+
+                    if (!spawnedSlimes.isEmpty()) {
+                        if (consumer instanceof Player player) {
+                            player.getFoodData().setFoodLevel(Math.max(0,
+                                    player.getFoodData().getFoodLevel() - successfulLevels * HUNGER_COST_PER_LEVEL));
+                            transferEffects(player, spawnedSlimes, successfulLevels);
+                        }
+                        consumer.hurt(level.damageSources().mobAttack(spawnedSlimes.get(spawnedSlimes.size() - 1)), successfulLevels);
                     }
                 }
             }
@@ -92,36 +130,77 @@ public class SlimeConsumableItem extends ConsumableItem {
         }
     }
 
-    private static void transferEffects(Player player, Slime slime) {
+    private static void transferEffects(Player player, List<Slime> slimes, int effectLevels) {
+        int slimeCount = slimes.size();
+        if (slimeCount == 0) return;
+
+        double totalShare = Math.min(effectLevels * EFFECT_STEAL_PERCENTAGE_PER_LEVEL, MAX_EFFECT_STEAL_PERCENTAGE);
+
         for (MobEffectInstance effect : List.copyOf(player.getActiveEffects())) {
             if (effect.is(MobEffects.OOZING)) continue;
 
-            int transferDuration = effect.isInfiniteDuration()
-                    ? EFFECT_TRANSFER_DURATION
-                    : Math.min(EFFECT_TRANSFER_DURATION, effect.getDuration());
-            if (transferDuration <= 0) continue;
+            if (effect.isInfiniteDuration()) {
+                for (Slime slime : slimes) {
+                    slime.addEffect(new MobEffectInstance(
+                            effect.getEffect(),
+                            EFFECT_TRANSFER_DURATION,
+                            effect.getAmplifier(),
+                            effect.isAmbient(),
+                            effect.isVisible(),
+                            effect.showIcon()));
+                }
+                continue;
+            }
 
-            MobEffectInstance transferredEffect = new MobEffectInstance(
-                    effect.getEffect(),
-                    transferDuration,
-                    effect.getAmplifier(),
-                    effect.isAmbient(),
-                    effect.isVisible(),
-                    effect.showIcon());
-            if (!slime.addEffect(transferredEffect) || effect.isInfiniteDuration()) continue;
+            int totalTransferDuration = (int) (effect.getDuration() * totalShare);
+            if (totalTransferDuration <= 0) continue;
 
-            int remainingDuration = effect.getDuration() - transferDuration;
-            player.removeEffect(effect.getEffect());
-            if (remainingDuration > 0) {
-                player.addEffect(new MobEffectInstance(
+            int perSlimeDuration = totalTransferDuration / slimeCount;
+            int durationRemainder = totalTransferDuration % slimeCount;
+
+            int totalTransferred = 0;
+            for (int i = 0; i < slimeCount; i++) {
+                int transferDuration = perSlimeDuration + (i < durationRemainder ? 1 : 0);
+                if (transferDuration <= 0) continue;
+
+                MobEffectInstance transferredEffect = new MobEffectInstance(
                         effect.getEffect(),
-                        remainingDuration,
+                        transferDuration,
                         effect.getAmplifier(),
                         effect.isAmbient(),
                         effect.isVisible(),
-                        effect.showIcon()));
+                        effect.showIcon());
+                if (slimes.get(i).addEffect(transferredEffect)) {
+                    totalTransferred += transferDuration;
+                }
+            }
+            if (totalTransferred <= 0) continue;
+
+            int remainingDuration = effect.getDuration() - totalTransferred;
+            MobEffectInstance remainingEffect = remainingDuration > 0
+                    ? copyWithDuration(effect, remainingDuration)
+                    : null;
+            player.removeEffect(effect.getEffect());
+            if (remainingEffect != null) {
+                player.addEffect(remainingEffect);
             }
         }
+    }
+
+    private static MobEffectInstance copyWithDuration(MobEffectInstance effect, int duration) {
+        if (effect.save() instanceof CompoundTag effectTag) {
+            effectTag.putInt("duration", duration);
+            MobEffectInstance copy = MobEffectInstance.load(effectTag);
+            if (copy != null) return copy;
+        }
+
+        return new MobEffectInstance(
+                effect.getEffect(),
+                duration,
+                effect.getAmplifier(),
+                effect.isAmbient(),
+                effect.isVisible(),
+                effect.showIcon());
     }
 
     @Override

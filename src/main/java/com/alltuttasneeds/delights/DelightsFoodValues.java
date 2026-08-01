@@ -11,20 +11,19 @@ public class DelightsFoodValues
                 .nutrition(5).saturationModifier(0.8f)
                 .build();
         public static final FoodProperties SQUISHMALLOW = (new FoodProperties.Builder())
-                .nutrition(2).saturationModifier(0.2f)
-                .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 300, 0, false, false), 1.0F)
+                .nutrition(1).saturationModifier(0.5f)
                 .alwaysEdible().fast().build();
         public static final FoodProperties SMOKED_SQUISHMALLOW = (new FoodProperties.Builder())
-                .nutrition(3).saturationModifier(0.2f)
-                .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0, false, false), 1.0F)
+                .nutrition(3).saturationModifier(0.5f)
+                .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 300, 0, false, false), 1.0F)
                 .alwaysEdible().fast().build();
         public static final FoodProperties STICKY_GREEN_NOODLES = (new FoodProperties.Builder())
-                .nutrition(12).saturationModifier(0.8f)
-                .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 6000, 0, false, false), 1.0F)
+                .nutrition(12).saturationModifier(0.6f)
+                .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 3600, 0, false, false), 1.0F)
                 .build();
         public static final FoodProperties MINTMALLOW_BIT = (new FoodProperties.Builder())
-                .nutrition(4).saturationModifier(0.3f)
-                .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 600, 0, false, false), 1.0F)
+                .nutrition(4).saturationModifier(0.45f)
+                .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 300, 0, false, false), 1.0F)
                 .alwaysEdible().fast().build();
         public static final FoodProperties SLIME_JELLY_SLICE = (new FoodProperties.Builder())
                 .nutrition(2).saturationModifier(0.1F)
@@ -212,7 +211,7 @@ public class DelightsFoodValues
                 .nutrition(5).saturationModifier(0.6F)
                 .alwaysEdible().fast().build();
         public static final FoodProperties POTATO_OMELET = (new FoodProperties.Builder())
-                .nutrition(13).saturationModifier(0.75F)
+                .nutrition(9).saturationModifier(0.85F)
                 .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1800, 0, false, false), 1.0F)
                 .build();
         public static final FoodProperties NAPOLITANA_WITH_FRIES_POTATOES = (new FoodProperties.Builder())

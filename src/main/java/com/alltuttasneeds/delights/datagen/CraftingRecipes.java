@@ -208,7 +208,7 @@ public class CraftingRecipes {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DelightsItems.SQUISHMALLOW.get())
                 .requires(Items.STICK)
-                .requires(DelightsItems.SLIMECUBE.get())
+                .requires(DelightsItems.SLIMECUBE.get(),2)
                 .unlockedBy("has_slime", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SLIME_BALL, DelightsItems.SLIMECUBE.get()))
                 .save(groups(output, SLIME), "tuttasdelights:crafting/squishmallow");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, DelightsItems.MINTMALLOW_BIT.get())

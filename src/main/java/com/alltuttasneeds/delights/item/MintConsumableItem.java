@@ -12,44 +12,53 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import vectorwing.farmersdelight.common.Configuration;
-import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.utility.TextUtils;
 
 import java.util.List;
-import java.util.Random;
 
-public class MintConsumableItem extends ConsumableItem {
-    private static final Random RANDOM = new Random();
+public class MintConsumableItem extends ExplosiveConsumableItem {
     private final boolean hasFoodEffectTooltip;
     private final boolean hasCustomTooltip;
 
     public MintConsumableItem(Properties properties) {
-        super(properties);
-        this.hasFoodEffectTooltip = false;
-        this.hasCustomTooltip = false;
+        this(properties, 0.05F, 8.0F);
+    }
+
+    public MintConsumableItem(Properties properties, float explosionChance) {
+        this(properties, explosionChance, 8.0F);
+    }
+
+    public MintConsumableItem(Properties properties, float explosionChance, float explosionDamage) {
+        this(properties, explosionChance, explosionDamage, false, false);
     }
 
     public MintConsumableItem(Properties properties, boolean hasFoodEffectTooltip) {
-        super(properties);
-        this.hasFoodEffectTooltip = hasFoodEffectTooltip;
-        this.hasCustomTooltip = false;
+        this(properties, 0.05F, 8.0F, hasFoodEffectTooltip, false);
     }
 
     public MintConsumableItem(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
-        super(properties);
+        this(properties, 0.05F, 8.0F, hasFoodEffectTooltip, hasCustomTooltip);
+    }
+
+    public MintConsumableItem(Properties properties, float explosionChance, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
+        this(properties, explosionChance, 8.0F, hasFoodEffectTooltip, hasCustomTooltip);
+    }
+
+    public MintConsumableItem(Properties properties, float explosionChance, float explosionDamage,
+                              boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
+        super(properties, explosionChance, explosionDamage);
         this.hasFoodEffectTooltip = hasFoodEffectTooltip;
         this.hasCustomTooltip = hasCustomTooltip;
     }
+
+    @Override
     public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
         if (consumer.hasEffect(MobEffects.CONFUSION)) {
             consumer.removeEffect(MobEffects.CONFUSION);
         } else if (consumer.hasEffect(MobEffects.POISON)) {
             consumer.removeEffect(MobEffects.POISON);
         }
-        if (RANDOM.nextDouble() < 0.05) {
-            level.explode(null, consumer.getX(), consumer.getEyeY(), consumer.getZ(), 0.25F, Level.ExplosionInteraction.NONE);
-            consumer.hurt(consumer.damageSources().magic(), 8.0F);
-        }
+        tryExplode(level, consumer);
     }
 
     @Override
