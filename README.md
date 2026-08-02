@@ -30,8 +30,8 @@ same `alltuttasneeds-startup.toml` when playing together.
 
 Door compatibility is available for Vanilla Backport, No Man's Land, New
 World, Abundant Atmosphere, Caverns & Chasms, Upgrade Aquatic, Atmospheric,
-Environmental, Autumnity, Spawn, Nature's Spirit, Biomes O' Plenty, Enderscape,
-Arts & Crafts, My Nether's Delight, Architect's Palette, Malum, Create,
+Environmental, Autumnity, Windswept, Spawn, Nature's Spirit, Biomes O' Plenty,
+Enderscape, Arts & Crafts, My Nether's Delight, Architect's Palette, Malum, Create,
 BlockBox and Woodworks.
 
 Farmer's Delight adds straw and canvas mattress materials and canvas covers.

@@ -141,6 +141,18 @@
       "required": false
     },
     {
+      "id": "windswept:holly_pet_door",
+      "required": false
+    },
+    {
+      "id": "windswept:pine_pet_door",
+      "required": false
+    },
+    {
+      "id": "windswept:chestnut_pet_door",
+      "required": false
+    },
+    {
       "id": "spawn:rotten_pet_door",
       "required": false
     },

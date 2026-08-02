@@ -24,6 +24,7 @@ public enum Mods {
     AUTUMNITY ("autumnity"),
     ENVIRONMENTAL ("environmental"),
     ATMOSPHERIC ("atmospheric"),
+    WINDSWEPT ("windswept"),
     SPAWN ("spawn"),
     WOODWORKS ("woodworks"),
     FARMERS_DELIGHT ("farmersdelight"),

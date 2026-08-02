@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "windswept"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "transit"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "alltuttasneeds:door_set_enabled",
+        "set": "consistent"
+      }
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pine_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "windswept:pine_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "windswept:crafting/pine_transit_from_original"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pine_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "windswept:crafting/pine_transit_from_original"
+    ]
+  }
+}

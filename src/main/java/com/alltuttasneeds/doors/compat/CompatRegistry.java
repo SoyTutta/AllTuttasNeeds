@@ -26,6 +26,7 @@ public final class CompatRegistry {
             new Entry(Mods.ATMOSPHERIC, () -> ATMContent.INSTANCE),
             new Entry(Mods.ENVIRONMENTAL, () -> EContent.INSTANCE),
             new Entry(Mods.AUTUMNITY, () -> AContent.INSTANCE),
+            new Entry(Mods.WINDSWEPT, () -> WindsweptContent.INSTANCE),
             new Entry(Mods.SPAWN, () -> SContent.INSTANCE),
             new Entry(Mods.NATURES_SPIRIT, () -> NSContent.INSTANCE),
             new Entry(Mods.BIOMESOPLENTY, () -> BoPContent.INSTANCE),

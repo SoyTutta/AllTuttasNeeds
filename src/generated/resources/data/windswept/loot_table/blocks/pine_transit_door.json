@@ -1,0 +1,44 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "transit"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "windswept"
+    }
+  ],
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "windswept:pine_transit_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
+          "name": "windswept:pine_transit_door"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "windswept:blocks/pine_transit_door"
+}

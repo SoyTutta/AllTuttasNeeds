@@ -1,0 +1,28 @@
+{
+  "add": {
+    "windswept:chestnut_door": [
+      "windswept:chestnut_normal_door",
+      "windswept:chestnut_indiscrete_door",
+      "windswept:chestnut_transit_door"
+    ],
+    "windswept:chestnut_trapdoor": [
+      "windswept:chestnut_pet_door"
+    ],
+    "windswept:holly_discrete_door": [
+      "windswept:holly_door",
+      "windswept:holly_indiscrete_door",
+      "windswept:holly_transit_door"
+    ],
+    "windswept:holly_trapdoor": [
+      "windswept:holly_pet_door"
+    ],
+    "windswept:pine_discrete_door": [
+      "windswept:pine_door",
+      "windswept:pine_indiscrete_door",
+      "windswept:pine_transit_door"
+    ],
+    "windswept:pine_trapdoor": [
+      "windswept:pine_pet_door"
+    ]
+  }
+}

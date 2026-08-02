@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "windswept:block/indiscrete_door/pine_door_bottom",
+    "top": "windswept:block/indiscrete_door/pine_door_top"
+  }
+}

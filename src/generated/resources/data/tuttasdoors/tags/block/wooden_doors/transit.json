@@ -141,6 +141,18 @@
       "required": false
     },
     {
+      "id": "windswept:holly_transit_door",
+      "required": false
+    },
+    {
+      "id": "windswept:pine_transit_door",
+      "required": false
+    },
+    {
+      "id": "windswept:chestnut_transit_door",
+      "required": false
+    },
+    {
       "id": "spawn:rotten_transit_door",
       "required": false
     },

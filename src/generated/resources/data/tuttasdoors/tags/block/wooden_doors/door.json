@@ -141,6 +141,18 @@
       "required": false
     },
     {
+      "id": "windswept:holly_door",
+      "required": false
+    },
+    {
+      "id": "windswept:pine_door",
+      "required": false
+    },
+    {
+      "id": "windswept:chestnut_normal_door",
+      "required": false
+    },
+    {
       "id": "spawn:rotten_normal_door",
       "required": false
     },

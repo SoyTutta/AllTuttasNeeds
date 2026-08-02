@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_bottom_left_open",
+  "textures": {
+    "door": "windswept:block/transit_door/holly_door_bottom"
+  }
+}

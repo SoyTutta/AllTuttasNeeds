@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/transit_door_top_right",
+  "textures": {
+    "door": "windswept:block/transit_door/chestnut_door_top"
+  }
+}

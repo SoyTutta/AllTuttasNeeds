@@ -134,8 +134,9 @@ public class CraftingRecipes {
                     getDoorItem(family, compat, DoorVariant.PET), 2,
                     List.of(Ingredient.of(discreteDoor)), "pet_from_discrete", family, compat);
             createConversionRecipe(petOutput.withConditions(new NotCondition(DoorSetEnabledCondition.CONSISTENT)),
-                    getDoorItem(family, compat, DoorVariant.PET), 2,
-                    List.of(Ingredient.of(originalDoor)), "pet_from_original", family, compat);
+                    getDoorItem(family, compat, DoorVariant.PET), 1,
+                    List.of(Ingredient.of(getItemLike(family.trapdoorLocation().toString()))),
+                    "pet_from_trapdoor", family, compat);
         }
     }
 

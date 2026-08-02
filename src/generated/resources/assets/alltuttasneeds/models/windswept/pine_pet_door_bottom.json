@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_bottom",
+  "textures": {
+    "door": "windswept:block/pet_door/pine_door",
+    "extra": "windswept:block/pet_door/pine_door"
+  }
+}
