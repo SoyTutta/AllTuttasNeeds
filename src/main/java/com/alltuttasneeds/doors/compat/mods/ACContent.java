@@ -31,6 +31,7 @@ public final class ACContent implements ModCompat {
             new WoodFamily("arts_and_crafts:cork", "cork",
                     () -> ACBlockSetType.CORK_SET, ACBlocks.CORK_DOOR,
                     List.of(ORIGINAL, NORMAL, INDISCRETE, TRANSIT, PET, TRAPDOOR))
+                    .withLogTagId(null)
     );
 
     static {

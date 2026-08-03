@@ -20,5 +20,6 @@ public class TDRecipes extends RecipeProvider {
     protected void buildRecipes(RecipeOutput output) {
         CraftingRecipes.register(output);
         CuttingRecipes.register(output);
+        WoodworksRecipes.register(output);
     }
 }

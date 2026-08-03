@@ -2,6 +2,7 @@ package com.alltuttasneeds.doors.compat.mods;
 
 import com.alltuttasneeds.core.Mods;
 import com.alltuttasneeds.doors.compat.CompatRegistrar;
+import com.alltuttasneeds.doors.compat.LogKind;
 import com.alltuttasneeds.doors.compat.ModCompat;
 import com.alltuttasneeds.doors.compat.WoodFamily;
 import net.bunten.enderscape.registry.EnderscapeBlocks;
@@ -32,10 +33,10 @@ public final class ESContent implements ModCompat {
                     List.of(DISCRETE, ORIGINAL, INDISCRETE, TRANSIT, PET, TRAPDOOR)),
             new WoodFamily("enderscape:celestial", "celestial",
                     () -> EnderscapeBlocks.CELESTIAL_BLOCK_SET, EnderscapeBlocks.CELESTIAL_DOOR,
-                    List.of(ORIGINAL, NORMAL, INDISCRETE, TRANSIT, PET, TRAPDOOR)),
+                    List.of(ORIGINAL, NORMAL, INDISCRETE, TRANSIT, PET, TRAPDOOR), LogKind.STEM),
             new WoodFamily("enderscape:murublight", "murublight",
                     () -> EnderscapeBlocks.MURUBLIGHT_BLOCK_SET, EnderscapeBlocks.MURUBLIGHT_DOOR,
-                    List.of(ORIGINAL, NORMAL, INDISCRETE, TRANSIT, PET, TRAPDOOR))
+                    List.of(ORIGINAL, NORMAL, INDISCRETE, TRANSIT, PET, TRAPDOOR), LogKind.STEM)
     );
 
     static {

@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "woodworks:config",
+      "value": "sawmill"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "spawn"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "transit"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_date_logs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#spawn:date_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spawn:sawmill/date_transit_door_from_date_logs_sawing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_date_logs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spawn:sawmill/date_transit_door_from_date_logs_sawing"
+    ]
+  }
+}

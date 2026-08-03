@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "woodworks:config",
+      "value": "sawmill"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "abundant_atmosphere"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "consistent"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ashroot_logs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#abundant_atmosphere:ashroot_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abundant_atmosphere:sawmill/ashroot_normal_door_from_ashroot_logs_sawing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ashroot_logs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abundant_atmosphere:sawmill/ashroot_normal_door_from_ashroot_logs_sawing"
+    ]
+  }
+}

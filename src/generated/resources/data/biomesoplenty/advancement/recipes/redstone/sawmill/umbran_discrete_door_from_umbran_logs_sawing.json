@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "woodworks:config",
+      "value": "sawmill"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "consistent"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "biomesoplenty:sawmill/umbran_discrete_door_from_umbran_logs_sawing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_umbran_logs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#biomesoplenty:umbran_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_umbran_logs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "biomesoplenty:sawmill/umbran_discrete_door_from_umbran_logs_sawing"
+    ]
+  }
+}

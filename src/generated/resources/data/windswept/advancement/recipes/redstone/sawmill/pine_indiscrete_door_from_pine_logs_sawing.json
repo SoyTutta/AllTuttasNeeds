@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "woodworks:config",
+      "value": "sawmill"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "windswept"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "consistent"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pine_logs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#windswept:pine_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "windswept:sawmill/pine_indiscrete_door_from_pine_logs_sawing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pine_logs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "windswept:sawmill/pine_indiscrete_door_from_pine_logs_sawing"
+    ]
+  }
+}

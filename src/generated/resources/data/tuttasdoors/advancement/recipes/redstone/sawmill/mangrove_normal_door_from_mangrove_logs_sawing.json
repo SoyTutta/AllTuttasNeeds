@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "woodworks:config",
+      "value": "sawmill"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "consistent"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mangrove_logs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:mangrove_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tuttasdoors:sawmill/mangrove_normal_door_from_mangrove_logs_sawing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mangrove_logs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tuttasdoors:sawmill/mangrove_normal_door_from_mangrove_logs_sawing"
+    ]
+  }
+}

@@ -240,27 +240,27 @@ public class DelightsFoodValues
                 .build();
 
         public static final FoodProperties RAW_FROG_LEG = (new FoodProperties.Builder())
-                .nutrition(2).saturationModifier(0.4F)
+                .nutrition(4).saturationModifier(0.4F)
                 .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F)
                 .fast().build();
         public static final FoodProperties COOKED_FROG_LEG = (new FoodProperties.Builder())
-                .nutrition(5).saturationModifier(0.4F)
+                .nutrition(7).saturationModifier(0.4F)
                 .fast().build();
         public static final FoodProperties FROGGLE_RICE_CHOWDER = (new FoodProperties.Builder())
-                .nutrition(10).saturationModifier(0.7F)
+                .nutrition(12).saturationModifier(0.7F)
                 .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1200, 0, false, false), 1.0F)
                 .alwaysEdible().fast().build();
         public static final FoodProperties FROGGLE_SANDWICH = (new FoodProperties.Builder())
-                .nutrition(12).saturationModifier(0.75F)
+                .nutrition(14).saturationModifier(0.75F)
                 .build();
         public static final FoodProperties HALF_A_FROGGLE_SANDWICH = (new FoodProperties.Builder())
-                .nutrition(6).saturationModifier(0.75F)
+                .nutrition(8).saturationModifier(0.75F)
                 .fast().build();
         public static final FoodProperties FROG_LEG_ON_A_STICK = (new FoodProperties.Builder())
-                .nutrition(8).saturationModifier(0.75F)
+                .nutrition(10).saturationModifier(0.75F)
                 .build();
         public static final FoodProperties HONEY_WINGS = (new FoodProperties.Builder())
-                .nutrition(8).saturationModifier(0.65F)
+                .nutrition(10).saturationModifier(0.65F)
                 .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, 1200, 0, false, false), 1.0F)
                 .alwaysEdible().fast().build();
 

@@ -20,8 +20,18 @@ public record WoodFamily(
         boolean nonFlammable,
         UnaryOperator<BlockBehaviour.Properties> propertiesCustomizer,
         @Nullable String plankId,
-        LogKind logKind
+        LogKind logKind,
+        @Nullable String logTagId
 ) {
+
+    public WoodFamily(String familyId, String registryName, Supplier<BlockSetType> setType,
+                      Supplier<? extends Block> baseDoor, List<DoorVariant> displayOrder,
+                      boolean nonFlammable, UnaryOperator<BlockBehaviour.Properties> propertiesCustomizer,
+                      @Nullable String plankId, LogKind logKind) {
+        this(familyId, registryName, setType, baseDoor, displayOrder, nonFlammable,
+                propertiesCustomizer, plankId, logKind,
+                familyNamespace(familyId) + ":" + registryName + logKind.tagSuffix());
+    }
 
     public WoodFamily(String familyId, String registryName, Supplier<BlockSetType> setType,
                       Supplier<? extends Block> baseDoor, List<DoorVariant> displayOrder) {
@@ -41,6 +51,13 @@ public record WoodFamily(
 
     public WoodFamily(String familyId, String registryName, Supplier<BlockSetType> setType,
                       Supplier<? extends Block> baseDoor, List<DoorVariant> displayOrder,
+                      boolean nonFlammable, LogKind logKind) {
+        this(familyId, registryName, setType, baseDoor, displayOrder, nonFlammable,
+                UnaryOperator.identity(), null, logKind);
+    }
+
+    public WoodFamily(String familyId, String registryName, Supplier<BlockSetType> setType,
+                      Supplier<? extends Block> baseDoor, List<DoorVariant> displayOrder,
                       boolean nonFlammable, UnaryOperator<BlockBehaviour.Properties> propertiesCustomizer) {
         this(familyId, registryName, setType, baseDoor, displayOrder, nonFlammable, propertiesCustomizer, null, LogKind.LOG);
     }
@@ -53,6 +70,10 @@ public record WoodFamily(
     }
 
     public String familyNamespace() {
+        return familyNamespace(familyId);
+    }
+
+    private static String familyNamespace(String familyId) {
         return familyId.substring(0, familyId.indexOf(':'));
     }
 
@@ -79,6 +100,16 @@ public record WoodFamily(
 
     public ResourceLocation strippedLogId() {
         return ResourceLocation.fromNamespaceAndPath(familyNamespace(), "stripped_" + registryName + logKind.suffix());
+    }
+
+    @Nullable
+    public ResourceLocation logTagLocation() {
+        return logTagId == null ? null : ResourceLocation.tryParse(logTagId);
+    }
+
+    public WoodFamily withLogTagId(@Nullable String logTagId) {
+        return new WoodFamily(familyId, registryName, setType, baseDoor, displayOrder, nonFlammable,
+                propertiesCustomizer, plankId, logKind, logTagId);
     }
 
     public EnumSet<DoorVariant> registeredVariants() {

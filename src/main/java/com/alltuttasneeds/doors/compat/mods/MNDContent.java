@@ -2,6 +2,7 @@ package com.alltuttasneeds.doors.compat.mods;
 
 import com.alltuttasneeds.core.Mods;
 import com.alltuttasneeds.doors.compat.CompatRegistrar;
+import com.alltuttasneeds.doors.compat.LogKind;
 import com.alltuttasneeds.doors.compat.ModCompat;
 import com.alltuttasneeds.doors.compat.WoodFamily;
 import com.soytutta.mynethersdelight.common.registry.MNDBlocks;
@@ -30,7 +31,8 @@ public final class MNDContent implements ModCompat {
     private static final List<WoodFamily> WOOD_FAMILIES = List.of(
             new WoodFamily("mynethersdelight:powdery", "powdery",
                     () -> BlockSetType.BAMBOO, MNDBlocks.POWDERY_DOOR,
-                    List.of(DISCRETE, ORIGINAL, INDISCRETE, TRANSIT, PET, TRAPDOOR), true)
+                    List.of(DISCRETE, ORIGINAL, INDISCRETE, TRANSIT, PET, TRAPDOOR),
+                    true, LogKind.BAMBOO)
     );
 
     static {

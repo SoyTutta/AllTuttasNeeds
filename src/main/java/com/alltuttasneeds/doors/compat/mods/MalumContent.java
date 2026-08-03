@@ -39,17 +39,20 @@ public final class MalumContent implements ModCompat {
 
             new WoodFamily("malum:bolted_runewood", "bolted_runewood",
                     RUNEWOOD_SET, MalumBlocks.BOLTED_RUNEWOOD_DOOR,
-                    List.of(DISCRETE, ORIGINAL, INDISCRETE, TRANSIT, PET, TRAPDOOR)),
+                    List.of(DISCRETE, ORIGINAL, INDISCRETE, TRANSIT, PET, TRAPDOOR))
+                    .withLogTagId("malum:runewood_logs"),
 
             new WoodFamily("malum:runewood_boards", "runewood_boards",
                     RUNEWOOD_SET, MalumBlocks.RUNEWOOD_BOARDS_DOOR,
                     List.of(ORIGINAL, NORMAL, INDISCRETE, TRANSIT, PET, TRAPDOOR),
-                    false, UnaryOperator.identity(), "#malum:runewood_boards"),
+                    false, UnaryOperator.identity(), "#malum:runewood_boards")
+                    .withLogTagId("malum:runewood_logs"),
 
             new WoodFamily("malum:bolted_runewood_boards", "bolted_runewood_boards",
                     RUNEWOOD_SET, MalumBlocks.BOLTED_RUNEWOOD_BOARDS_DOOR,
                     List.of(DISCRETE, ORIGINAL, INDISCRETE, TRANSIT, PET, TRAPDOOR),
-                    false, UnaryOperator.identity()),
+                    false, UnaryOperator.identity())
+                    .withLogTagId("malum:runewood_logs"),
 
             new WoodFamily("malum:soulwood", "soulwood",
                     SOULWOOD_SET, MalumBlocks.SOULWOOD_DOOR,
@@ -57,17 +60,20 @@ public final class MalumContent implements ModCompat {
 
             new WoodFamily("malum:bolted_soulwood", "bolted_soulwood",
                     SOULWOOD_SET, MalumBlocks.BOLTED_SOULWOOD_DOOR,
-                    List.of(DISCRETE, ORIGINAL, INDISCRETE, TRANSIT, PET, TRAPDOOR)),
+                    List.of(DISCRETE, ORIGINAL, INDISCRETE, TRANSIT, PET, TRAPDOOR))
+                    .withLogTagId("malum:soulwood_logs"),
 
             new WoodFamily("malum:soulwood_boards", "soulwood_boards",
                     SOULWOOD_SET, MalumBlocks.SOULWOOD_BOARDS_DOOR,
                     List.of(ORIGINAL, NORMAL, INDISCRETE, TRANSIT, PET, TRAPDOOR),
-                    false, UnaryOperator.identity(), "#malum:soulwood_boards"),
+                    false, UnaryOperator.identity(), "#malum:soulwood_boards")
+                    .withLogTagId("malum:soulwood_logs"),
 
             new WoodFamily("malum:bolted_soulwood_boards", "bolted_soulwood_boards",
                     SOULWOOD_SET, MalumBlocks.BOLTED_SOULWOOD_BOARDS_DOOR,
                     List.of(DISCRETE, ORIGINAL, INDISCRETE, TRANSIT, PET, TRAPDOOR),
                     false, UnaryOperator.identity())
+                    .withLogTagId("malum:soulwood_logs")
     );
 
     static {

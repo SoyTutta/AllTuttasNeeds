@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "woodworks:config",
+      "value": "sawmill"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "consistent"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_runewood_logs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#malum:runewood_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "malum:sawmill/runewood_boards_normal_door_from_runewood_logs_sawing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_runewood_logs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "malum:sawmill/runewood_boards_normal_door_from_runewood_logs_sawing"
+    ]
+  }
+}

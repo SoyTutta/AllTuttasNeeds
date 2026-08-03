@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "woodworks:config",
+      "value": "sawmill"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderscape"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "consistent"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enderscape:sawmill/veiled_indiscrete_door_from_veiled_logs_sawing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_veiled_logs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#enderscape:veiled_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_veiled_logs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enderscape:sawmill/veiled_indiscrete_door_from_veiled_logs_sawing"
+    ]
+  }
+}

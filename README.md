@@ -34,6 +34,10 @@ Environmental, Autumnity, Windswept, Spawn, Nature's Spirit, Biomes O' Plenty,
 Enderscape, Arts & Crafts, My Nether's Delight, Architect's Palette, Malum, Create,
 BlockBox and Woodworks.
 
+When Woodworks is installed, its sawmill can produce enabled Tutta's Doors variants
+from the matching wood-family tag, convert matching doors and trapdoors between their
+available forms, and create secret bookshelf doors from their bookshelves.
+
 Farmer's Delight adds straw and canvas mattress materials and canvas covers.
 It is also the base mod required for Tutta's Delights: when Farmer's Delight is
 not installed, the entire Delights module remains inactive. My Nether's Delight,
