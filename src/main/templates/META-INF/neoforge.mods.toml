@@ -197,3 +197,17 @@ type="optional"
 versionRange="[4.2,)"
 ordering="AFTER"
 side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="windswept"
+type="optional"
+versionRange="[4.0,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="obe"
+type="optional"
+versionRange="[1.1,)"
+ordering="AFTER"
+side="CLIENT"

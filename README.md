@@ -12,6 +12,21 @@ Tutta's Doors, Tutta's Beds and Tutta's Delights in one configurable project.
 - **Tutta's Delights** expands Farmer's Delight with meals, feasts, popsicles,
   potions, loot additions and decorative food presentation.
 
+Tutta's Beds has four comfort tiers, each with a different default advantage:
+
+| Tier | Default advantage |
+|---|---|
+| **Basic** | Takes 10 seconds to complete sleep and keeps the current respawn point, making it useful for temporary rest. |
+| **Low** | Takes 7.5 seconds to complete sleep and sets the respawn point. |
+| **Normal** | Keeps vanilla's 5-second sleep time, sets the respawn point and grants 5 seconds of Regeneration after waking. |
+| **Deluxe** | Takes 2.5 seconds to complete sleep, sets the respawn point, grants 10 seconds of Regeneration and can ignore nearby monsters when starting sleep. |
+
+Vanilla beds and recognized beds from other mods use the Basic tier by default.
+The startup configuration can change whether each tier sets spawn, its sleep
+duration and its wake-up effect, including any vanilla or modded effect ID and
+duration. Individual beds or complete mod namespaces can also be reassigned to
+another tier or excluded from the tier system.
+
 Each module can be disabled separately in the startup configuration. Disabling
 a module also leaves the corresponding vanilla and modded content unchanged.
 Tutta's Delights additionally exposes thematic content groups for suckling pig

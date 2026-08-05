@@ -13,7 +13,8 @@
     "BlockEntityTypeBedMixin"
   ],
   "client": [
-    "BedRendererMixin"
+    "BedRendererMixin",
+    "OptimizedBlockEntitiesCompatMixin"
   ],
   "injectors": {
     "defaultRequire": 1
