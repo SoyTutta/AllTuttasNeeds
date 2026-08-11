@@ -6,6 +6,7 @@ import com.alltuttasneeds.beds.MattressMaterial;
 import com.alltuttasneeds.beds.block.BedFrameBlock;
 import com.alltuttasneeds.beds.block.LooseMattressBlock;
 import com.alltuttasneeds.beds.block.TieredBedBlock;
+import com.alltuttasneeds.beds.item.BedBlanketItem.BlanketKind;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 
@@ -58,6 +59,24 @@ final class TBLangNames {
         }
 
         return block.getDescriptionId();
+    }
+
+    static String english(BlanketKind kind, DyeColor color) {
+        String material = switch (kind) {
+            case WOOL -> "Wool Blanket";
+            case LEATHER -> "Leather Blanket";
+            case DELUXE_WOOL -> "Deluxe Wool Blanket";
+        };
+        return colorEn(color) + " " + material;
+    }
+
+    static String spanish(BlanketKind kind, DyeColor color) {
+        String material = switch (kind) {
+            case WOOL -> "Manta de lana";
+            case LEATHER -> "Manta de cuero";
+            case DELUXE_WOOL -> "Manta de lana deluxe";
+        };
+        return material + " " + colorEs(color, true);
     }
 
     private static String normalSuffixEn(BlanketMaterial blanket) {

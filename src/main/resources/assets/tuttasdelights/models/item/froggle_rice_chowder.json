@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/froggle_rice_chowder"
+    "layer0": "tuttasdelights:alltuttasneeds/item/froggle_rice_chowder"
   }
 }

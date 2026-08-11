@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/broken_bones"
+    "layer0": "tuttasdelights:alltuttasneeds/item/broken_bones"
   }
 }

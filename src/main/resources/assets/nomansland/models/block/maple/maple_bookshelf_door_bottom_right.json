@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "nomansland:block/maple/maple_bookshelf",
 		"side": "nomansland:block/maple/maple_planks",
-		"door": "nomansland:block/secret_door/maple_bookshelf_door_bottom"
+		"door": "tuttasdoors:nomansland/block/secret_door/maple_bookshelf_door_bottom"
 	}
 }

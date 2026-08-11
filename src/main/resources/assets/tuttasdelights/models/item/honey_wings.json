@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/honey_nuggets"
+    "layer0": "tuttasdelights:alltuttasneeds/item/honey_nuggets"
   }
 }

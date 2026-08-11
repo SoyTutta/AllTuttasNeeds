@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/rotten_mutton_chops"
+    "layer0": "tuttasdelights:alltuttasneeds/item/rotten_mutton_chops"
   }
 }

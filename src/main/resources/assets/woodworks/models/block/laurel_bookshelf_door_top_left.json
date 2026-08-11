@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "atmospheric:block/laurel_bookshelf",
 		"side": "atmospheric:block/laurel_planks",
-		"door": "woodworks:block/secret_door/laurel_bookshelf_door_top"
+		"door": "tuttasdoors:woodworks/block/secret_door/laurel_bookshelf_door_top"
 	}
 }

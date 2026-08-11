@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/rotten_minced_beef"
+    "layer0": "tuttasdelights:alltuttasneeds/item/rotten_minced_beef"
   }
 }

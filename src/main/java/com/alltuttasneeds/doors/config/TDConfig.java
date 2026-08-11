@@ -38,30 +38,43 @@ public final class TDConfig {
             SET_ENABLED.put(set, value);
         }
         builder.pop();
+    }
 
+    public static void initClient(ModConfigSpec.Builder builder) {
         builder.push("behavior");
         tooltipsEnabled = builder
                 .comment("Shows Tutta's Doors style descriptions on door items.")
                 .define("tooltipsEnabled", true);
+        builder.pop();
+    }
+
+    public static void initServer(ModConfigSpec.Builder builder) {
+        builder.push("behavior");
         transitAutomaticOpeningEnabled = builder
                 .comment("Allows Transit Doors to open automatically for eligible entities.")
+                .worldRestart()
                 .define("transitAutomaticOpeningEnabled", true);
         transitAutomaticClosingEnabled = builder
                 .comment("Allows Transit Doors to close automatically after entities move away.")
+                .worldRestart()
                 .define("transitAutomaticClosingEnabled", true);
         petAutomaticOpeningEnabled = builder
                 .comment("Allows Pet Doors to open automatically for entities.")
+                .worldRestart()
                 .define("petAutomaticOpeningEnabled", true);
         petAutomaticClosingEnabled = builder
                 .comment("Allows Pet Doors to close automatically after entities move away.")
+                .worldRestart()
                 .define("petAutomaticClosingEnabled", true);
         automaticClosingDelayTicks = builder
                 .comment("Delay before an automatically closing door checks whether it can close.",
                         "20 ticks equals one second.")
+                .worldRestart()
                 .defineInRange("automaticClosingDelayTicks", 20, 1, 1200);
         invertAutomaticClosingRedstone = builder
                 .comment("By default, automatic opening and closing work without redstone and stop while powered.",
                         "Enable this to make both behaviors work only while powered.")
+                .worldRestart()
                 .define("invertAutomaticClosingRedstone", false);
         builder.pop();
     }

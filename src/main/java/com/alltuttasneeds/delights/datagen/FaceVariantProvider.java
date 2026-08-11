@@ -18,35 +18,35 @@ public class FaceVariantProvider implements DataProvider {
     private static final String MODID = "tuttasdelights";
 
     static final List<FaceEntry> FACES = List.of(
-            new FaceEntry("default", MODID + ":block/ice_cream_faces/ice_cream_default", List.of(
+            new FaceEntry("default", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_default", List.of(
                     "normal", "smile", "smiley", "happy", "feliz", "alegre", "sonriente",
                     "sonrisa", "clásico", "clasico", "por defecto", "predeterminado")),
-            new FaceEntry("mini", MODID + ":block/ice_cream_faces/ice_cream_mini", List.of(
+            new FaceEntry("mini", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_mini", List.of(
                     "small", "tiny", "little", "pequeño", "pequeno", "pequeña", "pequena",
                     "chiquito", "chiquita", "peque")),
-            new FaceEntry("kitty", MODID + ":block/ice_cream_faces/ice_cream_kitty", List.of(
+            new FaceEntry("kitty", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_kitty", List.of(
                     "cat", "kitten", "gato", "gata", "gatito", "gatita", "michi", "neko")),
-            new FaceEntry("troll", MODID + ":block/ice_cream_faces/ice_cream_troll", List.of(
+            new FaceEntry("troll", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_troll", List.of(
                     "trollface", "troll face", "trol", "cara troll", "troleador", "bromista")),
-            new FaceEntry("sad", MODID + ":block/ice_cream_faces/ice_cream_sad", List.of(
+            new FaceEntry("sad", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_sad", List.of(
                     "unhappy", "frown", "triste", "melancólico", "melancolico", "desanimado",
                     "llorón", "lloron")),
-            new FaceEntry("cool", MODID + ":block/ice_cream_faces/ice_cream_cool", List.of(
+            new FaceEntry("cool", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_cool", List.of(
                     "sunglasses", "shades", "genial", "guay", "fachero", "canchero", "copado",
                     "gafas", "lentes")),
-            new FaceEntry("creeper", MODID + ":block/ice_cream_faces/ice_cream_creeper", List.of(
+            new FaceEntry("creeper", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_creeper", List.of(
                     "creeper face", "cara creeper", "explosive", "explosivo", "dinamita", "boom")),
-            new FaceEntry("toby", MODID + ":block/ice_cream_faces/ice_cream_toby", List.of(
+            new FaceEntry("toby", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_toby", List.of(
                     "tobi", "toby fox")),
-            new FaceEntry("surprised", MODID + ":block/ice_cream_faces/ice_cream_surprised", List.of(
+            new FaceEntry("surprised", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_surprised", List.of(
                     "surprise", "shocked", "sorpresa", "sorprendido", "sorprendida", "asombrado",
                     "asombrada", "impactado", "impactada")),
-            new FaceEntry("serious", MODID + ":block/ice_cream_faces/ice_cream_serious", List.of(
+            new FaceEntry("serious", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_serious", List.of(
                     "straight face", "neutral", "serio", "seria", "inexpresivo", "inexpresiva",
                     "neutro", "neutra")),
-            new FaceEntry("chad", MODID + ":block/ice_cream_faces/ice_cream_chad", List.of(
+            new FaceEntry("chad", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_chad", List.of(
                     "based", "basado", "basada", "mandíbula")),
-            new FaceEntry("farcr", MODID + ":block/ice_cream_faces/ice_cream_farcr", List.of())
+            new FaceEntry("farcr", MODID + ":alltuttasneeds/block/ice_cream_faces/ice_cream_farcr", List.of())
     );
 
     private final PackOutput output;

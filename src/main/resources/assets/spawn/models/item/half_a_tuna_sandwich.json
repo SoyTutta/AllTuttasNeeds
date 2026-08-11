@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/half_a_tuna_sandwich"
+    "layer0": "tuttasdelights:spawn/item/half_a_tuna_sandwich"
   }
 }

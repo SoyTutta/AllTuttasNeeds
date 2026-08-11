@@ -3,7 +3,7 @@
 	"parent": "block/block",
 	"ambientocclusion": "false",
 	"textures": {
-		"10": "tuttasdelights:block/ice_cream_faces/ice_cream_default"
+		"10": "tuttasdelights:alltuttasneeds/block/ice_cream_faces/ice_cream_default"
 	},
 	"elements": [
 		{

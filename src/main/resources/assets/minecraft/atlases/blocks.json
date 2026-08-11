@@ -1,0 +1,249 @@
+{
+  "sources": [
+    {
+      "type": "directory",
+      "source": "abundant_atmosphere/block",
+      "prefix": "abundant_atmosphere/block/"
+    },
+    {
+      "type": "directory",
+      "source": "abundant_atmosphere/item",
+      "prefix": "abundant_atmosphere/item/"
+    },
+    {
+      "type": "directory",
+      "source": "alltuttasneeds/block",
+      "prefix": "alltuttasneeds/block/"
+    },
+    {
+      "type": "directory",
+      "source": "alltuttasneeds/item",
+      "prefix": "alltuttasneeds/item/"
+    },
+    {
+      "type": "directory",
+      "source": "architects_palette/block",
+      "prefix": "architects_palette/block/"
+    },
+    {
+      "type": "directory",
+      "source": "architects_palette/item",
+      "prefix": "architects_palette/item/"
+    },
+    {
+      "type": "directory",
+      "source": "arts_and_crafts/block",
+      "prefix": "arts_and_crafts/block/"
+    },
+    {
+      "type": "directory",
+      "source": "arts_and_crafts/item",
+      "prefix": "arts_and_crafts/item/"
+    },
+    {
+      "type": "directory",
+      "source": "atmospheric/block",
+      "prefix": "atmospheric/block/"
+    },
+    {
+      "type": "directory",
+      "source": "atmospheric/item",
+      "prefix": "atmospheric/item/"
+    },
+    {
+      "type": "directory",
+      "source": "autumnity/block",
+      "prefix": "autumnity/block/"
+    },
+    {
+      "type": "directory",
+      "source": "autumnity/item",
+      "prefix": "autumnity/item/"
+    },
+    {
+      "type": "directory",
+      "source": "biomesoplenty/block",
+      "prefix": "biomesoplenty/block/"
+    },
+    {
+      "type": "directory",
+      "source": "biomesoplenty/item",
+      "prefix": "biomesoplenty/item/"
+    },
+    {
+      "type": "directory",
+      "source": "blockbox/block",
+      "prefix": "blockbox/block/"
+    },
+    {
+      "type": "directory",
+      "source": "blockbox/item",
+      "prefix": "blockbox/item/"
+    },
+    {
+      "type": "directory",
+      "source": "brewinandchewin/item",
+      "prefix": "brewinandchewin/item/"
+    },
+    {
+      "type": "directory",
+      "source": "caverns_and_chasms/block",
+      "prefix": "caverns_and_chasms/block/"
+    },
+    {
+      "type": "directory",
+      "source": "caverns_and_chasms/item",
+      "prefix": "caverns_and_chasms/item/"
+    },
+    {
+      "type": "directory",
+      "source": "create/block",
+      "prefix": "create/block/"
+    },
+    {
+      "type": "directory",
+      "source": "create/item",
+      "prefix": "create/item/"
+    },
+    {
+      "type": "directory",
+      "source": "enderscape/block",
+      "prefix": "enderscape/block/"
+    },
+    {
+      "type": "directory",
+      "source": "enderscape/item",
+      "prefix": "enderscape/item/"
+    },
+    {
+      "type": "directory",
+      "source": "environmental/block",
+      "prefix": "environmental/block/"
+    },
+    {
+      "type": "directory",
+      "source": "environmental/item",
+      "prefix": "environmental/item/"
+    },
+    {
+      "type": "directory",
+      "source": "farmersdelight/block",
+      "prefix": "farmersdelight/block/"
+    },
+    {
+      "type": "directory",
+      "source": "malum/block",
+      "prefix": "malum/block/"
+    },
+    {
+      "type": "directory",
+      "source": "malum/item",
+      "prefix": "malum/item/"
+    },
+    {
+      "type": "directory",
+      "source": "minecraft/block",
+      "prefix": "minecraft/block/"
+    },
+    {
+      "type": "directory",
+      "source": "minecraft/item",
+      "prefix": "minecraft/item/"
+    },
+    {
+      "type": "directory",
+      "source": "minersdelight/item",
+      "prefix": "minersdelight/item/"
+    },
+    {
+      "type": "directory",
+      "source": "mynethersdelight/block",
+      "prefix": "mynethersdelight/block/"
+    },
+    {
+      "type": "directory",
+      "source": "mynethersdelight/item",
+      "prefix": "mynethersdelight/item/"
+    },
+    {
+      "type": "directory",
+      "source": "natures_spirit/block",
+      "prefix": "natures_spirit/block/"
+    },
+    {
+      "type": "directory",
+      "source": "natures_spirit/item",
+      "prefix": "natures_spirit/item/"
+    },
+    {
+      "type": "directory",
+      "source": "newworld/block",
+      "prefix": "newworld/block/"
+    },
+    {
+      "type": "directory",
+      "source": "newworld/item",
+      "prefix": "newworld/item/"
+    },
+    {
+      "type": "directory",
+      "source": "nomansland/block",
+      "prefix": "nomansland/block/"
+    },
+    {
+      "type": "directory",
+      "source": "nomansland/item",
+      "prefix": "nomansland/item/"
+    },
+    {
+      "type": "directory",
+      "source": "spawn/block",
+      "prefix": "spawn/block/"
+    },
+    {
+      "type": "directory",
+      "source": "spawn/item",
+      "prefix": "spawn/item/"
+    },
+    {
+      "type": "directory",
+      "source": "upgrade_aquatic/block",
+      "prefix": "upgrade_aquatic/block/"
+    },
+    {
+      "type": "directory",
+      "source": "upgrade_aquatic/item",
+      "prefix": "upgrade_aquatic/item/"
+    },
+    {
+      "type": "directory",
+      "source": "vanillabackport/block",
+      "prefix": "vanillabackport/block/"
+    },
+    {
+      "type": "directory",
+      "source": "vanillabackport/item",
+      "prefix": "vanillabackport/item/"
+    },
+    {
+      "type": "directory",
+      "source": "windswept/block",
+      "prefix": "windswept/block/"
+    },
+    {
+      "type": "directory",
+      "source": "windswept/item",
+      "prefix": "windswept/item/"
+    },
+    {
+      "type": "directory",
+      "source": "woodworks/block",
+      "prefix": "woodworks/block/"
+    },
+    {
+      "type": "directory",
+      "source": "woodworks/item",
+      "prefix": "woodworks/item/"
+    }
+  ]
+}

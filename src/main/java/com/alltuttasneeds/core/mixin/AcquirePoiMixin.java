@@ -32,7 +32,21 @@ public abstract class AcquirePoiMixin {
     private static void alltuttasneeds$prioritizeBeds(Mob mob,
                                                       Set<Pair<Holder<PoiType>, BlockPos>> pois,
                                                       CallbackInfoReturnable<Path> cir) {
-        if (!TBConfig.isModuleEnabled() || !TBConfig.villagersCanUseTuttaBeds.get()) return;
+        if (!TBConfig.isModuleEnabled()) return;
+        if (!TBConfig.villagersCanUseTuttaBeds.get()) {
+            Set<Pair<Holder<PoiType>, BlockPos>> allowed = new HashSet<>();
+            for (Pair<Holder<PoiType>, BlockPos> poi : pois) {
+                BlockState state = mob.level().getBlockState(poi.getSecond());
+                if (!(state.getBlock() instanceof TuttaBedBlock)
+                        && !(state.getBlock() instanceof LooseMattressBlock)) {
+                    allowed.add(poi);
+                }
+            }
+            if (allowed.size() != pois.size()) {
+                cir.setReturnValue(pathToPois(mob, allowed));
+            }
+            return;
+        }
         Map<Integer, Set<BlockPos>> bedsByPriority = new HashMap<>();
 
         for (Pair<Holder<PoiType>, BlockPos> poi : pois) {
@@ -70,5 +84,17 @@ public abstract class AcquirePoiMixin {
         if (block instanceof LooseMattressBlock mattress) return mattress.cover() != null ? 4 : 5;
         if (block instanceof BedFrameBlock) return 5;
         return block instanceof TuttaBedBlock ? 3 : 5;
+    }
+
+    private static Path pathToPois(Mob mob, Set<Pair<Holder<PoiType>, BlockPos>> pois) {
+        if (pois.isEmpty()) return null;
+
+        Set<BlockPos> positions = new HashSet<>();
+        int validRange = 1;
+        for (Pair<Holder<PoiType>, BlockPos> poi : pois) {
+            validRange = Math.max(validRange, poi.getFirst().value().validRange());
+            positions.add(poi.getSecond());
+        }
+        return mob.getNavigation().createPath(positions, validRange);
     }
 }

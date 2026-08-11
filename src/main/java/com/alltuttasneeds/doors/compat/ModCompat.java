@@ -31,6 +31,8 @@ public interface ModCompat {
 
     default boolean isLoaded() { return mod().isLoaded(); }
 
+    default String textureOwner() { return mod().id(); }
+
     default ResourceLocation registryLocation(String name) {
         return ResourceLocation.fromNamespaceAndPath(namespace(), name);
     }

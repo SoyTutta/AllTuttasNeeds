@@ -4,7 +4,7 @@
 	"ambientocclusion": false,
 	"textures": {
 		"particle": "#door",
-		"door": "tuttasdoors:block/transit_door/acacia_door_bottom"
+		"door": "tuttasdoors:minecraft/block/transit_door/acacia_door_bottom"
 	},
 	"elements": [
 		{

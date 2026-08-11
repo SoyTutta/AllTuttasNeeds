@@ -3,6 +3,7 @@ package com.alltuttasneeds.doors.datagen;
 import com.alltuttasneeds.core.Mods;
 import com.alltuttasneeds.core.condition.DoorSetEnabledCondition;
 import com.alltuttasneeds.core.condition.ModuleEnabledCondition;
+import com.alltuttasneeds.core.datagen.ConditionalBlockLootTableProvider;
 import com.alltuttasneeds.doors.block.PetDoorBlock;
 import com.alltuttasneeds.doors.block.TransitDoorBlock;
 import com.alltuttasneeds.doors.compat.CompatRegistry;
@@ -24,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class BlockLootTables extends BlockLootSubProvider {
+public class BlockLootTables extends BlockLootSubProvider implements ConditionalBlockLootTableProvider.SubProvider {
     private final Map<ResourceKey<LootTable>, List<ICondition>> conditions = new HashMap<>();
 
     public BlockLootTables(HolderLookup.Provider registries) {

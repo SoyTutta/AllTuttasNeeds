@@ -7,17 +7,20 @@ import java.util.List;
 public final class TierGameplayConfig {
     public final ModConfigSpec.BooleanValue setsSpawn;
     public final ModConfigSpec.DoubleValue sleepDurationMultiplier;
+    public final ModConfigSpec.BooleanValue ignoresNearbyMonsters;
     public final SleepEffectConfig wakeEffect;
     public final ModConfigSpec.ConfigValue<List<? extends String>> blockOverrides;
     public final ModConfigSpec.ConfigValue<List<? extends String>> blockExclusions;
 
     private TierGameplayConfig(ModConfigSpec.BooleanValue setsSpawn,
                                ModConfigSpec.DoubleValue sleepDurationMultiplier,
+                               ModConfigSpec.BooleanValue ignoresNearbyMonsters,
                                SleepEffectConfig wakeEffect,
                                ModConfigSpec.ConfigValue<List<? extends String>> blockOverrides,
                                ModConfigSpec.ConfigValue<List<? extends String>> blockExclusions) {
         this.setsSpawn = setsSpawn;
         this.sleepDurationMultiplier = sleepDurationMultiplier;
+        this.ignoresNearbyMonsters = ignoresNearbyMonsters;
         this.wakeEffect = wakeEffect;
         this.blockOverrides = blockOverrides;
         this.blockExclusions = blockExclusions;
@@ -25,28 +28,37 @@ public final class TierGameplayConfig {
 
     static TierGameplayConfig define(ModConfigSpec.Builder builder, String section, boolean defaultSetsSpawn,
                                      double defaultSleepMultiplier, boolean defaultEffectEnabled,
-                                     int defaultEffectDurationSeconds) {
+                                     int defaultEffectDurationSeconds, boolean defaultIgnoresNearbyMonsters) {
         builder.push(section);
         ModConfigSpec.BooleanValue setsSpawn = builder
                 .comment("Whether beds in this tier set the player's respawn point.")
+                .worldRestart()
                 .define("setsSpawn", defaultSetsSpawn);
         ModConfigSpec.DoubleValue sleepDurationMultiplier = builder
                 .comment("Multiplier applied to vanilla's five-second sleep duration.")
+                .worldRestart()
                 .defineInRange("sleepDurationMultiplier", defaultSleepMultiplier, 0.1D, 10.0D);
+        ModConfigSpec.BooleanValue ignoresNearbyMonsters = builder
+                .comment("Whether beds in this tier allow sleeping while nearby monsters would normally prevent it.")
+                .worldRestart()
+                .define("ignoresNearbyMonsters", defaultIgnoresNearbyMonsters);
         SleepEffectConfig wakeEffect = SleepEffectConfig.define(
                 builder, "wakeEffect", defaultEffectEnabled, "minecraft:regeneration", defaultEffectDurationSeconds);
         ModConfigSpec.ConfigValue<List<? extends String>> blockOverrides = builder
                 .comment("Optional block IDs assigned to this tier, overriding their automatic classification.",
                         "Use a full ID such as \"minecraft:red_bed\" or a namespace wildcard such as \"minecraft:*\".",
                         "If a block appears in multiple tiers, the highest tier wins.")
+                .worldRestart()
                 .defineList("blockOverrides", List.of(), TierGameplayConfig::isValidBlockPattern);
         ModConfigSpec.ConfigValue<List<? extends String>> blockExclusions = builder
                 .comment("Block IDs that cannot use this tier.",
                         "Use a full ID or namespace wildcard, following the same format as blockOverrides.",
                         "A bed excluded from its resolved tier keeps its normal behavior without tier mechanics.")
+                .worldRestart()
                 .defineList("blockExclusions", List.of(), TierGameplayConfig::isValidBlockPattern);
         builder.pop();
-        return new TierGameplayConfig(setsSpawn, sleepDurationMultiplier, wakeEffect, blockOverrides, blockExclusions);
+        return new TierGameplayConfig(setsSpawn, sleepDurationMultiplier, ignoresNearbyMonsters,
+                wakeEffect, blockOverrides, blockExclusions);
     }
 
     private static boolean isValidBlockPattern(Object value) {

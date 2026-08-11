@@ -1,6 +1,6 @@
 {
   "parent": "farmersdelight:item/mug",
   "textures": {
-    "layer0": "tuttasdelights:item/beet_juice"
+    "layer0": "tuttasdelights:alltuttasneeds/item/beet_juice"
   }
 }

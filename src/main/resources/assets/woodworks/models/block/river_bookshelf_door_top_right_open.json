@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "upgrade_aquatic:block/river_bookshelf",
 		"side": "upgrade_aquatic:block/river_planks",
-		"door": "woodworks:block/secret_door/river_bookshelf_door_top"
+		"door": "tuttasdoors:woodworks/block/secret_door/river_bookshelf_door_top"
 	}
 }

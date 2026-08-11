@@ -20,6 +20,7 @@ public final class TBConfig {
     public static ModConfigSpec.BooleanValue woolBlanketEnabled;
     public static ModConfigSpec.BooleanValue leatherBlanketEnabled;
     public static ModConfigSpec.BooleanValue deluxeTierEnabled;
+    public static ModConfigSpec.BooleanValue blanketItemsEnabled;
 
     public static ModConfigSpec.BooleanValue vanillaBedsSetSpawn;
     public static ModConfigSpec.BooleanValue villagersCanUseTuttaBeds;
@@ -56,9 +57,6 @@ public final class TBConfig {
                 .comment("Master switch for the whole beds module. Disabling registers none of its content",
                         "and leaves vanilla and other mods' bed behavior unchanged.")
                 .define("moduleEnabled", true);
-        tooltipsEnabled = builder
-                .comment("Shows Tutta's Beds descriptions on bed items.")
-                .define("tooltipsEnabled", true);
         builder.pop();
 
         builder.push("content");
@@ -91,61 +89,22 @@ public final class TBConfig {
         deluxeTierEnabled = builder
                 .comment("Master switch for Tier DELUXE specifically, independent of woolBlanketEnabled.")
                 .define("deluxeTierEnabled", true);
+        blanketItemsEnabled = builder
+                .comment("Registers standalone wool, leather and deluxe wool blanket items.",
+                        "They are used as fallbacks when a blanket has no enabled data-driven item assignment.",
+                        "They can apply blankets or be combined with a bare bed, but have no recipe of their own.",
+                        "The items are registered only when their corresponding bed variants exist.")
+                .define("blanketItemsEnabled", false);
         builder.pop();
         builder.pop();
 
         builder.push("gameplay");
-        builder.push("tiers");
-        tieredSleepDurationEnabled = builder
-                .comment("Whether the time required to complete sleep changes with the bed tier.",
-                        "Other mods' beds are treated as Tier BASIC.")
-                .define("tieredSleepDurationEnabled", true);
-        vanillaBedsUseTieredSleepDuration = builder
-                .comment("Whether vanilla Minecraft beds use the Tier BASIC sleep-duration multiplier.",
-                        "When disabled, vanilla beds always keep vanilla's five-second sleep duration.")
-                .define("vanillaBedsUseTieredSleepDuration", true);
-        vanillaBedsUseTierSpawnRules = builder
-                .comment("Whether vanilla Minecraft beds use their resolved tier's respawn rule.",
-                        "When disabled, vanilla beds always set spawn normally.")
-                .define("vanillaBedsUseTierSpawnRules", true);
-        vanillaBedsUseTierWakeEffects = builder
-                .comment("Whether vanilla Minecraft beds apply their resolved tier's wake effect.")
-                .define("vanillaBedsUseTierWakeEffects", true);
-        basicTierGameplay = TierGameplayConfig.define(builder, "basic", false, 2.0D, false, 0);
-        lowTierGameplay = TierGameplayConfig.define(builder, "low", true, 1.5D, false, 0);
-        normalTierGameplay = TierGameplayConfig.define(builder, "normal", true, 1.0D, true, 5);
-        deluxeTierGameplay = TierGameplayConfig.define(builder, "deluxe", true, 0.5D, true, 10);
-        builder.push("deluxe");
-        deluxeIgnoresNearbyMonsters = builder
-                .comment("Whether Tier DELUXE beds allow sleeping while nearby monsters would normally prevent it.")
-                .define("ignoresNearbyMonsters", true);
-        builder.pop();
-        builder.pop();
-
-        vanillaBedsSetSpawn = basicTierGameplay.setsSpawn;
-        vanillaBedsEffects = basicTierGameplay.wakeEffect;
-        basicTierEffects = basicTierGameplay.wakeEffect;
-        lowTierEffects = lowTierGameplay.wakeEffect;
-        normalTierEffects = normalTierGameplay.wakeEffect;
-        deluxeTierEffects = deluxeTierGameplay.wakeEffect;
-        basicTierSleepMultiplier = basicTierGameplay.sleepDurationMultiplier;
-        lowTierSleepMultiplier = lowTierGameplay.sleepDurationMultiplier;
-        normalTierSleepMultiplier = normalTierGameplay.sleepDurationMultiplier;
-        deluxeTierSleepMultiplier = deluxeTierGameplay.sleepDurationMultiplier;
-
         builder.push("villagers");
         villagersCanUseTuttaBeds = builder
                 .comment("Allows villagers to claim and sleep in Tutta's Beds, loose mattresses and bed frames.")
                 .define("canUseTuttaBeds", true);
         builder.pop();
 
-        builder.push("interactions");
-        directApplyDisabled = builder
-                .comment("Cover and blanket suffixes that cannot be applied directly to a mattress or bed.",
-                        "This only disables the interaction shortcut; normal recipes still work.",
-                        "The list applies to native and compatible materials with the same suffix.")
-                .defineList("directApplyDisabled", List.of("wool_blanket", "leather_blanket"), o -> o instanceof String);
-        builder.pop();
         builder.pop();
 
         builder.push("compatibility");
@@ -164,6 +123,67 @@ public final class TBConfig {
         builder.pop();
     }
 
+    public static void initClient(ModConfigSpec.Builder builder) {
+        builder.push("general");
+        tooltipsEnabled = builder
+                .comment("Shows Tutta's Beds descriptions on bed items.")
+                .define("tooltipsEnabled", true);
+        builder.pop();
+    }
+
+    public static void initServer(ModConfigSpec.Builder builder) {
+        builder.push("gameplay");
+        builder.push("interactions");
+        directApplyDisabled = builder
+                .comment("Cover or blanket suffixes whose data-driven items cannot be applied directly.",
+                        "Disabled blanket assignments also cannot be used by the dynamic combination recipe or returned as loot.",
+                        "Normal generated recipes remain available.",
+                        "The list applies to native and compatible materials with the same suffix.")
+                .worldRestart()
+                .defineList("directApplyDisabled", List.of(), o -> o instanceof String);
+        builder.pop();
+
+        builder.push("tiers");
+        tieredSleepDurationEnabled = builder
+                .comment("Whether the time required to complete sleep changes with the bed tier.",
+                        "Other mods' beds are treated as Tier BASIC.")
+                .worldRestart()
+                .define("tieredSleepDurationEnabled", true);
+        vanillaBedsUseTieredSleepDuration = builder
+                .comment("Whether vanilla Minecraft beds use the Tier BASIC sleep-duration multiplier.",
+                        "When disabled, vanilla beds always keep vanilla's five-second sleep duration.")
+                .worldRestart()
+                .define("vanillaBedsUseTieredSleepDuration", true);
+        vanillaBedsUseTierSpawnRules = builder
+                .comment("Whether vanilla Minecraft beds use their resolved tier's respawn rule.",
+                        "With the default assignments and basic.setsSpawn=false, enabling this means vanilla beds do not set spawn.",
+                        "When disabled, vanilla beds always set spawn normally.")
+                .worldRestart()
+                .define("vanillaBedsUseTierSpawnRules", true);
+        vanillaBedsUseTierWakeEffects = builder
+                .comment("Whether vanilla Minecraft beds apply their resolved tier's wake effects.")
+                .worldRestart()
+                .define("vanillaBedsUseTierWakeEffects", true);
+        basicTierGameplay = TierGameplayConfig.define(builder, "basic", false, 2.0D, false, 0, false);
+        lowTierGameplay = TierGameplayConfig.define(builder, "low", true, 1.5D, false, 0, false);
+        normalTierGameplay = TierGameplayConfig.define(builder, "normal", true, 1.0D, true, 5, false);
+        deluxeTierGameplay = TierGameplayConfig.define(builder, "deluxe", true, 0.5D, true, 10, true);
+        builder.pop();
+        builder.pop();
+
+        deluxeIgnoresNearbyMonsters = deluxeTierGameplay.ignoresNearbyMonsters;
+        vanillaBedsSetSpawn = basicTierGameplay.setsSpawn;
+        vanillaBedsEffects = basicTierGameplay.wakeEffect;
+        basicTierEffects = basicTierGameplay.wakeEffect;
+        lowTierEffects = lowTierGameplay.wakeEffect;
+        normalTierEffects = normalTierGameplay.wakeEffect;
+        deluxeTierEffects = deluxeTierGameplay.wakeEffect;
+        basicTierSleepMultiplier = basicTierGameplay.sleepDurationMultiplier;
+        lowTierSleepMultiplier = lowTierGameplay.sleepDurationMultiplier;
+        normalTierSleepMultiplier = normalTierGameplay.sleepDurationMultiplier;
+        deluxeTierSleepMultiplier = deluxeTierGameplay.sleepDurationMultiplier;
+    }
+
     public static SleepEffectConfig effectsFor(BedTier tier) {
         return gameplayFor(tier).wakeEffect;
     }
@@ -178,6 +198,10 @@ public final class TBConfig {
 
     public static double sleepDurationMultiplier(BedTier tier) {
         return gameplayFor(tier).sleepDurationMultiplier.get();
+    }
+
+    public static boolean ignoresNearbyMonsters(BedTier tier) {
+        return gameplayFor(tier).ignoresNearbyMonsters.get();
     }
 
     private static TierGameplayConfig gameplayFor(BedTier tier) {

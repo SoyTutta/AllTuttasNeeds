@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/half_a_vegan_hamburger"
+    "layer0": "tuttasdelights:minersdelight/item/half_a_vegan_hamburger"
   }
 }

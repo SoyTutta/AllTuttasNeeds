@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/plate_of_muzzle_with_vegetables"
+    "layer0": "tuttasdelights:alltuttasneeds/item/plate_of_muzzle_with_vegetables"
   }
 }

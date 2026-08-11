@@ -4,7 +4,7 @@
 	"parent": "block/block",
 	"texture_size": [48, 48],
 	"textures": {
-		"0": "tuttasdelights:block/ancient_soft-boiled_egg_and_breads_block",
+		"0": "tuttasdelights:alltuttasneeds/block/ancient_soft-boiled_egg_and_breads_block",
 		"1": "farmersdelight:block/tray_bottom",
 		"particle": "farmersdelight:block/tray_bottom"
 	},

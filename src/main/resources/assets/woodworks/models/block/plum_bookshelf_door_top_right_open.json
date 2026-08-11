@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "environmental:block/plum_bookshelf",
 		"side": "environmental:block/plum_planks",
-		"door": "woodworks:block/secret_door/plum_bookshelf_door_top"
+		"door": "tuttasdoors:woodworks/block/secret_door/plum_bookshelf_door_top"
 	}
 }

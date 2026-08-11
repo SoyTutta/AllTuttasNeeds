@@ -20,14 +20,14 @@ public class TDItemsModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        CompatRegistry.loaded().forEach(compat -> registerFromMap(compat.doorItems(), compat.namespace()));
+        CompatRegistry.loaded().forEach(compat -> registerFromMap(compat.doorItems(), compat.textureOwner()));
     }
 
-    private void registerFromMap(Map<String, Supplier<Item>> itemMap, String modNamespace) {
+    private void registerFromMap(Map<String, Supplier<Item>> itemMap, String textureOwner) {
         for (Map.Entry<String, Supplier<Item>> entry : itemMap.entrySet()) {
             String name = entry.getKey();
             Item item = entry.getValue().get();
-            itemGeneratedModel(item, resourceItem(name, modNamespace));
+            itemGeneratedModel(item, resourceItem(name, textureOwner));
         }
     }
 
@@ -39,7 +39,8 @@ public class TDItemsModels extends ItemModelProvider {
         return BuiltInRegistries.ITEM.getKey(item).toString();
     }
 
-    private ResourceLocation resourceItem(String name, String modNamespace) {
-        return ResourceLocation.fromNamespaceAndPath(modNamespace, "item/" + name.replace("waxed_", ""));
+    private ResourceLocation resourceItem(String name, String textureOwner) {
+        return ResourceLocation.fromNamespaceAndPath(
+                "tuttasdoors", textureOwner + "/item/" + name.replace("waxed_", ""));
     }
 }

@@ -98,6 +98,7 @@ public final class TDContent implements ModCompat {
 
     @Override public Mods mod() { return Mods.ALLTUTTASNEEDS; }
     @Override public String namespace() { return "tuttasdoors"; }
+    @Override public String textureOwner() { return "minecraft"; }
     @Override public DeferredRegister<Block> blocks() { return BLOCKS; }
     @Override public DeferredRegister<Item> items() { return ITEMS; }
     @Override public Map<String, Supplier<? extends Block>> doors() { return DOORS; }

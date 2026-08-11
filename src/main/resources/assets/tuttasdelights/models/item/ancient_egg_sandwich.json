@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/ancient_egg_sandwich"
+    "layer0": "tuttasdelights:alltuttasneeds/item/ancient_egg_sandwich"
   }
 }

@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "environmental:block/pine_bookshelf",
 		"side": "environmental:block/pine_planks",
-		"door": "woodworks:block/secret_door/pine_bookshelf_door_bottom"
+		"door": "tuttasdoors:woodworks/block/secret_door/pine_bookshelf_door_bottom"
 	}
 }

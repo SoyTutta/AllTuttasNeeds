@@ -14,6 +14,7 @@ public record ModuleEnabledCondition(String module) implements ICondition {
     ).apply(instance, ModuleEnabledCondition::new));
 
     public static final ModuleEnabledCondition DOORS = new ModuleEnabledCondition("doors");
+    public static final ModuleEnabledCondition BEDS = new ModuleEnabledCondition("beds");
     public static final ModuleEnabledCondition DELIGHTS = new ModuleEnabledCondition("delights");
 
     @Override

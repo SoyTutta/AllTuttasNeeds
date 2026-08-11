@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"textures": {
-		"door": "tuttasdoors:block/transit_door/acacia_door_bottom",
+		"door": "tuttasdoors:minecraft/block/transit_door/acacia_door_bottom",
 		"particle": "#door"
 	},
 	"elements": [

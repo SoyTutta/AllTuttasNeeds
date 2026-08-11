@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/sticky_green_noodles"
+    "layer0": "tuttasdelights:alltuttasneeds/item/sticky_green_noodles"
   }
 }

@@ -10,7 +10,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -21,6 +20,7 @@ import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.phys.BlockHitResult;
@@ -68,6 +68,12 @@ public class LooseMattressBlock extends BedBlock {
     }
 
     @Override
+    public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+        BedCombining.preserveHeadDropWhenBreakingFoot(level, pos, state, player);
+        return super.playerWillDestroy(level, pos, state, player);
+    }
+
+    @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
@@ -75,6 +81,12 @@ public class LooseMattressBlock extends BedBlock {
     @Override
     protected RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return null;
     }
 
     @Override
@@ -93,26 +105,23 @@ public class LooseMattressBlock extends BedBlock {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (cover != null) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-
-        CoverMaterial usedCover = null;
-        for (Map.Entry<CoverMaterial, Supplier<Block>> entry : coverResults.entrySet()) {
-            CoverMaterial candidate = entry.getKey();
-            if (!candidate.isDirectApplyEnabled()) continue;
-            Item ingredient = candidate.ingredient();
-            if (ingredient != null && stack.is(ingredient)) {
-                usedCover = candidate;
-                break;
-            }
+        if (BedCombining.isOccupied(level, pos, state)) {
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
-        if (usedCover == null) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
-        BedCombining.replaceBothParts(level, pos, state, coverResults.get(usedCover).get(), player, stack);
-        return ItemInteractionResult.SUCCESS;
+        Block coverResult = BedCombining.coverResult(coverResults, cover, stack);
+        if (coverResult == null) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+
+        BedCombining.replaceBothParts(level, pos, state, coverResult, player, stack);
+        return ItemInteractionResult.sidedSuccess(level.isClientSide);
     }
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+        if (BedCombining.isOccupied(level, pos, state)) {
+            return super.useWithoutItem(state, level, pos, player, hit);
+        }
+
         if (!level.isClientSide
                 && BedCombining.combineMattressOntoFrame(level, pos, state, this, frameResult.get())) {
             return InteractionResult.SUCCESS;
@@ -128,7 +137,7 @@ public class LooseMattressBlock extends BedBlock {
         Direction pairDirection = part == BedPart.HEAD ? facing.getOpposite() : facing;
 
         if (direction == pairDirection) {
-            boolean validPair = neighborState.getBlock() instanceof LooseMattressBlock
+            boolean validPair = neighborState.is(this)
                     && neighborState.hasProperty(FACING) && neighborState.getValue(FACING) == facing
                     && neighborState.hasProperty(PART) && neighborState.getValue(PART) != part;
             return validPair ? state.setValue(OCCUPIED, neighborState.getValue(OCCUPIED)) : Blocks.AIR.defaultBlockState();

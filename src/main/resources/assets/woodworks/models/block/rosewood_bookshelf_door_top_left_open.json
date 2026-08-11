@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "atmospheric:block/rosewood_bookshelf",
 		"side": "atmospheric:block/rosewood_planks",
-		"door": "woodworks:block/secret_door/rosewood_bookshelf_door_top"
+		"door": "tuttasdoors:woodworks/block/secret_door/rosewood_bookshelf_door_top"
 	}
 }

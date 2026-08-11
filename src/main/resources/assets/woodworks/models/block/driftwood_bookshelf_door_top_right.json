@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "upgrade_aquatic:block/driftwood_bookshelf",
 		"side": "upgrade_aquatic:block/driftwood_planks",
-		"door": "woodworks:block/secret_door/driftwood_bookshelf_door_top"
+		"door": "tuttasdoors:woodworks/block/secret_door/driftwood_bookshelf_door_top"
 	}
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/potato_omelet"
+    "layer0": "tuttasdelights:alltuttasneeds/item/potato_omelet"
   }
 }

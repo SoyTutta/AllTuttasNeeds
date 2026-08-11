@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "woodworks:block/birch_bookshelf",
 		"side": "block/birch_planks",
-		"door": "woodworks:block/secret_door/birch_bookshelf_door_top"
+		"door": "tuttasdoors:woodworks/block/secret_door/birch_bookshelf_door_top"
 	}
 }

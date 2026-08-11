@@ -2,7 +2,7 @@
   "parent": "tuttasdoors:block/alt/pet_door_bottom",
   "render_type": "minecraft:cutout",
   "textures": {
-    "door": "nomansland:block/pet_door/maple_door",
+    "door": "tuttasdoors:nomansland/block/pet_door/maple_door",
     "extra": "minecraft:block/maple_door_top"
   }
 }

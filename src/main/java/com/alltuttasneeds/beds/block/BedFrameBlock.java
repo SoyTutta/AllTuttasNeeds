@@ -80,6 +80,10 @@ public class BedFrameBlock extends AbstractTuttaBedBlock {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (BedCombining.isOccupied(level, pos, state)) {
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        }
+
         if (!(level.getBlockState(pos).getBlock() instanceof BedFrameBlock)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
         Supplier<Block> result = null;

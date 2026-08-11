@@ -1,6 +1,5 @@
 package com.alltuttasneeds.beds;
 
-import com.alltuttasneeds.beds.config.TBConfig;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -24,6 +23,14 @@ public record BlanketMaterial(String suffix, boolean supportsDeluxe, BooleanSupp
     }
 
     public boolean isDirectApplyEnabled() {
-        return !TBConfig.directApplyDisabled.get().contains(suffix);
+        return BedIngredientSyncState.isDirectApplyEnabled(suffix);
+    }
+
+    @Nullable
+    public Item associatedItemFor(DyeColor color, BedTier tier) {
+        Item configured = isDirectApplyEnabled()
+                ? BedBlanketIngredients.associatedItemFor(suffix, color, tier)
+                : null;
+        return configured != null ? configured : TBContent.blanketItem(this, color, tier);
     }
 }

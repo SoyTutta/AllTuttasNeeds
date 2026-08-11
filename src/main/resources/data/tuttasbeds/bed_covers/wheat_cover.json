@@ -1,3 +1,5 @@
 {
-  "item": "minecraft:wheat"
+  "items": [
+    "minecraft:wheat"
+  ]
 }

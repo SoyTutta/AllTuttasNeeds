@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/ancient_boiled_egg"
+    "layer0": "tuttasdelights:alltuttasneeds/item/ancient_boiled_egg"
   }
 }

@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"render_type": "minecraft:cutout",
 	"textures": {
-		"0": "tuttasdelights:block/mint_roulette_block",
-		"1": "tuttasdelights:block/mint_roulette_salad_block",
+		"0": "tuttasdelights:alltuttasneeds/block/mint_roulette_block",
+		"1": "tuttasdelights:alltuttasneeds/block/mint_roulette_salad_block",
 		"particle": "farmersdelight:block/tray_bottom"
 	},
 	"elements": [

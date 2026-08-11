@@ -11,6 +11,10 @@
   ],
   "type": "tuttasdelights:remplace_item",
   "conditions": [
+    {
+      "condition": "minecraft:random_chance",
+      "chance": 0.25
+    }
   ],
   "entity": "minecraft:slime",
   "item": "tuttasdelights:slimecube",

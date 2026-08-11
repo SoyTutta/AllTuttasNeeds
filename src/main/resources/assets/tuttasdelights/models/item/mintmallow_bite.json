@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/mintmallow_bite"
+    "layer0": "tuttasdelights:alltuttasneeds/item/mintmallow_bite"
   }
 }

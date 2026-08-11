@@ -6,6 +6,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import com.alltuttasneeds.doors.config.TDConfig;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -49,6 +52,34 @@ public class TransitDoorBlock extends DoorBlock {
 
     public TransitDoorBlock(BlockSetType type, Properties properties) {
         super(type, properties);
+    }
+
+    @Override
+    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        if (level instanceof ServerLevel serverLevel) {
+            tryOpenAutomatically(serverLevel, pos, state, entity);
+        }
+    }
+
+    public void tryOpenAutomatically(ServerLevel level, BlockPos pos, BlockState state, Entity entity) {
+        if (!TDConfig.transitAutomaticOpeningEnabled.get() || !isAutomaticOpeningEntity(entity)) return;
+
+        BlockPos lowerPos = state.getValue(HALF) == DoubleBlockHalf.LOWER ? pos : pos.below();
+        BlockState lowerState = level.getBlockState(lowerPos);
+        if (!lowerState.is(this) || !TDConfig.shouldAutomaticallyClose(lowerState.getValue(POWERED))) return;
+
+        if (!lowerState.getValue(OPEN)) {
+            setOpen(null, level, lowerState, lowerPos, true);
+        }
+        if (TDConfig.transitAutomaticClosingEnabled.get()) {
+            level.scheduleTick(lowerPos, this, TDConfig.automaticClosingDelay());
+        }
+    }
+
+    private static boolean isAutomaticOpeningEntity(Entity entity) {
+        if (entity.isCrouching() || entity instanceof ItemEntity) return false;
+        if (!(entity instanceof Animal animal)) return true;
+        return !animal.getPassengers().isEmpty() || animal instanceof TamableAnimal tamable && tamable.isTame();
     }
 
     @Override

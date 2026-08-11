@@ -50,6 +50,30 @@ public class PetDoorBlock extends TrapDoorBlock {
     }
 
     @Override
+    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        if (level instanceof ServerLevel serverLevel) {
+            tryOpenAutomatically(serverLevel, pos, state, entity);
+        }
+    }
+
+    public void tryOpenAutomatically(ServerLevel level, BlockPos pos, BlockState state, Entity entity) {
+        if (!TDConfig.petAutomaticOpeningEnabled.get()) return;
+        if (!state.is(this) || !TDConfig.shouldAutomaticallyClose(state.getValue(POWERED))) return;
+        if (entity instanceof Player player && state.getValue(HALF) == Half.TOP
+                && !player.isCrouching() && !player.isSwimming()
+                && player.getBoundingBox().maxY > pos.getY() + 1.0D) {
+            return;
+        }
+
+        if (!state.getValue(OPEN)) {
+            setOpen(null, level, state, pos, true);
+        }
+        if (TDConfig.petAutomaticClosingEnabled.get()) {
+            level.scheduleTick(pos, this, TDConfig.automaticClosingDelay());
+        }
+    }
+
+    @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         if (state.getValue(OPEN)) {
             return state.getValue(HALF) == Half.TOP ? TOP_AABB : BOTTOM_AABB;

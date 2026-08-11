@@ -4,7 +4,7 @@
 	"ambientocclusion": false,
 	"textures": {
 		"particle": "#door",
-		"door": "tuttasdoors:block/sliding_door/iron_bars_door_top"
+		"door": "tuttasdoors:minecraft/block/sliding_door/iron_bars_door_top"
 	},
 	"elements": [
 		{

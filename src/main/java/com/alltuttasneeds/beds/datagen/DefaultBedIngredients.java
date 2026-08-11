@@ -1,37 +1,43 @@
 package com.alltuttasneeds.beds.datagen;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
 
-import javax.annotation.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 final class DefaultBedIngredients {
     private DefaultBedIngredients() {}
 
-    static Item cover(String suffix) {
+    static Ingredient cover(String suffix) {
         JsonObject json = read("bed_covers", suffix);
-        ResourceLocation itemId = ResourceLocation.parse(GsonHelper.getAsString(json, "item"));
-        return BuiltInRegistries.ITEM.getOptional(itemId)
-                .orElseThrow(() -> new IllegalStateException("bed_covers/" + suffix + ".json references unknown item " + itemId));
+        Set<Item> items = new LinkedHashSet<>();
+        if (json.has("item")) addCoverItem(suffix, GsonHelper.getAsString(json, "item"), items);
+        if (json.has("items")) {
+            for (JsonElement element : GsonHelper.getAsJsonArray(json, "items")) {
+                addCoverItem(suffix, element.getAsString(), items);
+            }
+        }
+        if (items.isEmpty()) {
+            throw new IllegalStateException("bed_covers/" + suffix + ".json must contain at least one valid item");
+        }
+        return Ingredient.of(items.toArray(Item[]::new));
     }
 
-    @Nullable
-    static Item blanket(String suffix, DyeColor color) {
-        JsonObject json = read("bed_blankets", suffix);
-        JsonObject colors = GsonHelper.getAsJsonObject(json, "colors");
-        if (!colors.has(color.getSerializedName())) return null;
-
-        ResourceLocation itemId = ResourceLocation.parse(GsonHelper.getAsString(colors, color.getSerializedName()));
-        return BuiltInRegistries.ITEM.getOptional(itemId)
-                .orElseThrow(() -> new IllegalStateException("bed_blankets/" + suffix + ".json references unknown item " + itemId));
+    private static void addCoverItem(String suffix, String value, Set<Item> items) {
+        ResourceLocation itemId = ResourceLocation.parse(value);
+        Item item = BuiltInRegistries.ITEM.getOptional(itemId)
+                .orElseThrow(() -> new IllegalStateException("bed_covers/" + suffix + ".json references unknown item " + itemId));
+        items.add(item);
     }
 
     private static JsonObject read(String folder, String suffix) {

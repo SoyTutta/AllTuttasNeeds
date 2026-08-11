@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "nomansland:block/vanilla_woods/birch_bookshelf",
 		"side": "block/birch_planks",
-		"door": "nomansland:block/secret_door/birch_bookshelf_door_bottom"
+		"door": "tuttasdoors:nomansland/block/secret_door/birch_bookshelf_door_bottom"
 	}
 }

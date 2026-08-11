@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "atmospheric:block/morado_bookshelf",
 		"side": "atmospheric:block/morado_planks",
-		"door": "woodworks:block/secret_door/morado_bookshelf_door_top"
+		"door": "tuttasdoors:woodworks/block/secret_door/morado_bookshelf_door_top"
 	}
 }

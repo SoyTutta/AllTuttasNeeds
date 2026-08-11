@@ -95,7 +95,7 @@ public record PotluckRecipe(ResourceLocation id, PotluckSize size, int initialSe
 
         JsonObject appearanceJson = json.has("appearance") ? json.getAsJsonObject("appearance") : new JsonObject();
         ResourceLocation texture = ResourceLocation.parse(GsonHelper.getAsString(appearanceJson, "texture",
-                "tuttasdelights:block/potluck_soup_block"));
+                "tuttasdelights:alltuttasneeds/block/potluck_soup_block"));
         int color = parseColor(GsonHelper.getAsString(appearanceJson, "color", "#FFFFFFFF"));
         List<ParticleSetting> particles = new ArrayList<>();
         JsonArray particlesJson = appearanceJson.has("particles")

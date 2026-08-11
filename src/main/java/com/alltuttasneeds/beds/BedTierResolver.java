@@ -6,6 +6,7 @@ import com.alltuttasneeds.beds.block.TieredBedBlock;
 import com.alltuttasneeds.beds.config.TBConfig;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Block;
 
@@ -17,10 +18,13 @@ public final class BedTierResolver {
     @Nullable
     public static BedTier resolve(Block block) {
         if (!TBConfig.isModuleEnabled()) return null;
-        if (!(block instanceof BedBlock)) return null;
 
         ResourceLocation id = BuiltInRegistries.BLOCK.getKey(block);
         BedTier tier = configuredTier(id);
+        if (!(block instanceof BedBlock)
+                && (tier == null || !block.defaultBlockState().is(BlockTags.BEDS))) {
+            return null;
+        }
         if (tier == null) tier = automaticTier(block);
         return isExcluded(id, tier) ? null : tier;
     }
@@ -40,16 +44,16 @@ public final class BedTierResolver {
 
     @Nullable
     private static BedTier configuredTier(ResourceLocation id) {
-        if (matches(id, TBConfig.deluxeTierGameplay.blockOverrides.get()) && !isExcluded(id, BedTier.DELUXE)) {
+        if (matches(id, TBConfig.deluxeTierGameplay.blockOverrides.get())) {
             return BedTier.DELUXE;
         }
-        if (matches(id, TBConfig.normalTierGameplay.blockOverrides.get()) && !isExcluded(id, BedTier.NORMAL)) {
+        if (matches(id, TBConfig.normalTierGameplay.blockOverrides.get())) {
             return BedTier.NORMAL;
         }
-        if (matches(id, TBConfig.lowTierGameplay.blockOverrides.get()) && !isExcluded(id, BedTier.LOW)) {
+        if (matches(id, TBConfig.lowTierGameplay.blockOverrides.get())) {
             return BedTier.LOW;
         }
-        if (matches(id, TBConfig.basicTierGameplay.blockOverrides.get()) && !isExcluded(id, BedTier.BASIC)) {
+        if (matches(id, TBConfig.basicTierGameplay.blockOverrides.get())) {
             return BedTier.BASIC;
         }
         return null;

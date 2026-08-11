@@ -9,12 +9,7 @@
     "LivingEntityBedHeightMixin",
     "PlayerSleepDurationMixin",
     "SleepInBedMixin",
-    "WakeUpFromBunkMixin",
-    "BlockEntityTypeBedMixin"
-  ],
-  "client": [
-    "BedRendererMixin",
-    "OptimizedBlockEntitiesCompatMixin"
+    "WakeUpFromBunkMixin"
   ],
   "injectors": {
     "defaultRequire": 1

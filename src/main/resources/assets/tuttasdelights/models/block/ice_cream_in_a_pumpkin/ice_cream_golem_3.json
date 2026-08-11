@@ -3,9 +3,9 @@
 	"parent": "block/block",
 	"ambientocclusion": "false",
 	"textures": {
-		"6": "tuttasdelights:block/ice_cream_in_a_pumpkin_body",
-		"7": "tuttasdelights:block/ice_cream_in_a_pumpkin_details",
-		"9": "tuttasdelights:block/ice_cream_in_a_pumpkin_face_north_body",
+		"6": "tuttasdelights:alltuttasneeds/block/ice_cream_in_a_pumpkin_body",
+		"7": "tuttasdelights:alltuttasneeds/block/ice_cream_in_a_pumpkin_details",
+		"9": "tuttasdelights:alltuttasneeds/block/ice_cream_in_a_pumpkin_face_north_body",
 		"particle": "minecraft:block/snow"
 	},
 	"elements": [

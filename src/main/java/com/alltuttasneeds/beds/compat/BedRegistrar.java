@@ -96,7 +96,7 @@ public final class BedRegistrar {
         for (CoverMaterial cover : covers) {
             if (!cover.isEnabled()) continue;
             bedCovers.put(cover, registerBlockItem(blocks, items, id + "_bed_" + cover.suffix(),
-                    () -> new TieredBedBlock(material, BedTier.LOW, cover, null, null, Map.of(), Map.of(), bedProperties)));
+                    () -> new TieredBedBlock(material, BedTier.LOW, cover, null, null, bedCovers, Map.of(), bedProperties)));
         }
 
         Supplier<Block> bedBare = blocks.register(id + "_bed",
@@ -108,7 +108,7 @@ public final class BedRegistrar {
             if (!cover.isEnabled()) continue;
             Supplier<Block> coveredBed = bedCovers.get(cover);
             mattressCovers.put(cover, registerBlockItem(blocks, items, id + "_mattress_" + cover.suffix(),
-                    () -> new LooseMattressBlock(material, cover, Map.of(), coveredBed, mattressProperties),
+                    () -> new LooseMattressBlock(material, cover, mattressCovers, coveredBed, mattressProperties),
                     item -> BedFrameBlock.registerMattressResult(item, coveredBed)));
         }
 

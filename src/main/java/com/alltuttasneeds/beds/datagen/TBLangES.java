@@ -1,7 +1,9 @@
 package com.alltuttasneeds.beds.datagen;
 
 import com.alltuttasneeds.beds.compat.BedCompatRegistry;
+import com.alltuttasneeds.beds.item.BedBlanketItem.BlanketKind;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -21,6 +23,12 @@ public class TBLangES extends LanguageProvider {
     @Override
     protected void addTranslations() {
         allBlocks.forEach(block -> add(block.getDescriptionId(), TBLangNames.spanish(block)));
+        for (BlanketKind kind : BlanketKind.values()) {
+            for (DyeColor color : DyeColor.values()) {
+                String id = color.getSerializedName() + "_" + kind.id();
+                add("item.tuttasbeds." + id, TBLangNames.spanish(kind, color));
+            }
+        }
 
         add("alltuttasneeds.itemGroup.tuttasbeds", "Tutta's Beds");
         add("alltuttasneeds.tooltip.beds.basic", "Cama sencilla: un descanso humilde.");

@@ -1,9 +1,7 @@
 package com.alltuttasneeds.delights.crafting;
 
-import com.alltuttasneeds.core.Mods;
 import com.alltuttasneeds.delights.CompatTags;
 import com.alltuttasneeds.delights.DelightsIngredientTypes;
-import com.alltuttasneeds.delights.config.DelightsConfig;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -25,8 +23,7 @@ public final class ConfigurableCheeseIngredient implements ICustomIngredient {
     }
 
     private static Ingredient selectedIngredient() {
-        if (DelightsConfig.isModuleEnabled() && DelightsConfig.useCheeseWedges()
-                && Mods.BREWIN_AND_CHEWIN.isLoaded()) {
+        if (DelightsRecipeSyncState.useCheeseWedges()) {
             return Ingredient.of(CompatTags.FOOD_CHEESE_WEDGE);
         }
         return Ingredient.of(Tags.Items.DRINKS_MILK);

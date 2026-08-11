@@ -2,6 +2,7 @@ package com.alltuttasneeds.core.mixin;
 
 import com.alltuttasneeds.beds.BedTier;
 import com.alltuttasneeds.beds.BedTierResolver;
+import com.alltuttasneeds.beds.BedTierSyncState;
 import com.alltuttasneeds.beds.config.TBConfig;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -55,20 +56,38 @@ public abstract class PlayerSleepDurationMixin {
     @Unique
     private static int alltuttasneeds$requiredSleepTicks(Player player) {
         BedTier tier = player.getSleepingPos()
-                .map(pos -> BedTierResolver.resolve(player.level().getBlockState(pos).getBlock()))
+                .map(pos -> alltuttasneeds$resolveTier(player, player.level().getBlockState(pos).getBlock()))
                 .orElse(BedTier.BASIC);
-        return Math.max(1, Mth.ceil(100.0D * TBConfig.sleepDurationMultiplier(tier)));
+        double multiplier = player.level().isClientSide()
+                ? BedTierSyncState.sleepDurationMultiplier(tier)
+                : TBConfig.sleepDurationMultiplier(tier);
+        return Math.max(1, Mth.ceil(100.0D * multiplier));
     }
 
     @Unique
     private static boolean alltuttasneeds$usesTieredSleepDuration(Player player) {
-        if (!TBConfig.isModuleEnabled() || !TBConfig.tieredSleepDurationEnabled.get()) return false;
+        if (player.level().isClientSide()
+                ? !BedTierSyncState.moduleEnabled()
+                : !TBConfig.isModuleEnabled()) return false;
+        boolean enabled = player.level().isClientSide()
+                ? BedTierSyncState.tieredSleepDurationEnabled()
+                : TBConfig.tieredSleepDurationEnabled.get();
+        if (!enabled) return false;
         return player.getSleepingPos()
                 .map(pos -> player.level().getBlockState(pos).getBlock())
-                .filter(block -> BedTierResolver.resolve(block) != null)
-                .map(block -> TBConfig.vanillaBedsUseTieredSleepDuration.get()
+                .filter(block -> alltuttasneeds$resolveTier(player, block) != null)
+                .map(block -> (player.level().isClientSide()
+                        ? BedTierSyncState.vanillaBedsUseTieredSleepDuration()
+                        : TBConfig.vanillaBedsUseTieredSleepDuration.get())
                         || !alltuttasneeds$isVanillaBed(block))
                 .orElse(false);
+    }
+
+    @Unique
+    private static BedTier alltuttasneeds$resolveTier(Player player, Block block) {
+        return player.level().isClientSide()
+                ? BedTierSyncState.resolveForClient(block)
+                : BedTierResolver.resolve(block);
     }
 
     @Unique

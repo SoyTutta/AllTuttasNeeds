@@ -7,8 +7,9 @@ Tutta's Doors, Tutta's Beds and Tutta's Delights in one configurable project.
 
 - **Tutta's Doors** adds discreet, normal, indiscreet, transit, pet, sliding
   and secret bookshelf doors across vanilla and supported wood families.
-- **Tutta's Beds** adds bed frames, mattresses, covers, blankets, connected
-  beds, bunk beds and different comfort tiers.
+- **Tutta's Beds** adds bed frames, interchangeable mattresses, covers,
+  blankets, optional standalone blanket items, connected beds, bunk beds and
+  different comfort tiers.
 - **Tutta's Delights** expands Farmer's Delight with meals, feasts, popsicles,
   potions, loot additions and decorative food presentation.
 
@@ -22,10 +23,13 @@ Tutta's Beds has four comfort tiers, each with a different default advantage:
 | **Deluxe** | Takes 2.5 seconds to complete sleep, sets the respawn point, grants 10 seconds of Regeneration and can ignore nearby monsters when starting sleep. |
 
 Vanilla beds and recognized beds from other mods use the Basic tier by default.
-The startup configuration can change whether each tier sets spawn, its sleep
-duration and its wake-up effect, including any vanilla or modded effect ID and
+The common configuration can change whether each tier sets spawn, its sleep
+duration, whether nearby monsters are ignored and the effects applied after
+waking. Every wake effect can use a vanilla or modded effect ID and its own
 duration. Individual beds or complete mod namespaces can also be reassigned to
-another tier or excluded from the tier system.
+another tier or excluded from the tier system. Special beds that do not extend
+Minecraft's `BedBlock` can be opted in through `blockOverrides` when their mod
+also includes them in the `minecraft:beds` block tag.
 
 Each module can be disabled separately in the startup configuration. Disabling
 a module also leaves the corresponding vanilla and modded content unchanged.
@@ -37,9 +41,21 @@ Most content sets and gameplay mechanics have their own options for modpack
 authors. Disabling the consistent door set restores the original door recipes;
 transit and pet conversions then use the original door as their ingredient.
 
-The configuration is loaded at startup because module and content switches can
-change which registry entries exist. Client and server must therefore use the
-same `alltuttasneeds-startup.toml` when playing together.
+Module and content switches are loaded from `alltuttasneeds-startup.toml`
+because they can change which registry entries exist; client and server must
+use the same file when playing together. Local tooltip preferences for Doors
+and Beds are stored in `alltuttasneeds-client.toml`. Automatic door behavior,
+bed interaction and tier rules, and the Delights cheese recipe option are
+stored globally in `alltuttasneeds-common.toml`. All Tutta's Needs
+must be installed on both the client and server; connection negotiation rejects
+a missing installation or incompatible network protocol before joining.
+The server synchronizes each bed's effective tier, tiered sleep timing and the
+active Delights cheese ingredient when joining and after data pack reloads.
+Client tooltips, sleep progress and recipe displays therefore follow the
+server's common rules without replacing local configuration files.
+When updating from the previous single-file configuration or the obsolete
+global server file, existing client and common values are migrated automatically
+without replacing values already present in either new file.
 
 ## Compatibility
 
@@ -63,13 +79,32 @@ compatibility remains optional for the container mod.
 
 ## Data packs
 
-Bed cover and blanket ingredients are data-driven. They can be replaced or
-extended through `data/<namespace>/bed_covers` and
-`data/<namespace>/bed_blankets`; suffixes must remain unique across loaded data
-packs. Door recipes also carry NeoForge conditions for their module, content set
-and optional owner mod. Delights recipes and loot modifiers carry the Delights
-module condition, plus owner-mod conditions where required, so disabled or
-unavailable content is not loaded.
+Bed cover and blanket ingredients are data-driven through
+`data/<namespace>/bed_covers` and `data/<namespace>/bed_blankets`; suffixes must
+remain unique across loaded data packs. A cover can declare one legacy `item`,
+an `items` array, or both; every listed item applies that same cover and can be
+combined with a bare bed. Blanket `colors` assign one item to each NORMAL color,
+while `recipe_items.normal` and `recipe_items.deluxe` can override the single
+associated item for either tier. That item applies the blanket directly, works in
+the dynamic bare-bed recipe and is returned when the blanket is removed or the
+bed is broken without Silk Touch. The optional standalone blanket items provide
+the fallback assignment when enabled. Applying another cover replaces and
+discards the previous cover. A blanket can be replaced only when its previous
+variant has a valid associated item, which is returned to the player. If no
+valid associated item exists, the decorated bed drops itself. Existing
+multi-material blanket and cover recipes
+remain available. Data-driven blanket shortcuts can be disabled per suffix with
+`beds.gameplay.interactions.directApplyDisabled`. The bundled blanket data does
+not associate raw wool or leather as blanket items; those materials remain part
+of the normal multi-item recipes. Runtime assignments and the interaction
+configuration are synchronized from the server to connected clients.
+Door recipes also carry NeoForge conditions for their module, content set
+and optional owner mod. Bed recipes and loot tables carry module, result-item
+and owner-mod conditions, while their tag entries are optional, so disabled
+materials and absent compatibilities do not leave invalid data references.
+Delights recipes and loot modifiers carry the Delights module condition, plus
+owner-mod conditions where required, so disabled or unavailable content is not
+loaded.
 
 ## Development
 

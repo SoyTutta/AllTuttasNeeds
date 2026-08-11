@@ -3,25 +3,32 @@ package com.alltuttasneeds.beds.block;
 import com.alltuttasneeds.beds.BedTier;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class AbstractTuttaBedBlock extends BedBlock implements TuttaBedBlock {
-    private static final VoxelShape SHAPE = Block.box(0.0D, 3.0D, 0.0D, 16.0D, 9.0D, 16.0D);
+    private static final VoxelShape BODY = Block.box(0.0D, 3.0D, 0.0D, 16.0D, 9.0D, 16.0D);
+    private static final Map<ShapeKey, VoxelShape> SHAPES = new ConcurrentHashMap<>();
 
     protected AbstractTuttaBedBlock(DyeColor color, Properties properties) {
         super(color, properties);
@@ -36,18 +43,60 @@ public abstract class AbstractTuttaBedBlock extends BedBlock implements TuttaBed
     public abstract BedTier tier();
 
     @Override
+    public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+        BedCombining.preserveHeadDropWhenBreakingFoot(level, pos, state, player);
+        return super.playerWillDestroy(level, pos, state, player);
+    }
+
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, PART, OCCUPIED, BedStateProperties.BED_POSITION, BedStateProperties.BUNK);
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        ShapeKey key = new ShapeKey(
+                state.getValue(FACING),
+                state.getValue(PART),
+                state.getValue(BedStateProperties.BED_POSITION),
+                state.getValue(BedStateProperties.BUNK));
+        return SHAPES.computeIfAbsent(key, AbstractTuttaBedBlock::createShape);
     }
+
+    private static VoxelShape createShape(ShapeKey key) {
+        VoxelShape shape = BODY;
+        if (key.position == BedPosition.CENTER) return shape;
+
+        Direction end = key.part == BedPart.HEAD ? key.facing : key.facing.getOpposite();
+        if (key.position == BedPosition.SINGLE || key.position == BedPosition.LEFT) {
+            shape = addPost(shape, end, key.facing.getCounterClockWise(), key.bunk);
+        }
+        if (key.position == BedPosition.SINGLE || key.position == BedPosition.RIGHT) {
+            shape = addPost(shape, end, key.facing.getClockWise(), key.bunk);
+        }
+        return shape.optimize();
+    }
+
+    private static VoxelShape addPost(VoxelShape shape, Direction end, Direction side, boolean bunk) {
+        double minX = end == Direction.WEST || side == Direction.WEST ? 0.0D : 13.0D;
+        double minZ = end == Direction.NORTH || side == Direction.NORTH ? 0.0D : 13.0D;
+        shape = Shapes.or(shape, Block.box(minX, 0.0D, minZ, minX + 3.0D, 3.0D, minZ + 3.0D));
+        return bunk
+                ? Shapes.or(shape, Block.box(minX, 9.0D, minZ, minX + 3.0D, 16.0D, minZ + 3.0D))
+                : shape;
+    }
+
+    private record ShapeKey(Direction facing, BedPart part, BedPosition position, boolean bunk) {}
 
     @Override
     protected RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return null;
     }
 
     @Nullable
@@ -69,7 +118,7 @@ public abstract class AbstractTuttaBedBlock extends BedBlock implements TuttaBed
         Direction pairDirection = part == BedPart.HEAD ? facing.getOpposite() : facing;
 
         if (direction == pairDirection) {
-            if (!isFamilyPair(neighborState, facing, part)) {
+            if (!isPair(state, neighborState, facing, part)) {
                 return Blocks.AIR.defaultBlockState();
             }
             return state.setValue(OCCUPIED, neighborState.getValue(OCCUPIED));
@@ -86,8 +135,8 @@ public abstract class AbstractTuttaBedBlock extends BedBlock implements TuttaBed
         return state;
     }
 
-    private static boolean isFamilyPair(BlockState neighbor, Direction facing, BedPart part) {
-        return neighbor.getBlock() instanceof TuttaBedBlock
+    private static boolean isPair(BlockState state, BlockState neighbor, Direction facing, BedPart part) {
+        return neighbor.is(state.getBlock())
                 && neighbor.hasProperty(FACING) && neighbor.getValue(FACING) == facing
                 && neighbor.hasProperty(PART) && neighbor.getValue(PART) != part;
     }

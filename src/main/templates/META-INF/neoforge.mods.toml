@@ -28,7 +28,7 @@ config="alltuttasneeds.mixins.json"
     ordering="NONE"
     side="BOTH"
 
-# — Compat mods: todos con ordering="AFTER" —
+# Compat mods: todos con ordering="AFTER"
 
 [[dependencies.${mod_id}]]
 modId="tuttasdoors"
@@ -82,21 +82,21 @@ side="BOTH"
 [[dependencies.${mod_id}]]
 modId="malum"
 type="optional"
-versionRange="[1.7,)"
+versionRange="[1.8,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.${mod_id}]]
 modId="mynethersdelight"
 type="optional"
-versionRange="[1.8,)"
+versionRange="[1.10.4,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.${mod_id}]]
 modId="nomansland"
 type="optional"
-versionRange="[1.3,)"
+versionRange="[1.5,)"
 ordering="AFTER"
 side="BOTH"
 
@@ -159,7 +159,7 @@ side="BOTH"
 [[dependencies.${mod_id}]]
 modId="spawn"
 type="optional"
-versionRange="[4.0,)"
+versionRange="[4.0.7,)"
 ordering="AFTER"
 side="BOTH"
 
@@ -173,7 +173,7 @@ side="BOTH"
 [[dependencies.${mod_id}]]
 modId="vanillabackport"
 type="optional"
-versionRange="[1.0,)"
+versionRange="[1.1.7.10,)"
 ordering="AFTER"
 side="BOTH"
 
@@ -187,14 +187,14 @@ side="BOTH"
 [[dependencies.${mod_id}]]
 modId="minersdelight"
 type="optional"
-versionRange="[1.4,)"
+versionRange="[1.4.5,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.${mod_id}]]
 modId="brewinandchewin"
 type="optional"
-versionRange="[4.2,)"
+versionRange="[4.4,)"
 ordering="AFTER"
 side="BOTH"
 
@@ -204,10 +204,3 @@ type="optional"
 versionRange="[4.0,)"
 ordering="AFTER"
 side="BOTH"
-
-[[dependencies.${mod_id}]]
-modId="obe"
-type="optional"
-versionRange="[1.1,)"
-ordering="AFTER"
-side="CLIENT"

@@ -1,9 +1,10 @@
 package com.alltuttasneeds.beds;
 
-import com.alltuttasneeds.beds.config.TBConfig;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.function.BooleanSupplier;
 
 public record CoverMaterial(String suffix, BooleanSupplier enabled) {
@@ -16,7 +17,15 @@ public record CoverMaterial(String suffix, BooleanSupplier enabled) {
         return BedCoverIngredients.ingredientFor(suffix);
     }
 
+    public List<Item> ingredients() {
+        return BedCoverIngredients.ingredientsFor(suffix);
+    }
+
+    public boolean matches(ItemStack stack) {
+        return ingredients().stream().anyMatch(stack::is);
+    }
+
     public boolean isDirectApplyEnabled() {
-        return !TBConfig.directApplyDisabled.get().contains(suffix);
+        return BedIngredientSyncState.isDirectApplyEnabled(suffix);
     }
 }

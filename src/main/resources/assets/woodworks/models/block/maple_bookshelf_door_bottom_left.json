@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "autumnity:block/maple_bookshelf",
 		"side": "autumnity:block/maple_planks",
-		"door": "woodworks:block/secret_door/maple_bookshelf_door_bottom"
+		"door": "tuttasdoors:woodworks/block/secret_door/maple_bookshelf_door_bottom"
 	}
 }

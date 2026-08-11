@@ -9,6 +9,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -40,6 +41,15 @@ public class TBCreativeTab {
                         .icon(() -> TBContent.BED_FRAME != null ? new ItemStack(TBContent.BED_FRAME.get()) : new ItemStack(Items.RED_BED))
                         .displayItems((parameters, output) -> {
                             if (TBContent.BED_FRAME != null) accept(output, TBContent.BED_FRAME);
+
+                            for (Map<DyeColor, Supplier<Item>> blankets : List.of(
+                                    TBContent.WOOL_BLANKET_ITEMS,
+                                    TBContent.LEATHER_BLANKET_ITEMS,
+                                    TBContent.DELUXE_WOOL_BLANKET_ITEMS)) {
+                                for (DyeColor color : CREATIVE_COLOR_ORDER) {
+                                    accept(output, blankets.get(color));
+                                }
+                            }
 
                             BedCompatRegistry.loaded().flatMap(compat -> compat.families().stream()).forEach(family -> {
                                 accept(output, family.looseMattress());

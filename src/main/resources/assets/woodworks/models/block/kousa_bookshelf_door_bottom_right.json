@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "atmospheric:block/kousa_bookshelf",
 		"side": "atmospheric:block/kousa_planks",
-		"door": "woodworks:block/secret_door/kousa_bookshelf_door_bottom"
+		"door": "tuttasdoors:woodworks/block/secret_door/kousa_bookshelf_door_bottom"
 	}
 }

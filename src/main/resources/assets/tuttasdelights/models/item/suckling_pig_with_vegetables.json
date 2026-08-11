@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/suckling_pig_with_vegetables"
+    "layer0": "tuttasdelights:alltuttasneeds/item/suckling_pig_with_vegetables"
   }
 }

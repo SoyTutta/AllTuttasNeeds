@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "tuttasdelights:item/smoked_squishmallow"
+    "layer0": "tuttasdelights:alltuttasneeds/item/smoked_squishmallow"
   },
   "display": {
     "thirdperson_righthand": {

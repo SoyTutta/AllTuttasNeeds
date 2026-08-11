@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "tuttasdelights:item/rotten_meat_on_a_bone"
+    "layer0": "tuttasdelights:alltuttasneeds/item/rotten_meat_on_a_bone"
   }
 }

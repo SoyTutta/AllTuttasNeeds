@@ -3,7 +3,7 @@ package com.alltuttasneeds.beds.client;
 import com.alltuttasneeds.ATNTextUtils;
 import com.alltuttasneeds.AllTuttasNeeds;
 import com.alltuttasneeds.beds.BedTier;
-import com.alltuttasneeds.beds.BedTierResolver;
+import com.alltuttasneeds.beds.BedTierSyncState;
 import com.alltuttasneeds.beds.config.TBConfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -31,10 +31,10 @@ public final class TBBedTooltipEvents {
 
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
-        if (!TBConfig.isModuleEnabled() || !TBConfig.tooltipsEnabled.get() || event.getItemStack().isEmpty()) return;
+        if (!BedTierSyncState.moduleEnabled() || !TBConfig.tooltipsEnabled.get() || event.getItemStack().isEmpty()) return;
 
         if (!(event.getItemStack().getItem() instanceof BlockItem blockItem)) return;
-        BedTier tier = BedTierResolver.resolve(blockItem.getBlock());
+        BedTier tier = BedTierSyncState.resolveForClient(blockItem.getBlock());
         if (tier != null) event.getToolTip().add(TOOLTIP_MAP.get(tier));
     }
 

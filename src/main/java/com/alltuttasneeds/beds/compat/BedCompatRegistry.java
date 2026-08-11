@@ -8,6 +8,7 @@ import com.alltuttasneeds.core.Mods;
 
 import java.util.List;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public final class BedCompatRegistry {
@@ -28,8 +29,24 @@ public final class BedCompatRegistry {
     }
 
     public static void registerFamilies() {
-        List<CoverMaterial> covers = loaded().flatMap(compat -> compat.coverMaterials().stream()).toList();
-        List<BlanketMaterial> blankets = loaded().flatMap(compat -> compat.blanketMaterials().stream()).toList();
-        loaded().forEach(compat -> compat.registerFamilies(covers, blankets));
+        List<BedModCompat> loadedCompats = loaded().toList();
+        List<CoverMaterial> covers = loadedCompats.stream().flatMap(compat -> compat.coverMaterials().stream()).toList();
+        List<BlanketMaterial> blankets = loadedCompats.stream().flatMap(compat -> compat.blanketMaterials().stream()).toList();
+        validateDeluxeBlanket(blankets);
+        loadedCompats.forEach(compat -> compat.registerFamilies(covers, blankets));
+        TBContent.registerBlanketItemsForFamilies(
+                loadedCompats.stream().flatMap(compat -> compat.families().stream()).toList());
+    }
+
+    private static void validateDeluxeBlanket(List<BlanketMaterial> blankets) {
+        List<BlanketMaterial> deluxe = blankets.stream()
+                .filter(BlanketMaterial::isEnabled)
+                .filter(BlanketMaterial::supportsDeluxe)
+                .toList();
+        if (deluxe.size() <= 1) return;
+
+        String suffixes = deluxe.stream().map(BlanketMaterial::suffix).collect(Collectors.joining(", "));
+        throw new IllegalStateException(
+                "Only one enabled blanket material can support Deluxe beds; found: " + suffixes);
     }
 }

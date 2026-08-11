@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/creeper_salad"
+    "layer0": "tuttasdelights:alltuttasneeds/item/creeper_salad"
   }
 }

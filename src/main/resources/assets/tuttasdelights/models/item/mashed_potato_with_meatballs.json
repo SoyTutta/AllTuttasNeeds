@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/mashed_potato_with_meatballs"
+    "layer0": "tuttasdelights:alltuttasneeds/item/mashed_potato_with_meatballs"
   }
 }

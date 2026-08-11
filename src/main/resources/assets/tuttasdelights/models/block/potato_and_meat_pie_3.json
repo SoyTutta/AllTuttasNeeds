@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"0": "tuttasdelights:block/potato_and_meat_pie_block",
+		"0": "tuttasdelights:alltuttasneeds/block/potato_and_meat_pie_block",
 		"particle": "farmersdelight:block/tray_bottom"
 	},
 	"elements": [

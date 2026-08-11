@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"textures": {
-		"door": "tuttasdoors:block/pet_door/oak_door",
+		"door": "tuttasdoors:minecraft/block/pet_door/oak_door",
 		"particle": "#door"
 	},
 	"elements": [

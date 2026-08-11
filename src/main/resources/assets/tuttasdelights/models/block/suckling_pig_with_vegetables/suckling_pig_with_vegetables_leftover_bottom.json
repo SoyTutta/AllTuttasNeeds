@@ -3,8 +3,8 @@
 	"render_type": "minecraft:cutout",
 	"texture_size": [64, 48],
 	"textures": {
-		"0": "tuttasdelights:block/suckling_pig_with_vegetables_tray",
-		"1": "tuttasdelights:block/suckling_pig_with_vegetables",
+		"0": "tuttasdelights:alltuttasneeds/block/suckling_pig_with_vegetables_tray",
+		"1": "tuttasdelights:alltuttasneeds/block/suckling_pig_with_vegetables",
 		"particle": "farmersdelight:block/tray_bottom"
 	},
 	"elements": [

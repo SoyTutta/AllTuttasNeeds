@@ -4,9 +4,9 @@
 	"ambientocclusion": "false",
 	"textures": {
 		"0": "farmersdelight:block/stuffed_pumpkin_bottom",
-		"1": "tuttasdelights:block/ice_cream_in_a_pumpkin_side",
+		"1": "tuttasdelights:alltuttasneeds/block/ice_cream_in_a_pumpkin_side",
 		"2": "farmersdelight:block/stuffed_pumpkin_top",
-		"8": "tuttasdelights:block/ice_cream_in_a_pumpkin_face",
+		"8": "tuttasdelights:alltuttasneeds/block/ice_cream_in_a_pumpkin_face",
 		"particle": "minecraft:block/pumpkin_side"
 	},
 	"elements": [

@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "environmental:block/wisteria_bookshelf",
 		"side": "environmental:block/wisteria_planks",
-		"door": "woodworks:block/secret_door/wisteria_bookshelf_door_top"
+		"door": "tuttasdoors:woodworks/block/secret_door/wisteria_bookshelf_door_top"
 	}
 }

@@ -33,10 +33,11 @@ public class TDBlockStates extends BlockStateProvider {
     protected void registerStatesAndModels() {
         CompatRegistry.loaded()
                 .filter(ModCompat::requiresBlockStateGeneration)
-                .forEach(compat -> registerDoorsFromMod(compat.doors(), compat.namespace()));
+                .forEach(compat -> registerDoorsFromMod(compat.doors(), compat.textureOwner()));
     }
 
-    private void registerDoorsFromMod(Map<String, ? extends Supplier<? extends Block>> doorMap, String modNamespace) {
+    private void registerDoorsFromMod(Map<String, ? extends Supplier<? extends Block>> doorMap,
+                                      String textureOwner) {
         for (Map.Entry<String, ? extends Supplier<? extends Block>> entry : doorMap.entrySet()) {
             String name  = entry.getKey();
             Block  block = entry.getValue().get();
@@ -44,20 +45,20 @@ public class TDBlockStates extends BlockStateProvider {
 
             if (block instanceof SlidingDoorBlock) {
                 slidingDoorBlockWithRenderType((DoorBlock) block,
-                        resourceBlock(texturePath + "_bottom", modNamespace),
-                        resourceBlock(texturePath + "_top",    modNamespace));
+                        resourceBlock(texturePath + "_bottom", textureOwner),
+                        resourceBlock(texturePath + "_top",    textureOwner));
             } else if (block instanceof PetDoorBlock petBlock) {
                 petDoorBlockWithRenderType(petBlock,
-                        resourceBlock(texturePath, modNamespace),
-                        resourceBlock(texturePath, modNamespace));
+                        resourceBlock(texturePath, textureOwner),
+                        resourceBlock(texturePath, textureOwner));
             } else if (block instanceof TransitDoorBlock) {
                 transitDoorBlockWithRenderType((DoorBlock) block,
-                        resourceBlock(texturePath + "_bottom", modNamespace),
-                        resourceBlock(texturePath + "_top",    modNamespace));
+                        resourceBlock(texturePath + "_bottom", textureOwner),
+                        resourceBlock(texturePath + "_top",    textureOwner));
             } else if (block instanceof SecretDoorBlock) {
                 continue;
             } else if (block instanceof DoorBlock) {
-                registerDoor(entry.getValue(), texturePath, modNamespace);
+                registerDoor(entry.getValue(), texturePath, textureOwner);
             }
         }
     }
@@ -81,11 +82,11 @@ public class TDBlockStates extends BlockStateProvider {
         return key.getNamespace() + "/" + key.getPath();
     }
 
-    private void registerDoor(Supplier<? extends Block> blockSupplier, String texturePath, String modNamespace) {
+    private void registerDoor(Supplier<? extends Block> blockSupplier, String texturePath, String textureOwner) {
         DoorBlock block  = (DoorBlock) blockSupplier.get();
         String baseName  = getUniqueModelPath(block);
-        ResourceLocation bottom = resourceBlock(texturePath + "_bottom", modNamespace);
-        ResourceLocation top    = resourceBlock(texturePath + "_top",    modNamespace);
+        ResourceLocation bottom = resourceBlock(texturePath + "_bottom", textureOwner);
+        ResourceLocation top    = resourceBlock(texturePath + "_top",    textureOwner);
 
         ModelFile bl  = models().withExistingParent(baseName + "_bottom_left",       mcLoc("block/door_bottom_left"))      .texture("bottom", bottom).texture("top", top);
         ModelFile blo = models().withExistingParent(baseName + "_bottom_left_open",  mcLoc("block/door_bottom_left_open")) .texture("bottom", bottom).texture("top", top);
@@ -170,8 +171,9 @@ public class TDBlockStates extends BlockStateProvider {
         }, TrapDoorBlock.POWERED, TrapDoorBlock.WATERLOGGED);
     }
 
-    private static ResourceLocation resourceBlock(String name, String modNamespace) {
-        return ResourceLocation.fromNamespaceAndPath(modNamespace, BLOCK_FOLDER + "/" + name.replace("waxed_", ""));
+    private static ResourceLocation resourceBlock(String name, String textureOwner) {
+        return ResourceLocation.fromNamespaceAndPath(
+                "tuttasdoors", textureOwner + "/" + BLOCK_FOLDER + "/" + name.replace("waxed_", ""));
     }
 
     private ResourceLocation key(Block block) {

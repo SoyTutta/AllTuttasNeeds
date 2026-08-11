@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/baked_potato_slices"
+    "layer0": "tuttasdelights:alltuttasneeds/item/baked_potato_slices"
   }
 }

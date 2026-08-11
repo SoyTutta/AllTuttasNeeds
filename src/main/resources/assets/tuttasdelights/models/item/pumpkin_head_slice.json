@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdelights:item/pumpkin_head_slice"
+    "layer0": "tuttasdelights:alltuttasneeds/item/pumpkin_head_slice"
   }
 }

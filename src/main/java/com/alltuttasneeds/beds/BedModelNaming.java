@@ -3,12 +3,16 @@ package com.alltuttasneeds.beds;
 import com.alltuttasneeds.beds.block.BedFrameBlock;
 import com.alltuttasneeds.beds.block.LooseMattressBlock;
 import com.alltuttasneeds.beds.block.TieredBedBlock;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Block;
 
 public final class BedModelNaming {
+    private static final String MODULE_NAMESPACE = "tuttasbeds";
+    private static final String NATIVE_TEXTURE_OWNER = "alltuttasneeds";
+
     private BedModelNaming() {}
 
     public static String type(Block block) {
@@ -36,6 +40,11 @@ public final class BedModelNaming {
     }
 
     public static ResourceLocation blockTexture(Block block) {
-        return ResourceLocation.fromNamespaceAndPath("tuttasbeds", "block/" + type(block) + "/" + color(block).getSerializedName());
+        String registryNamespace = BuiltInRegistries.BLOCK.getKey(block).getNamespace();
+        String textureOwner = registryNamespace.equals(MODULE_NAMESPACE)
+                ? NATIVE_TEXTURE_OWNER
+                : registryNamespace;
+        return ResourceLocation.fromNamespaceAndPath(MODULE_NAMESPACE,
+                textureOwner + "/block/" + type(block) + "/" + color(block).getSerializedName());
     }
 }

@@ -4,7 +4,7 @@
 	"render_type": "minecraft:translucent",
 	"texture_size": [48, 32],
 	"textures": {
-		"0": "tuttasdelights:block/slime_jelly",
+		"0": "tuttasdelights:alltuttasneeds/block/slime_jelly",
 		"particle": "block/slime_block"
 	},
 	"elements": [

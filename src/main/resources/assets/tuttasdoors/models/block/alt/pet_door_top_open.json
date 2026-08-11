@@ -5,7 +5,7 @@
 	"textures": {
 		"side": "nomansland:block/maple/maple_door_sides",
 		"particle": "#door",
-		"door": "tuttasdoors:block/pet_door/maple_door"
+		"door": "tuttasdoors:nomansland/block/pet_door/maple_door"
 	},
 	"elements": [
 		{

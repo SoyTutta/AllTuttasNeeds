@@ -3,6 +3,6 @@
 	"textures": {
 		"fake": "woodworks:block/warped_bookshelf",
 		"side": "block/warped_planks",
-		"door": "woodworks:block/secret_door/warped_bookshelf_door_bottom"
+		"door": "tuttasdoors:woodworks/block/secret_door/warped_bookshelf_door_bottom"
 	}
 }

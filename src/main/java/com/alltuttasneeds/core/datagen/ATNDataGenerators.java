@@ -1,7 +1,6 @@
 package com.alltuttasneeds.core.datagen;
 
 import com.alltuttasneeds.AllTuttasNeeds;
-import com.alltuttasneeds.doors.datagen.ConditionalBlockLootTableProvider;
 import com.alltuttasneeds.doors.datagen.DataMaps;
 import com.alltuttasneeds.doors.datagen.ESLang;
 import com.alltuttasneeds.beds.datagen.TBBlockLootTables;
@@ -24,15 +23,11 @@ import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 @EventBusSubscriber(modid = AllTuttasNeeds.MODID)
@@ -66,11 +61,12 @@ public class ATNDataGenerators {
         generator.addProvider(doorsServer, new DataMaps(output, lookupProvider));
         generator.addProvider(doorsServer, new ShapeMapProvider(output));
 
-        generator.addProvider(doorsServer, new ConditionalBlockLootTableProvider(output, lookupProvider));
-        generator.addProvider(bedsServer, named("Tuttas Beds Loot Tables", new LootTableProvider(
-                output, Collections.emptySet(), List.of(
-                new LootTableProvider.SubProviderEntry(TBBlockLootTables::new, LootContextParamSets.BLOCK)
-        ), lookupProvider)));
+        generator.addProvider(doorsServer, new ConditionalBlockLootTableProvider(
+                output, lookupProvider, com.alltuttasneeds.doors.datagen.BlockLootTables::new,
+                "Tutta's Doors conditional block loot tables"));
+        generator.addProvider(bedsServer, new ConditionalBlockLootTableProvider(
+                output, lookupProvider, TBBlockLootTables::new,
+                "Tutta's Beds conditional block loot tables"));
         TDBlockStates blockStates = new TDBlockStates(output, helper);
         generator.addProvider(doorsClient, blockStates);
         generator.addProvider(doorsClient, new TDItemsModels(output, blockStates.models().existingFileHelper));

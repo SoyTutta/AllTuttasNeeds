@@ -6,9 +6,10 @@ import com.alltuttasneeds.beds.BedCoverIngredients;
 import com.alltuttasneeds.beds.BedTier;
 import com.alltuttasneeds.beds.BedTierResolver;
 import com.alltuttasneeds.beds.BunkBedPositions;
-import com.alltuttasneeds.beds.block.TieredBedBlock;
+import com.alltuttasneeds.beds.block.TuttaBedBlock;
 import com.alltuttasneeds.beds.config.SleepEffectConfig;
 import com.alltuttasneeds.beds.config.TBConfig;
+import com.alltuttasneeds.core.network.ATNNetwork;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -25,6 +26,7 @@ import net.minecraft.world.level.portal.DimensionTransition;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.event.OnDatapackSyncEvent;
 import net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerRespawnPositionEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerSetSpawnEvent;
@@ -44,6 +46,11 @@ public final class TBEvents {
     }
 
     @SubscribeEvent
+    public static void onDatapackSync(OnDatapackSyncEvent event) {
+        ATNNetwork.syncServerRules(event.getRelevantPlayers());
+    }
+
+    @SubscribeEvent
     public static void onPlayerSetSpawn(PlayerSetSpawnEvent event) {
         if (!TBConfig.isModuleEnabled()) return;
         BlockPos spawn = event.getNewSpawn();
@@ -60,8 +67,9 @@ public final class TBEvents {
     @SubscribeEvent
     public static void onCanPlayerSleep(CanPlayerSleepEvent event) {
         if (!TBConfig.isModuleEnabled()) return;
-        if (!TBConfig.deluxeIgnoresNearbyMonsters.get() || event.getProblem() != BedSleepingProblem.NOT_SAFE) return;
-        if (BedTierResolver.resolve(event.getState().getBlock()) == BedTier.DELUXE) {
+        if (event.getProblem() != BedSleepingProblem.NOT_SAFE) return;
+        BedTier tier = BedTierResolver.resolve(event.getState().getBlock());
+        if (tier != null && TBConfig.ignoresNearbyMonsters(tier)) {
             event.setProblem(null);
         }
     }
@@ -78,7 +86,7 @@ public final class TBEvents {
         if (player.getRespawnDimension() != level.dimension()) return;
 
         BlockState state = level.getBlockState(respawnPos);
-        if (!(state.getBlock() instanceof TieredBedBlock) || !state.hasProperty(BedBlock.FACING)) return;
+        if (!(state.getBlock() instanceof TuttaBedBlock) || !state.hasProperty(BedBlock.FACING)) return;
 
         List<BlockPos> beds = BunkBedPositions.collectStack(level, respawnPos);
         if (beds.size() == 1) return;
@@ -113,8 +121,9 @@ public final class TBEvents {
             if (tier == null) return;
             SleepEffectConfig effects = TBConfig.effectsFor(tier);
 
-            effects.resolveEffect().ifPresent(effect ->
-                    player.addEffect(new MobEffectInstance(effect, effects.durationTicks(), 0)));
+            for (SleepEffectConfig.ResolvedEffect effect : effects.resolveEffects()) {
+                player.addEffect(new MobEffectInstance(effect.effect(), effect.durationTicks(), 0));
+            }
         });
     }
 

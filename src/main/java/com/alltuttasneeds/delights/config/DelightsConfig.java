@@ -32,11 +32,14 @@ public final class DelightsConfig {
                     .define(group.configKey() + "Enabled", true));
         }
         builder.pop();
+    }
 
+    public static void initServer(ModConfigSpec.Builder builder) {
         builder.push("recipes");
         useCheeseWedges = builder
                 .comment("Uses cheese wedges instead of milk in recipes where milk represents cheese.",
                         "The milk recipe is used when Brewin' and Chewin' is not installed.")
+                .worldRestart()
                 .define("useCheeseWedges", false);
         builder.pop();
     }
