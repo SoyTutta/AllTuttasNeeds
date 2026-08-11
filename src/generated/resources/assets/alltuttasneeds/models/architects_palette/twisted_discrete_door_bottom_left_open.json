@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/door_bottom_left_open",
   "textures": {
-    "bottom": "architects_palette:block/discrete_door/twisted_door_bottom",
-    "top": "architects_palette:block/discrete_door/twisted_door_top"
+    "bottom": "tuttasdoors:architects_palette/block/discrete_door/twisted_door_bottom",
+    "top": "tuttasdoors:architects_palette/block/discrete_door/twisted_door_top"
   }
 }

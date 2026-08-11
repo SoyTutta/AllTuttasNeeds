@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tuttasbeds:alltuttasneeds/item/white_wool_blanket"
+  }
+}

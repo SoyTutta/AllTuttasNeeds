@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "windswept:item/pine_indiscrete_door"
+    "layer0": "tuttasdoors:windswept/item/pine_indiscrete_door"
   }
 }

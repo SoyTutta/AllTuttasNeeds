@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/door_top_right",
   "textures": {
-    "bottom": "natures_spirit:block/indiscrete_door/cedar_door_bottom",
-    "top": "natures_spirit:block/indiscrete_door/cedar_door_top"
+    "bottom": "tuttasdoors:natures_spirit/block/indiscrete_door/cedar_door_bottom",
+    "top": "tuttasdoors:natures_spirit/block/indiscrete_door/cedar_door_top"
   }
 }

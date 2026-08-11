@@ -1,8 +1,16 @@
 {
   "neoforge:conditions": [
     {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "beds"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "farmersdelight"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "farmersdelight:canvas_bed_brown_wool_blanket"
     }
   ],
   "type": "minecraft:crafting_shapeless",

@@ -1,7 +1,7 @@
 {
   "parent": "tuttasdoors:block/pet_door_top_open",
   "textures": {
-    "door": "biomesoplenty:block/pet_door/magic_door",
-    "extra": "biomesoplenty:block/pet_door/magic_door"
+    "door": "tuttasdoors:biomesoplenty/block/pet_door/magic_door",
+    "extra": "tuttasdoors:biomesoplenty/block/pet_door/magic_door"
   }
 }

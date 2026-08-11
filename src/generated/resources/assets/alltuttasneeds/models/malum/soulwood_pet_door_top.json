@@ -1,7 +1,7 @@
 {
   "parent": "tuttasdoors:block/pet_door_top",
   "textures": {
-    "door": "malum:block/pet_door/soulwood_door",
-    "extra": "malum:block/pet_door/soulwood_door"
+    "door": "tuttasdoors:malum/block/pet_door/soulwood_door",
+    "extra": "tuttasdoors:malum/block/pet_door/soulwood_door"
   }
 }

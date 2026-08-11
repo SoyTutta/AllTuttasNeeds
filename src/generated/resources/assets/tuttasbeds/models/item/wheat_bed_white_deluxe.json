@@ -1,7 +1,7 @@
 {
   "parent": "tuttasbeds:item/template/bed",
   "textures": {
-    "0": "tuttasbeds:block/wheat_bed_deluxe/white",
-    "frame": "tuttasbeds:block/frame/brown"
+    "0": "tuttasbeds:alltuttasneeds/block/wheat_bed_deluxe/white",
+    "frame": "tuttasbeds:alltuttasneeds/block/frame/brown"
   }
 }

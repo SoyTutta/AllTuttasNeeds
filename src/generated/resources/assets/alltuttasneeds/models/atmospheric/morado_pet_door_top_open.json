@@ -1,7 +1,7 @@
 {
   "parent": "tuttasdoors:block/pet_door_top_open",
   "textures": {
-    "door": "atmospheric:block/pet_door/morado_door",
-    "extra": "atmospheric:block/pet_door/morado_door"
+    "door": "tuttasdoors:atmospheric/block/pet_door/morado_door",
+    "extra": "tuttasdoors:atmospheric/block/pet_door/morado_door"
   }
 }

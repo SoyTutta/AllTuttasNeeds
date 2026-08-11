@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "woodworks:item/cherry_bookshelf_door"
+    "layer0": "tuttasdoors:woodworks/item/cherry_bookshelf_door"
   }
 }

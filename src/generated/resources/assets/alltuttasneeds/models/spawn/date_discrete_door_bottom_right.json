@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/door_bottom_right",
   "textures": {
-    "bottom": "spawn:block/discrete_door/date_door_bottom",
-    "top": "spawn:block/discrete_door/date_door_top"
+    "bottom": "tuttasdoors:spawn/block/discrete_door/date_door_bottom",
+    "top": "tuttasdoors:spawn/block/discrete_door/date_door_top"
   }
 }

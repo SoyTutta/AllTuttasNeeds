@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdoors:item/bamboo_discrete_door"
+    "layer0": "tuttasdoors:minecraft/item/bamboo_discrete_door"
   }
 }

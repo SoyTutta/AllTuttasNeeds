@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "create:item/brass_bars_sliding_door"
+    "layer0": "tuttasdoors:create/item/brass_bars_sliding_door"
   }
 }

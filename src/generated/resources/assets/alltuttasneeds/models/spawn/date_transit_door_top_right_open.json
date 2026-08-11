@@ -1,6 +1,6 @@
 {
   "parent": "tuttasdoors:block/transit_door_top_right_open",
   "textures": {
-    "door": "spawn:block/transit_door/date_door_top"
+    "door": "tuttasdoors:spawn/block/transit_door/date_door_top"
   }
 }

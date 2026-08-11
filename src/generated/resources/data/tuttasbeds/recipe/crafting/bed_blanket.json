@@ -1,0 +1,10 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "beds"
+    }
+  ],
+  "type": "tuttasbeds:bed_blanket",
+  "category": "misc"
+}

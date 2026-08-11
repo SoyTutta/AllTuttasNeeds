@@ -1,6 +1,6 @@
 {
   "parent": "tuttasbeds:block/template/bed/single_foot",
   "textures": {
-    "0": "tuttasbeds:block/soft_bed_deluxe/yellow"
+    "0": "tuttasbeds:alltuttasneeds/block/soft_bed_deluxe/yellow"
   }
 }

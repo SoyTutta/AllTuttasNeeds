@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "caverns_and_chasms:item/azalea_transit_door"
+    "layer0": "tuttasdoors:caverns_and_chasms/item/azalea_transit_door"
   }
 }

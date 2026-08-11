@@ -1,4 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "beds"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "tuttasbeds:wheat_bed_magenta_wool_blanket"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_bed": {

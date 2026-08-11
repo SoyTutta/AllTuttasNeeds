@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "enderscape:item/murublight_indiscrete_door"
+    "layer0": "tuttasdoors:enderscape/item/murublight_indiscrete_door"
   }
 }

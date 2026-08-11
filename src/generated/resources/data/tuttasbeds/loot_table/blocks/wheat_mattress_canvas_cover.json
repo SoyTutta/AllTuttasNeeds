@@ -1,4 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "beds"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "tuttasbeds:wheat_mattress_canvas_cover"
+    }
+  ],
   "type": "minecraft:block",
   "pools": [
     {

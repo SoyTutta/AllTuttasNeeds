@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "biomesoplenty:item/redwood_indiscrete_door"
+    "layer0": "tuttasdoors:biomesoplenty/item/redwood_indiscrete_door"
   }
 }

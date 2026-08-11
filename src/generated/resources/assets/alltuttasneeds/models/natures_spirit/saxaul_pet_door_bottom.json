@@ -1,7 +1,7 @@
 {
   "parent": "tuttasdoors:block/pet_door_bottom",
   "textures": {
-    "door": "natures_spirit:block/pet_door/saxaul_door",
-    "extra": "natures_spirit:block/pet_door/saxaul_door"
+    "door": "tuttasdoors:natures_spirit/block/pet_door/saxaul_door",
+    "extra": "tuttasdoors:natures_spirit/block/pet_door/saxaul_door"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "biomesoplenty:item/pine_transit_door"
+    "layer0": "tuttasdoors:biomesoplenty/item/pine_transit_door"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "tuttasdoors:block/pet_door_top",
   "textures": {
-    "door": "tuttasdoors:block/pet_door/birch_door",
-    "extra": "tuttasdoors:block/pet_door/birch_door"
+    "door": "tuttasdoors:minecraft/block/pet_door/birch_door",
+    "extra": "tuttasdoors:minecraft/block/pet_door/birch_door"
   }
 }

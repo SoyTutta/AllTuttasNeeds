@@ -1,7 +1,7 @@
 {
   "parent": "tuttasdoors:block/pet_door_bottom_open",
   "textures": {
-    "door": "enderscape:block/pet_door/celestial_door",
-    "extra": "enderscape:block/pet_door/celestial_door"
+    "door": "tuttasdoors:enderscape/block/pet_door/celestial_door",
+    "extra": "tuttasdoors:enderscape/block/pet_door/celestial_door"
   }
 }

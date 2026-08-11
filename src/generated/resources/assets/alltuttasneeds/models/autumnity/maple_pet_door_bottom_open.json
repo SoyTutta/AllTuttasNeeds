@@ -1,7 +1,7 @@
 {
   "parent": "tuttasdoors:block/pet_door_bottom_open",
   "textures": {
-    "door": "autumnity:block/pet_door/maple_door",
-    "extra": "autumnity:block/pet_door/maple_door"
+    "door": "tuttasdoors:autumnity/block/pet_door/maple_door",
+    "extra": "tuttasdoors:autumnity/block/pet_door/maple_door"
   }
 }

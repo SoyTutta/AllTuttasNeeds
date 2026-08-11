@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tuttasdoors:item/acacia_normal_door"
+    "layer0": "tuttasdoors:minecraft/item/acacia_normal_door"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "tuttasbeds:block/template/bed/left_foot",
   "textures": {
-    "0": "tuttasbeds:block/wheat_bed_deluxe/magenta"
+    "0": "tuttasbeds:alltuttasneeds/block/wheat_bed_deluxe/magenta"
   }
 }

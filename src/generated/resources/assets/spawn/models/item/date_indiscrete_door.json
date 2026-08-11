@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "spawn:item/date_indiscrete_door"
+    "layer0": "tuttasdoors:spawn/item/date_indiscrete_door"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "atmospheric:item/morado_normal_door"
+    "layer0": "tuttasdoors:atmospheric/item/morado_normal_door"
   }
 }

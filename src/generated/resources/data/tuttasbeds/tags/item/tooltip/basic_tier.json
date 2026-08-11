@@ -1,6 +1,9 @@
 {
   "values": [
-    "tuttasbeds:bed_frame",
+    {
+      "id": "tuttasbeds:bed_frame",
+      "required": false
+    },
     "minecraft:white_bed",
     "minecraft:orange_bed",
     "minecraft:magenta_bed",
@@ -17,13 +20,37 @@
     "minecraft:green_bed",
     "minecraft:red_bed",
     "minecraft:black_bed",
-    "tuttasbeds:wheat_mattress",
-    "tuttasbeds:wheat_bed",
-    "tuttasbeds:soft_mattress",
-    "tuttasbeds:soft_bed",
-    "farmersdelight:canvas_mattress",
-    "farmersdelight:canvas_bed",
-    "farmersdelight:straw_mattress",
-    "farmersdelight:straw_bed"
+    {
+      "id": "tuttasbeds:wheat_mattress",
+      "required": false
+    },
+    {
+      "id": "tuttasbeds:wheat_bed",
+      "required": false
+    },
+    {
+      "id": "tuttasbeds:soft_mattress",
+      "required": false
+    },
+    {
+      "id": "tuttasbeds:soft_bed",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:canvas_mattress",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:canvas_bed",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:straw_mattress",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:straw_bed",
+      "required": false
+    }
   ]
 }

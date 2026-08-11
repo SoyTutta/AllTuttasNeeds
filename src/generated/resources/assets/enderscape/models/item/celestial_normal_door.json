@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "enderscape:item/celestial_normal_door"
+    "layer0": "tuttasdoors:enderscape/item/celestial_normal_door"
   }
 }

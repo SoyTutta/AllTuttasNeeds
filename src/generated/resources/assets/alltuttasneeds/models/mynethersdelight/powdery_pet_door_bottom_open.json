@@ -1,7 +1,7 @@
 {
   "parent": "tuttasdoors:block/pet_door_bottom_open",
   "textures": {
-    "door": "mynethersdelight:block/pet_door/powdery_door",
-    "extra": "mynethersdelight:block/pet_door/powdery_door"
+    "door": "tuttasdoors:mynethersdelight/block/pet_door/powdery_door",
+    "extra": "tuttasdoors:mynethersdelight/block/pet_door/powdery_door"
   }
 }

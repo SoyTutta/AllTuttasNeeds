@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "nomansland:item/maple_normal_door"
+    "layer0": "tuttasdoors:nomansland/item/maple_normal_door"
   }
 }

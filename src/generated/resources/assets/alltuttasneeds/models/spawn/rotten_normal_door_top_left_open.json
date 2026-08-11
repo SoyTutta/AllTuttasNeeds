@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/door_top_left_open",
   "textures": {
-    "bottom": "spawn:block/door/rotten_door_bottom",
-    "top": "spawn:block/door/rotten_door_top"
+    "bottom": "tuttasdoors:spawn/block/door/rotten_door_bottom",
+    "top": "tuttasdoors:spawn/block/door/rotten_door_top"
   }
 }

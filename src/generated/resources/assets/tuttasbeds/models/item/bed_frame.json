@@ -1,6 +1,6 @@
 {
   "parent": "tuttasbeds:item/template/frame",
   "textures": {
-    "0": "tuttasbeds:block/frame/brown"
+    "0": "tuttasbeds:alltuttasneeds/block/frame/brown"
   }
 }

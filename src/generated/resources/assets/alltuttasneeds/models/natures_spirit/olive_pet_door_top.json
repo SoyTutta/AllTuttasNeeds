@@ -1,7 +1,7 @@
 {
   "parent": "tuttasdoors:block/pet_door_top",
   "textures": {
-    "door": "natures_spirit:block/pet_door/olive_door",
-    "extra": "natures_spirit:block/pet_door/olive_door"
+    "door": "tuttasdoors:natures_spirit/block/pet_door/olive_door",
+    "extra": "tuttasdoors:natures_spirit/block/pet_door/olive_door"
   }
 }
