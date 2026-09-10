@@ -1,3 +1,10 @@
+All Tutta's Needs 3.3.0
+
+Tutta's Delights:
+Fixes:
+
+- Fixed player-owned projectiles crashing when the undead content group was disabled.
+
 All Tutta's Needs 3.2.0
 
 General:
@@ -34,19 +41,14 @@ Changes:
 
 Fixes:
 
-- Fixed beds disappearing when changing covers, blankets, mattresses or frames.
+- Fixed beds disappearing when applying covers or blankets, or when combining mattresses with Bed Frames.
 - Fixed beds being replaceable while someone was sleeping in them. They now use Minecraft's normal occupied-bed message.
 - Fixed leather and wool being accepted as blanket items when right-clicking a bed.
-- Fixed blanket items existing when their matching bed variants did not.
-- Fixed optional blanket items having missing inventory models and names when enabled.
-- Fixed blanket drops giving the wrong material or ignoring Silk Touch when the foot of the bed was broken.
-- Fixed beds dropping their contents twice when broken from the foot.
 - Fixed ambiguous cover and blanket ingredients silently choosing whichever result they felt like.
 - Fixed mismatched bed halves accepting each other after external block changes.
 - Fixed connected and bunk bed hitboxes.
 - Fixed respawning from bunk beds made with Bed Frames.
 - Fixed excluded bed tiers still affecting gameplay and tooltips.
-- Fixed server tier synchronization ignoring special beds without an associated item.
 - Fixed Tutta beds being registered incompletely as villager homes.
 - Fixed very long wake-up effects eventually exploding into math nonsense.
 

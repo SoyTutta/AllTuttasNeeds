@@ -9,6 +9,7 @@ import com.alltuttasneeds.delights.block.SnowGolemFeastBlock;
 import com.alltuttasneeds.delights.block.entity.SnowGolemFeastBlockEntity;
 import com.alltuttasneeds.delights.config.DelightGroup;
 import com.alltuttasneeds.delights.face.SnowGolemFaceRegistry;
+import com.alltuttasneeds.delights.item.RottenArmItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -47,10 +48,11 @@ public class DelightsEvents {
         if (!DelightsConfig.isGroupEnabled(DelightGroup.UNDEAD)
                 || isProcessingBoneAttack
                 || !(event.getSource().getEntity() instanceof Player player)
+                || event.getSource().getDirectEntity() != player
                 || player.level().isClientSide) return;
 
         ItemStack weapon = player.getMainHandItem();
-        if (!weapon.is(DelightsItems.ROTTEN_MEAT_ON_A_BONE.get())) return;
+        if (!(weapon.getItem() instanceof RottenArmItem)) return;
 
         float newDamage = event.getAmount() + 2;
         event.setCanceled(true);
@@ -68,7 +70,7 @@ public class DelightsEvents {
                     && event.getEntity().isDeadOrDying()
                     && !player.getAbilities().instabuild
                     && player.getMainHandItem() == weapon
-                    && weapon.is(DelightsItems.ROTTEN_MEAT_ON_A_BONE.get())) {
+                    && weapon.getItem() instanceof RottenArmItem) {
                 weapon.shrink(1);
             }
         } finally {
