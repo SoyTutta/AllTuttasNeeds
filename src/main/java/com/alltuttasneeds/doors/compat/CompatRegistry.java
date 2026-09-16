@@ -30,6 +30,7 @@ public final class CompatRegistry {
             new Entry(Mods.SPAWN, () -> SContent.INSTANCE),
             new Entry(Mods.NATURES_SPIRIT, () -> NSContent.INSTANCE),
             new Entry(Mods.BIOMESOPLENTY, () -> BoPContent.INSTANCE),
+            new Entry(Mods.BOUNTIFUL_FARES, () -> BFContent.INSTANCE),
             new Entry(Mods.ENDERSCAPE, () -> ESContent.INSTANCE),
             new Entry(Mods.ARTS_AND_CRAFTS, () -> ACContent.INSTANCE),
             new Entry(Mods.MYNETHERSDELIGHT, () -> MNDContent.INSTANCE),

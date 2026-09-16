@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "upgrade_aquatic:driftwood_door",
+      "required": false
+    },
+    {
+      "id": "upgrade_aquatic:driftwood_normal_door",
+      "required": false
+    },
+    {
+      "id": "upgrade_aquatic:driftwood_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "upgrade_aquatic:driftwood_transit_door",
+      "required": false
+    },
+    {
+      "id": "upgrade_aquatic:driftwood_pet_door",
+      "required": false
+    }
+  ]
+}

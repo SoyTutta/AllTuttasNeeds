@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "tuttasdoors:wooden_doors/families/minecraft/spruce"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:spruce_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

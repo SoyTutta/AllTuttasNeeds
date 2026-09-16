@@ -1,6 +1,7 @@
 package com.alltuttasneeds.beds.block;
 
 import com.alltuttasneeds.beds.BedTier;
+import com.alltuttasneeds.beds.BedColor;
 import com.alltuttasneeds.beds.BlanketMaterial;
 import com.alltuttasneeds.beds.CoverMaterial;
 import com.alltuttasneeds.beds.MattressMaterial;
@@ -28,21 +29,31 @@ public class TieredBedBlock extends AbstractTuttaBedBlock {
     @Nullable
     private final BlanketMaterial blanketMaterial;
     @Nullable
-    private final DyeColor color;
+    private final BedColor bedColor;
     private final Map<CoverMaterial, Supplier<Block>> coverResults;
-    private final Map<BlanketMaterial, Map<DyeColor, Supplier<Block>>> blanketResults;
+    private final Map<BlanketMaterial, Map<BedColor, Supplier<Block>>> blanketResults;
 
     public TieredBedBlock(MattressMaterial mattress, BedTier tier, @Nullable CoverMaterial basicCover,
                           @Nullable BlanketMaterial blanketMaterial, @Nullable DyeColor color,
                           Map<CoverMaterial, Supplier<Block>> coverResults,
                           Map<BlanketMaterial, Map<DyeColor, Supplier<Block>>> blanketResults,
                           Properties properties) {
-        super(color != null ? color : DyeColor.WHITE, properties);
+        this(mattress, tier, basicCover, blanketMaterial,
+                color == null ? null : BedColor.fromVanilla(color), coverResults,
+                convertBlanketResults(blanketResults), properties);
+    }
+
+    public TieredBedBlock(MattressMaterial mattress, BedTier tier, @Nullable CoverMaterial basicCover,
+                          @Nullable BlanketMaterial blanketMaterial, @Nullable BedColor color,
+                          Map<CoverMaterial, Supplier<Block>> coverResults,
+                          Map<BlanketMaterial, Map<BedColor, Supplier<Block>>> blanketResults,
+                          Properties properties) {
+        super(color != null ? color.vanillaColor() : DyeColor.WHITE, properties);
         this.mattress = mattress;
         this.tier = tier;
         this.basicCover = basicCover;
         this.blanketMaterial = blanketMaterial;
-        this.color = color;
+        this.bedColor = color;
         this.coverResults = coverResults;
         this.blanketResults = blanketResults;
     }
@@ -68,7 +79,23 @@ public class TieredBedBlock extends AbstractTuttaBedBlock {
 
     @Nullable
     public DyeColor color() {
-        return color;
+        return bedColor == null ? null : bedColor.vanillaColor();
+    }
+
+    @Nullable
+    public BedColor bedColor() {
+        return bedColor;
+    }
+
+    private static Map<BlanketMaterial, Map<BedColor, Supplier<Block>>> convertBlanketResults(
+            Map<BlanketMaterial, Map<DyeColor, Supplier<Block>>> results) {
+        java.util.LinkedHashMap<BlanketMaterial, Map<BedColor, Supplier<Block>>> converted = new java.util.LinkedHashMap<>();
+        results.forEach((blanket, colors) -> {
+            java.util.LinkedHashMap<BedColor, Supplier<Block>> convertedColors = new java.util.LinkedHashMap<>();
+            colors.forEach((color, block) -> convertedColors.put(BedColor.fromVanilla(color), block));
+            converted.put(blanket, Map.copyOf(convertedColors));
+        });
+        return Map.copyOf(converted);
     }
 
     @Override

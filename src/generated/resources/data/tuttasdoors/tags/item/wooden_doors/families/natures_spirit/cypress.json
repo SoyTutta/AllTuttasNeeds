@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "natures_spirit:cypress_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cypress_discrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cypress_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cypress_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cypress_pet_door",
+      "required": false
+    }
+  ]
+}

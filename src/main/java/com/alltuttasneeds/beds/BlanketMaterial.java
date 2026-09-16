@@ -33,4 +33,10 @@ public record BlanketMaterial(String suffix, boolean supportsDeluxe, BooleanSupp
                 : null;
         return configured != null ? configured : TBContent.blanketItem(this, color, tier);
     }
+
+    @Nullable
+    public Item associatedItemFor(BedColor color, BedTier tier) {
+        BedColor vanilla = BedColor.fromVanilla(color.vanillaColor());
+        return color.equals(vanilla) ? associatedItemFor(color.vanillaColor(), tier) : null;
+    }
 }

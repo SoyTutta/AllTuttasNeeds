@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "arts_and_crafts:cork_door",
+      "required": false
+    },
+    {
+      "id": "arts_and_crafts:cork_normal_door",
+      "required": false
+    },
+    {
+      "id": "arts_and_crafts:cork_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "arts_and_crafts:cork_transit_door",
+      "required": false
+    },
+    {
+      "id": "arts_and_crafts:cork_pet_door",
+      "required": false
+    }
+  ]
+}

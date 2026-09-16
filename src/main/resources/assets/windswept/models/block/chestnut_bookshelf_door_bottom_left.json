@@ -1,0 +1,8 @@
+{
+  "parent": "tuttasdoors:block/secret_door_bottom_left",
+  "textures": {
+    "fake": "windswept:block/chestnut_bookshelf",
+    "side": "windswept:block/chestnut_planks",
+    "door": "tuttasdoors:windswept/block/secret_door/chestnut_bookshelf_door_bottom"
+  }
+}

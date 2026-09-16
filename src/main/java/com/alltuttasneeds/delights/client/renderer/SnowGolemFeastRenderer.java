@@ -1,6 +1,7 @@
 package com.alltuttasneeds.delights.client.renderer;
 
 import com.alltuttasneeds.delights.block.entity.SnowGolemFeastBlockEntity;
+import com.alltuttasneeds.delights.face.SnowGolemFeastNameSyncState;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
@@ -16,6 +17,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import org.joml.Matrix4f;
@@ -42,9 +45,19 @@ public class SnowGolemFeastRenderer implements BlockEntityRenderer<SnowGolemFeas
         renderFace(be, state, poseStack, bufferSource, packedLight, packedOverlay);
 
         Component customName = be.getCustomName();
-        if (customName != null) {
+        if (customName != null && (SnowGolemFeastNameSyncState.alwaysShowNames() || shouldShowName(be))) {
             renderName(customName, poseStack, bufferSource, packedLight);
         }
+    }
+
+    private boolean shouldShowName(SnowGolemFeastBlockEntity be) {
+        Minecraft minecraft = Minecraft.getInstance();
+        if (!(minecraft.hitResult instanceof BlockHitResult hitResult)
+                || !hitResult.getBlockPos().equals(be.getBlockPos())) {
+            return false;
+        }
+        Vec3 cameraPosition = minecraft.gameRenderer.getMainCamera().getPosition();
+        return cameraPosition.distanceToSqr(Vec3.atCenterOf(be.getBlockPos())) <= 4096.0D;
     }
 
     private void renderFace(SnowGolemFeastBlockEntity be, BlockState state, PoseStack poseStack,

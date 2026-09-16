@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "bountifulfares"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "consistent"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "door_conversions",
+  "ingredients": [
+    {
+      "item": "bountifulfares:hoary_indiscrete_door"
+    },
+    {
+      "item": "bountifulfares:hoary_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "bountifulfares:hoary_normal_door"
+  }
+}

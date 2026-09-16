@@ -1,6 +1,5 @@
 package com.alltuttasneeds.beds;
 
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 
 import java.util.Map;
@@ -12,7 +11,7 @@ public record MattressFamily(
         Map<CoverMaterial, Supplier<Block>> looseMattressCovers,
         Supplier<Block> bedBare,
         Map<CoverMaterial, Supplier<Block>> bedBasicCovers,
-        Map<BlanketMaterial, Map<DyeColor, Supplier<Block>>> bedBlankets,
-        Map<DyeColor, Supplier<Block>> bedDeluxe
+        Map<BlanketMaterial, Map<BedColor, Supplier<Block>>> bedBlankets,
+        Map<BedColor, Supplier<Block>> bedDeluxe
 ) {
 }

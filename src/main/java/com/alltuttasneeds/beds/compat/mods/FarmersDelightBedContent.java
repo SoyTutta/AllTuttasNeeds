@@ -1,6 +1,7 @@
 package com.alltuttasneeds.beds.compat.mods;
 
 import com.alltuttasneeds.beds.BlanketMaterial;
+import com.alltuttasneeds.beds.BedColor;
 import com.alltuttasneeds.beds.CoverMaterial;
 import com.alltuttasneeds.beds.MattressFamily;
 import com.alltuttasneeds.beds.MattressMaterial;
@@ -71,11 +72,12 @@ public final class FarmersDelightBedContent implements BedModCompat {
     }
 
     @Override
-    public void registerFamilies(List<CoverMaterial> allCovers, List<BlanketMaterial> allBlankets) {
+    public void registerFamilies(List<CoverMaterial> allCovers, List<BlanketMaterial> allBlankets,
+                                 List<BedColor> allColors) {
         if (!TBConfig.moduleEnabled.get()) return;
 
         families = BedRegistrar.registerFamilies(
-                BLOCKS, ITEMS, MATERIALS, allCovers, allBlankets, MATTRESS_PROPERTIES, BED_PROPERTIES);
+                BLOCKS, ITEMS, MATERIALS, allCovers, allBlankets, allColors, MATTRESS_PROPERTIES, BED_PROPERTIES);
     }
 
     @Override

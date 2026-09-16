@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "biomesoplenty:hellbark_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:hellbark_discrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:hellbark_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:hellbark_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:hellbark_pet_door",
+      "required": false
+    }
+  ]
+}

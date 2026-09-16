@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "abundant_atmosphere:gourdrot_door",
+      "required": false
+    },
+    {
+      "id": "abundant_atmosphere:gourdrot_normal_door",
+      "required": false
+    },
+    {
+      "id": "abundant_atmosphere:gourdrot_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "abundant_atmosphere:gourdrot_transit_door",
+      "required": false
+    },
+    {
+      "id": "abundant_atmosphere:gourdrot_pet_door",
+      "required": false
+    }
+  ]
+}

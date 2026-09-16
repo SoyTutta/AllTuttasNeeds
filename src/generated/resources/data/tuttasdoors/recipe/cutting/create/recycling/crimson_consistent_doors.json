@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "consistent"
+    }
+  ],
+  "type": "create:cutting",
+  "ingredients": [
+    [
+      {
+        "item": "tuttasdoors:crimson_normal_door"
+      },
+      {
+        "item": "tuttasdoors:crimson_indiscrete_door"
+      }
+    ]
+  ],
+  "processing_time": 50,
+  "results": [
+    {
+      "id": "minecraft:crimson_planks"
+    }
+  ]
+}

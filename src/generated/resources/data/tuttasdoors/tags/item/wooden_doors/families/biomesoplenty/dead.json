@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "biomesoplenty:dead_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:dead_discrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:dead_normal_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:dead_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:dead_pet_door",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "tuttasdoors:wooden_doors/families/caverns_and_chasms/azalea"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "caverns_and_chasms:azalea_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

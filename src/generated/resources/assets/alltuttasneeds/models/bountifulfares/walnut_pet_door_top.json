@@ -1,0 +1,7 @@
+{
+  "parent": "tuttasdoors:block/pet_door_top",
+  "textures": {
+    "door": "tuttasdoors:bountifulfares/block/pet_door/walnut_door",
+    "extra": "tuttasdoors:bountifulfares/block/pet_door/walnut_door"
+  }
+}

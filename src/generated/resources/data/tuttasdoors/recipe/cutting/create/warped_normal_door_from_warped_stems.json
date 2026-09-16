@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "consistent"
+    }
+  ],
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "tag": "minecraft:warped_stems"
+    }
+  ],
+  "processing_time": 50,
+  "results": [
+    {
+      "count": 2,
+      "id": "tuttasdoors:warped_normal_door"
+    }
+  ]
+}

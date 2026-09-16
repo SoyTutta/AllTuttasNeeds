@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "natures_spirit:maple_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:maple_discrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:maple_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:maple_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:maple_pet_door",
+      "required": false
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 package com.alltuttasneeds.beds.datagen;
 
 import com.alltuttasneeds.beds.BlanketMaterial;
+import com.alltuttasneeds.beds.BedColor;
 import com.alltuttasneeds.beds.MattressFamily;
 import com.alltuttasneeds.beds.compat.BedCompatRegistry;
 import com.alltuttasneeds.beds.TBContent;
@@ -13,7 +14,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BedPart;
@@ -110,7 +110,7 @@ public class TBBlockLootTables extends BlockLootSubProvider implements Condition
                         .add(LootItem.lootTableItem(bare).when(headOnly(covered)))));
     }
 
-    private void generateBlanketedBed(MattressFamily family, BlanketMaterial blanket, DyeColor color, Block block) {
+    private void generateBlanketedBed(MattressFamily family, BlanketMaterial blanket, BedColor color, Block block) {
         LootTable.Builder table = LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))

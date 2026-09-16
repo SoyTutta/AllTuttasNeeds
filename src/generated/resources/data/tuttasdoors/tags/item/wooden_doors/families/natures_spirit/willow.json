@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "natures_spirit:willow_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:willow_discrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:willow_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:willow_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:willow_pet_door",
+      "required": false
+    }
+  ]
+}

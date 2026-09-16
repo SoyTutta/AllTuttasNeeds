@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "environmental:wisteria_door",
+      "required": false
+    },
+    {
+      "id": "environmental:wisteria_discrete_door",
+      "required": false
+    },
+    {
+      "id": "environmental:wisteria_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "environmental:wisteria_transit_door",
+      "required": false
+    },
+    {
+      "id": "environmental:wisteria_pet_door",
+      "required": false
+    }
+  ]
+}

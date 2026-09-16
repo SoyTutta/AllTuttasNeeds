@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "windswept:gingerbread_door",
+      "required": false
+    },
+    {
+      "id": "windswept:gingerbread_discrete_door",
+      "required": false
+    },
+    {
+      "id": "windswept:gingerbread_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "windswept:gingerbread_transit_door",
+      "required": false
+    },
+    {
+      "id": "windswept:gingerbread_pet_door",
+      "required": false
+    }
+  ]
+}

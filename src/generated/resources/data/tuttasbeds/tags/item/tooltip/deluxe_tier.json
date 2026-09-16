@@ -65,6 +65,10 @@
       "required": false
     },
     {
+      "id": "tuttasbeds:wheat_bed_bleached_deluxe",
+      "required": false
+    },
+    {
       "id": "tuttasbeds:soft_bed_white_deluxe",
       "required": false
     },
@@ -126,6 +130,10 @@
     },
     {
       "id": "tuttasbeds:soft_bed_black_deluxe",
+      "required": false
+    },
+    {
+      "id": "tuttasbeds:soft_bed_bleached_deluxe",
       "required": false
     },
     {
@@ -193,6 +201,10 @@
       "required": false
     },
     {
+      "id": "farmersdelight:canvas_bed_bleached_deluxe",
+      "required": false
+    },
+    {
       "id": "farmersdelight:straw_bed_white_deluxe",
       "required": false
     },
@@ -254,6 +266,10 @@
     },
     {
       "id": "farmersdelight:straw_bed_black_deluxe",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:straw_bed_bleached_deluxe",
       "required": false
     }
   ]

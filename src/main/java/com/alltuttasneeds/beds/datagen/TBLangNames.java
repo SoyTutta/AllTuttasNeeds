@@ -1,6 +1,7 @@
 package com.alltuttasneeds.beds.datagen;
 
 import com.alltuttasneeds.beds.BlanketMaterial;
+import com.alltuttasneeds.beds.BedColor;
 import com.alltuttasneeds.beds.CoverMaterial;
 import com.alltuttasneeds.beds.MattressMaterial;
 import com.alltuttasneeds.beds.block.BedFrameBlock;
@@ -29,8 +30,8 @@ final class TBLangNames {
                 case LOW -> bed.basicCover() == null
                         ? material + " Bed"
                         : material + " Bed with " + coverEn(bed.basicCover()) + " Cover";
-                case NORMAL -> colorEn(bed.color()) + " " + material + " Bed" + normalSuffixEn(bed.blanketMaterial());
-                case DELUXE -> colorEn(bed.color()) + " " + material + " Deluxe Bed";
+                case NORMAL -> colorEn(bed.bedColor()) + " " + material + " Bed" + normalSuffixEn(bed.blanketMaterial());
+                case DELUXE -> colorEn(bed.bedColor()) + " " + material + " Deluxe Bed";
                 default -> material + " Bed";
             };
         }
@@ -52,8 +53,8 @@ final class TBLangNames {
                 case LOW -> bed.basicCover() == null
                         ? "Cama " + material
                         : "Cama " + material + " con cubierta de " + coverEs(bed.basicCover());
-                case NORMAL -> "Cama " + material + " " + colorEs(bed.color(), true) + normalSuffixEs(bed.blanketMaterial());
-                case DELUXE -> "Cama " + material + " " + colorEs(bed.color(), true) + " delux";
+                case NORMAL -> "Cama " + material + " " + colorEs(bed.bedColor(), true) + normalSuffixEs(bed.blanketMaterial());
+                case DELUXE -> "Cama " + material + " " + colorEs(bed.bedColor(), true) + " delux";
                 default -> "Cama " + material;
             };
         }
@@ -127,26 +128,39 @@ final class TBLangNames {
         return capitalize(name);
     }
 
+    private static String colorEn(BedColor color) {
+        if (color == null) return "";
+        return color.id().equals("bleached") ? "Bleached" : colorEn(color.vanillaColor());
+    }
+
     private static String colorEs(DyeColor color, boolean feminine) {
         if (color == null) return "";
-        return switch (color) {
-            case WHITE -> feminine ? "blanca" : "blanco";
-            case ORANGE -> "naranja";
-            case MAGENTA -> "magenta";
-            case LIGHT_BLUE -> "azul claro";
-            case YELLOW -> feminine ? "amarilla" : "amarillo";
-            case LIME -> "lima";
-            case PINK -> "rosa";
-            case GRAY -> "gris";
-            case LIGHT_GRAY -> "gris claro";
-            case CYAN -> "cian";
-            case PURPLE -> feminine ? "morada" : "morado";
-            case BLUE -> "azul";
-            case BROWN -> "marrón";
-            case GREEN -> "verde";
-            case RED -> feminine ? "roja" : "rojo";
-            case BLACK -> feminine ? "negra" : "negro";
+        return switch (color.getSerializedName()) {
+            case "white" -> feminine ? "blanca" : "blanco";
+            case "orange" -> "naranja";
+            case "magenta" -> "magenta";
+            case "light_blue" -> "azul claro";
+            case "yellow" -> feminine ? "amarilla" : "amarillo";
+            case "lime" -> "lima";
+            case "pink" -> "rosa";
+            case "gray" -> "gris";
+            case "light_gray" -> "gris claro";
+            case "cyan" -> "cian";
+            case "purple" -> feminine ? "morada" : "morado";
+            case "blue" -> "azul";
+            case "brown" -> "marrón";
+            case "green" -> "verde";
+            case "red" -> feminine ? "roja" : "rojo";
+            case "black" -> feminine ? "negra" : "negro";
+            default -> words(color.getSerializedName());
         };
+    }
+
+    private static String colorEs(BedColor color, boolean feminine) {
+        if (color == null) return "";
+        return color.id().equals("bleached")
+                ? (feminine ? "blanqueada" : "blanqueado")
+                : colorEs(color.vanillaColor(), feminine);
     }
 
     private static String words(String text) {

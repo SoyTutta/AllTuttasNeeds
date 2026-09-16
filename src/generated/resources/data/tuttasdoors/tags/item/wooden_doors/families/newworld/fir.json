@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "newworld:fir_door",
+      "required": false
+    },
+    {
+      "id": "newworld:fir_normal_door",
+      "required": false
+    },
+    {
+      "id": "newworld:fir_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "newworld:fir_transit_door",
+      "required": false
+    },
+    {
+      "id": "newworld:fir_pet_door",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "malum:soulwood_door",
+      "required": false
+    },
+    {
+      "id": "malum:soulwood_discrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:soulwood_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:soulwood_transit_door",
+      "required": false
+    },
+    {
+      "id": "malum:soulwood_pet_door",
+      "required": false
+    }
+  ]
+}

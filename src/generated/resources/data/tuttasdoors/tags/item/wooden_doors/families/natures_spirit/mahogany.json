@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "natures_spirit:mahogany_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:mahogany_discrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:mahogany_normal_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:mahogany_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:mahogany_pet_door",
+      "required": false
+    }
+  ]
+}

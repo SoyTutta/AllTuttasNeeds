@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "secret"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "windswept"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "consistent"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "secret_door_conversion",
+  "ingredients": [
+    {
+      "item": "windswept:chestnut_bookshelf"
+    },
+    {
+      "tag": "tuttasdoors:wooden_doors/discrete"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "windswept:chestnut_bookshelf_door"
+  }
+}

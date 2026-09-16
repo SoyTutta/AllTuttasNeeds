@@ -43,7 +43,7 @@ public final class FaceNameRegistry {
             ResourceLocation.fromNamespaceAndPath("tuttasdelights", "default");
     private static final ResourceLocation DEFAULT_TEXTURE =
             ResourceLocation.fromNamespaceAndPath(
-                    "tuttasdelights", "block/ice_cream_faces/ice_cream_default");
+                    "tuttasdelights", "alltuttasneeds/block/ice_cream_faces/ice_cream_default");
 
     private static Map<ResourceLocation, Appearance> appearances = Map.of();
     private static Map<ResourceLocation, BakedModel[]> bakedModels = Map.of();

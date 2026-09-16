@@ -4,7 +4,6 @@ import com.alltuttasneeds.beds.block.TieredBedBlock;
 import com.alltuttasneeds.beds.compat.BedCompatRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
@@ -42,7 +41,7 @@ public class BedDyeRecipe extends CustomRecipe {
     @Nullable
     private static Block resolve(CraftingInput input) {
         TieredBedBlock bed = null;
-        DyeColor dye = null;
+        BedColor dye = null;
 
         for (int i = 0; i < input.size(); i++) {
             ItemStack stack = input.getItem(i);
@@ -54,18 +53,20 @@ public class BedDyeRecipe extends CustomRecipe {
                 bed = candidate;
             } else if (stack.getItem() instanceof DyeItem dyeItem) {
                 if (dye != null) return null;
-                dye = dyeItem.getDyeColor();
+                dye = BedColor.fromVanilla(dyeItem.getDyeColor());
             } else {
-                return null;
+                if (dye != null) return null;
+                dye = BedCompatRegistry.colorForDye(stack.getItem());
+                if (dye == null) return null;
             }
         }
 
-        if (bed == null || dye == null || bed.color() == dye) return null;
+        if (bed == null || dye == null || dye.equals(bed.bedColor())) return null;
         return recolor(bed, dye);
     }
 
     @Nullable
-    private static Block recolor(TieredBedBlock bed, DyeColor color) {
+    private static Block recolor(TieredBedBlock bed, BedColor color) {
         return BedCompatRegistry.loaded()
                 .flatMap(compat -> compat.families().stream())
                 .filter(family -> family.material().equals(bed.mattress()))
@@ -75,8 +76,8 @@ public class BedDyeRecipe extends CustomRecipe {
     }
 
     @Nullable
-    private static Block sibling(MattressFamily family, TieredBedBlock bed, DyeColor color) {
-        Map<DyeColor, Supplier<Block>> colors = family.bedBlankets().get(bed.blanketMaterial());
+    private static Block sibling(MattressFamily family, TieredBedBlock bed, BedColor color) {
+        Map<BedColor, Supplier<Block>> colors = family.bedBlankets().get(bed.blanketMaterial());
         if (colors == null) return null;
 
         Supplier<Block> result = colors.get(color);

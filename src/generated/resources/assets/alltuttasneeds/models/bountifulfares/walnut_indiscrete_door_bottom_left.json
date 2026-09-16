@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "tuttasdoors:bountifulfares/block/indiscrete_door/walnut_door_bottom",
+    "top": "tuttasdoors:bountifulfares/block/indiscrete_door/walnut_door_top"
+  }
+}

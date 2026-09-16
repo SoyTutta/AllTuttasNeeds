@@ -1,0 +1,36 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "beds"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "arts_and_crafts"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "tuttasbeds:wheat_bed_bleached_wool_blanket"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tuttasbeds:wheat_bed"
+    },
+    {
+      "item": "arts_and_crafts:bleached_wool"
+    },
+    {
+      "item": "arts_and_crafts:bleached_wool"
+    },
+    {
+      "item": "arts_and_crafts:bleached_wool"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasbeds:wheat_bed_bleached_wool_blanket"
+  }
+}

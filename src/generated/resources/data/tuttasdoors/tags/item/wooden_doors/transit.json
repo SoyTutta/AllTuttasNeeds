@@ -153,6 +153,10 @@
       "required": false
     },
     {
+      "id": "windswept:gingerbread_transit_door",
+      "required": false
+    },
+    {
       "id": "spawn:rotten_transit_door",
       "required": false
     },
@@ -278,6 +282,14 @@
     },
     {
       "id": "biomesoplenty:empyreal_transit_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:hoary_transit_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:walnut_transit_door",
       "required": false
     },
     {

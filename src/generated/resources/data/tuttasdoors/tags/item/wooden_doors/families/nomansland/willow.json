@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "nomansland:willow_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:willow_discrete_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:willow_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:willow_transit_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:willow_pet_door",
+      "required": false
+    }
+  ]
+}

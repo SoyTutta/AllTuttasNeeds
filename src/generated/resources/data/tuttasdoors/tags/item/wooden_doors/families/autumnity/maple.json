@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "autumnity:maple_door",
+      "required": false
+    },
+    {
+      "id": "autumnity:maple_discrete_door",
+      "required": false
+    },
+    {
+      "id": "autumnity:maple_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "autumnity:maple_transit_door",
+      "required": false
+    },
+    {
+      "id": "autumnity:maple_pet_door",
+      "required": false
+    }
+  ]
+}

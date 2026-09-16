@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "atmospheric:kousa_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:kousa_normal_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:kousa_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:kousa_transit_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:kousa_pet_door",
+      "required": false
+    }
+  ]
+}

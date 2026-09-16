@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "minecraft:oak_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:oak_discrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:oak_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:oak_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:oak_pet_door",
+      "required": false
+    }
+  ]
+}

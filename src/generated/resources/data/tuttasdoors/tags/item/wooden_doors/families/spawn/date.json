@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "spawn:date_door",
+      "required": false
+    },
+    {
+      "id": "spawn:date_discrete_door",
+      "required": false
+    },
+    {
+      "id": "spawn:date_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "spawn:date_transit_door",
+      "required": false
+    },
+    {
+      "id": "spawn:date_pet_door",
+      "required": false
+    }
+  ]
+}

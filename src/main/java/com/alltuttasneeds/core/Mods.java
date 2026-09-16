@@ -11,6 +11,7 @@ public enum Mods {
     ARTS_AND_CRAFTS    ("arts_and_crafts"),
     BIOMESOPLENTY      ("biomesoplenty"),
     BLOCKBOX           ("blockbox"),
+    BOUNTIFUL_FARES    ("bountifulfares"),
     CREATE             ("create"),
     ENDERSCAPE         ("enderscape"),
     MALUM              ("malum"),

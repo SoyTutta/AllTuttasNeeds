@@ -6,6 +6,7 @@ import com.alltuttasneeds.beds.BedCoverIngredients;
 import com.alltuttasneeds.beds.BedIngredientSyncState;
 import com.alltuttasneeds.beds.BedTierSyncState;
 import com.alltuttasneeds.delights.crafting.DelightsRecipeSyncState;
+import com.alltuttasneeds.delights.face.SnowGolemFeastNameSyncState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -22,5 +23,6 @@ public final class ClientNetworkEvents {
         BedIngredientSyncState.clear();
         BedTierSyncState.clear();
         DelightsRecipeSyncState.clear();
+        SnowGolemFeastNameSyncState.clear();
     }
 }

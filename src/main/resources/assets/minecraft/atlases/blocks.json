@@ -82,6 +82,16 @@
     },
     {
       "type": "directory",
+      "source": "bountifulfares/block",
+      "prefix": "bountifulfares/block/"
+    },
+    {
+      "type": "directory",
+      "source": "bountifulfares/item",
+      "prefix": "bountifulfares/item/"
+    },
+    {
+      "type": "directory",
       "source": "brewinandchewin/item",
       "prefix": "brewinandchewin/item/"
     },

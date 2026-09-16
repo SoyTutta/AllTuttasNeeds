@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "environmental:willow_door",
+      "required": false
+    },
+    {
+      "id": "environmental:willow_discrete_door",
+      "required": false
+    },
+    {
+      "id": "environmental:willow_normal_door",
+      "required": false
+    },
+    {
+      "id": "environmental:willow_transit_door",
+      "required": false
+    },
+    {
+      "id": "environmental:willow_pet_door",
+      "required": false
+    }
+  ]
+}

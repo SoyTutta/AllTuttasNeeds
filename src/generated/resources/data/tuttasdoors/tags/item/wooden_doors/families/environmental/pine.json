@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "environmental:pine_door",
+      "required": false
+    },
+    {
+      "id": "environmental:pine_normal_door",
+      "required": false
+    },
+    {
+      "id": "environmental:pine_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "environmental:pine_transit_door",
+      "required": false
+    },
+    {
+      "id": "environmental:pine_pet_door",
+      "required": false
+    }
+  ]
+}

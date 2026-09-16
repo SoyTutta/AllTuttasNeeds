@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "biomesoplenty:maple_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:maple_normal_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:maple_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:maple_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:maple_pet_door",
+      "required": false
+    }
+  ]
+}

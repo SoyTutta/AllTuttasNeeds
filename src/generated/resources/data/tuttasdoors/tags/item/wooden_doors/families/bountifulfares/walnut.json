@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "bountifulfares:walnut_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:walnut_discrete_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:walnut_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:walnut_transit_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:walnut_pet_door",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "minecraft:jungle_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:jungle_discrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:jungle_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:jungle_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:jungle_pet_door",
+      "required": false
+    }
+  ]
+}

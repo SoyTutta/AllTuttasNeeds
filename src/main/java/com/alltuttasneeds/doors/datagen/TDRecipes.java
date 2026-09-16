@@ -21,5 +21,6 @@ public class TDRecipes extends RecipeProvider {
         CraftingRecipes.register(output);
         CuttingRecipes.register(output);
         WoodworksRecipes.register(output);
+        CreateRecipes.register(output);
     }
 }

@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "natures_spirit:fir_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:fir_discrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:fir_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:fir_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:fir_pet_door",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "add": {
+    "bountifulfares:hoary_door": [
+      "bountifulfares:hoary_normal_door",
+      "bountifulfares:hoary_indiscrete_door",
+      "bountifulfares:hoary_transit_door"
+    ],
+    "bountifulfares:hoary_trapdoor": [
+      "bountifulfares:hoary_pet_door"
+    ],
+    "bountifulfares:walnut_discrete_door": [
+      "bountifulfares:walnut_door",
+      "bountifulfares:walnut_indiscrete_door",
+      "bountifulfares:walnut_transit_door"
+    ],
+    "bountifulfares:walnut_trapdoor": [
+      "bountifulfares:walnut_pet_door"
+    ]
+  }
+}

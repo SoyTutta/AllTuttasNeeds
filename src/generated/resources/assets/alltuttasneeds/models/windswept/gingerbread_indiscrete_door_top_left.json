@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left",
+  "textures": {
+    "bottom": "tuttasdoors:windswept/block/indiscrete_door/gingerbread_door_bottom",
+    "top": "tuttasdoors:windswept/block/indiscrete_door/gingerbread_door_top"
+  }
+}

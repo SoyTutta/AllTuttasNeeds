@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "natures_spirit:palo_verde_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:palo_verde_normal_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:palo_verde_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:palo_verde_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:palo_verde_pet_door",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "natures_spirit:larch_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:larch_normal_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:larch_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:larch_transit_door",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:larch_pet_door",
+      "required": false
+    }
+  ]
+}

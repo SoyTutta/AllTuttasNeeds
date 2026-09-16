@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "abundant_atmosphere:red_bamboo_door",
+      "required": false
+    },
+    {
+      "id": "abundant_atmosphere:red_bamboo_discrete_door",
+      "required": false
+    },
+    {
+      "id": "abundant_atmosphere:red_bamboo_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "abundant_atmosphere:red_bamboo_transit_door",
+      "required": false
+    },
+    {
+      "id": "abundant_atmosphere:red_bamboo_pet_door",
+      "required": false
+    }
+  ]
+}

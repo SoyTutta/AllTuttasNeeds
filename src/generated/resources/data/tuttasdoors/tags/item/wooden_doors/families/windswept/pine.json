@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "windswept:pine_door",
+      "required": false
+    },
+    {
+      "id": "windswept:pine_discrete_door",
+      "required": false
+    },
+    {
+      "id": "windswept:pine_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "windswept:pine_transit_door",
+      "required": false
+    },
+    {
+      "id": "windswept:pine_pet_door",
+      "required": false
+    }
+  ]
+}

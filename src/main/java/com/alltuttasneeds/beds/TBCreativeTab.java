@@ -18,6 +18,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -51,6 +52,7 @@ public class TBCreativeTab {
                                 }
                             }
 
+                            List<BedColor> bedColors = creativeBedColors();
                             BedCompatRegistry.loaded().flatMap(compat -> compat.families().stream()).forEach(family -> {
                                 accept(output, family.looseMattress());
                                 for (CoverMaterial cover : family.looseMattressCovers().keySet()) {
@@ -62,13 +64,13 @@ public class TBCreativeTab {
                                     accept(output, family.bedBasicCovers().get(cover));
                                 }
 
-                                for (Map.Entry<BlanketMaterial, Map<DyeColor, Supplier<Block>>> entry : family.bedBlankets().entrySet()) {
-                                    for (DyeColor color : CREATIVE_COLOR_ORDER) {
+                                for (Map.Entry<BlanketMaterial, Map<BedColor, Supplier<Block>>> entry : family.bedBlankets().entrySet()) {
+                                    for (BedColor color : bedColors) {
                                         accept(output, entry.getValue().get(color));
                                     }
                                 }
 
-                                for (DyeColor color : CREATIVE_COLOR_ORDER) {
+                                for (BedColor color : bedColors) {
                                     accept(output, family.bedDeluxe().get(color));
                                 }
                             });
@@ -80,6 +82,24 @@ public class TBCreativeTab {
                 return builder.build();
             })
             : null;
+
+    private static List<BedColor> creativeBedColors() {
+        List<BedColor> available = BedCompatRegistry.colors();
+        List<BedColor> ordered = new ArrayList<>();
+
+        available.stream()
+                .filter(color -> color.id().equals("bleached"))
+                .forEach(ordered::add);
+        CREATIVE_COLOR_ORDER.stream()
+                .map(BedColor::fromVanilla)
+                .filter(available::contains)
+                .forEach(ordered::add);
+        available.stream()
+                .filter(color -> !ordered.contains(color))
+                .forEach(ordered::add);
+
+        return List.copyOf(ordered);
+    }
 
     private static void accept(CreativeModeTab.Output output, @Nullable Supplier<? extends ItemLike> item) {
         if (item != null && item.get() != null) {

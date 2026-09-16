@@ -39,12 +39,19 @@ public final class BedModelNaming {
         return block instanceof BedBlock bed ? bed.getColor() : DyeColor.BROWN;
     }
 
+    public static String colorName(Block block) {
+        if (block instanceof TieredBedBlock bed && bed.bedColor() != null) {
+            return bed.bedColor().id();
+        }
+        return color(block).getSerializedName();
+    }
+
     public static ResourceLocation blockTexture(Block block) {
         String registryNamespace = BuiltInRegistries.BLOCK.getKey(block).getNamespace();
         String textureOwner = registryNamespace.equals(MODULE_NAMESPACE)
                 ? NATIVE_TEXTURE_OWNER
                 : registryNamespace;
         return ResourceLocation.fromNamespaceAndPath(MODULE_NAMESPACE,
-                textureOwner + "/block/" + type(block) + "/" + color(block).getSerializedName());
+                textureOwner + "/block/" + type(block) + "/" + colorName(block));
     }
 }

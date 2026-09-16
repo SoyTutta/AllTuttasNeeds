@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "spawn"
+    }
+  ],
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "spawn:date_door"
+    }
+  ],
+  "processing_time": 50,
+  "results": [
+    {
+      "id": "spawn:date_planks"
+    }
+  ]
+}

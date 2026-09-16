@@ -1,5 +1,6 @@
 package com.alltuttasneeds.beds.datagen;
 
+import com.alltuttasneeds.beds.BedColor;
 import com.alltuttasneeds.beds.compat.BedCompatRegistry;
 import com.alltuttasneeds.beds.item.BedBlanketItem.BlanketKind;
 import net.minecraft.data.PackOutput;
@@ -24,7 +25,7 @@ public class TBLangES extends LanguageProvider {
     protected void addTranslations() {
         allBlocks.forEach(block -> add(block.getDescriptionId(), TBLangNames.spanish(block)));
         for (BlanketKind kind : BlanketKind.values()) {
-            for (DyeColor color : DyeColor.values()) {
+            for (DyeColor color : BedColor.vanillaDyeColors()) {
                 String id = color.getSerializedName() + "_" + kind.id();
                 add("item.tuttasbeds." + id, TBLangNames.spanish(kind, color));
             }

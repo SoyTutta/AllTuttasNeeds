@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "minecraft:warped_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:warped_normal_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:warped_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:warped_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:warped_pet_door",
+      "required": false
+    }
+  ]
+}

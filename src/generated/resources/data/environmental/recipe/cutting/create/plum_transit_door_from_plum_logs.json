@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "environmental"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "transit"
+    }
+  ],
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "tag": "environmental:plum_logs"
+    }
+  ],
+  "processing_time": 50,
+  "results": [
+    {
+      "count": 2,
+      "id": "environmental:plum_transit_door"
+    }
+  ]
+}

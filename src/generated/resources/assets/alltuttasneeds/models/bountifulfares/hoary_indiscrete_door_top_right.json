@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "tuttasdoors:bountifulfares/block/indiscrete_door/hoary_door_bottom",
+    "top": "tuttasdoors:bountifulfares/block/indiscrete_door/hoary_door_top"
+  }
+}

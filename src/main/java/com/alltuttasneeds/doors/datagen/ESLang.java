@@ -20,7 +20,7 @@ public class ESLang extends LanguageProvider {
 
     private static final String BOOKSHELF_DOOR_SUFFIX = "_bookshelf_door";
 
-    private static final Map<String, String> METAL_MATERIAL_TRANSLATION_MAP = Map.ofEntries(
+    private static final Map<String, String> BARS_MATERIAL_TRANSLATION_MAP = Map.ofEntries(
             Map.entry("iron", "hierro"),
             Map.entry("golden", "oro"),
             Map.entry("copper", "cobre"),
@@ -36,10 +36,11 @@ public class ESLang extends LanguageProvider {
             Map.entry("entwine", "entrelazados"),
             Map.entry("sunmetal", "metal solar"),
             Map.entry("silver", "plata"),
-            Map.entry("tin", "estaño")
+            Map.entry("tin", "estaño"),
+            Map.entry("icicle", "carámbano")
     );
 
-    private static final Set<String> DIRECT_METAL_MODIFIERS = Set.of("entwine");
+    private static final Set<String> DIRECT_BARS_MODIFIERS = Set.of("entwine");
 
     private static final Map<String, String> MATERIAL_TRANSLATION_MAP = Map.ofEntries(
             Map.entry("acacia", "acacia"),
@@ -49,12 +50,14 @@ public class ESLang extends LanguageProvider {
             Map.entry("bamboo", "bambú"),
             Map.entry("birch", "abedul"),
             Map.entry("cherry", "cerezo"),
+            Map.entry("chestnut", "castaño"),
             Map.entry("crimson", "carmesí"),
             Map.entry("dark_oak", "roble oscuro"),
             Map.entry("driftwood", "madera flotante"),
             Map.entry("fir", "pícea"),
             Map.entry("gourdrot", "tallo de calabaza"),
             Map.entry("grimwood", "madera lúgubre"),
+            Map.entry("holly", "acebo"),
             Map.entry("jungle", "jungla"),
             Map.entry("kousa", "cornejo kousa"),
             Map.entry("laurel", "laurel"),
@@ -117,9 +120,9 @@ public class ESLang extends LanguageProvider {
         String metalSuffix = "_bars_sliding_door";
         if (path.endsWith(metalSuffix)) {
             String materialKey = path.substring(0, path.length() - metalSuffix.length());
-            if (METAL_MATERIAL_TRANSLATION_MAP.containsKey(materialKey)) {
-                String translatedMaterial = METAL_MATERIAL_TRANSLATION_MAP.get(materialKey);
-                String connector = DIRECT_METAL_MODIFIERS.contains(materialKey) ? " " : " de ";
+            if (BARS_MATERIAL_TRANSLATION_MAP.containsKey(materialKey)) {
+                String translatedMaterial = BARS_MATERIAL_TRANSLATION_MAP.get(materialKey);
+                String connector = DIRECT_BARS_MODIFIERS.contains(materialKey) ? " " : " de ";
                 String finalName = "Puerta de barrotes" + connector + translatedMaterial;
                 add(descriptionId, finalName);
                 return;

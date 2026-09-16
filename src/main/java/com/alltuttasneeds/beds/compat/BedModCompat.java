@@ -1,6 +1,7 @@
 package com.alltuttasneeds.beds.compat;
 
 import com.alltuttasneeds.beds.BlanketMaterial;
+import com.alltuttasneeds.beds.BedColor;
 import com.alltuttasneeds.beds.CoverMaterial;
 import com.alltuttasneeds.beds.MattressFamily;
 import com.alltuttasneeds.beds.MattressMaterial;
@@ -33,6 +34,11 @@ public interface BedModCompat {
     }
 
     default void registerFamilies(List<CoverMaterial> allCovers, List<BlanketMaterial> allBlankets) {
+    }
+
+    default void registerFamilies(List<CoverMaterial> allCovers, List<BlanketMaterial> allBlankets,
+                                  List<BedColor> allColors) {
+        registerFamilies(allCovers, allBlankets);
     }
 
     default List<MattressFamily> families() {

@@ -1,0 +1,71 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "beds"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "tuttasbeds:wheat_bed_cyan_leather_blanket"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "wheat_bed_leather_blanket",
+  "ingredients": [
+    [
+      {
+        "item": "tuttasbeds:wheat_bed_white_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_orange_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_magenta_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_light_blue_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_yellow_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_lime_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_pink_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_gray_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_light_gray_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_purple_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_blue_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_brown_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_green_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_red_leather_blanket"
+      },
+      {
+        "item": "tuttasbeds:wheat_bed_black_leather_blanket"
+      }
+    ],
+    {
+      "item": "minecraft:cyan_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasbeds:wheat_bed_cyan_leather_blanket"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "tuttasdoors:block/sliding_door_top_left_open",
+  "textures": {
+    "door": "tuttasdoors:windswept/block/sliding_door/icicle_bars_door_top"
+  }
+}

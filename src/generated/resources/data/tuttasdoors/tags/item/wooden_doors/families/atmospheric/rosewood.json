@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "atmospheric:rosewood_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:rosewood_normal_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:rosewood_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:rosewood_transit_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:rosewood_pet_door",
+      "required": false
+    }
+  ]
+}

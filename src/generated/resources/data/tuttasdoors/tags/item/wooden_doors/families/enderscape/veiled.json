@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "enderscape:veiled_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:veiled_discrete_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:veiled_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:veiled_transit_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:veiled_pet_door",
+      "required": false
+    }
+  ]
+}

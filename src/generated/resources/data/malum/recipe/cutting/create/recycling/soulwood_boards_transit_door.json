@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "transit"
+    }
+  ],
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "malum:soulwood_boards_transit_door"
+    }
+  ],
+  "processing_time": 50,
+  "results": [
+    {
+      "id": "malum:soulwood_boards"
+    }
+  ]
+}

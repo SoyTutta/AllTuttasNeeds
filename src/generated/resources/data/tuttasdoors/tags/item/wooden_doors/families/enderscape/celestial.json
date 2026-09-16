@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "enderscape:celestial_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:celestial_normal_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:celestial_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:celestial_transit_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:celestial_pet_door",
+      "required": false
+    }
+  ]
+}

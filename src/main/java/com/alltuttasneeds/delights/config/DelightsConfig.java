@@ -12,6 +12,7 @@ public final class DelightsConfig {
 
     public static ModConfigSpec.BooleanValue moduleEnabled;
     public static ModConfigSpec.BooleanValue useCheeseWedges;
+    public static ModConfigSpec.BooleanValue alwaysShowSnowGolemFeastNames;
 
     private static final Map<DelightGroup, ModConfigSpec.BooleanValue> GROUP_ENABLED =
             new EnumMap<>(DelightGroup.class);
@@ -42,6 +43,14 @@ public final class DelightsConfig {
                 .worldRestart()
                 .define("useCheeseWedges", false);
         builder.pop();
+
+        builder.push("presentation");
+        alwaysShowSnowGolemFeastNames = builder
+                .comment("Always displays custom Snow Golem Feast names.",
+                        "When disabled, names are only displayed while looking at the feast within 64 blocks.")
+                .worldRestart()
+                .define("alwaysShowSnowGolemFeastNames", true);
+        builder.pop();
     }
 
     public static boolean isModuleEnabled() {
@@ -71,5 +80,9 @@ public final class DelightsConfig {
 
     public static boolean useCheeseWedges() {
         return useCheeseWedges != null && useCheeseWedges.get();
+    }
+
+    public static boolean alwaysShowSnowGolemFeastNames() {
+        return alwaysShowSnowGolemFeastNames == null || alwaysShowSnowGolemFeastNames.get();
     }
 }

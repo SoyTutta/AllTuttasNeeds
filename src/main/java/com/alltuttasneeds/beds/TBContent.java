@@ -110,7 +110,7 @@ public final class TBContent implements BedModCompat {
                                                          List<MattressFamily> registeredFamilies) {
         if (!items.isEmpty() || !hasRegisteredVariant(kind, registeredFamilies)) return;
 
-        for (DyeColor color : DyeColor.values()) {
+        for (DyeColor color : BedColor.vanillaDyeColors()) {
             String id = color.getSerializedName() + "_" + kind.id();
             items.put(color, ITEMS.register(id, () -> new BedBlanketItem(kind, color, new Item.Properties())));
         }
@@ -180,11 +180,12 @@ public final class TBContent implements BedModCompat {
     }
 
     @Override
-    public void registerFamilies(List<CoverMaterial> allCovers, List<BlanketMaterial> allBlankets) {
+    public void registerFamilies(List<CoverMaterial> allCovers, List<BlanketMaterial> allBlankets,
+                                 List<BedColor> allColors) {
         if (!TBConfig.moduleEnabled.get()) return;
 
         families = BedRegistrar.registerFamilies(
-                BLOCKS, ITEMS, MATERIALS, allCovers, allBlankets, MATTRESS_PROPERTIES, BED_PROPERTIES);
+                BLOCKS, ITEMS, MATERIALS, allCovers, allBlankets, allColors, MATTRESS_PROPERTIES, BED_PROPERTIES);
     }
 
     @Override

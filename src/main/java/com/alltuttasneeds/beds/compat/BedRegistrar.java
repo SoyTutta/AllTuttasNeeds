@@ -1,6 +1,7 @@
 package com.alltuttasneeds.beds.compat;
 
 import com.alltuttasneeds.beds.BedTier;
+import com.alltuttasneeds.beds.BedColor;
 import com.alltuttasneeds.beds.BlanketMaterial;
 import com.alltuttasneeds.beds.CoverMaterial;
 import com.alltuttasneeds.beds.MattressFamily;
@@ -10,7 +11,6 @@ import com.alltuttasneeds.beds.block.LooseMattressBlock;
 import com.alltuttasneeds.beds.block.TieredBedBlock;
 import com.alltuttasneeds.beds.config.TBConfig;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -20,7 +20,6 @@ import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.ArrayList;
-import java.util.EnumMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,10 +54,21 @@ public final class BedRegistrar {
             List<MattressMaterial> materials, List<CoverMaterial> covers, List<BlanketMaterial> blankets,
             BlockBehaviour.Properties mattressProperties, BlockBehaviour.Properties bedProperties
     ) {
+        return registerFamilies(blocks, items, materials, covers, blankets, BedColor.vanillaColors(),
+                mattressProperties, bedProperties);
+    }
+
+    public static List<MattressFamily> registerFamilies(
+            DeferredRegister<Block> blocks, DeferredRegister<Item> items,
+            List<MattressMaterial> materials, List<CoverMaterial> covers, List<BlanketMaterial> blankets,
+            List<BedColor> colors,
+            BlockBehaviour.Properties mattressProperties, BlockBehaviour.Properties bedProperties
+    ) {
         List<MattressFamily> families = new ArrayList<>();
         for (MattressMaterial material : materials) {
             if (material.isEnabled()) {
-                families.add(registerFamily(blocks, items, material, covers, blankets, mattressProperties, bedProperties));
+                families.add(registerFamily(blocks, items, material, covers, blankets, colors,
+                        mattressProperties, bedProperties));
             }
         }
         return List.copyOf(families);
@@ -69,24 +79,34 @@ public final class BedRegistrar {
             MattressMaterial material, List<CoverMaterial> covers, List<BlanketMaterial> blankets,
             BlockBehaviour.Properties mattressProperties, BlockBehaviour.Properties bedProperties
     ) {
+        return registerFamily(blocks, items, material, covers, blankets, BedColor.vanillaColors(),
+                mattressProperties, bedProperties);
+    }
+
+    public static MattressFamily registerFamily(
+            DeferredRegister<Block> blocks, DeferredRegister<Item> items,
+            MattressMaterial material, List<CoverMaterial> covers, List<BlanketMaterial> blankets,
+            List<BedColor> availableColors,
+            BlockBehaviour.Properties mattressProperties, BlockBehaviour.Properties bedProperties
+    ) {
         String id = material.id();
 
-        Map<BlanketMaterial, Map<DyeColor, Supplier<Block>>> bedBlankets = new LinkedHashMap<>();
-        Map<DyeColor, Supplier<Block>> deluxe = new EnumMap<>(DyeColor.class);
+        Map<BlanketMaterial, Map<BedColor, Supplier<Block>>> bedBlankets = new LinkedHashMap<>();
+        Map<BedColor, Supplier<Block>> deluxe = new LinkedHashMap<>();
 
         for (BlanketMaterial blanket : blankets) {
             if (!blanket.isEnabled()) continue;
 
-            Map<DyeColor, Supplier<Block>> colors = new EnumMap<>(DyeColor.class);
-            for (DyeColor color : DyeColor.values()) {
-                colors.put(color, registerBlockItem(blocks, items, id + "_bed_" + color.getSerializedName() + "_" + blanket.suffix(),
+            Map<BedColor, Supplier<Block>> colors = new LinkedHashMap<>();
+            for (BedColor color : availableColors) {
+                colors.put(color, registerBlockItem(blocks, items, id + "_bed_" + color.id() + "_" + blanket.suffix(),
                         () -> new TieredBedBlock(material, BedTier.NORMAL, null, blanket, color, Map.of(), Map.of(), bedProperties)));
             }
             bedBlankets.put(blanket, colors);
 
             if (blanket.supportsDeluxe() && TBConfig.deluxeTierEnabled.get()) {
-                for (DyeColor color : DyeColor.values()) {
-                    deluxe.put(color, registerBlockItem(blocks, items, id + "_bed_" + color.getSerializedName() + "_deluxe",
+                for (BedColor color : availableColors) {
+                    deluxe.put(color, registerBlockItem(blocks, items, id + "_bed_" + color.id() + "_deluxe",
                             () -> new TieredBedBlock(material, BedTier.DELUXE, null, blanket, color, Map.of(), Map.of(), bedProperties)));
                 }
             }
@@ -96,7 +116,8 @@ public final class BedRegistrar {
         for (CoverMaterial cover : covers) {
             if (!cover.isEnabled()) continue;
             bedCovers.put(cover, registerBlockItem(blocks, items, id + "_bed_" + cover.suffix(),
-                    () -> new TieredBedBlock(material, BedTier.LOW, cover, null, null, bedCovers, Map.of(), bedProperties)));
+                    () -> new TieredBedBlock(material, BedTier.LOW, cover, null, (BedColor) null,
+                            bedCovers, Map.of(), bedProperties)));
         }
 
         Supplier<Block> bedBare = blocks.register(id + "_bed",

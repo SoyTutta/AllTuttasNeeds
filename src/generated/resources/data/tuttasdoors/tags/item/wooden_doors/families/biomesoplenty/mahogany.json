@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "biomesoplenty:mahogany_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:mahogany_discrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:mahogany_normal_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:mahogany_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:mahogany_pet_door",
+      "required": false
+    }
+  ]
+}

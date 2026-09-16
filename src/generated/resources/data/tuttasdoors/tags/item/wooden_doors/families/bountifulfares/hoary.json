@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "bountifulfares:hoary_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:hoary_normal_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:hoary_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:hoary_transit_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:hoary_pet_door",
+      "required": false
+    }
+  ]
+}

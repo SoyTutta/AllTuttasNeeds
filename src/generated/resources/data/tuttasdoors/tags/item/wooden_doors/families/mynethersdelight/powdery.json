@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "mynethersdelight:powdery_door",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:powdery_discrete_door",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:powdery_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:powdery_transit_door",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:powdery_pet_door",
+      "required": false
+    }
+  ]
+}

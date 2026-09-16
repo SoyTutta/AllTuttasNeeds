@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "windswept:holly_door",
+      "required": false
+    },
+    {
+      "id": "windswept:holly_discrete_door",
+      "required": false
+    },
+    {
+      "id": "windswept:holly_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "windswept:holly_transit_door",
+      "required": false
+    },
+    {
+      "id": "windswept:holly_pet_door",
+      "required": false
+    }
+  ]
+}

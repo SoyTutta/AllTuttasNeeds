@@ -153,6 +153,10 @@
       "required": false
     },
     {
+      "id": "windswept:gingerbread_indiscrete_door",
+      "required": false
+    },
+    {
       "id": "spawn:rotten_indiscrete_door",
       "required": false
     },
@@ -278,6 +282,14 @@
     },
     {
       "id": "biomesoplenty:empyreal_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:hoary_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "bountifulfares:walnut_indiscrete_door",
       "required": false
     },
     {

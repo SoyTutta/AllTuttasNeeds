@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "malum:bolted_soulwood_boards_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_soulwood_boards_discrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_soulwood_boards_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_soulwood_boards_transit_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_soulwood_boards_pet_door",
+      "required": false
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import com.alltuttasneeds.beds.config.TBConfig;
 import com.alltuttasneeds.core.Mods;
 import com.alltuttasneeds.delights.config.DelightsConfig;
 import com.alltuttasneeds.delights.crafting.DelightsRecipeSyncState;
+import com.alltuttasneeds.delights.face.SnowGolemFeastNameSyncState;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -33,7 +34,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 public final class ATNNetwork {
-    private static final String PROTOCOL_VERSION = "4";
+    private static final String PROTOCOL_VERSION = "5";
 
     private ATNNetwork() {}
 
@@ -54,6 +55,7 @@ public final class ATNNetwork {
                             payload.vanillaBedsUseTieredSleepDuration(),
                             payload.sleepDurationMultipliers());
                     DelightsRecipeSyncState.apply(payload.useCheeseWedges());
+                    SnowGolemFeastNameSyncState.apply(payload.alwaysShowSnowGolemFeastNames());
                 });
         registrar.playToClient(
                 BedIngredientsSyncPayload.TYPE,
@@ -93,7 +95,8 @@ public final class ATNNetwork {
                                           boolean tieredSleepDurationEnabled,
                                           boolean vanillaBedsUseTieredSleepDuration,
                                           Map<BedTier, Double> sleepDurationMultipliers,
-                                          boolean useCheeseWedges) implements CustomPacketPayload {
+                                          boolean useCheeseWedges,
+                                          boolean alwaysShowSnowGolemFeastNames) implements CustomPacketPayload {
         private static final int MAX_ENTRIES = 32768;
         private static final Type<ServerRulesSyncPayload> TYPE = new Type<>(
                 ResourceLocation.fromNamespaceAndPath(AllTuttasNeeds.MODID, "server_rules"));
@@ -122,13 +125,15 @@ public final class ATNNetwork {
                     sleepDurationMultipliers.put(tier, multiplier);
                 }
                 boolean useCheeseWedges = buffer.readBoolean();
+                boolean alwaysShowSnowGolemFeastNames = buffer.readBoolean();
                 return new ServerRulesSyncPayload(
                         tiers,
                         bedsModuleEnabled,
                         tieredSleepDurationEnabled,
                         vanillaBedsUseTieredSleepDuration,
                         sleepDurationMultipliers,
-                        useCheeseWedges);
+                        useCheeseWedges,
+                        alwaysShowSnowGolemFeastNames);
             }
 
             @Override
@@ -145,6 +150,7 @@ public final class ATNNetwork {
                     buffer.writeDouble(payload.sleepDurationMultipliers().get(tier));
                 }
                 buffer.writeBoolean(payload.useCheeseWedges());
+                buffer.writeBoolean(payload.alwaysShowSnowGolemFeastNames());
             }
         };
 
@@ -173,7 +179,8 @@ public final class ATNNetwork {
                     TBConfig.tieredSleepDurationEnabled.get(),
                     TBConfig.vanillaBedsUseTieredSleepDuration.get(),
                     sleepDurationMultipliers,
-                    useCheeseWedges);
+                    useCheeseWedges,
+                    DelightsConfig.alwaysShowSnowGolemFeastNames());
         }
 
         @Override

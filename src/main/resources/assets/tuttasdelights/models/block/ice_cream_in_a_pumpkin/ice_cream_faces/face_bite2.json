@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "minecraft:cutout",
 	"ambientocclusion": "false",
 	"textures": {
 		"10": "tuttasdelights:alltuttasneeds/block/ice_cream_faces/ice_cream_default"

@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "malum:bolted_runewood_boards_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_runewood_boards_discrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_runewood_boards_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_runewood_boards_transit_door",
+      "required": false
+    },
+    {
+      "id": "malum:bolted_runewood_boards_pet_door",
+      "required": false
+    }
+  ]
+}

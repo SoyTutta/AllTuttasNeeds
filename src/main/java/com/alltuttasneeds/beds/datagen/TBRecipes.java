@@ -2,11 +2,11 @@ package com.alltuttasneeds.beds.datagen;
 
 import com.alltuttasneeds.beds.BedDyeRecipe;
 import com.alltuttasneeds.beds.BedBlanketRecipe;
+import com.alltuttasneeds.beds.BedColor;
 import com.alltuttasneeds.beds.BlanketMaterial;
 import com.alltuttasneeds.beds.CoverMaterial;
 import com.alltuttasneeds.beds.MattressFamily;
 import com.alltuttasneeds.beds.TBContent;
-import com.alltuttasneeds.beds.WoolColors;
 import com.alltuttasneeds.beds.compat.BedCompatRegistry;
 import com.alltuttasneeds.core.Mods;
 import com.alltuttasneeds.core.condition.ModuleEnabledCondition;
@@ -23,7 +23,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -33,6 +32,9 @@ import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.common.conditions.ItemExistsCondition;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -51,6 +53,7 @@ public final class TBRecipes {
             registerMattress(familyOutput, family);
             registerFrameMattressCombos(familyOutput, family, owner);
             registerDirectApplyRecipes(familyOutput, family, owner);
+            registerBedRecoloring(familyOutput, family);
             registerWoolBlankets(familyOutput, family);
             registerLeatherBlankets(familyOutput, family);
             registerDeluxeUpgrades(familyOutput, family);
@@ -104,6 +107,39 @@ public final class TBRecipes {
     private static void registerBedBlanketing(RecipeOutput output) {
         SpecialRecipeBuilder.special(BedBlanketRecipe::new)
                 .save(output, ResourceLocation.fromNamespaceAndPath("tuttasbeds", "crafting/bed_blanket"));
+    }
+
+    private static void registerBedRecoloring(RecipeOutput output, MattressFamily family) {
+        family.bedBlankets().forEach((blanket, colors) -> colors.forEach((targetColor, targetSupplier) -> {
+            Item dye = targetColor.dyeIngredient();
+            if (dye == null) return;
+
+            Map<Mods, List<ItemLike>> sourcesByDependency = new LinkedHashMap<>();
+            colors.forEach((sourceColor, sourceSupplier) -> {
+                if (!sourceColor.equals(targetColor)) {
+                    sourcesByDependency.computeIfAbsent(sourceColor.requiredMod(), ignored -> new ArrayList<>())
+                            .add(sourceSupplier.get());
+                }
+            });
+
+            Block target = targetSupplier.get();
+            String group = family.material().id() + "_bed_" + blanket.suffix();
+            sourcesByDependency.forEach((sourceDependency, sources) -> {
+                if (sources.isEmpty()) return;
+
+                RecipeOutput recipeOutput = conditionalForColor(output, targetColor);
+                if (sourceDependency != null) recipeOutput = conditional(recipeOutput, sourceDependency);
+
+                String kind = sourceDependency == null ? "dye" : "dye_from_" + sourceDependency.id();
+                ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, target)
+                        .requires(Ingredient.of(sources.toArray(ItemLike[]::new)))
+                        .requires(dye)
+                        .group(group)
+                        .unlockedBy("has_bed", hasAny(sources))
+                        .unlockedBy("has_dye", has(dye))
+                        .save(forResult(recipeOutput, target), idFor(target, kind));
+            });
+        }));
     }
 
     private static void registerMattress(RecipeOutput output, MattressFamily family) {
@@ -172,16 +208,16 @@ public final class TBRecipes {
         Supplier<Block> bareBed = family.bedBare();
         if (bareBed == null) return;
 
-        Map<DyeColor, Supplier<Block>> byColor = blanketColors(family, "wool_blanket");
-        for (DyeColor color : DyeColor.values()) {
+        Map<BedColor, Supplier<Block>> byColor = blanketColors(family, "wool_blanket");
+        for (BedColor color : BedCompatRegistry.colors()) {
             Supplier<Block> result = byColor.get(color);
             if (result == null) continue;
 
             ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, result.get())
                     .requires(bareBed.get())
-                    .requires(WoolColors.woolItem(color), 3)
+                    .requires(color.woolIngredient(), 3)
                     .unlockedBy("has_bed", has(bareBed.get()))
-                    .save(forResult(output, result.get()), idFor(result.get()));
+                    .save(forResult(conditionalForColor(output, color), result.get()), idFor(result.get()));
         }
     }
 
@@ -189,9 +225,10 @@ public final class TBRecipes {
         Supplier<Block> bareBed = family.bedBare();
         if (bareBed == null) return;
 
-        Map<DyeColor, Supplier<Block>> byColor = blanketColors(family, "leather_blanket");
+        Map<BedColor, Supplier<Block>> byColor = blanketColors(family, "leather_blanket");
 
-        Supplier<Block> brown = byColor.get(DyeColor.BROWN);
+        BedColor brownColor = BedColor.fromVanilla(DyeColor.BROWN);
+        Supplier<Block> brown = byColor.get(brownColor);
         if (brown != null) {
             ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, brown.get())
                     .requires(bareBed.get())
@@ -200,25 +237,26 @@ public final class TBRecipes {
                     .save(forResult(output, brown.get()), idFor(brown.get()));
         }
 
-        for (DyeColor color : DyeColor.values()) {
-            if (color == DyeColor.BROWN) continue;
+        for (BedColor color : BedCompatRegistry.colors()) {
+            if (color.equals(brownColor)) continue;
             Supplier<Block> result = byColor.get(color);
-            if (result == null) continue;
+            Item dye = color.dyeIngredient();
+            if (result == null || dye == null) continue;
 
             ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, result.get())
                     .requires(bareBed.get())
                     .requires(Items.LEATHER, 3)
-                    .requires(DyeItem.byColor(color))
+                    .requires(dye)
                     .unlockedBy("has_bed", has(bareBed.get()))
-                    .save(forResult(output, result.get()), idFor(result.get()));
+                    .save(forResult(conditionalForColor(output, color), result.get()), idFor(result.get()));
         }
     }
 
     private static void registerDeluxeUpgrades(RecipeOutput output, MattressFamily family) {
-        Map<DyeColor, Supplier<Block>> wool = blanketColors(family, "wool_blanket");
-        Map<DyeColor, Supplier<Block>> deluxe = family.bedDeluxe();
+        Map<BedColor, Supplier<Block>> wool = blanketColors(family, "wool_blanket");
+        Map<BedColor, Supplier<Block>> deluxe = family.bedDeluxe();
 
-        for (DyeColor color : DyeColor.values()) {
+        for (BedColor color : BedCompatRegistry.colors()) {
             Supplier<Block> normal = wool.get(color);
             Supplier<Block> result = deluxe.get(color);
             if (normal == null || result == null) continue;
@@ -230,12 +268,12 @@ public final class TBRecipes {
                     .define('P', Items.IRON_NUGGET)
                     .define('#', normal.get())
                     .unlockedBy("has_normal_bed", has(normal.get()))
-                    .save(forResult(output, result.get()), idFor(result.get()));
+                    .save(forResult(conditionalForColor(output, color), result.get()), idFor(result.get()));
         }
     }
 
-    private static Map<DyeColor, Supplier<Block>> blanketColors(MattressFamily family, String blanketSuffix) {
-        for (Map.Entry<BlanketMaterial, Map<DyeColor, Supplier<Block>>> entry : family.bedBlankets().entrySet()) {
+    private static Map<BedColor, Supplier<Block>> blanketColors(MattressFamily family, String blanketSuffix) {
+        for (Map.Entry<BlanketMaterial, Map<BedColor, Supplier<Block>>> entry : family.bedBlankets().entrySet()) {
             if (entry.getKey().suffix().equals(blanketSuffix)) return entry.getValue();
         }
         return Map.of();
@@ -259,10 +297,19 @@ public final class TBRecipes {
         return InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(tag).build());
     }
 
+    private static Criterion<?> hasAny(List<ItemLike> items) {
+        return InventoryChangeTrigger.TriggerInstance.hasItems(
+                ItemPredicate.Builder.item().of(items.toArray(ItemLike[]::new)).build());
+    }
+
     private static RecipeOutput conditionalForCover(RecipeOutput output, CoverMaterial cover, Mods owner) {
         return cover.suffix().equals("canvas_cover") && owner != Mods.FARMERS_DELIGHT
                 ? conditional(output, Mods.FARMERS_DELIGHT)
                 : output;
+    }
+
+    private static RecipeOutput conditionalForColor(RecipeOutput output, BedColor color) {
+        return color.requiredMod() == null ? output : conditional(output, color.requiredMod());
     }
 
     private static RecipeOutput forResult(RecipeOutput output, ItemLike result) {

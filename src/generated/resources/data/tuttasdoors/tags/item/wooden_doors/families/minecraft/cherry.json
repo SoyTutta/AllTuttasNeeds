@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "minecraft:cherry_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:cherry_discrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:cherry_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:cherry_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:cherry_pet_door",
+      "required": false
+    }
+  ]
+}

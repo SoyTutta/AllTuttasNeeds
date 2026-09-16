@@ -32,6 +32,10 @@ public class TDTags {
     public static final TagKey<Item> PET_DOORS_ITEMS = modItemTag("doors/pet");
     public static final TagKey<Item> SLIDING_DOORS_ITEMS = modItemTag("doors/sliding");
 
+    public static TagKey<Item> woodFamilyDoors(ResourceLocation family) {
+        return modItemTag("wooden_doors/families/" + family.getNamespace() + "/" + family.getPath());
+    }
+
     private static TagKey<Item> modItemTag(String path) {
         return ItemTags.create(ResourceLocation.fromNamespaceAndPath("tuttasdoors", path));
     }

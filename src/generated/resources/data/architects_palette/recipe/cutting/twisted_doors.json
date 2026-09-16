@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "architects_palette"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "tuttasdoors:wooden_doors/families/architects_palette/twisted"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "architects_palette:twisted_planks"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:axes"
+  }
+}

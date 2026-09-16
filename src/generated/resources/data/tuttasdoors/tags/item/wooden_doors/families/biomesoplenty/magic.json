@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "biomesoplenty:magic_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:magic_discrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:magic_normal_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:magic_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:magic_pet_door",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "minecraft:crimson_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:crimson_normal_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:crimson_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:crimson_transit_door",
+      "required": false
+    },
+    {
+      "id": "tuttasdoors:crimson_pet_door",
+      "required": false
+    }
+  ]
+}

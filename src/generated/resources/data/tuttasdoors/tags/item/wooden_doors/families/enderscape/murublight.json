@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "enderscape:murublight_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:murublight_normal_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:murublight_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:murublight_transit_door",
+      "required": false
+    },
+    {
+      "id": "enderscape:murublight_pet_door",
+      "required": false
+    }
+  ]
+}

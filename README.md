@@ -45,12 +45,14 @@ Module and content switches are loaded from `alltuttasneeds-startup.toml`
 because they can change which registry entries exist; client and server must
 use the same file when playing together. Local tooltip preferences for Doors
 and Beds are stored in `alltuttasneeds-client.toml`. Automatic door behavior,
-bed interaction and tier rules, and the Delights cheese recipe option are
+bed interaction and tier rules, and the Delights cheese recipe and Snow Golem
+Feast name display options are
 stored globally in `alltuttasneeds-common.toml`. All Tutta's Needs
 must be installed on both the client and server; connection negotiation rejects
 a missing installation or incompatible network protocol before joining.
-The server synchronizes each bed's effective tier, tiered sleep timing and the
-active Delights cheese ingredient when joining and after data pack reloads.
+The server synchronizes each bed's effective tier, tiered sleep timing, the
+active Delights cheese ingredient and Snow Golem Feast name display behavior
+when joining and after data pack reloads.
 Client tooltips, sleep progress and recipe displays therefore follow the
 server's common rules without replacing local configuration files.
 When updating from the previous single-file configuration or the obsolete
@@ -62,15 +64,24 @@ without replacing values already present in either new file.
 Door compatibility is available for Vanilla Backport, No Man's Land, New
 World, Abundant Atmosphere, Caverns & Chasms, Upgrade Aquatic, Atmospheric,
 Environmental, Autumnity, Windswept, Spawn, Nature's Spirit, Biomes O' Plenty,
-Enderscape, Arts & Crafts, My Nether's Delight, Architect's Palette, Malum, Create,
+Bountiful Fares, Enderscape, Arts & Crafts, My Nether's Delight, Architect's Palette, Malum, Create,
 BlockBox and Woodworks.
 
 When Woodworks is installed, its sawmill can produce enabled Tutta's Doors variants
 from the matching wood-family tag, convert matching doors and trapdoors between their
 available forms, and create secret bookshelf doors from their bookshelves.
 
+When Create is installed, its mechanical saw can produce enabled door variants from
+the matching logs, recycle doors into their family material, and convert bookshelves
+to and from their secret-door variants.
+
 Farmer's Delight adds straw and canvas mattress materials and canvas covers.
-It is also the base mod required for Tutta's Delights: when Farmer's Delight is
+Arts & Crafts adds its Bleached colour to wool, leather and Deluxe beds for
+every available mattress material.
+Windswept adds a complete Gingerbread door family whose recipes use Gingerbread
+Cookies and Ginger Roots, a sliding door made from Icicle Bars, and secret bookshelf
+doors for Holly, Pine and Chestnut.
+Farmer's Delight is also the base mod required for Tutta's Delights: when it is
 not installed, the entire Delights module remains inactive. My Nether's Delight,
 Brewin' and Chewin', Miner's Delight and Spawn add optional Delights content
 through internal compatibility paths. Their entries follow the related content groups
@@ -106,9 +117,18 @@ Delights recipes and loot modifiers carry the Delights module condition, plus
 owner-mod conditions where required, so disabled or unavailable content is not
 loaded.
 
+Snow Golem Feast appearances use matching definitions in
+`assets/<namespace>/snow_golem_feast_faces` and
+`data/<namespace>/snow_golem_feast_faces`. Each server-side rule can associate
+names with an appearance and assign its `random_weight`; a weight of zero keeps
+the appearance available through renaming while excluding it from random
+placement. The bundled pool assigns 60% of random placements to general faces,
+30% to mob faces, 5% to Undertale faces and 5% to special faces. Player faces
+are available only through renaming.
+
 ## Development
 
-The project targets Java 21, Minecraft 1.21.1 and NeoForge 21.1.234. Generated
+The project targets Java 21, Minecraft 1.21.1 and NeoForge 21.1.250. Generated
 resources live in `src/generated/resources` and are part of the main resource
 set.
 

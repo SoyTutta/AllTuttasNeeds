@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "nomansland:pine_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:pine_discrete_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:pine_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:pine_transit_door",
+      "required": false
+    },
+    {
+      "id": "nomansland:pine_pet_door",
+      "required": false
+    }
+  ]
+}

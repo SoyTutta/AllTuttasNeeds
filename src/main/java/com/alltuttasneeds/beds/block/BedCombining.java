@@ -1,6 +1,7 @@
 package com.alltuttasneeds.beds.block;
 
 import com.alltuttasneeds.beds.BedTier;
+import com.alltuttasneeds.beds.BedColor;
 import com.alltuttasneeds.beds.BedDecorationResolver;
 import com.alltuttasneeds.beds.BlanketMaterial;
 import com.alltuttasneeds.beds.CoverMaterial;
@@ -12,7 +13,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -143,6 +143,26 @@ final class BedCombining {
         return true;
     }
 
+    static boolean swapLooseMattress(Level level, BlockPos pos, BlockState state, LooseMattressBlock currentMattress,
+                                     LooseMattressBlock replacementMattress, Player player, ItemStack usedStack) {
+        if (replacementMattress.material().equals(currentMattress.material())) return false;
+
+        MattressFamily currentFamily = findFamily(currentMattress.material());
+        MattressFamily replacementFamily = findFamily(replacementMattress.material());
+        if (currentFamily == null || replacementFamily == null) return false;
+
+        Block result = replacementMattress.cover() == null
+                ? replacementFamily.looseMattress().get()
+                : get(replacementFamily.looseMattressCovers().get(replacementMattress.cover()));
+        if (result == null) return false;
+
+        replaceBothParts(level, pos, state, result, player, usedStack);
+        if (!level.isClientSide && !player.getAbilities().instabuild) {
+            Block.popResource(level, pos, new ItemStack(currentFamily.looseMattress().get()));
+        }
+        return true;
+    }
+
     static boolean applyDecoration(Level level, BlockPos pos, BlockState state, TieredBedBlock currentBed,
                                    Player player, ItemStack usedStack) {
         MattressFamily family = findFamily(currentBed.mattress());
@@ -171,14 +191,14 @@ final class BedCombining {
     private static Block replacementBed(MattressFamily family, TieredBedBlock currentBed,
                                         LooseMattressBlock replacementMattress) {
         if (currentBed.blanketMaterial() != null) {
-            DyeColor color = currentBed.color();
+            BedColor color = currentBed.bedColor();
             if (color == null) return null;
 
             if (currentBed.tier() == BedTier.DELUXE) {
                 return get(family.bedDeluxe().get(color));
             }
 
-            Map<DyeColor, Supplier<Block>> colors = family.bedBlankets().get(currentBed.blanketMaterial());
+            Map<BedColor, Supplier<Block>> colors = family.bedBlankets().get(currentBed.blanketMaterial());
             return colors == null ? null : get(colors.get(color));
         }
 
@@ -199,7 +219,7 @@ final class BedCombining {
 
     @Nullable
     private static Item blanketItem(TieredBedBlock bed) {
-        DyeColor color = bed.color();
+        BedColor color = bed.bedColor();
         if (color == null || bed.blanketMaterial() == null) return null;
         return bed.blanketMaterial().associatedItemFor(color, bed.tier());
     }

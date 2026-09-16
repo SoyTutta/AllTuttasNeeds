@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "biomesoplenty:palm_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:palm_discrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:palm_normal_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:palm_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:palm_pet_door",
+      "required": false
+    }
+  ]
+}

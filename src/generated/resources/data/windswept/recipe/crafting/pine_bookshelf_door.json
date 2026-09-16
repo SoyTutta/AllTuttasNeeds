@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "secret"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "windswept"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "secret_doors",
+  "key": {
+    "#": {
+      "item": "windswept:pine_bookshelf"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "windswept:pine_bookshelf_door"
+  }
+}

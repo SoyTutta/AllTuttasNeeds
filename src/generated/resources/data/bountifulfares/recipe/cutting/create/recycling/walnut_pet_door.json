@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "bountifulfares"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "pet"
+    }
+  ],
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "bountifulfares:walnut_pet_door"
+    }
+  ],
+  "processing_time": 50,
+  "results": [
+    {
+      "id": "bountifulfares:walnut_planks"
+    }
+  ]
+}

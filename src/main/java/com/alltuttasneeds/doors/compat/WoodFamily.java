@@ -21,7 +21,8 @@ public record WoodFamily(
         UnaryOperator<BlockBehaviour.Properties> propertiesCustomizer,
         @Nullable String plankId,
         LogKind logKind,
-        @Nullable String logTagId
+        @Nullable String logTagId,
+        @Nullable String stickId
 ) {
 
     public WoodFamily(String familyId, String registryName, Supplier<BlockSetType> setType,
@@ -30,7 +31,7 @@ public record WoodFamily(
                       @Nullable String plankId, LogKind logKind) {
         this(familyId, registryName, setType, baseDoor, displayOrder, nonFlammable,
                 propertiesCustomizer, plankId, logKind,
-                familyNamespace(familyId) + ":" + registryName + logKind.tagSuffix());
+                familyNamespace(familyId) + ":" + registryName + logKind.tagSuffix(), null);
     }
 
     public WoodFamily(String familyId, String registryName, Supplier<BlockSetType> setType,
@@ -89,6 +90,10 @@ public record WoodFamily(
         return plankId != null ? plankId : familyNamespace() + ":" + registryName + "_planks";
     }
 
+    public String resolvedStickId() {
+        return stickId != null ? stickId : "minecraft:stick";
+    }
+
     public String cuttingOutputId() {
         String id = resolvedPlankId();
         return id.startsWith("#") ? id.substring(1) : id;
@@ -109,7 +114,12 @@ public record WoodFamily(
 
     public WoodFamily withLogTagId(@Nullable String logTagId) {
         return new WoodFamily(familyId, registryName, setType, baseDoor, displayOrder, nonFlammable,
-                propertiesCustomizer, plankId, logKind, logTagId);
+                propertiesCustomizer, plankId, logKind, logTagId, stickId);
+    }
+
+    public WoodFamily withStickId(@Nullable String stickId) {
+        return new WoodFamily(familyId, registryName, setType, baseDoor, displayOrder, nonFlammable,
+                propertiesCustomizer, plankId, logKind, logTagId, stickId);
     }
 
     public EnumSet<DoorVariant> registeredVariants() {

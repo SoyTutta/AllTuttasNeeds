@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "architects_palette:twisted_door",
+      "required": false
+    },
+    {
+      "id": "architects_palette:twisted_discrete_door",
+      "required": false
+    },
+    {
+      "id": "architects_palette:twisted_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "architects_palette:twisted_transit_door",
+      "required": false
+    },
+    {
+      "id": "architects_palette:twisted_pet_door",
+      "required": false
+    }
+  ]
+}

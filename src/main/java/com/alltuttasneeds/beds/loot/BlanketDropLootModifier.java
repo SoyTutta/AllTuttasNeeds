@@ -1,6 +1,7 @@
 package com.alltuttasneeds.beds.loot;
 
 import com.alltuttasneeds.beds.BlanketMaterial;
+import com.alltuttasneeds.beds.BedColor;
 import com.alltuttasneeds.beds.MattressFamily;
 import com.alltuttasneeds.beds.block.TieredBedBlock;
 import com.alltuttasneeds.beds.compat.BedCompatRegistry;
@@ -10,7 +11,6 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -49,7 +49,7 @@ public final class BlanketDropLootModifier extends LootModifier {
         }
 
         BlanketMaterial blanket = bed.blanketMaterial();
-        DyeColor color = bed.color();
+        BedColor color = bed.bedColor();
         if (blanket == null || color == null) return generatedLoot;
 
         Item blanketItem = blanket.associatedItemFor(color, bed.tier());

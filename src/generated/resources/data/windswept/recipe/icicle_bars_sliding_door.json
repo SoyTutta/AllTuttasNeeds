@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "doors"
+    },
+    {
+      "type": "alltuttasneeds:door_set_enabled",
+      "set": "lateral"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "windswept"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "sliding_doors",
+  "key": {
+    "#": {
+      "item": "windswept:icicle_bars"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "windswept:icicle_bars_sliding_door"
+  }
+}

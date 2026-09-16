@@ -52,11 +52,12 @@ public class CraftingRecipes {
         EnumSet<DoorVariant> registered = family.registeredVariants();
 
         Ingredient plank = plankIngredient(family);
+        Ingredient stick = stickIngredient(family);
 
-        if (plank.isEmpty()) return;
+        if (plank.isEmpty() || stick.isEmpty()) return;
 
-        registerMainCraftingRecipes(output, family, compat, plank, registered);
-        registerConversionRecipes(output, family, compat, plank, registered);
+        registerMainCraftingRecipes(output, family, compat, plank, stick, registered);
+        registerConversionRecipes(output, family, compat, plank, stick, registered);
     }
 
     private static void registerOriginalDoorRecipes(RecipeOutput output) {
@@ -80,25 +81,32 @@ public class CraftingRecipes {
     }
 
     private static Ingredient plankIngredient(WoodFamily family) {
-        String plankId = family.resolvedPlankId();
-        return plankId.startsWith("#")
-                ? Ingredient.of(TagKey.create(Registries.ITEM, ResourceLocation.tryParse(plankId.substring(1))))
-                : Ingredient.of(getItemLike(plankId));
+        return ingredient(family.resolvedPlankId());
+    }
+
+    private static Ingredient stickIngredient(WoodFamily family) {
+        return ingredient(family.resolvedStickId());
+    }
+
+    private static Ingredient ingredient(String itemId) {
+        return itemId.startsWith("#")
+                ? Ingredient.of(TagKey.create(Registries.ITEM, ResourceLocation.tryParse(itemId.substring(1))))
+                : Ingredient.of(getItemLike(itemId));
     }
 
     private static void registerMainCraftingRecipes(RecipeOutput output, WoodFamily family, ModCompat compat,
-                                                    Ingredient plank, EnumSet<DoorVariant> registered) {
-        createShapedDoorRecipe(output, DoorVariant.DISCRETE,   family, compat, plank, 3, registered);
-        createShapedDoorRecipe(output, DoorVariant.NORMAL,     family, compat, plank, 3, registered);
-        createShapedDoorRecipe(output, DoorVariant.INDISCRETE, family, compat, plank, 3, registered);
+                                                    Ingredient plank, Ingredient stick, EnumSet<DoorVariant> registered) {
+        createShapedDoorRecipe(output, DoorVariant.DISCRETE,   family, compat, plank, stick, 3, registered);
+        createShapedDoorRecipe(output, DoorVariant.NORMAL,     family, compat, plank, stick, 3, registered);
+        createShapedDoorRecipe(output, DoorVariant.INDISCRETE, family, compat, plank, stick, 3, registered);
         if (registered.contains(DoorVariant.TRANSIT))
-            createShapedDoorRecipe(output, DoorVariant.TRANSIT, family, compat, plank, 3, registered);
+            createShapedDoorRecipe(output, DoorVariant.TRANSIT, family, compat, plank, stick, 3, registered);
         if (registered.contains(DoorVariant.PET))
-            createShapedDoorRecipe(output, DoorVariant.PET, family, compat, plank, 2, registered);
+            createShapedDoorRecipe(output, DoorVariant.PET, family, compat, plank, stick, 2, registered);
     }
 
     private static void registerConversionRecipes(RecipeOutput output, WoodFamily family, ModCompat compat,
-                                                  Ingredient plank, EnumSet<DoorVariant> registered) {
+                                                  Ingredient plank, Ingredient stick, EnumSet<DoorVariant> registered) {
         String base = family.originalLocation().toString();
         ItemLike originalDoor   = getItemLike(base);
 
@@ -109,7 +117,6 @@ public class CraftingRecipes {
         ItemLike indiscreteDoor = registered.contains(DoorVariant.INDISCRETE)
                 ? getDoorItem(family, compat, DoorVariant.INDISCRETE) : originalDoor;
 
-        Ingredient stick = Ingredient.of(Items.STICK);
         RecipeOutput consistentOutput = output.withConditions(DoorSetEnabledCondition.CONSISTENT);
 
         createConversionRecipe(consistentOutput, normalDoor,     1, List.of(Ingredient.of(discreteDoor),   stick),        "normal_from_discrete",     family, compat);
@@ -141,7 +148,7 @@ public class CraftingRecipes {
     }
 
     private static void createShapedDoorRecipe(RecipeOutput output, DoorVariant variant, WoodFamily family,
-                                               ModCompat compat, Ingredient plank, int count,
+                                               ModCompat compat, Ingredient plank, Ingredient stick, int count,
                                                EnumSet<DoorVariant> registered) {
         ItemLike result;
         if (registered.contains(variant)) {
@@ -156,10 +163,10 @@ public class CraftingRecipes {
         ShapedRecipeBuilder builder = ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, result, count);
         switch (variant) {
             case DISCRETE   -> builder.pattern("##").pattern("##").pattern("##").define('#', plank).group("discrete_doors");
-            case NORMAL     -> builder.pattern("s#").pattern("##").pattern("##").define('s', Items.STICK).define('#', plank).group("wooden_doors");
-            case INDISCRETE -> builder.pattern("s#").pattern("s#").pattern("##").define('s', Items.STICK).define('#', plank).group("wooden_indiscrete_doors");
+            case NORMAL     -> builder.pattern("s#").pattern("##").pattern("##").define('s', stick).define('#', plank).group("wooden_doors");
+            case INDISCRETE -> builder.pattern("s#").pattern("s#").pattern("##").define('s', stick).define('#', plank).group("wooden_indiscrete_doors");
             case TRANSIT    -> builder.pattern(" #").pattern("##").pattern("##").define('#', plank).group("wooden_transit_doors");
-            case PET        -> builder.pattern("ss").pattern("##").pattern("##").define('s', Items.STICK).define('#', plank).group("wooden_pet_doors");
+            case PET        -> builder.pattern("ss").pattern("##").pattern("##").define('s', stick).define('#', plank).group("wooden_pet_doors");
             default -> { return; }
         }
 

@@ -51,10 +51,14 @@ public class TDItemTags extends ItemTagsProvider {
 
     private void registerWoodFamilyTags() {
         CompatRegistry.loaded().forEach(compat -> compat.woodFamilies().forEach(family -> {
+            var familyDoors = tag(TDTags.woodFamilyDoors(ResourceLocation.parse(family.familyId())))
+                    .addOptional(family.originalLocation());
             for (DoorVariant variant : family.displayOrder()) {
                 if (variant.isRegistrable()) {
-                    tag(variant.itemTag()).addOptional(
-                            compat.registryLocation(family.registryName() + "_" + variant.suffix()));
+                    ResourceLocation location = compat.registryLocation(
+                            family.registryName() + "_" + variant.suffix());
+                    tag(variant.itemTag()).addOptional(location);
+                    familyDoors.addOptional(location);
                 } else if (variant == DoorVariant.ORIGINAL) {
                     DoorVariant impliedTier = family.impliedOriginalTier();
                     if (impliedTier != null) {

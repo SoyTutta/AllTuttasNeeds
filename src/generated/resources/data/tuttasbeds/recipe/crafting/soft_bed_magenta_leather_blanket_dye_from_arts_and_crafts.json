@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "alltuttasneeds:module_enabled",
+      "module": "beds"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "arts_and_crafts"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "tuttasbeds:soft_bed_magenta_leather_blanket"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "soft_bed_leather_blanket",
+  "ingredients": [
+    {
+      "item": "tuttasbeds:soft_bed_bleached_leather_blanket"
+    },
+    {
+      "item": "minecraft:magenta_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tuttasbeds:soft_bed_magenta_leather_blanket"
+  }
+}

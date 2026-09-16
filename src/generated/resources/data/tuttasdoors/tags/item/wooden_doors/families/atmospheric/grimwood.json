@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "atmospheric:grimwood_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:grimwood_normal_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:grimwood_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:grimwood_transit_door",
+      "required": false
+    },
+    {
+      "id": "atmospheric:grimwood_pet_door",
+      "required": false
+    }
+  ]
+}

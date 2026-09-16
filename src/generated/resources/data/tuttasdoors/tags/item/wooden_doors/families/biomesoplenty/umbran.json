@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "biomesoplenty:umbran_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:umbran_discrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:umbran_indiscrete_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:umbran_transit_door",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:umbran_pet_door",
+      "required": false
+    }
+  ]
+}

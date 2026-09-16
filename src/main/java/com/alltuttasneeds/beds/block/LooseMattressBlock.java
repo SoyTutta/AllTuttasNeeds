@@ -9,6 +9,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -107,6 +108,12 @@ public class LooseMattressBlock extends BedBlock {
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (BedCombining.isOccupied(level, pos, state)) {
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        }
+
+        if (stack.getItem() instanceof BlockItem blockItem
+                && blockItem.getBlock() instanceof LooseMattressBlock replacementMattress
+                && BedCombining.swapLooseMattress(level, pos, state, this, replacementMattress, player, stack)) {
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
 
         Block coverResult = BedCombining.coverResult(coverResults, cover, stack);

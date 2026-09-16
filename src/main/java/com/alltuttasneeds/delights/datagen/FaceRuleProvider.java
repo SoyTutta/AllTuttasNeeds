@@ -33,7 +33,7 @@ public class FaceRuleProvider implements DataProvider {
             names.add(face.name());
             face.aliases().forEach(names::add);
             json.add("names", names);
-            json.addProperty("random_weight", 1);
+            json.addProperty("random_weight", face.randomWeight());
 
             Path path = output.getOutputFolder(PackOutput.Target.DATA_PACK)
                     .resolve(MODID)

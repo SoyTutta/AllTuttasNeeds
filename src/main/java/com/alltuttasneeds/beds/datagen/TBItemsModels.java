@@ -1,8 +1,9 @@
 package com.alltuttasneeds.beds.datagen;
 
+import com.alltuttasneeds.beds.BedColor;
 import com.alltuttasneeds.beds.BedModelNaming;
-import com.alltuttasneeds.beds.compat.BedCompatRegistry;
 import com.alltuttasneeds.beds.TBContent;
+import com.alltuttasneeds.beds.compat.BedCompatRegistry;
 import com.alltuttasneeds.beds.item.BedBlanketItem.BlanketKind;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -31,7 +32,7 @@ public class TBItemsModels extends ItemModelProvider {
         }
 
         for (BlanketKind kind : BlanketKind.values()) {
-            for (DyeColor color : DyeColor.values()) {
+            for (DyeColor color : BedColor.vanillaDyeColors()) {
                 registerBlanket(kind, color);
             }
         }

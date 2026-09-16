@@ -8,6 +8,14 @@
     "windswept:chestnut_trapdoor": [
       "windswept:chestnut_pet_door"
     ],
+    "windswept:gingerbread_discrete_door": [
+      "windswept:gingerbread_door",
+      "windswept:gingerbread_indiscrete_door",
+      "windswept:gingerbread_transit_door"
+    ],
+    "windswept:gingerbread_trapdoor": [
+      "windswept:gingerbread_pet_door"
+    ],
     "windswept:holly_discrete_door": [
       "windswept:holly_door",
       "windswept:holly_indiscrete_door",

@@ -1,3 +1,46 @@
+All Tutta's Needs 3.4.0
+
+Tutta's Doors:
+Compatibility:
+
+- Added Bountiful Fares compatibility for the Walnut and Hoary wood sets.
+- Added a Windswept sliding door crafted from Icicle Bars.
+- Added Windswept Gingerbread door variants using Gingerbread Cookies and Ginger Roots in their recipes.
+- Added Windswept secret bookshelf doors for Holly, Pine and Chestnut.
+- Grouped each wood family's compatible doors into a single Farmer's Delight cutting-board recipe.
+- Added Create mechanical-saw recipes for producing and recycling compatible doors.
+
+Tutta's Beds:
+Changes:
+
+- Loose mattresses can now be exchanged by interacting with them using a different mattress material.
+- Added standard bed recoloring recipes for recipe-viewer visibility.
+
+Compatibility:
+
+- Added Arts & Crafts Bleached variants for wool, leather and Deluxe beds.
+
+Fixes:
+
+- Fixed Tutta bed models having visibly different ambient shading from vanilla beds.
+- Fixed the frame texture references in the single bed foot model.
+- Prevented mods that extend `DyeColor` from being treated as vanilla bed colors.
+
+Tutta's Delights:
+Changes:
+
+- Added a server option to show Snow Golem Feast names only while looking at them.
+- Added 17 new Snow Golem Feast faces and adjusted each face's random appearance chance according to its category.
+- Player-associated faces can now only be obtained by renaming the feast.
+
+Fixes:
+
+- Fixed Ancient Ribs being added to Sniffer digging loot instead of only its entity loot.
+- Restricted Frog Leg, Rotten Bacon and Slime Cube modifiers to their intended entity loot tables.
+- Prevented the FARCR Snow Golem Feast face from being selected randomly.
+- Fixed Snow Golem Feasts always rendering the default face instead of their selected appearance.
+
+
 All Tutta's Needs 3.3.0
 
 Tutta's Delights:
